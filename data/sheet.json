@@ -1,0 +1,3838 @@
+{
+  "phases": [
+    {
+      "id": 1,
+      "title": "FOUNDATION",
+      "timeline": "Weeks 1-3"
+    },
+    {
+      "id": 2,
+      "title": "CORE DATA STRUCTURES",
+      "timeline": "Weeks 3-6"
+    },
+    {
+      "id": 3,
+      "title": "DYNAMIC PROGRAMMING",
+      "timeline": "Weeks 6-10"
+    },
+    {
+      "id": 4,
+      "title": "ADVANCED PATTERNS",
+      "timeline": "Weeks 10-14"
+    }
+  ],
+  "patterns": [
+    {
+      "id": 1,
+      "phaseId": 1,
+      "code": "01",
+      "title": "Arrays and Hashing",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 2,
+      "phaseId": 1,
+      "code": "02",
+      "title": "Two Pointers",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 3,
+      "phaseId": 1,
+      "code": "03",
+      "title": "Sliding Window",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 4,
+      "phaseId": 1,
+      "code": "04",
+      "title": "Stack and Monotonic Stack",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 5,
+      "phaseId": 1,
+      "code": "05",
+      "title": "Binary Search",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "5-6 days"
+    },
+    {
+      "id": 6,
+      "phaseId": 1,
+      "code": "06",
+      "title": "Prefix Sums and Difference Arrays",
+      "difficulty": "FOUNDATION",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 7,
+      "phaseId": 2,
+      "code": "07",
+      "title": "Linked Lists",
+      "difficulty": "CORE",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 8,
+      "phaseId": 2,
+      "code": "08",
+      "title": "Trees — DFS Complete",
+      "difficulty": "CORE",
+      "timeEstimate": "5-6 days"
+    },
+    {
+      "id": 9,
+      "phaseId": 2,
+      "code": "09",
+      "title": "Trees — BFS and Level Order",
+      "difficulty": "CORE",
+      "timeEstimate": "2-3 days"
+    },
+    {
+      "id": 10,
+      "phaseId": 2,
+      "code": "10",
+      "title": "Heap and Priority Queue",
+      "difficulty": "CORE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 11,
+      "phaseId": 2,
+      "code": "11",
+      "title": "Intervals",
+      "difficulty": "CORE",
+      "timeEstimate": "3 days"
+    },
+    {
+      "id": 12,
+      "phaseId": 2,
+      "code": "12",
+      "title": "Graphs — BFS and DFS",
+      "difficulty": "CORE",
+      "timeEstimate": "5-6 days"
+    },
+    {
+      "id": 13,
+      "phaseId": 2,
+      "code": "13",
+      "title": "Graphs — Union Find (DSU)",
+      "difficulty": "CORE",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 14,
+      "phaseId": 2,
+      "code": "14",
+      "title": "Graphs — Shortest Path",
+      "difficulty": "CORE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 15,
+      "phaseId": 2,
+      "code": "15",
+      "title": "Backtracking",
+      "difficulty": "CORE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 16,
+      "phaseId": 3,
+      "code": "16",
+      "title": "DP Fundamentals",
+      "difficulty": "CORE",
+      "timeEstimate": "3 days"
+    },
+    {
+      "id": 17,
+      "phaseId": 3,
+      "code": "17",
+      "title": "1D DP",
+      "difficulty": "CORE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 18,
+      "phaseId": 3,
+      "code": "18",
+      "title": "2D DP and Grid DP",
+      "difficulty": "CORE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 19,
+      "phaseId": 3,
+      "code": "19",
+      "title": "Knapsack Family",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "5-6 days"
+    },
+    {
+      "id": 20,
+      "phaseId": 3,
+      "code": "20",
+      "title": "LCS Family",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 21,
+      "phaseId": 3,
+      "code": "21",
+      "title": "LIS Family",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 22,
+      "phaseId": 3,
+      "code": "22",
+      "title": "DP on Trees",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 23,
+      "phaseId": 3,
+      "code": "23",
+      "title": "Interval DP",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 24,
+      "phaseId": 3,
+      "code": "24",
+      "title": "Bitmask DP",
+      "difficulty": "ELITE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 25,
+      "phaseId": 3,
+      "code": "25",
+      "title": "Digit DP",
+      "difficulty": "ELITE",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 26,
+      "phaseId": 4,
+      "code": "26",
+      "title": "Trie",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 27,
+      "phaseId": 4,
+      "code": "27",
+      "title": "Segment Tree",
+      "difficulty": "ELITE",
+      "timeEstimate": "5-7 days"
+    },
+    {
+      "id": 28,
+      "phaseId": 4,
+      "code": "28",
+      "title": "Fenwick Tree (BIT)",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "2-3 days"
+    },
+    {
+      "id": 29,
+      "phaseId": 4,
+      "code": "29",
+      "title": "Monotonic Deque",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "2-3 days"
+    },
+    {
+      "id": 30,
+      "phaseId": 4,
+      "code": "30",
+      "title": "Topological Sort",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 31,
+      "phaseId": 4,
+      "code": "31",
+      "title": "Minimum Spanning Tree",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "2-3 days"
+    },
+    {
+      "id": 32,
+      "phaseId": 4,
+      "code": "32",
+      "title": "Strongly Connected Components",
+      "difficulty": "ELITE",
+      "timeEstimate": "3-4 days"
+    },
+    {
+      "id": 33,
+      "phaseId": 4,
+      "code": "33",
+      "title": "String Algorithms",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 34,
+      "phaseId": 4,
+      "code": "34",
+      "title": "Greedy (Formal Treatment)",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    },
+    {
+      "id": 35,
+      "phaseId": 4,
+      "code": "35",
+      "title": "Math and Number Theory",
+      "difficulty": "ADVANCED",
+      "timeEstimate": "4-5 days"
+    }
+  ],
+  "problems": [
+    {
+      "id": 0,
+      "patternId": 1,
+      "title": "Two Sum",
+      "lcNumber": 1,
+      "url": "https://leetcode.com/problems/two-sum/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "complement lookup"
+    },
+    {
+      "id": 1,
+      "patternId": 1,
+      "title": "Contains Duplicate",
+      "lcNumber": 217,
+      "url": "https://leetcode.com/problems/contains-duplicate/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "hash set existence"
+    },
+    {
+      "id": 2,
+      "patternId": 1,
+      "title": "Valid Anagram",
+      "lcNumber": 242,
+      "url": "https://leetcode.com/problems/valid-anagram/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "frequency counting"
+    },
+    {
+      "id": 3,
+      "patternId": 1,
+      "title": "Group Anagrams",
+      "lcNumber": 49,
+      "url": "https://leetcode.com/problems/group-anagrams/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "grouping by sorted key"
+    },
+    {
+      "id": 4,
+      "patternId": 1,
+      "title": "Top K Frequent Elements",
+      "lcNumber": 347,
+      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "frequency + bucket sort"
+    },
+    {
+      "id": 5,
+      "patternId": 1,
+      "title": "Product of Array Except Self",
+      "lcNumber": 238,
+      "url": "https://leetcode.com/problems/product-of-array-except-self/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "prefix/suffix updates"
+    },
+    {
+      "id": 6,
+      "patternId": 1,
+      "title": "Longest Consecutive Sequence",
+      "lcNumber": 128,
+      "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "hash set + jump starting"
+    },
+    {
+      "id": 7,
+      "patternId": 1,
+      "title": "Subarray Sum Equals K",
+      "lcNumber": 560,
+      "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "prefix sum + hash map"
+    },
+    {
+      "id": 8,
+      "patternId": 1,
+      "title": "Encode and Decode Strings",
+      "lcNumber": 271,
+      "url": "https://leetcode.com/problems/encode-and-decode-strings/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "serialization layout"
+    },
+    {
+      "id": 9,
+      "patternId": 1,
+      "title": "First Missing Positive",
+      "lcNumber": 41,
+      "url": "https://leetcode.com/problems/first-missing-positive/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "cyclic sorting map"
+    },
+    {
+      "id": 10,
+      "patternId": 1,
+      "title": "Minimum Window Substring",
+      "lcNumber": 76,
+      "url": "https://leetcode.com/problems/minimum-window-substring/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "frequency mapping structure"
+    },
+    {
+      "id": 11,
+      "patternId": 2,
+      "title": "Valid Palindrome",
+      "lcNumber": 125,
+      "url": "https://leetcode.com/problems/valid-palindrome/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "opposite direction scan"
+    },
+    {
+      "id": 12,
+      "patternId": 2,
+      "title": "Two Sum II - Input Sorted",
+      "lcNumber": 167,
+      "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "left-right converging bounds"
+    },
+    {
+      "id": 13,
+      "patternId": 2,
+      "title": "3Sum",
+      "lcNumber": 15,
+      "url": "https://leetcode.com/problems/3sum/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "anchor index + 2 pointer checks"
+    },
+    {
+      "id": 14,
+      "patternId": 2,
+      "title": "Container With Most Water",
+      "lcNumber": 11,
+      "url": "https://leetcode.com/problems/container-with-most-water/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "shrink pointer with lower value"
+    },
+    {
+      "id": 15,
+      "patternId": 2,
+      "title": "Sort Colors",
+      "lcNumber": 75,
+      "url": "https://leetcode.com/problems/sort-colors/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "Dutch national flag grouping"
+    },
+    {
+      "id": 16,
+      "patternId": 2,
+      "title": "Remove Duplicates II",
+      "lcNumber": 80,
+      "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "write cursor tracking offset"
+    },
+    {
+      "id": 17,
+      "patternId": 2,
+      "title": "Trapping Rain Water",
+      "lcNumber": 42,
+      "url": "https://leetcode.com/problems/trapping-rain-water/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "elevation boundary updates"
+    },
+    {
+      "id": 18,
+      "patternId": 2,
+      "title": "4Sum",
+      "lcNumber": 18,
+      "url": "https://leetcode.com/problems/4sum/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "nested two-pointer reduction"
+    },
+    {
+      "id": 19,
+      "patternId": 2,
+      "title": "Boats to Save People",
+      "lcNumber": 881,
+      "url": "https://leetcode.com/problems/boats-to-save-people/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "greedy pairings matching values"
+    },
+    {
+      "id": 20,
+      "patternId": 2,
+      "title": "Shortest Unsorted Subarray",
+      "lcNumber": 581,
+      "url": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "value boundaries exploration"
+    },
+    {
+      "id": 21,
+      "patternId": 2,
+      "title": "Subsequences Satisfying Sum",
+      "lcNumber": 1498,
+      "url": "https://leetcode.com/problems/number-of-subsequences-that-satisfy-given-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "two pointer combinations + mod math"
+    },
+    {
+      "id": 22,
+      "patternId": 3,
+      "title": "Best Time to Buy Stock",
+      "lcNumber": 121,
+      "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "running min tracking"
+    },
+    {
+      "id": 23,
+      "patternId": 3,
+      "title": "Maximum Average Subarray I",
+      "lcNumber": 643,
+      "url": "https://leetcode.com/problems/maximum-average-subarray-i/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "simple static window size"
+    },
+    {
+      "id": 24,
+      "patternId": 3,
+      "title": "Longest Substring No Repeats",
+      "lcNumber": 3,
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dynamic sliding via unique set"
+    },
+    {
+      "id": 25,
+      "patternId": 3,
+      "title": "Longest Repeating Replacement",
+      "lcNumber": 424,
+      "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "character metrics window lookup"
+    },
+    {
+      "id": 26,
+      "patternId": 3,
+      "title": "Permutation in String",
+      "lcNumber": 567,
+      "url": "https://leetcode.com/problems/permutation-in-string/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "explicit window frequency tracking"
+    },
+    {
+      "id": 27,
+      "patternId": 3,
+      "title": "Minimum Window Substring",
+      "lcNumber": 76,
+      "url": "https://leetcode.com/problems/minimum-window-substring/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "contract window bounds dynamically"
+    },
+    {
+      "id": 28,
+      "patternId": 3,
+      "title": "Subarrays with K Distinct",
+      "lcNumber": 992,
+      "url": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "exact configuration difference trick"
+    },
+    {
+      "id": 29,
+      "patternId": 3,
+      "title": "Minimum Size Subarray Sum",
+      "lcNumber": 209,
+      "url": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "variable window scanning scale"
+    },
+    {
+      "id": 30,
+      "patternId": 3,
+      "title": "Max Consecutive Ones III",
+      "lcNumber": 1004,
+      "url": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "zero replacement condition tracking"
+    },
+    {
+      "id": 31,
+      "patternId": 3,
+      "title": "Sliding Window Maximum",
+      "lcNumber": 239,
+      "url": "https://leetcode.com/problems/sliding-window-maximum/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "window traversal using dequeue index"
+    },
+    {
+      "id": 32,
+      "patternId": 3,
+      "title": "Continuous Subarray Conversion",
+      "lcNumber": 2009,
+      "url": "https://leetcode.com/problems/minimum-number-of-operations to-make-array-continuous/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "sorted range window check"
+    },
+    {
+      "id": 33,
+      "patternId": 4,
+      "title": "Valid Parentheses",
+      "lcNumber": 20,
+      "url": "https://leetcode.com/problems/valid-parentheses/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "open close balancing checks"
+    },
+    {
+      "id": 34,
+      "patternId": 4,
+      "title": "Min Stack",
+      "lcNumber": 155,
+      "url": "https://leetcode.com/problems/min-stack/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "parallel minimum tracker layer"
+    },
+    {
+      "id": 35,
+      "patternId": 4,
+      "title": "Next Greater Element I",
+      "lcNumber": 496,
+      "url": "https://leetcode.com/problems/next-greater-element-i/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "structural entry logic pattern"
+    },
+    {
+      "id": 36,
+      "patternId": 4,
+      "title": "Daily Temperatures",
+      "lcNumber": 739,
+      "url": "https://leetcode.com/problems/daily-temperatures/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "monotonic decreasing indices setup"
+    },
+    {
+      "id": 37,
+      "patternId": 4,
+      "title": "Evaluate Reverse Polish Notation",
+      "lcNumber": 150,
+      "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "basic token operations parsing"
+    },
+    {
+      "id": 38,
+      "patternId": 4,
+      "title": "Largest Rectangle in Histogram",
+      "lcNumber": 84,
+      "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "index expansion lookup width boundary"
+    },
+    {
+      "id": 39,
+      "patternId": 4,
+      "title": "Trapping Rain Water",
+      "lcNumber": 42,
+      "url": "https://leetcode.com/problems/trapping-rain-water/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "stack structural level computation"
+    },
+    {
+      "id": 40,
+      "patternId": 4,
+      "title": "Sum of Subarray Minimums",
+      "lcNumber": 907,
+      "url": "https://leetcode.com/problems/sum-of-subarray-minimums/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "element index contribution spans"
+    },
+    {
+      "id": 41,
+      "patternId": 4,
+      "title": "Online Stock Span",
+      "lcNumber": 901,
+      "url": "https://leetcode.com/problems/online-stock-span/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "incremental structure index tracker"
+    },
+    {
+      "id": 42,
+      "patternId": 4,
+      "title": "Maximal Rectangle",
+      "lcNumber": 85,
+      "url": "https://leetcode.com/problems/maximal-rectangle/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "stacked matrix histogram loop bounds"
+    },
+    {
+      "id": 43,
+      "patternId": 4,
+      "title": "Sum of Subarray Ranges",
+      "lcNumber": 2104,
+      "url": "https://leetcode.com/problems/sum-of-subarray-ranges/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "total range metrics integration"
+    },
+    {
+      "id": 44,
+      "patternId": 5,
+      "title": "Binary Search",
+      "lcNumber": 704,
+      "url": "https://leetcode.com/problems/binary-search/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "exact split range selection"
+    },
+    {
+      "id": 45,
+      "patternId": 5,
+      "title": "Search Insert Position",
+      "lcNumber": 35,
+      "url": "https://leetcode.com/problems/search-insert-position/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "boundary edge index return logic"
+    },
+    {
+      "id": 46,
+      "patternId": 5,
+      "title": "First and Last Position",
+      "lcNumber": 34,
+      "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "edge condition matching dual updates"
+    },
+    {
+      "id": 47,
+      "patternId": 5,
+      "title": "Search Rotated Array",
+      "lcNumber": 33,
+      "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "detect continuous range sorting cuts"
+    },
+    {
+      "id": 48,
+      "patternId": 5,
+      "title": "Find Peak Element",
+      "lcNumber": 162,
+      "url": "https://leetcode.com/problems/find-peak-element/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "directional coordinate peak selection"
+    },
+    {
+      "id": 49,
+      "patternId": 5,
+      "title": "Koko Eating Bananas",
+      "lcNumber": 875,
+      "url": "https://leetcode.com/problems/koko-eating-bananas/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "binary scale range answer checks"
+    },
+    {
+      "id": 50,
+      "patternId": 5,
+      "title": "Capacity to Ship Packages",
+      "lcNumber": 1011,
+      "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "allocation feasibility scanning scale"
+    },
+    {
+      "id": 51,
+      "patternId": 5,
+      "title": "Split Array Largest Sum",
+      "lcNumber": 410,
+      "url": "https://leetcode.com/problems/split-array-largest-sum/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "range sum allocation ceiling optimization"
+    },
+    {
+      "id": 52,
+      "patternId": 5,
+      "title": "Median of Two Arrays",
+      "lcNumber": 4,
+      "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "balanced range partitions split balance"
+    },
+    {
+      "id": 53,
+      "patternId": 5,
+      "title": "Magnetic Force Between Balls",
+      "lcNumber": 1552,
+      "url": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "placement gap maximum tracking verification"
+    },
+    {
+      "id": 54,
+      "patternId": 5,
+      "title": "Minimize Max Distance Gas Station",
+      "lcNumber": 774,
+      "url": "https://leetcode.com/problems/minimize-max-distance-to-gas-station/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "fractional metrics scale updates validation"
+    },
+    {
+      "id": 55,
+      "patternId": 5,
+      "title": "Find in Mountain Array",
+      "lcNumber": 1095,
+      "url": "https://leetcode.com/problems/find-in-mountain-array/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "peak localization + distinct range lookups"
+    },
+    {
+      "id": 56,
+      "patternId": 6,
+      "title": "Running Sum of 1D Array",
+      "lcNumber": 1480,
+      "url": "https://leetcode.com/problems/running-sum-of-1d-array/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "sequential baseline addition loops"
+    },
+    {
+      "id": 57,
+      "patternId": 6,
+      "title": "Range Sum Query - Immutable",
+      "lcNumber": 303,
+      "url": "https://leetcode.com/problems/range-sum-query-immutable/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "cached boundary array extraction"
+    },
+    {
+      "id": 58,
+      "patternId": 6,
+      "title": "Subarray Sum Equals K",
+      "lcNumber": 560,
+      "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "cumulative values validation layout"
+    },
+    {
+      "id": 59,
+      "patternId": 6,
+      "title": "Continuous Subarray Sum",
+      "lcNumber": 523,
+      "url": "https://leetcode.com/problems/continuous-subarray-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "index distance + prefix coordinate mods"
+    },
+    {
+      "id": 60,
+      "patternId": 6,
+      "title": "Range Sum Query 2D",
+      "lcNumber": 304,
+      "url": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "matrix layout balance calculations"
+    },
+    {
+      "id": 61,
+      "patternId": 6,
+      "title": "Product of Array Except Self",
+      "lcNumber": 238,
+      "url": "https://leetcode.com/problems/product-of-array-except-self/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "bidirectional product updates execution"
+    },
+    {
+      "id": 62,
+      "patternId": 6,
+      "title": "Subarray Sums Divisible by K",
+      "lcNumber": 974,
+      "url": "https://leetcode.com/problems/subarray-sums-divisible by-k/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "modular frequency remainder counting"
+    },
+    {
+      "id": 63,
+      "patternId": 6,
+      "title": "Count Nice Subarrays",
+      "lcNumber": 1248,
+      "url": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "input conversion indexing lookup maps"
+    },
+    {
+      "id": 64,
+      "patternId": 6,
+      "title": "Subarray Sum With Deletion",
+      "lcNumber": 1186,
+      "url": "https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "edge connection split index values"
+    },
+    {
+      "id": 65,
+      "patternId": 6,
+      "title": "Range Addition",
+      "lcNumber": 370,
+      "url": "https://leetcode.com/problems/range-addition/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "edge interval markup transformation"
+    },
+    {
+      "id": 66,
+      "patternId": 6,
+      "title": "Corporate Flight Bookings",
+      "lcNumber": 1109,
+      "url": "https://leetcode.com/problems/corporate-flight-bookings/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "delta array boundary index changes"
+    },
+    {
+      "id": 67,
+      "patternId": 7,
+      "title": "Reverse Linked List",
+      "lcNumber": 206,
+      "url": "https://leetcode.com/problems/reverse-linked-list/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "reference flipping operations"
+    },
+    {
+      "id": 68,
+      "patternId": 7,
+      "title": "Linked List Cycle",
+      "lcNumber": 141,
+      "url": "https://leetcode.com/problems/linked-list-cycle/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "cycle pointer distance check"
+    },
+    {
+      "id": 69,
+      "patternId": 7,
+      "title": "Merge Two Sorted Lists",
+      "lcNumber": 21,
+      "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "node link updates tracking"
+    },
+    {
+      "id": 70,
+      "patternId": 7,
+      "title": "Remove Nth Node From End",
+      "lcNumber": 19,
+      "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dual pointers lookahead window offset"
+    },
+    {
+      "id": 71,
+      "patternId": 7,
+      "title": "Linked List Cycle II",
+      "lcNumber": 142,
+      "url": "https://leetcode.com/problems/linked-list-cycle-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "loop node matching convergence bounds"
+    },
+    {
+      "id": 72,
+      "patternId": 7,
+      "title": "Reorder List",
+      "lcNumber": 143,
+      "url": "https://leetcode.com/problems/reorder-list/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "cut middle + reverse + interleave links"
+    },
+    {
+      "id": 73,
+      "patternId": 7,
+      "title": "Copy List Random Pointer",
+      "lcNumber": 138,
+      "url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "deep copy structural nodes mirroring"
+    },
+    {
+      "id": 74,
+      "patternId": 7,
+      "title": "Add Two Numbers",
+      "lcNumber": 2,
+      "url": "https://leetcode.com/problems/add-two-numbers/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "carry digit sequence insertion logic"
+    },
+    {
+      "id": 75,
+      "patternId": 7,
+      "title": "LRU Cache",
+      "lcNumber": 146,
+      "url": "https://leetcode.com/problems/lru-cache/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "map lookups integrated with list shifts"
+    },
+    {
+      "id": 76,
+      "patternId": 7,
+      "title": "Merge K Sorted Lists",
+      "lcNumber": 23,
+      "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "heap node extraction sequences balance"
+    },
+    {
+      "id": 77,
+      "patternId": 7,
+      "title": "Reverse Nodes in k-Group",
+      "lcNumber": 25,
+      "url": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "batch boundaries structural link resets"
+    },
+    {
+      "id": 78,
+      "patternId": 8,
+      "title": "Maximum Depth of Tree",
+      "lcNumber": 104,
+      "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "simple node height depth scaling"
+    },
+    {
+      "id": 79,
+      "patternId": 8,
+      "title": "Invert Binary Tree",
+      "lcNumber": 226,
+      "url": "https://leetcode.com/problems/invert-binary-tree/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "bottom-up structural tree inversion"
+    },
+    {
+      "id": 80,
+      "patternId": 8,
+      "title": "Diameter of Binary Tree",
+      "lcNumber": 543,
+      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "evaluate child spans, update diameter"
+    },
+    {
+      "id": 81,
+      "patternId": 8,
+      "title": "Validate BST",
+      "lcNumber": 98,
+      "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "propagate value constraint checking limits"
+    },
+    {
+      "id": 82,
+      "patternId": 8,
+      "title": "LCA of BST",
+      "lcNumber": 235,
+      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "directional selection binary navigation"
+    },
+    {
+      "id": 83,
+      "patternId": 8,
+      "title": "LCA of Binary Tree",
+      "lcNumber": 236,
+      "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dual recursive path tracking lookup"
+    },
+    {
+      "id": 84,
+      "patternId": 8,
+      "title": "Maximum Path Sum",
+      "lcNumber": 124,
+      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "path extraction branching sum update logic"
+    },
+    {
+      "id": 85,
+      "patternId": 8,
+      "title": "Build Tree Pre/Inorder",
+      "lcNumber": 105,
+      "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "divide and conquer over array limits"
+    },
+    {
+      "id": 86,
+      "patternId": 8,
+      "title": "Serialize/Deserialize Tree",
+      "lcNumber": 297,
+      "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "preorder layout structural encoding"
+    },
+    {
+      "id": 87,
+      "patternId": 8,
+      "title": "Kth Smallest in BST",
+      "lcNumber": 230,
+      "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "in-order iteration node count lookup"
+    },
+    {
+      "id": 88,
+      "patternId": 8,
+      "title": "Count Good Nodes",
+      "lcNumber": 1448,
+      "url": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "value maximum tracking tracking rules"
+    },
+    {
+      "id": 89,
+      "patternId": 9,
+      "title": "Level Order Traversal",
+      "lcNumber": 102,
+      "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "basic queue block sizing loop"
+    },
+    {
+      "id": 90,
+      "patternId": 9,
+      "title": "Minimum Depth of Tree",
+      "lcNumber": 111,
+      "url": "https://leetcode.com/problems/minimum-depth-of-binary-tree/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "termination at target leaf node"
+    },
+    {
+      "id": 91,
+      "patternId": 9,
+      "title": "Right Side View",
+      "lcNumber": 199,
+      "url": "https://leetcode.com/problems/binary-tree-right-side-view/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "isolate terminal element of layer"
+    },
+    {
+      "id": 92,
+      "patternId": 9,
+      "title": "Zigzag Level Order",
+      "lcNumber": 103,
+      "url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "collection ordering direction toggle"
+    },
+    {
+      "id": 93,
+      "patternId": 9,
+      "title": "Populate Next Right",
+      "lcNumber": 116,
+      "url": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "direct structure linkage pointers shift"
+    },
+    {
+      "id": 94,
+      "patternId": 9,
+      "title": "Average of Levels",
+      "lcNumber": 637,
+      "url": "https://leetcode.com/problems/average-of-levels in-binary-tree/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "cumulative metrics assessment row updates"
+    },
+    {
+      "id": 95,
+      "patternId": 9,
+      "title": "Symmetric Tree",
+      "lcNumber": 101,
+      "url": "https://leetcode.com/problems/symmetric-tree/",
+      "difficulty": "EASY",
+      "role": "STRETCH",
+      "hint": "mirrored queue data matching runs"
+    },
+    {
+      "id": 96,
+      "patternId": 9,
+      "title": "Even Odd Tree",
+      "lcNumber": 1609,
+      "url": "https://leetcode.com/problems/even-odd-tree/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "layout constraints value tracking validation"
+    },
+    {
+      "id": 97,
+      "patternId": 9,
+      "title": "Maximum Width of Tree",
+      "lcNumber": 662,
+      "url": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "coordinate indexing tracking logic overflow"
+    },
+    {
+      "id": 98,
+      "patternId": 9,
+      "title": "Vertical Order Traversal",
+      "lcNumber": 987,
+      "url": "https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "2D map column alignment grid sorting"
+    },
+    {
+      "id": 99,
+      "patternId": 9,
+      "title": "Bus Routes",
+      "lcNumber": 815,
+      "url": "https://leetcode.com/problems/bus-routes/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "implicit layout state node graph mapping"
+    },
+    {
+      "id": 100,
+      "patternId": 10,
+      "title": "Kth Largest in Stream",
+      "lcNumber": 703,
+      "url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "bounded min-heap limit tracking"
+    },
+    {
+      "id": 101,
+      "patternId": 10,
+      "title": "Last Stone Weight",
+      "lcNumber": 1046,
+      "url": "https://leetcode.com/problems/last-stone-weight/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "simple sorting reductions cycle"
+    },
+    {
+      "id": 102,
+      "patternId": 10,
+      "title": "K Closest Points",
+      "lcNumber": 973,
+      "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "custom metrics sorting capacity checks"
+    },
+    {
+      "id": 103,
+      "patternId": 10,
+      "title": "Top K Frequent Elements",
+      "lcNumber": 347,
+      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "occurrences mapping + tree indexing extraction"
+    },
+    {
+      "id": 104,
+      "patternId": 10,
+      "title": "Kth Largest in Array",
+      "lcNumber": 215,
+      "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "standard tree extraction or quickselect"
+    },
+    {
+      "id": 105,
+      "patternId": 10,
+      "title": "Merge K Sorted Lists",
+      "lcNumber": 23,
+      "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "min-heap structure for current node heads"
+    },
+    {
+      "id": 106,
+      "patternId": 10,
+      "title": "Median from Data Stream",
+      "lcNumber": 295,
+      "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "dual max/min structural balance tuning"
+    },
+    {
+      "id": 107,
+      "patternId": 10,
+      "title": "Task Scheduler",
+      "lcNumber": 621,
+      "url": "https://leetcode.com/problems/task-scheduler/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "priority scheduling combined with waiting structures"
+    },
+    {
+      "id": 108,
+      "patternId": 10,
+      "title": "Reorganize String",
+      "lcNumber": 767,
+      "url": "https://leetcode.com/problems/reorganize-string/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "character usage sequence balancing checks"
+    },
+    {
+      "id": 109,
+      "patternId": 10,
+      "title": "IPO",
+      "lcNumber": 502,
+      "url": "https://leetcode.com/problems/ipo/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "resource threshold filter + optimal returns tree"
+    },
+    {
+      "id": 110,
+      "patternId": 10,
+      "title": "Smallest Range K Lists",
+      "lcNumber": 632,
+      "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "heap window limits tracking index bounds"
+    },
+    {
+      "id": 111,
+      "patternId": 11,
+      "title": "Meeting Rooms",
+      "lcNumber": 252,
+      "url": "https://leetcode.com/problems/meeting-rooms/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "direct segment overlap detection loops"
+    },
+    {
+      "id": 112,
+      "patternId": 11,
+      "title": "Merge Intervals",
+      "lcNumber": 56,
+      "url": "https://leetcode.com/problems/merge-intervals/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "sequence sort + continuous block growth"
+    },
+    {
+      "id": 113,
+      "patternId": 11,
+      "title": "Insert Interval",
+      "lcNumber": 57,
+      "url": "https://leetcode.com/problems/insert-interval/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "linear range localization + consolidation runs"
+    },
+    {
+      "id": 114,
+      "patternId": 11,
+      "title": "Non-overlapping Intervals",
+      "lcNumber": 435,
+      "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "greedy sorting tracking using completion coordinates"
+    },
+    {
+      "id": 115,
+      "patternId": 11,
+      "title": "Meeting Rooms II",
+      "lcNumber": 253,
+      "url": "https://leetcode.com/problems/meeting-rooms-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dynamic allocation tree vs timeline sweeping scans"
+    },
+    {
+      "id": 116,
+      "patternId": 11,
+      "title": "Interval List Intersections",
+      "lcNumber": 986,
+      "url": "https://leetcode.com/problems/interval-list-intersections/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dual segment index comparisons step calculations"
+    },
+    {
+      "id": 117,
+      "patternId": 11,
+      "title": "Burst Balloons Arrows",
+      "lcNumber": 452,
+      "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "tight interval grouping optimization bounds"
+    },
+    {
+      "id": 118,
+      "patternId": 11,
+      "title": "Employee Free Time",
+      "lcNumber": 759,
+      "url": "https://leetcode.com/problems/employee-free-time/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "combined list scanning gaps localization tracking"
+    },
+    {
+      "id": 119,
+      "patternId": 11,
+      "title": "Remove Covered Intervals",
+      "lcNumber": 1288,
+      "url": "https://leetcode.com/problems/remove-covered-intervals/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "precise sort order layout comparisons check"
+    },
+    {
+      "id": 120,
+      "patternId": 11,
+      "title": "My Calendar I / II / III",
+      "lcNumber": 729,
+      "url": "https://leetcode.com/problems/my-calendar-i/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "tree index tracking timeline value updates"
+    },
+    {
+      "id": 121,
+      "patternId": 11,
+      "title": "Data Stream Intervals",
+      "lcNumber": 352,
+      "url": "https://leetcode.com/problems/data-stream-as-disjoint-intervals/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "active structure index lookup consolidation tracking"
+    },
+    {
+      "id": 122,
+      "patternId": 12,
+      "title": "Number of Islands",
+      "lcNumber": 200,
+      "url": "https://leetcode.com/problems/number-of-islands/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "grid flood fill execution rounds"
+    },
+    {
+      "id": 123,
+      "patternId": 12,
+      "title": "Flood Fill",
+      "lcNumber": 733,
+      "url": "https://leetcode.com/problems/flood-fill/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "primary recursion coordinate updates"
+    },
+    {
+      "id": 124,
+      "patternId": 12,
+      "title": "Clone Graph",
+      "lcNumber": 133,
+      "url": "https://leetcode.com/problems/clone-graph/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "object layout tracing via tracking lookup map"
+    },
+    {
+      "id": 125,
+      "patternId": 12,
+      "title": "Rotting Oranges",
+      "lcNumber": 994,
+      "url": "https://leetcode.com/problems/rotting-oranges/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "multi-source queue index propagation layers"
+    },
+    {
+      "id": 126,
+      "patternId": 12,
+      "title": "Pacific Atlantic Flow",
+      "lcNumber": 417,
+      "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "boundary inversion graph search checks"
+    },
+    {
+      "id": 127,
+      "patternId": 12,
+      "title": "Course Schedule",
+      "lcNumber": 207,
+      "url": "https://leetcode.com/problems/course-schedule/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "layout path validation node loop checking"
+    },
+    {
+      "id": 128,
+      "patternId": 12,
+      "title": "Word Ladder",
+      "lcNumber": 127,
+      "url": "https://leetcode.com/problems/word-ladder/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "metric node variations shortest tracking runs"
+    },
+    {
+      "id": 129,
+      "patternId": 12,
+      "title": "Surrounded Regions",
+      "lcNumber": 130,
+      "url": "https://leetcode.com/problems/surrounded-regions/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "edge connection anchor search protection"
+    },
+    {
+      "id": 130,
+      "patternId": 12,
+      "title": "Shortest Path in Grid",
+      "lcNumber": 1091,
+      "url": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "direct directional layout routing queue validation"
+    },
+    {
+      "id": 131,
+      "patternId": 12,
+      "title": "Walls and Gates",
+      "lcNumber": 286,
+      "url": "https://leetcode.com/problems/walls-and-gates/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "parallel root tracking metrics expansion"
+    },
+    {
+      "id": 132,
+      "patternId": 12,
+      "title": "Graph Valid Tree",
+      "lcNumber": 261,
+      "url": "https://leetcode.com/problems/graph-valid-tree/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "structural node connection verify rules"
+    },
+    {
+      "id": 133,
+      "patternId": 12,
+      "title": "Shortest Bridge",
+      "lcNumber": 934,
+      "url": "https://leetcode.com/problems/shortest-bridge/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "cluster location tag + layer routing growth"
+    },
+    {
+      "id": 134,
+      "patternId": 13,
+      "title": "Connected Components",
+      "lcNumber": 323,
+      "url": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "baseline partition consolidation loop"
+    },
+    {
+      "id": 135,
+      "patternId": 13,
+      "title": "Redundant Connection",
+      "lcNumber": 684,
+      "url": "https://leetcode.com/problems/redundant-connection/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "detect branch intersection component cycle"
+    },
+    {
+      "id": 136,
+      "patternId": 13,
+      "title": "Number of Provinces",
+      "lcNumber": 547,
+      "url": "https://leetcode.com/problems/number-of-provinces/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "matrix layout grouping updates track"
+    },
+    {
+      "id": 137,
+      "patternId": 13,
+      "title": "Accounts Merge",
+      "lcNumber": 721,
+      "url": "https://leetcode.com/problems/accounts-merge/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "key token consolidation maps connection"
+    },
+    {
+      "id": 138,
+      "patternId": 13,
+      "title": "Longest Consecutive",
+      "lcNumber": 128,
+      "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "value range component link structure alternative"
+    },
+    {
+      "id": 139,
+      "patternId": 13,
+      "title": "Equality Equations",
+      "lcNumber": 990,
+      "url": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "constraint node groups + verify violations"
+    },
+    {
+      "id": 140,
+      "patternId": 13,
+      "title": "Number of Islands II",
+      "lcNumber": 305,
+      "url": "https://leetcode.com/problems/number-of-islands-ii/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "incremental structure layout consolidation checks"
+    },
+    {
+      "id": 141,
+      "patternId": 13,
+      "title": "Smallest String Swaps",
+      "lcNumber": 1202,
+      "url": "https://leetcode.com/problems/smallest-string-with-swaps/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "component index group extraction sorting runs"
+    },
+    {
+      "id": 142,
+      "patternId": 13,
+      "title": "Most Stones Removed",
+      "lcNumber": 947,
+      "url": "https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "coordinate map axis index grouping sets"
+    },
+    {
+      "id": 143,
+      "patternId": 13,
+      "title": "Swim in Rising Water",
+      "lcNumber": 778,
+      "url": "https://leetcode.com/problems/swim-in-rising-water/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "metric edge selection loop component matching"
+    },
+    {
+      "id": 144,
+      "patternId": 13,
+      "title": "Minimize Malware Spread",
+      "lcNumber": 924,
+      "url": "https://leetcode.com/problems/minimize-malware-spread/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "cluster size metrics tracking value lookup"
+    },
+    {
+      "id": 145,
+      "patternId": 14,
+      "title": "Network Delay Time",
+      "lcNumber": 743,
+      "url": "https://leetcode.com/problems/network-delay-time/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "pure metric tree routing loop template"
+    },
+    {
+      "id": 146,
+      "patternId": 14,
+      "title": "Max Probability Path",
+      "lcNumber": 1514,
+      "url": "https://leetcode.com/problems/path-with-maximum-probability/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "multiplicative tree value metrics logic"
+    },
+    {
+      "id": 147,
+      "patternId": 14,
+      "title": "Cheapest Flights K Stops",
+      "lcNumber": 787,
+      "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "range step limits updates track logic"
+    },
+    {
+      "id": 148,
+      "patternId": 14,
+      "title": "Path With Minimum Effort",
+      "lcNumber": 1631,
+      "url": "https://leetcode.com/problems/path-with-minimum-effort/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "threshold metric binary check bounds"
+    },
+    {
+      "id": 149,
+      "patternId": 14,
+      "title": "Swim in Rising Water",
+      "lcNumber": 778,
+      "url": "https://leetcode.com/problems/swim-in-rising-water/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "layout coordinate tree navigation loops"
+    },
+    {
+      "id": 150,
+      "patternId": 14,
+      "title": "Shortest Path Matrix",
+      "lcNumber": 1091,
+      "url": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "static step index array routing queue runs"
+    },
+    {
+      "id": 151,
+      "patternId": 14,
+      "title": "City Smallest Neighbors",
+      "lcNumber": 1334,
+      "url": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "complete matrix path layout limits mapping"
+    },
+    {
+      "id": 152,
+      "patternId": 14,
+      "title": "Shortest Path All Keys",
+      "lcNumber": 864,
+      "url": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "layout positioning + target state collection bitmask"
+    },
+    {
+      "id": 153,
+      "patternId": 14,
+      "title": "Minimum Cost Valid Path",
+      "lcNumber": 1368,
+      "url": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "zero-one dequeue index routing strategy"
+    },
+    {
+      "id": 154,
+      "patternId": 14,
+      "title": "Ways to Arrive Destination",
+      "lcNumber": 1976,
+      "url": "https://leetcode.com/problems/number-of-ways to-arrive-at-destination/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "metric paths + configuration route calculations"
+    },
+    {
+      "id": 155,
+      "patternId": 14,
+      "title": "Shortest Path All Nodes",
+      "lcNumber": 847,
+      "url": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "combined node structure navigation state bitmask"
+    },
+    {
+      "id": 156,
+      "patternId": 15,
+      "title": "Subsets",
+      "lcNumber": 78,
+      "url": "https://leetcode.com/problems/subsets/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "state inclusion choice tree tracking"
+    },
+    {
+      "id": 157,
+      "patternId": 15,
+      "title": "Permutations",
+      "lcNumber": 46,
+      "url": "https://leetcode.com/problems/permutations/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "layout configurations selection swaps"
+    },
+    {
+      "id": 158,
+      "patternId": 15,
+      "title": "Combinations",
+      "lcNumber": 77,
+      "url": "https://leetcode.com/problems/combinations/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "target size combination range limitations"
+    },
+    {
+      "id": 159,
+      "patternId": 15,
+      "title": "Combination Sum",
+      "lcNumber": 39,
+      "url": "https://leetcode.com/problems/combination-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "index reuse allocation paths checking"
+    },
+    {
+      "id": 160,
+      "patternId": 15,
+      "title": "Subsets II",
+      "lcNumber": 90,
+      "url": "https://leetcode.com/problems/subsets-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "elements duplicate filtering range cuts"
+    },
+    {
+      "id": 161,
+      "patternId": 15,
+      "title": "Permutations II",
+      "lcNumber": 47,
+      "url": "https://leetcode.com/problems/permutations-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "configuration index duplicate protection logic"
+    },
+    {
+      "id": 162,
+      "patternId": 15,
+      "title": "Palindrome Partitioning",
+      "lcNumber": 131,
+      "url": "https://leetcode.com/problems/palindrome-partitioning/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "text validation slice path search"
+    },
+    {
+      "id": 163,
+      "patternId": 15,
+      "title": "Word Search",
+      "lcNumber": 79,
+      "url": "https://leetcode.com/problems/word-search/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "layout coordinate search path protection"
+    },
+    {
+      "id": 164,
+      "patternId": 15,
+      "title": "N-Queens",
+      "lcNumber": 51,
+      "url": "https://leetcode.com/problems/n-queens/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "line and axis block validations tracking"
+    },
+    {
+      "id": 165,
+      "patternId": 15,
+      "title": "Sudoku Solver",
+      "lcNumber": 37,
+      "url": "https://leetcode.com/problems/sudoku-solver/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "dense constraint checking state resolution"
+    },
+    {
+      "id": 166,
+      "patternId": 15,
+      "title": "Letter Combinations",
+      "lcNumber": 17,
+      "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "key map selection tracking expansion"
+    },
+    {
+      "id": 167,
+      "patternId": 16,
+      "title": "Fibonacci Number",
+      "lcNumber": 509,
+      "url": "https://leetcode.com/problems/fibonacci-number/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "state memory base initialization loops"
+    },
+    {
+      "id": 168,
+      "patternId": 16,
+      "title": "Climbing Stairs",
+      "lcNumber": 70,
+      "url": "https://leetcode.com/problems/climbing-stairs/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "simple index combination calculations"
+    },
+    {
+      "id": 169,
+      "patternId": 16,
+      "title": "Min Cost Climbing Stairs",
+      "lcNumber": 746,
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "index route state choice validation"
+    },
+    {
+      "id": 170,
+      "patternId": 16,
+      "title": "House Robber",
+      "lcNumber": 198,
+      "url": "https://leetcode.com/problems/house-robber/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "pick or ignore element selection state rules"
+    },
+    {
+      "id": 171,
+      "patternId": 16,
+      "title": "House Robber II",
+      "lcNumber": 213,
+      "url": "https://leetcode.com/problems/house-robber-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "circular range boundary separate calculations"
+    },
+    {
+      "id": 172,
+      "patternId": 16,
+      "title": "Unique Paths",
+      "lcNumber": 62,
+      "url": "https://leetcode.com/problems/unique-paths/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "matrix coordinate options combination updates"
+    },
+    {
+      "id": 173,
+      "patternId": 16,
+      "title": "Coin Change",
+      "lcNumber": 322,
+      "url": "https://leetcode.com/problems/coin-change/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "target combination space mapping allocation"
+    },
+    {
+      "id": 174,
+      "patternId": 16,
+      "title": "LIS",
+      "lcNumber": 300,
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "sequential item relation checking state"
+    },
+    {
+      "id": 175,
+      "patternId": 16,
+      "title": "Word Break",
+      "lcNumber": 139,
+      "url": "https://leetcode.com/problems/word-break/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "text index tracking substring confirmation"
+    },
+    {
+      "id": 176,
+      "patternId": 16,
+      "title": "Maximum Subarray",
+      "lcNumber": 53,
+      "url": "https://leetcode.com/problems/maximum-subarray/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "local element calculation choice mapping"
+    },
+    {
+      "id": 177,
+      "patternId": 17,
+      "title": "Climbing Stairs",
+      "lcNumber": 70,
+      "url": "https://leetcode.com/problems/climbing-stairs/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "index progression data storage matching"
+    },
+    {
+      "id": 178,
+      "patternId": 17,
+      "title": "Min Cost Stairs",
+      "lcNumber": 746,
+      "url": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "baseline step route price optimization"
+    },
+    {
+      "id": 179,
+      "patternId": 17,
+      "title": "House Robber",
+      "lcNumber": 198,
+      "url": "https://leetcode.com/problems/house-robber/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "element inclusion state alternation mapping"
+    },
+    {
+      "id": 180,
+      "patternId": 17,
+      "title": "House Robber II",
+      "lcNumber": 213,
+      "url": "https://leetcode.com/problems/house-robber-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "boundary closure layout range splits"
+    },
+    {
+      "id": 181,
+      "patternId": 17,
+      "title": "Decode Ways",
+      "lcNumber": 91,
+      "url": "https://leetcode.com/problems/decode-ways/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "string parsing token branch combination checks"
+    },
+    {
+      "id": 182,
+      "patternId": 17,
+      "title": "Jump Game",
+      "lcNumber": 55,
+      "url": "https://leetcode.com/problems/jump-game/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "index reachability tracking bounds structure"
+    },
+    {
+      "id": 183,
+      "patternId": 17,
+      "title": "Jump Game II",
+      "lcNumber": 45,
+      "url": "https://leetcode.com/problems/jump-game-ii/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "level optimization metrics boundary scan"
+    },
+    {
+      "id": 184,
+      "patternId": 17,
+      "title": "Word Break",
+      "lcNumber": 139,
+      "url": "https://leetcode.com/problems/word-break/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "subset range parsing validation tracking"
+    },
+    {
+      "id": 185,
+      "patternId": 17,
+      "title": "Max Product Subarray",
+      "lcNumber": 152,
+      "url": "https://leetcode.com/problems/maximum-product-subarray/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "dual max/min tracking inversion loops"
+    },
+    {
+      "id": 186,
+      "patternId": 17,
+      "title": "Longest Turbulent Subarray",
+      "lcNumber": 978,
+      "url": "https://leetcode.com/problems/longest-turbulent-subarray/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "value comparison sequence switch track"
+    },
+    {
+      "id": 187,
+      "patternId": 17,
+      "title": "Delete and Earn",
+      "lcNumber": 740,
+      "url": "https://leetcode.com/problems/delete-and-earn/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "array item transformation tracking structures"
+    },
+    {
+      "id": 188,
+      "patternId": 17,
+      "title": "Minimum Cost For Tickets",
+      "lcNumber": 983,
+      "url": "https://leetcode.com/problems/minimum-cost-for-tickets/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "multiple selection range cost analysis"
+    },
+    {
+      "id": 189,
+      "patternId": 18,
+      "title": "Unique Paths",
+      "lcNumber": 62,
+      "url": "https://leetcode.com/problems/unique-paths/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "standard grid step additions grid"
+    },
+    {
+      "id": 190,
+      "patternId": 18,
+      "title": "Unique Paths II",
+      "lcNumber": 63,
+      "url": "https://leetcode.com/problems/unique-paths-ii/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "obstacle validation index map clear"
+    },
+    {
+      "id": 191,
+      "patternId": 18,
+      "title": "Minimum Path Sum",
+      "lcNumber": 64,
+      "url": "https://leetcode.com/problems/minimum-path-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "coordinate direction selection min calculation"
+    },
+    {
+      "id": 192,
+      "patternId": 18,
+      "title": "Triangle",
+      "lcNumber": 120,
+      "url": "https://leetcode.com/problems/triangle/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "bottom-up row reduction grid alignment"
+    },
+    {
+      "id": 193,
+      "patternId": 18,
+      "title": "Maximal Square",
+      "lcNumber": 221,
+      "url": "https://leetcode.com/problems/maximal-square/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "multi-axis side limit extraction match"
+    },
+    {
+      "id": 194,
+      "patternId": 18,
+      "title": "Dungeon Game",
+      "lcNumber": 174,
+      "url": "https://leetcode.com/problems/dungeon-game/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "target tracking reverse metrics logic"
+    },
+    {
+      "id": 195,
+      "patternId": 18,
+      "title": "Cherry Pickup",
+      "lcNumber": 741,
+      "url": "https://leetcode.com/problems/cherry-pickup/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "parallel coordinate state tracking synchronization"
+    },
+    {
+      "id": 196,
+      "patternId": 18,
+      "title": "LCS",
+      "lcNumber": 1143,
+      "url": "https://leetcode.com/problems/longest-common-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "dual text character index mapping matrix"
+    },
+    {
+      "id": 197,
+      "patternId": 18,
+      "title": "Interleaving String",
+      "lcNumber": 97,
+      "url": "https://leetcode.com/problems/interleaving-string/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "multi-source string match paths checker"
+    },
+    {
+      "id": 198,
+      "patternId": 18,
+      "title": "Min Falling Path Sum",
+      "lcNumber": 931,
+      "url": "https://leetcode.com/problems/minimum-falling-path-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "index adjacency tracking minimal value loops"
+    },
+    {
+      "id": 199,
+      "patternId": 18,
+      "title": "Maximal Rectangle",
+      "lcNumber": 85,
+      "url": "https://leetcode.com/problems/maximal-rectangle/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "row state history integration + histogram loops"
+    },
+    {
+      "id": 200,
+      "patternId": 19,
+      "title": "Partition Equal Subset Sum",
+      "lcNumber": 416,
+      "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "target weight balance boolean mapping"
+    },
+    {
+      "id": 201,
+      "patternId": 19,
+      "title": "Coin Change",
+      "lcNumber": 322,
+      "url": "https://leetcode.com/problems/coin-change/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "unlimited element choice volume track"
+    },
+    {
+      "id": 202,
+      "patternId": 19,
+      "title": "Coin Change II",
+      "lcNumber": 518,
+      "url": "https://leetcode.com/problems/coin-change-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "space loops sequencing item combination track"
+    },
+    {
+      "id": 203,
+      "patternId": 19,
+      "title": "Target Sum",
+      "lcNumber": 494,
+      "url": "https://leetcode.com/problems/target-sum/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "value transformation partition sizing maps"
+    },
+    {
+      "id": 204,
+      "patternId": 19,
+      "title": "Last Stone Weight II",
+      "lcNumber": 1049,
+      "url": "https://leetcode.com/problems/last-stone-weight-ii/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "target subset separation range limits"
+    },
+    {
+      "id": 205,
+      "patternId": 19,
+      "title": "Ones and Zeroes",
+      "lcNumber": 474,
+      "url": "https://leetcode.com/problems/ones-and-zeroes/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dual capacity coordinate space boundaries"
+    },
+    {
+      "id": 206,
+      "patternId": 19,
+      "title": "Combination Sum IV",
+      "lcNumber": 377,
+      "url": "https://leetcode.com/problems/combination-sum-iv/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "index configuration routing loop selection rules"
+    },
+    {
+      "id": 207,
+      "patternId": 19,
+      "title": "Perfect Squares",
+      "lcNumber": 279,
+      "url": "https://leetcode.com/problems/perfect-squares/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "value scaling allocation strategy levels"
+    },
+    {
+      "id": 208,
+      "patternId": 19,
+      "title": "Profitable Schemes",
+      "lcNumber": 879,
+      "url": "https://leetcode.com/problems/profitable-schemes/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "resource ceiling combined with profit target logic"
+    },
+    {
+      "id": 209,
+      "patternId": 19,
+      "title": "Tallest Billboard",
+      "lcNumber": 956,
+      "url": "https://leetcode.com/problems/tallest-billboard/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "delta shift index evaluation matching table"
+    },
+    {
+      "id": 210,
+      "patternId": 20,
+      "title": "LCS",
+      "lcNumber": 1143,
+      "url": "https://leetcode.com/problems/longest-common-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "baseline text token grid matrix track"
+    },
+    {
+      "id": 211,
+      "patternId": 20,
+      "title": "Edit Distance",
+      "lcNumber": 72,
+      "url": "https://leetcode.com/problems/edit-distance/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "transformation cost options mapping cuts"
+    },
+    {
+      "id": 212,
+      "patternId": 20,
+      "title": "Longest Palindromic Subseq",
+      "lcNumber": 516,
+      "url": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "reverse text correlation grid routing"
+    },
+    {
+      "id": 213,
+      "patternId": 20,
+      "title": "Shortest Common Superseq",
+      "lcNumber": 1092,
+      "url": "https://leetcode.com/problems/shortest-common-supersequence/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "matrix pathway backtrace layout build"
+    },
+    {
+      "id": 214,
+      "patternId": 20,
+      "title": "Distinct Subsequences",
+      "lcNumber": 115,
+      "url": "https://leetcode.com/problems/distinct-subsequences/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "matching choices pattern tracking layout"
+    },
+    {
+      "id": 215,
+      "patternId": 20,
+      "title": "Min ASCII Delete Sum",
+      "lcNumber": 712,
+      "url": "https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "custom price balance sequence comparisons"
+    },
+    {
+      "id": 216,
+      "patternId": 20,
+      "title": "Interleaving String",
+      "lcNumber": 97,
+      "url": "https://leetcode.com/problems/interleaving-string/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "grid coordinate path validation status"
+    },
+    {
+      "id": 217,
+      "patternId": 20,
+      "title": "Wildcard Matching",
+      "lcNumber": 44,
+      "url": "https://leetcode.com/problems/wildcard-matching/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "sign tracking string index grid navigation"
+    },
+    {
+      "id": 218,
+      "patternId": 20,
+      "title": "Regular Expression Match",
+      "lcNumber": 10,
+      "url": "https://leetcode.com/problems/regular-expression-matching/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "structural control lookahead conditions loop"
+    },
+    {
+      "id": 219,
+      "patternId": 20,
+      "title": "Longest Palindromic Substr",
+      "lcNumber": 5,
+      "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "middle out index range growth validation"
+    },
+    {
+      "id": 220,
+      "patternId": 20,
+      "title": "Min Insertions Palindrome",
+      "lcNumber": 1312,
+      "url": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-palindrome/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "sequence length delta metrics reduction"
+    },
+    {
+      "id": 221,
+      "patternId": 21,
+      "title": "LIS",
+      "lcNumber": 300,
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "binary replacement tail array sequence"
+    },
+    {
+      "id": 222,
+      "patternId": 21,
+      "title": "Longest String Chain",
+      "lcNumber": 1048,
+      "url": "https://leetcode.com/problems/longest-string-chain/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "string length map key validation jumps"
+    },
+    {
+      "id": 223,
+      "patternId": 21,
+      "title": "Number of LIS",
+      "lcNumber": 673,
+      "url": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "parallel count tracker integration logic"
+    },
+    {
+      "id": 224,
+      "patternId": 21,
+      "title": "Increasing Triplet",
+      "lcNumber": 334,
+      "url": "https://leetcode.com/problems/increasing-triplet-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "simple local slot variables update metrics"
+    },
+    {
+      "id": 225,
+      "patternId": 21,
+      "title": "Max Length Pair Chain",
+      "lcNumber": 646,
+      "url": "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "greedy boundary end sorting execution"
+    },
+    {
+      "id": 226,
+      "patternId": 21,
+      "title": "Russian Doll Envelopes",
+      "lcNumber": 354,
+      "url": "https://leetcode.com/problems/russian-doll-envelopes/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "customized multi-sort grid + array LIS runs"
+    },
+    {
+      "id": 227,
+      "patternId": 21,
+      "title": "Longest Arithmetic Subseq",
+      "lcNumber": 1027,
+      "url": "https://leetcode.com/problems/longest-arithmetic-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "variance gap metrics tracking dictionary table"
+    },
+    {
+      "id": 228,
+      "patternId": 21,
+      "title": "Make Array Increasing",
+      "lcNumber": 1187,
+      "url": "https://leetcode.com/problems/make-array-strictly-increasing/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "switch options matching range optimization"
+    },
+    {
+      "id": 229,
+      "patternId": 21,
+      "title": "Min Operations Array Inc",
+      "lcNumber": 1827,
+      "url": "https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/",
+      "difficulty": "EASY",
+      "role": "CONTEST",
+      "hint": "local tracking greed configuration corrections"
+    },
+    {
+      "id": 230,
+      "patternId": 21,
+      "title": "Longest Ideal Subseq",
+      "lcNumber": 2370,
+      "url": "https://leetcode.com/problems/longest-ideal-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "localized map char distance range update"
+    },
+    {
+      "id": 231,
+      "patternId": 21,
+      "title": "Stacking Cuboids Height",
+      "lcNumber": 1691,
+      "url": "https://leetcode.com/problems/maximum-height-by-stacking-cuboids/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "axis dimension alignments + linear sorting LIS"
+    },
+    {
+      "id": 232,
+      "patternId": 22,
+      "title": "Diameter of Tree",
+      "lcNumber": 543,
+      "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "bottom-up structural node path comparisons"
+    },
+    {
+      "id": 233,
+      "patternId": 22,
+      "title": "House Robber III",
+      "lcNumber": 337,
+      "url": "https://leetcode.com/problems/house-robber-iii/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "child node select status pairs map"
+    },
+    {
+      "id": 234,
+      "patternId": 22,
+      "title": "Maximum Path Sum",
+      "lcNumber": 124,
+      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "node routing separation value updates logic"
+    },
+    {
+      "id": 235,
+      "patternId": 22,
+      "title": "Binary Tree Cameras",
+      "lcNumber": 968,
+      "url": "https://leetcode.com/problems/binary-tree-cameras/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "node context tag states returns structure"
+    },
+    {
+      "id": 236,
+      "patternId": 22,
+      "title": "Longest Path Diff Chars",
+      "lcNumber": 2246,
+      "url": "https://leetcode.com/problems/longest-path-with-different-adjacent-characters/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "text criteria node selection maximum paths"
+    },
+    {
+      "id": 237,
+      "patternId": 22,
+      "title": "Sum of Distances in Tree",
+      "lcNumber": 834,
+      "url": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "double phase graph re-root calculations map"
+    },
+    {
+      "id": 238,
+      "patternId": 22,
+      "title": "Max Product Splitted Tree",
+      "lcNumber": 1339,
+      "url": "https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "branch values addition total checking loops"
+    },
+    {
+      "id": 239,
+      "patternId": 22,
+      "title": "Min Cost Tree Leaf",
+      "lcNumber": 1130,
+      "url": "https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "element section reduction range analysis table"
+    },
+    {
+      "id": 240,
+      "patternId": 22,
+      "title": "Tree of Coprimes",
+      "lcNumber": 1766,
+      "url": "https://leetcode.com/problems/tree-of-coprimes/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "factors search index track graph recursion"
+    },
+    {
+      "id": 241,
+      "patternId": 22,
+      "title": "Number of Good Paths",
+      "lcNumber": 2421,
+      "url": "https://leetcode.com/problems/number-of-good-paths/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "value filter node component sorting sets"
+    },
+    {
+      "id": 242,
+      "patternId": 23,
+      "title": "Longest Palindromic Subseq",
+      "lcNumber": 516,
+      "url": "https://leetcode.com/problems/longest-custom-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "string segment side validation table rules"
+    },
+    {
+      "id": 243,
+      "patternId": 23,
+      "title": "Palindrome Partitioning II",
+      "lcNumber": 132,
+      "url": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+      "difficulty": "HARD",
+      "role": "WARMUP",
+      "hint": "split coordinate minimization text array"
+    },
+    {
+      "id": 244,
+      "patternId": 23,
+      "title": "Burst Balloons",
+      "lcNumber": 312,
+      "url": "https://leetcode.com/problems/burst-balloons/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "terminal step index choice strategy layout"
+    },
+    {
+      "id": 245,
+      "patternId": 23,
+      "title": "Min Cost Cut Stick",
+      "lcNumber": 1547,
+      "url": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "cut mark alignment range metrics calculation"
+    },
+    {
+      "id": 246,
+      "patternId": 23,
+      "title": "Stone Game",
+      "lcNumber": 877,
+      "url": "https://leetcode.com/problems/stone-game/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "choice game dynamic optimization layout"
+    },
+    {
+      "id": 247,
+      "patternId": 23,
+      "title": "Strange Printer",
+      "lcNumber": 664,
+      "url": "https://leetcode.com/problems/strange-printer/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "text pattern overlap compression matches"
+    },
+    {
+      "id": 248,
+      "patternId": 23,
+      "title": "Polygon Triangulation",
+      "lcNumber": 1039,
+      "url": "https://leetcode.com/problems/minimum-score-triangulation-of-polygon/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "vertex split selection triangle computations"
+    },
+    {
+      "id": 249,
+      "patternId": 23,
+      "title": "Merge Stones Cost",
+      "lcNumber": 1000,
+      "url": "https://leetcode.com/problems/minimum-cost-to-merge-stones/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "block structural compression sequence steps"
+    },
+    {
+      "id": 250,
+      "patternId": 23,
+      "title": "Zuma Game",
+      "lcNumber": 488,
+      "url": "https://leetcode.com/problems/zuma-game/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "text manipulation sequence options matrix search"
+    },
+    {
+      "id": 251,
+      "patternId": 23,
+      "title": "Allocate Mailboxes",
+      "lcNumber": 1478,
+      "url": "https://leetcode.com/problems/allocate-mailboxes/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "spatial coordinate variance minimization runs"
+    },
+    {
+      "id": 252,
+      "patternId": 24,
+      "title": "Subsets Bitmask",
+      "lcNumber": 78,
+      "url": "https://leetcode.com/problems/subsets/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "digital register sequence combinations loop"
+    },
+    {
+      "id": 253,
+      "patternId": 24,
+      "title": "Partition K Equal Sums",
+      "lcNumber": 698,
+      "url": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "tracking code subset state bit operations"
+    },
+    {
+      "id": 254,
+      "patternId": 24,
+      "title": "Shortest Path All Nodes",
+      "lcNumber": 847,
+      "url": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "node layer queue navigation mask updates"
+    },
+    {
+      "id": 255,
+      "patternId": 24,
+      "title": "Min XOR Sum Arrays",
+      "lcNumber": 1879,
+      "url": "https://leetcode.com/problems/minimum-xor-sum-of-two-arrays/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "sequence pairing assignment options table"
+    },
+    {
+      "id": 256,
+      "patternId": 24,
+      "title": "Max Students Exam",
+      "lcNumber": 1349,
+      "url": "https://leetcode.com/problems/maximum-students-taking-exam/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "grid level adjacency configurations index"
+    },
+    {
+      "id": 257,
+      "patternId": 24,
+      "title": "Ways Wear Different Hats",
+      "lcNumber": 1434,
+      "url": "https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "target assignment inversion indexing code"
+    },
+    {
+      "id": 258,
+      "patternId": 24,
+      "title": "Find Shortest Superstring",
+      "lcNumber": 943,
+      "url": "https://leetcode.com/problems/find-the-shortest-superstring/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "TSP logic string overlap optimization"
+    },
+    {
+      "id": 259,
+      "patternId": 24,
+      "title": "Parallel Courses II",
+      "lcNumber": 1494,
+      "url": "https://leetcode.com/problems/parallel-courses-ii/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "prerequisites state submask extraction rules"
+    },
+    {
+      "id": 260,
+      "patternId": 24,
+      "title": "Maximize Score Operations",
+      "lcNumber": 1799,
+      "url": "https://leetcode.com/problems/maximize-score-after-n-operations/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "dynamic pair selection bit math states"
+    },
+    {
+      "id": 261,
+      "patternId": 24,
+      "title": "Can I Win",
+      "lcNumber": 464,
+      "url": "https://leetcode.com/problems/can-i-win/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "game status selection search memo table"
+    },
+    {
+      "id": 262,
+      "patternId": 24,
+      "title": "Beautiful Arrangement",
+      "lcNumber": 526,
+      "url": "https://leetcode.com/problems/beautiful-arrangement/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "slot compliance combination value bits"
+    },
+    {
+      "id": 263,
+      "patternId": 25,
+      "title": "Unique Digits Counting",
+      "lcNumber": 357,
+      "url": "https://leetcode.com/problems/count-numbers-with-unique-digits/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "layout selection calculations framework"
+    },
+    {
+      "id": 264,
+      "patternId": 25,
+      "title": "Numbers At Most N",
+      "lcNumber": 902,
+      "url": "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/",
+      "difficulty": "HARD",
+      "role": "WARMUP",
+      "hint": "ceiling indicator check state recursion"
+    },
+    {
+      "id": 265,
+      "patternId": 25,
+      "title": "Count of Integers",
+      "lcNumber": 2719,
+      "url": "https://leetcode.com/problems/count-of-integers/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "range value addition constraints matrix"
+    },
+    {
+      "id": 266,
+      "patternId": 25,
+      "title": "No Consecutive Ones",
+      "lcNumber": 600,
+      "url": "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "binary sequence placement rules check"
+    },
+    {
+      "id": 267,
+      "patternId": 25,
+      "title": "Number of Digit One",
+      "lcNumber": 233,
+      "url": "https://leetcode.com/problems/number-of-digit-one/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "target value match count accumulation"
+    },
+    {
+      "id": 268,
+      "patternId": 25,
+      "title": "Count Special Integers",
+      "lcNumber": 2376,
+      "url": "https://leetcode.com/problems/count-special-integers/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "layout value selection bit registration matrix"
+    },
+    {
+      "id": 269,
+      "patternId": 25,
+      "title": "Numbers Repeated Digits",
+      "lcNumber": 1012,
+      "url": "https://leetcode.com/problems/numbers-with-repeated-digits/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "inverse total selection rule subtraction logic"
+    },
+    {
+      "id": 270,
+      "patternId": 25,
+      "title": "Digit Count in Range",
+      "lcNumber": 1067,
+      "url": "https://leetcode.com/problems/digit-count-in-range/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "range bounds sequence delta evaluation"
+    },
+    {
+      "id": 271,
+      "patternId": 25,
+      "title": "Stepping Numbers Range",
+      "lcNumber": 2801,
+      "url": "https://leetcode.com/problems/count-stepping-numbers-in-range/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "adjacent value separation match limitations"
+    },
+    {
+      "id": 272,
+      "patternId": 25,
+      "title": "Rotated Digits",
+      "lcNumber": 788,
+      "url": "https://leetcode.com/problems/rotated-digits/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "character compliance verification state values"
+    },
+    {
+      "id": 273,
+      "patternId": 26,
+      "title": "Implement Trie",
+      "lcNumber": 208,
+      "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "character index node pointer matrix setup"
+    },
+    {
+      "id": 274,
+      "patternId": 26,
+      "title": "Add and Search Words",
+      "lcNumber": 211,
+      "url": "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "structural routing wildcard DFS loop"
+    },
+    {
+      "id": 275,
+      "patternId": 26,
+      "title": "Word Search II",
+      "lcNumber": 212,
+      "url": "https://leetcode.com/problems/word-search-ii/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "dynamic index grid tracking + tree branch cuts"
+    },
+    {
+      "id": 276,
+      "patternId": 26,
+      "title": "Replace Words",
+      "lcNumber": 648,
+      "url": "https://leetcode.com/problems/replace-words/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "text prefix localization matching loops"
+    },
+    {
+      "id": 277,
+      "patternId": 26,
+      "title": "Max XOR Two Numbers",
+      "lcNumber": 421,
+      "url": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "digital register path selection logic tree"
+    },
+    {
+      "id": 278,
+      "patternId": 26,
+      "title": "Longest Word Dictionary",
+      "lcNumber": 720,
+      "url": "https://leetcode.com/problems/longest-word-in-dictionary/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "tree validation layer navigation tracking"
+    },
+    {
+      "id": 279,
+      "patternId": 26,
+      "title": "Map Sum Pairs",
+      "lcNumber": 677,
+      "url": "https://leetcode.com/problems/map-sum-pairs/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "node value metrics aggregation logic"
+    },
+    {
+      "id": 280,
+      "patternId": 26,
+      "title": "Palindrome Pairs",
+      "lcNumber": 336,
+      "url": "https://leetcode.com/problems/palindrome-pairs/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "text slicing logic + reverse index lookup trees"
+    },
+    {
+      "id": 281,
+      "patternId": 26,
+      "title": "Stream of Characters",
+      "lcNumber": 1032,
+      "url": "https://leetcode.com/problems/stream-of-characters/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "reverse text sequence scanning strategy"
+    },
+    {
+      "id": 282,
+      "patternId": 26,
+      "title": "Max XOR With Element",
+      "lcNumber": 1707,
+      "url": "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "request sorting logic + offline index building tree"
+    },
+    {
+      "id": 283,
+      "patternId": 27,
+      "title": "Range Sum Query Mutable",
+      "lcNumber": 307,
+      "url": "https://leetcode.com/problems/range-sum-query-mutable/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "array index structure update + query loops"
+    },
+    {
+      "id": 284,
+      "patternId": 27,
+      "title": "Count Smaller After Self",
+      "lcNumber": 315,
+      "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "element coordinates value tree scanning"
+    },
+    {
+      "id": 285,
+      "patternId": 27,
+      "title": "Count of Range Sum",
+      "lcNumber": 327,
+      "url": "https://leetcode.com/problems/count-of-range-sum/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "range split tracking or value tree indices"
+    },
+    {
+      "id": 286,
+      "patternId": 27,
+      "title": "Falling Squares",
+      "lcNumber": 699,
+      "url": "https://leetcode.com/problems/falling-squares/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "index coordinate values range updates limits"
+    },
+    {
+      "id": 287,
+      "patternId": 27,
+      "title": "My Calendar I / II / III",
+      "lcNumber": 729,
+      "url": "https://leetcode.com/problems/my-calendar-i/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "dynamic timeline range overlay indicators"
+    },
+    {
+      "id": 288,
+      "patternId": 27,
+      "title": "Reverse Pairs",
+      "lcNumber": 493,
+      "url": "https://leetcode.com/problems/reverse-pairs/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "sequence sorting tracking index modifications tree"
+    },
+    {
+      "id": 289,
+      "patternId": 27,
+      "title": "The Skyline Problem",
+      "lcNumber": 218,
+      "url": "https://leetcode.com/problems/the-skyline-problem/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "line scanning process + active height tracks"
+    },
+    {
+      "id": 290,
+      "patternId": 27,
+      "title": "Rectangle Area II",
+      "lcNumber": 850,
+      "url": "https://leetcode.com/problems/rectangle-area-ii/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "sweep timeline logic + length tree balance"
+    },
+    {
+      "id": 291,
+      "patternId": 27,
+      "title": "LIS II",
+      "lcNumber": 2407,
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence-ii/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "dynamic state range max tracking adjustments"
+    },
+    {
+      "id": 292,
+      "patternId": 27,
+      "title": "Range Module",
+      "lcNumber": 715,
+      "url": "https://leetcode.com/problems/range-module/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "segment values structural coverage toggle tree"
+    },
+    {
+      "id": 293,
+      "patternId": 28,
+      "title": "Range Sum Mutable",
+      "lcNumber": 307,
+      "url": "https://leetcode.com/problems/range-sum-query-mutable/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "digital index bit shift additions data structure"
+    },
+    {
+      "id": 294,
+      "patternId": 28,
+      "title": "Count Smaller After Self",
+      "lcNumber": 315,
+      "url": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "value scaling index mapping tree loops"
+    },
+    {
+      "id": 295,
+      "patternId": 28,
+      "title": "Reverse Pairs",
+      "lcNumber": 493,
+      "url": "https://leetcode.com/problems/reverse-pairs/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "coordinate balance counting bit updates"
+    },
+    {
+      "id": 296,
+      "patternId": 28,
+      "title": "Create Sorted Array Cost",
+      "lcNumber": 1649,
+      "url": "https://leetcode.com/problems/create-sorted-array-through-instructions/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "tracking position variance min cost totals"
+    },
+    {
+      "id": 297,
+      "patternId": 28,
+      "title": "Count Good Triplets Array",
+      "lcNumber": 2179,
+      "url": "https://leetcode.com/problems/count-good-triplets-in-an-array/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "dual step tracking indices correlation trees"
+    },
+    {
+      "id": 298,
+      "patternId": 28,
+      "title": "Range Sum Query 2D Mutable",
+      "lcNumber": 308,
+      "url": "https://leetcode.com/problems/range-sum-query-2d-mutable/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "dual axis bit transformation array grid"
+    },
+    {
+      "id": 299,
+      "patternId": 28,
+      "title": "Global/Local Inversions",
+      "lcNumber": 775,
+      "url": "https://leetcode.com/problems/global-and-local-inversions/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "condition value location variance metrics"
+    },
+    {
+      "id": 300,
+      "patternId": 28,
+      "title": "LIS Fenwick Optimization",
+      "lcNumber": 300,
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "difficulty": "MEDIUM",
+      "role": "CONTEST",
+      "hint": "value coordinate height balance maximum updates"
+    },
+    {
+      "id": 301,
+      "patternId": 29,
+      "title": "Sliding Window Maximum",
+      "lcNumber": 239,
+      "url": "https://leetcode.com/problems/sliding-window-maximum/",
+      "difficulty": "HARD",
+      "role": "WARMUP",
+      "hint": "index sequence values tracking double queue"
+    },
+    {
+      "id": 302,
+      "patternId": 29,
+      "title": "Jump Game VI",
+      "lcNumber": 1696,
+      "url": "https://leetcode.com/problems/jump-game-vi/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "route step value optimization + structural queue"
+    },
+    {
+      "id": 303,
+      "patternId": 29,
+      "title": "Constrained Subseq Sum",
+      "lcNumber": 1425,
+      "url": "https://leetcode.com/problems/constrained-subsequence-sum/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "distance limit balance dynamic updates queue"
+    },
+    {
+      "id": 304,
+      "patternId": 29,
+      "title": "Shortest Subarray Sum K",
+      "lcNumber": 862,
+      "url": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "prefix sum layout tracking structural clearing"
+    },
+    {
+      "id": 305,
+      "patternId": 29,
+      "title": "Continuous Subarray Limit",
+      "lcNumber": 1438,
+      "url": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "dual min/max tracking structural queues loop"
+    },
+    {
+      "id": 306,
+      "patternId": 29,
+      "title": "Max Value of Equation",
+      "lcNumber": 1499,
+      "url": "https://leetcode.com/problems/max-value-of-equation/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "expression value index optimization bounds"
+    },
+    {
+      "id": 307,
+      "patternId": 29,
+      "title": "Max Robots Budget",
+      "lcNumber": 2398,
+      "url": "https://leetcode.com/problems/maximum-number-of-robots-within-budget/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "cost window balancing + tracking loop queue"
+    },
+    {
+      "id": 308,
+      "patternId": 30,
+      "title": "Course Schedule",
+      "lcNumber": 207,
+      "url": "https://leetcode.com/problems/course-schedule/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "node connection constraints dependency tracking"
+    },
+    {
+      "id": 309,
+      "patternId": 30,
+      "title": "Course Schedule II",
+      "lcNumber": 210,
+      "url": "https://leetcode.com/problems/course-schedule-ii/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "processing sequence configuration generation"
+    },
+    {
+      "id": 310,
+      "patternId": 30,
+      "title": "Alien Dictionary",
+      "lcNumber": 269,
+      "url": "https://leetcode.com/problems/alien-dictionary/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "text sequence criteria graph construction"
+    },
+    {
+      "id": 311,
+      "patternId": 30,
+      "title": "Minimum Height Trees",
+      "lcNumber": 310,
+      "url": "https://leetcode.com/problems/minimum-height-trees/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "terminal node layer inward deletion loops"
+    },
+    {
+      "id": 312,
+      "patternId": 30,
+      "title": "Course Schedule IV",
+      "lcNumber": 1462,
+      "url": "https://leetcode.com/problems/course-schedule-iv/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "node routing verification connection matrix"
+    },
+    {
+      "id": 313,
+      "patternId": 30,
+      "title": "Longest Increasing Path",
+      "lcNumber": 329,
+      "url": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "coordinate path routing sequence memo sets"
+    },
+    {
+      "id": 314,
+      "patternId": 30,
+      "title": "Parallel Courses",
+      "lcNumber": 1136,
+      "url": "https://leetcode.com/problems/parallel-courses/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "sequence layer optimization metrics tracking"
+    },
+    {
+      "id": 315,
+      "patternId": 30,
+      "title": "Sequence Reconstruction",
+      "lcNumber": 444,
+      "url": "https://leetcode.com/problems/sequence-reconstruction/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "sequence layout unique confirmation loop"
+    },
+    {
+      "id": 316,
+      "patternId": 30,
+      "title": "Sort Items by Groups",
+      "lcNumber": 1203,
+      "url": "https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "dual stage tracking graph alignment layout"
+    },
+    {
+      "id": 317,
+      "patternId": 30,
+      "title": "Build Matrix Conditions",
+      "lcNumber": 2392,
+      "url": "https://leetcode.com/problems/build-a-matrix-with-conditions/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "double axis constraint sequence coordinates"
+    },
+    {
+      "id": 318,
+      "patternId": 31,
+      "title": "Min Cost Connect Points",
+      "lcNumber": 1584,
+      "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "line metric weight edge selection loops"
+    },
+    {
+      "id": 319,
+      "patternId": 31,
+      "title": "Connect Cities Min Cost",
+      "lcNumber": 1135,
+      "url": "https://leetcode.com/problems/connecting-cities-with-minimum-cost/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "primary edge integration partition sets"
+    },
+    {
+      "id": 320,
+      "patternId": 31,
+      "title": "Optimize Water Distribution",
+      "lcNumber": 1168,
+      "url": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "virtual root node structure construction map"
+    },
+    {
+      "id": 321,
+      "patternId": 31,
+      "title": "Critical Edges in MST",
+      "lcNumber": 1489,
+      "url": "https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "edge filter exclusion checks partition trees"
+    },
+    {
+      "id": 322,
+      "patternId": 31,
+      "title": "Remove Max Edges",
+      "lcNumber": 1579,
+      "url": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-connected/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "dual data partition structures mapping links"
+    },
+    {
+      "id": 323,
+      "patternId": 32,
+      "title": "Critical Connections",
+      "lcNumber": 1192,
+      "url": "https://leetcode.com/problems/critical-connections-in-a-network/",
+      "difficulty": "HARD",
+      "role": "WARMUP",
+      "hint": "graph structural loop trace check bounds"
+    },
+    {
+      "id": 324,
+      "patternId": 32,
+      "title": "Disconnect Island Days",
+      "lcNumber": 1568,
+      "url": "https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "connection node structural cut locations"
+    },
+    {
+      "id": 325,
+      "patternId": 33,
+      "title": "First Occurrence Index",
+      "lcNumber": 28,
+      "url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "text token window matching alignment"
+    },
+    {
+      "id": 326,
+      "patternId": 33,
+      "title": "Repeated Substring Pattern",
+      "lcNumber": 459,
+      "url": "https://leetcode.com/problems/repeated-substring-pattern/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "character lookup offset sequence mapping"
+    },
+    {
+      "id": 327,
+      "patternId": 33,
+      "title": "Shortest Palindrome",
+      "lcNumber": 214,
+      "url": "https://leetcode.com/problems/shortest-palindrome/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "text matching index sequence analysis"
+    },
+    {
+      "id": 328,
+      "patternId": 33,
+      "title": "Longest Happy Prefix",
+      "lcNumber": 1392,
+      "url": "https://leetcode.com/problems/longest-happy-prefix/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "boundary prefix array balance values"
+    },
+    {
+      "id": 329,
+      "patternId": 33,
+      "title": "Longest Duplicate Substring",
+      "lcNumber": 1044,
+      "url": "https://leetcode.com/problems/longest-duplicate-substring/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "size split check + rolling hash structure"
+    },
+    {
+      "id": 330,
+      "patternId": 33,
+      "title": "Distinct Echo Substrings",
+      "lcNumber": 1316,
+      "url": "https://leetcode.com/problems/distinct-echo-substrings/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "character rolling checksum set validation"
+    },
+    {
+      "id": 331,
+      "patternId": 33,
+      "title": "Sum Scores Built Strings",
+      "lcNumber": 2223,
+      "url": "https://leetcode.com/problems/sum-of-scores-of-built-strings/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "text tracking function index totals"
+    },
+    {
+      "id": 332,
+      "patternId": 33,
+      "title": "Revert Word Time I",
+      "lcNumber": 3029,
+      "url": "https://leetcode.com/problems/minimum-time-to-revert-word-to-initial-state-i/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "shift check range index evaluation"
+    },
+    {
+      "id": 333,
+      "patternId": 34,
+      "title": "Assign Cookies",
+      "lcNumber": 455,
+      "url": "https://leetcode.com/problems/assign-cookies/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "sequence sort + pairing alignment loops"
+    },
+    {
+      "id": 334,
+      "patternId": 34,
+      "title": "Jump Game",
+      "lcNumber": 55,
+      "url": "https://leetcode.com/problems/jump-game/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "ceiling distance range tracking index"
+    },
+    {
+      "id": 335,
+      "patternId": 34,
+      "title": "Gas Station",
+      "lcNumber": 134,
+      "url": "https://leetcode.com/problems/gas-station/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "loop range total metrics tracking checks"
+    },
+    {
+      "id": 336,
+      "patternId": 34,
+      "title": "Candy",
+      "lcNumber": 135,
+      "url": "https://leetcode.com/problems/candy/",
+      "difficulty": "HARD",
+      "role": "CORE",
+      "hint": "bidirectional boundary parsing steps"
+    },
+    {
+      "id": 337,
+      "patternId": 34,
+      "title": "Task Scheduler",
+      "lcNumber": 621,
+      "url": "https://leetcode.com/problems/task-scheduler/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "value distribution layout sizing code"
+    },
+    {
+      "id": 338,
+      "patternId": 34,
+      "title": "Burst Balloons Arrows",
+      "lcNumber": 452,
+      "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "range grouping choices sorting check"
+    },
+    {
+      "id": 339,
+      "patternId": 34,
+      "title": "Queue Reconstruction",
+      "lcNumber": 406,
+      "url": "https://leetcode.com/problems/queue-reconstruction-by-height/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "sorting criteria + data insertion blocks"
+    },
+    {
+      "id": 340,
+      "patternId": 34,
+      "title": "Partition Labels",
+      "lcNumber": 763,
+      "url": "https://leetcode.com/problems/partition-labels/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "coordinate map terminal index updates"
+    },
+    {
+      "id": 341,
+      "patternId": 34,
+      "title": "Day of Full Bloom",
+      "lcNumber": 2136,
+      "url": "https://leetcode.com/problems/earliest-possible-day-of-full-bloom/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "metric parameters sorting execution priorities"
+    },
+    {
+      "id": 342,
+      "patternId": 34,
+      "title": "Min Replacements Sort",
+      "lcNumber": 2366,
+      "url": "https://leetcode.com/problems/minimum-replacements-to-sort-array/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "reverse direction scaling division code"
+    },
+    {
+      "id": 343,
+      "patternId": 35,
+      "title": "Count Primes",
+      "lcNumber": 204,
+      "url": "https://leetcode.com/problems/count-primes/",
+      "difficulty": "MEDIUM",
+      "role": "WARMUP",
+      "hint": "index grid validation step loops"
+    },
+    {
+      "id": 344,
+      "patternId": 35,
+      "title": "Power of Two",
+      "lcNumber": 231,
+      "url": "https://leetcode.com/problems/power-of-two/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "digital register bit alignment verification"
+    },
+    {
+      "id": 345,
+      "patternId": 35,
+      "title": "Power of Three",
+      "lcNumber": 326,
+      "url": "https://leetcode.com/problems/power-of-three/",
+      "difficulty": "EASY",
+      "role": "WARMUP",
+      "hint": "maximum scale evaluation division check"
+    },
+    {
+      "id": 346,
+      "patternId": 35,
+      "title": "GCD of Strings",
+      "lcNumber": 1071,
+      "url": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
+      "difficulty": "EASY",
+      "role": "CORE",
+      "hint": "factor string configuration matching loops"
+    },
+    {
+      "id": 347,
+      "patternId": 35,
+      "title": "Pow(x, n)",
+      "lcNumber": 50,
+      "url": "https://leetcode.com/problems/powx-n/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "digital split range multiplication paths"
+    },
+    {
+      "id": 348,
+      "patternId": 35,
+      "title": "Count Good Numbers",
+      "lcNumber": 1922,
+      "url": "https://leetcode.com/problems/count-good-numbers/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "modular exponentiation digital split calculation"
+    },
+    {
+      "id": 349,
+      "patternId": 35,
+      "title": "Unique Paths Combinatorics",
+      "lcNumber": 62,
+      "url": "https://leetcode.com/problems/unique-paths/",
+      "difficulty": "MEDIUM",
+      "role": "CORE",
+      "hint": "factor division selection formulation matrix"
+    },
+    {
+      "id": 350,
+      "patternId": 35,
+      "title": "Super Pow",
+      "lcNumber": 372,
+      "url": "https://leetcode.com/problems/super-pow/",
+      "difficulty": "MEDIUM",
+      "role": "STRETCH",
+      "hint": "digit array modular scale calculations"
+    },
+    {
+      "id": 351,
+      "patternId": 35,
+      "title": "Component Size Factor",
+      "lcNumber": 952,
+      "url": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+      "difficulty": "HARD",
+      "role": "STRETCH",
+      "hint": "values prime indexing maps + components DSU"
+    },
+    {
+      "id": 352,
+      "patternId": 35,
+      "title": "Count Anagrams",
+      "lcNumber": 2514,
+      "url": "https://leetcode.com/problems/count-anagrams/",
+      "difficulty": "HARD",
+      "role": "CONTEST",
+      "hint": "factorial calculations + modular inverse layout"
+    }
+  ]
+}

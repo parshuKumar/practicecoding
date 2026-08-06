@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+/* Palette carried over from the original legacy/index.html — it was good. */
+@theme {
+  --color-bg: #0d1117;
+  --color-card: #161b22;
+  --color-border: #30363d;
+  --color-text: #c9d1d9;
+  --color-muted: #8b949e;
+  --color-accent: #58a6ff;
+
+  --color-easy: #2ea043;
+  --color-medium: #d29922;
+  --color-hard: #f85149;
+
+  --color-warmup: #8957e5;
+  --color-core: #1f6feb;
+  --color-stretch: #da3633;
+  --color-contest: #db6d28;
+
+  --color-star: #d29922;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible focus ring that survives the dark background. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
