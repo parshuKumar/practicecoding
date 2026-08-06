@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { ProblemView } from '@/lib/types';
+import { External, X } from '../icons';
 
 export function NoteDialog({
   problem,
@@ -17,63 +18,78 @@ export function NoteDialog({
   const [draft, setDraft] = useState(note ?? '');
   const [saved, setSaved] = useState(false);
   const textarea = useRef<HTMLTextAreaElement>(null);
-  const initial = useRef(note ?? '');
+  const committed = useRef(note ?? '');
+  const draftRef = useRef(draft);
+  draftRef.current = draft;
 
   useEffect(() => {
     textarea.current?.focus();
+    textarea.current?.setSelectionRange(draftRef.current.length, draftRef.current.length);
   }, []);
 
+  // Debounced autosave; closing flushes whatever is still pending.
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  });
-
-  // Debounced autosave. The explicit save on close covers the last keystrokes.
-  useEffect(() => {
-    if (draft === initial.current) return;
+    if (draft === committed.current) return;
     const timer = setTimeout(() => {
       onSave(draft.trim() ? draft : null);
-      initial.current = draft;
+      committed.current = draft;
       setSaved(true);
-      setTimeout(() => setSaved(false), 1500);
-    }, 800);
+      const clear = setTimeout(() => setSaved(false), 1600);
+      return () => clearTimeout(clear);
+    }, 700);
     return () => clearTimeout(timer);
   }, [draft, onSave]);
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        close();
+      }
+      if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) close();
+    };
+    window.addEventListener('keydown', onKey, true);
+    return () => window.removeEventListener('keydown', onKey, true);
+  });
+
   function close() {
-    if (draft !== initial.current) onSave(draft.trim() ? draft : null);
+    const current = draftRef.current;
+    if (current !== committed.current) onSave(current.trim() ? current : null);
     onClose();
   }
 
+  const dirty = draft !== committed.current;
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-      onClick={(e) => {
-        if (e.target === e.currentTarget) close();
-      }}
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+      onClick={(e) => e.target === e.currentTarget && close()}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-label={`Note for ${problem.title}`}
-        className="w-full max-w-lg rounded-lg border border-[--color-border] bg-[--color-card] shadow-xl"
+        className="glass animate-rise flex w-full max-w-xl flex-col rounded-t-2xl sm:rounded-2xl"
       >
-        <header className="flex items-start justify-between gap-4 border-b border-[--color-border] px-4 py-3">
+        <header className="flex items-start justify-between gap-4 border-b border-[--color-line] px-5 py-3.5">
           <div className="min-w-0">
-            <h2 className="truncate text-sm font-semibold text-white">{problem.title}</h2>
-            <p className="text-xs text-[--color-muted]">
-              {problem.lcNumber !== null ? `LC ${problem.lcNumber} · ` : ''}Your note
-            </p>
+            <h2 className="truncate text-sm font-semibold text-[--color-hi]">{problem.title}</h2>
+            <a
+              href={problem.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-0.5 inline-flex items-center gap-1 text-[11px] text-[--color-dim] transition hover:text-[--color-accent-2]"
+            >
+              {problem.lcNumber !== null ? `LeetCode ${problem.lcNumber}` : 'Open problem'}
+              <External size={10} />
+            </a>
           </div>
           <button
             onClick={close}
             aria-label="Close"
-            className="rounded p-1 text-[--color-muted] transition hover:bg-white/5 hover:text-white"
+            className="rounded-lg p-1.5 text-[--color-dim] transition hover:bg-white/5 hover:text-[--color-hi]"
           >
-            ✕
+            <X size={16} />
           </button>
         </header>
 
@@ -81,21 +97,31 @@ export function NoteDialog({
           ref={textarea}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
-          rows={12}
-          placeholder="Approach, edge cases, what tripped you up…"
-          className="w-full resize-none bg-transparent px-4 py-3 font-mono text-sm text-white placeholder:text-[--color-muted] focus:outline-none"
+          rows={14}
+          placeholder="Approach, complexity, the edge case that got you…"
+          className="w-full flex-1 resize-none bg-transparent px-5 py-4 font-mono text-[13px] leading-relaxed text-[--color-hi] placeholder:text-[--color-dim] focus:outline-none"
         />
 
-        <footer className="flex items-center justify-between border-t border-[--color-border] px-4 py-2.5">
-          <span className="text-xs text-[--color-muted]">
-            {saved ? 'Saved' : draft !== initial.current ? 'Unsaved…' : 'Autosaves as you type'}
+        <footer className="flex items-center justify-between border-t border-[--color-line] px-5 py-2.5">
+          <span className="flex items-center gap-2 text-[11px] text-[--color-dim]">
+            <span
+              className="h-1.5 w-1.5 rounded-full transition-colors"
+              style={{
+                backgroundColor: dirty
+                  ? 'var(--color-medium)'
+                  : saved
+                    ? 'var(--color-easy)'
+                    : 'var(--color-line)',
+              }}
+            />
+            {dirty ? 'Unsaved…' : saved ? 'Saved' : 'Autosaves as you type'}
           </span>
-          <button
-            onClick={close}
-            className="rounded-md border border-[--color-border] px-3 py-1.5 text-sm text-white transition hover:border-[--color-accent]"
-          >
-            Done
-          </button>
+          <span className="flex items-center gap-3 text-[11px] text-[--color-dim]">
+            <kbd className="rounded border border-[--color-line] bg-[--color-raised] px-1.5 py-0.5">
+              Esc
+            </kbd>
+            to close
+          </span>
         </footer>
       </div>
     </div>

@@ -61,33 +61,32 @@ npm run db:seed                       # load the 353 problems
 npm run dev
 ```
 
-Sign in at http://localhost:3000, then go to **Import** and click
-*"Import my 47 saved problems"*.
+Sign in at http://localhost:3000.
 
-## Bringing over your old progress
+## Using it
 
-The original tracker stored ticks in `localStorage`, keyed by row position
-(`dsa-task-master-7` = the 8th checkbox). `Problem.id` in the database is seeded to be exactly
-that index, so the import is a direct lookup with nothing to match by hand.
+| | |
+| --- | --- |
+| Tick a problem | click the checkbox, or `x` on the focused row |
+| Star for revision | the star icon, or `s`. The **Starred** tab filters to them. |
+| Write a note | the note icon, or `n`. Autosaves. |
+| Move around | `j` / `k`, `/` to search, `r` for a random unsolved problem |
+| Everything else | press `?` |
 
-Your rescued ticks are committed at [`legacy/legacy-progress.json`](legacy/legacy-progress.json)
-and bundled into the app, so `/import` offers a one-click button. It shows a dry run first —
-matched count plus the problem titles — before writing anything. It only ever *adds*, so running
-it twice is harmless.
+Starred is a tab, not a page — switching is instant client-side state, no network round trip.
 
-Verify the mapping without a database at all:
+## The legacy import
+
+The original tracker kept ticks in `localStorage` keyed by row position
+(`dsa-task-master-7` = the 8th checkbox), and `Problem.id` was seeded to be exactly that index.
+Those 47 problems were imported once and the import UI has since been removed.
+
+The inputs are kept for good: [`legacy/index.html`](legacy/index.html) (what each id means) and
+[`legacy/legacy-progress.json`](legacy/legacy-progress.json) (the original ticks). Re-check the
+mapping any time, without a database:
 
 ```bash
 npx tsx tools/verify-import.ts
-```
-
-Ticked problems on another browser or laptop? Run this in its console, save the output as JSON,
-and upload it on `/import`:
-
-```js
-copy(JSON.stringify(Object.fromEntries(
-  Object.entries(localStorage).filter(([k]) => k.startsWith('dsa-task-master-'))
-), null, 2))
 ```
 
 ## Scripts

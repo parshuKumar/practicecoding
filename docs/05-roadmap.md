@@ -65,7 +65,7 @@ The big one.
 - Phase and pattern sections, collapsible, with bars and counts
 - Problem rows: checkbox, LeetCode link, badges
 - Progress header: ring, `x / 353`, Easy/Medium/Hard split
-- `PATCH /api/v1/problems/:id` + TanStack Query optimistic updates
+- `PATCH /api/v1/problems/:id` + optimistic updates with rollback
 
 **Done when:** all 353 problems render grouped correctly, ticking updates instantly, survives a
 hard refresh, and shows up on your phone.
@@ -77,7 +77,9 @@ instead of showing a lie.
 
 ## M5 — Import · ~1.5 h · **the one that brings your 47 back**
 
-`src/server/import.ts`, `POST /api/v1/import/legacy` with `dryRun`, and the `/import` page:
+~~`src/server/import.ts`, `POST /api/v1/import/legacy` with `dryRun`, and the `/import` page:~~ **Done, then removed once the 47 were in.**
+
+Was:
 upload → dry run with matched titles → confirm.
 
 **Done when:** the report says `imported: 47`, the header reads `47 / 353`, the three spot-check
@@ -115,8 +117,8 @@ Three, and no more:
 
 - `tools/extract-sheet.ts` — the eight assertions plus a snapshot of `data/sheet.json`.
   Protects the one irreplaceable mapping.
-- `src/server/import.ts` — your real 47-entry file as a fixture: happy path, run-twice,
-  bad keys, out-of-range ids.
+- ~~`src/server/import.ts`~~ — feature removed after the one-time import; `tools/verify-import.ts`
+  still re-checks the mapping against `data/sheet.json`.
 - One Playwright path: sign in → tick → refresh → still ticked.
 
-Skip component tests, mocked-Prisma tests, and endpoint tests for an app with three endpoints.
+Skip component tests, mocked-Prisma tests, and endpoint tests for an app with two endpoints.

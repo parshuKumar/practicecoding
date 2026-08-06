@@ -1,22 +1,26 @@
 import { redirect } from 'next/navigation';
 import { getUser, signOut } from '@/server/auth';
-import { NavTabs } from '@/components/NavTabs';
+import { Logout } from '@/components/icons';
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUser();
   if (!user) redirect('/');
 
   return (
-    <div className="min-h-screen">
-      <header className="sticky top-0 z-20 border-b border-[--color-border] bg-[--color-bg]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-          <div className="flex items-center gap-6">
-            <span className="font-semibold tracking-tight text-white">DSA Sheet</span>
-            <NavTabs />
+    <div className="relative z-10 min-h-screen">
+      <header className="sticky top-0 z-30 border-b border-[--color-line] bg-[--color-base]/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4">
+          <div className="flex items-center gap-2.5">
+            <span className="grid h-7 w-7 place-items-center rounded-lg bg-linear-to-br from-[--color-accent] to-[--color-accent-2] text-[13px] font-bold text-white">
+              D
+            </span>
+            <span className="text-sm font-semibold tracking-tight text-[--color-hi]">
+              DSA Sheet
+            </span>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="hidden text-sm text-[--color-muted] sm:inline">{user.email}</span>
+          <div className="flex items-center gap-2">
+            <span className="hidden text-xs text-[--color-dim] sm:inline">{user.email}</span>
             <form
               action={async () => {
                 'use server';
@@ -25,16 +29,18 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             >
               <button
                 type="submit"
-                className="rounded-md border border-[--color-border] px-3 py-1.5 text-sm text-[--color-muted] transition hover:border-[--color-hard] hover:text-white"
+                title="Sign out"
+                aria-label="Sign out"
+                className="rounded-lg border border-[--color-line] bg-[--color-surface] p-2 text-[--color-dim] transition hover:border-[--color-hard] hover:text-[--color-hard]"
               >
-                Sign out
+                <Logout size={15} />
               </button>
             </form>
           </div>
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-5">{children}</main>
     </div>
   );
 }

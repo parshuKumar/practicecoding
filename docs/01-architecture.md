@@ -23,36 +23,34 @@ dsa-sheet/
 │   ├── app/
 │   │   ├── page.tsx                        # landing + "Sign in with Google"
 │   │   ├── (app)/layout.tsx                # signed-in shell: header, progress, sign out
-│   │   ├── (app)/sheet/page.tsx            # the sheet
-│   │   ├── (app)/starred/page.tsx          # same list, starred only
-│   │   ├── (app)/import/page.tsx           # one-time legacy import
+│   │   ├── (app)/sheet/page.tsx            # the sheet (+ loading.tsx, error.tsx)
+│   │   ├── starred/route.ts                # redirect — starred is a tab now
 │   │   ├── api/auth/[...nextauth]/route.ts
 │   │   └── api/v1/
 │   │       ├── problems/[id]/route.ts      # PATCH — done / starred / note
-│   │       └── import/legacy/route.ts
+│   │       └── health/route.ts
 │   │
 │   ├── server/                             # no React, no next/* imports
 │   │   ├── db.ts                           # Prisma client singleton
 │   │   ├── auth.ts                         # Auth.js config + requireUser()
 │   │   ├── handler.ts                      # withAuth wrapper, error → JSON
-│   │   ├── sheet.ts                        # read the sheet + user progress + stats
-│   │   ├── progress.ts                     # upsert done / starred / note
-│   │   └── import.ts                       # legacy localStorage import
+│   │   ├── sheet.ts                        # cached content + this user's rows
+│   │   └── progress.ts                     # upsert done / starred / note
 │   │
 │   ├── components/
-│   │   ├── sheet/{PhaseSection,PatternSection,ProblemRow,NotePopup}.tsx
-│   │   ├── ProgressHeader.tsx
-│   │   └── ui/                             # button, checkbox, dialog, badge
-│   └── lib/{types.ts,api.ts,cn.ts}
+│   │   ├── icons.tsx                       # inline SVG set
+│   │   └── sheet/{SheetClient,HeroProgress,CommandBar,PhaseCard,
+│   │              PatternCard,ProblemRow,NoteDialog,Toast,ShortcutsOverlay}.tsx
+│   └── lib/{types.ts,api.ts}
 │
 ├── prisma/{schema.prisma,seed.ts}
 ├── data/sheet.json                         # generated once from the old HTML, committed
-├── tools/extract-sheet.ts                  # the one-off parser
-├── legacy/index.html                       # frozen original, never edited again
+├── tools/{extract-sheet.ts,verify-import.ts}  # one-off parser + mapping check
+├── legacy/{index.html,legacy-progress.json}   # frozen original + rescued ticks
 └── docs/
 ```
 
-Seven files in `src/server/`. That's the entire backend.
+Five files in `src/server/`. That's the entire backend.
 
 ## The three rules
 
@@ -74,7 +72,7 @@ what stops the tidiness eroding in a month.
 // src/server/progress.ts — plain function, no framework
 export async function updateProblem(
   userId: string,
-  problemId: string,
+  problemId: number,
   patch: { done?: boolean; starred?: boolean; note?: string },
 ) {
   return prisma.userProblem.upsert({
@@ -89,7 +87,7 @@ export async function updateProblem(
 // src/app/api/v1/problems/[id]/route.ts — thin adapter
 export const PATCH = withAuth(async (user, req, { params }) => {
   const patch = patchProblemSchema.parse(await req.json());
-  return updateProblem(user.id, params.id, patch);
+  return updateProblem(user.id, Number(params.id), patch);
 });
 ```
 
@@ -118,30 +116,32 @@ export function withAuth<T>(fn: (user: User, req: NextRequest, ctx: Ctx) => Prom
 - **Reads** — Server Components call `getSheet(userId)` directly. No HTTP hop, no spinner, the
   sheet is there on first paint.
 - **Writes** — ticking, starring, saving a note go to `/api/v1/problems/:id` from the client,
-  through TanStack Query with an optimistic update.
+  applied optimistically and rolled back with a toast if the request fails.
 
 Optimistic updates matter here: a checkbox that waits ~150 ms for the network feels broken.
-Update the UI immediately, roll back if the request fails.
+
+`getSheet()` splits into two queries: sheet **content** (353 rows, changes only on re-seed) is
+memoised in-process with a 10-minute TTL, and only the user's own `UserProblem` rows are fetched
+per view. Before that split, every page view — including a tab switch — ran the full nested join.
 
 ## Stack
 
 | | |
 | --- | --- |
 | Next.js 15 (App Router), React 19, TypeScript | |
-| Tailwind v4 | port the existing dark palette to CSS variables |
-| TanStack Query v5 | optimistic ticks |
+| Tailwind v4 | dark theme via `@theme` CSS variables |
 | zod | one schema for the one endpoint's body |
 | Prisma 6 + `@prisma/adapter-neon` | |
 | Auth.js v5 + `@auth/prisma-adapter` | Google only |
-| Vitest | the parser and the import — nothing else needs tests |
+| Vitest | the parser — nothing else needs tests |
 
 ## Local dev
 
 ```bash
-pnpm install
-pnpm db:migrate      # prisma migrate dev
-pnpm db:seed         # data/sheet.json → Postgres
-pnpm dev             # localhost:3000
+npm install
+npm run db:migrate   # prisma migrate dev
+npm run db:seed      # data/sheet.json → Postgres
+npm run dev          # localhost:3000
 ```
 
 Use a Neon **branch** for local work instead of Docker Postgres — free, instant, and identical

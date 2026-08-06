@@ -2,7 +2,7 @@
 
 ## API
 
-Three endpoints. Everything requires a session except health.
+Two endpoints. Everything requires a session except health.
 
 ### `PATCH /api/v1/problems/:id`
 
@@ -31,10 +31,6 @@ export const patchProblemSchema = z.object({
 }).refine(o => Object.keys(o).length > 0, 'empty patch');
 ```
 
-### `POST /api/v1/import/legacy`
-
-One-time localStorage import. Idempotent. See [04-migration.md](04-migration.md).
-
 ### `GET /api/v1/health`
 
 Public. `{ status, db }`. Useful when a deploy looks wrong.
@@ -46,104 +42,102 @@ directly. Adding a `GET /api/v1/sheet` nobody calls would be dead code.
 
 ### `/` — landing
 
-Title, one line, one button: **Continue with Google**. Signed-in visitors redirect to `/sheet`.
+Logo, one line, one button: **Continue with Google**. Signed-in visitors redirect to `/sheet`.
 
 ### `/sheet` — the whole app
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│  DSA Sheet                                          ⬤ avatar ▾       │
-├──────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│    ╭───╮   231 / 353                                                 │
-│    │65%│   ● Easy 93/152    ● Medium 108/186    ● Hard 30/136        │
-│    ╰───╯                                                             │
-│                                                                      │
-├──────────────────────────────────────────────────────────────────────┤
-│  [ All ] [ ⭐ Starred ]        🔍 search…      Difficulty ▾   ☑ Hide done │
-├──────────────────────────────────────────────────────────────────────┤
-│  ▾ PHASE 1 — FOUNDATION                    ▰▰▰▰▰▱▱▱▱▱     40 / 96    │
-│                                                                      │
-│    ▾ 01 — Arrays and Hashing               ▰▰▰▰▰▰▰▱▱▱      7 / 11    │
-│      ☑  Two Sum (LC 1)              Warmup · complement lookup   📝 ⭐│
-│      ☐  Contains Duplicate (LC 217) Warmup · hash set existence  ＋ ☆│
-│      ☑  Valid Anagram (LC 242)      Core · frequency counting    ＋ ★│
-│                                                                      │
-│    ▸ 02 — Two Pointers                     ▰▰▰▱▱▱▱▱▱▱      3 / 10    │
-└──────────────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────────┐
+│ ▣ DSA Sheet                                        you@gmail.com  [↩] │
+├───────────────────────────────────────────────────────────────────────┤
+│  ╭─────╮   47 / 353  solved                                   ╭─────╮ │
+│  │ 13% │   Easy   ▰▰▰▰▰▰▱▱  26/38                             │  ★  │ │
+│  │     │   Medium ▰▱▱▱▱▱▱▱  20/196                            │  12 │ │
+│  ╰─────╯   Hard   ▱▱▱▱▱▱▱▱   1/119                            ╰─────╯ │
+├───────────────────────────────────────────────────────────────────────┤
+│ [All][★ Starred 12]  🔍 Search…      / │ All Easy Med Hard │ Hide done│
+│                                                          🎲  ⤢  ⌨    │
+├───────────────────────────────────────────────────────────────────────┤
+│ ① FOUNDATION  Weeks 1-3                        ▰▰▰▰▱▱▱▱▱▱    40 / 96  │
+│   ▾ 01  Arrays and Hashing            3-4 days   ▰▰▰▰▰▰▱▱     8 / 11  │
+│     ☑ Two Sum 1              complement lookup  Warmup  E    ✎  ★     │
+│     ☐ Contains Duplicate 217 hash set existence Warmup  E    ✎  ☆     │
+│   ▸ 02  Two Pointers                             ▰▰▰▰▱▱▱▱     5 / 11  │
+└───────────────────────────────────────────────────────────────────────┘
 ```
 
-**Header** — ring with `done / 353` and the percentage, plus the Easy/Medium/Hard split. Updates
-live as you tick, from the same TanStack Query cache.
+**Hero** — gradient ring with the percentage, an animated count that rolls to its new value, a
+meter per difficulty, and the starred count. Recomputed client-side, so it moves the instant you
+tick.
 
-**Tabs** — `All` and `⭐ Starred`. Starred is the same list filtered to `starred: true`; that
-*is* the revision feature.
+**Command bar** — sticky under the header. View switch, search, difficulty chips, hide-done, and
+three icon actions: random unsolved, expand/collapse all, shortcuts.
 
-**Filters** — search by title, difficulty dropdown, "hide done" checkbox. All client-side over
-the 353 rows already in memory. Put them in the URL (`?q=tree&difficulty=HARD`) so a reload
-keeps your place.
+**Starred is a tab, not a route.** It filters data already in the browser, so switching is
+instant. `/starred` remains as a redirect for old bookmarks.
 
-**Phase sections** — collapsible, with a bar and `40 / 96`. Collapsed state persists in
-localStorage (a UI preference, not data — this one genuinely belongs there).
+Making it a separate `force-dynamic` route was the original mistake: every click paid a session
+lookup, a 353-row query and an RSC round trip to re-render data the page already had.
 
-**Pattern sections** — collapsible, bar, count.
+**Phase cards** — gradient number badge, title, timeline, progress bar. **Pattern cards** —
+collapsible, code chip that turns green at 100%, bar, count. Collapsed state persists in
+localStorage (a UI preference, not data — that one genuinely belongs there).
 
-**Row** — checkbox, problem title linking to LeetCode (new tab), role + hint, difficulty badge,
-note icon, star icon.
+**Rows are single-line.** Checkbox · title + LC number · hint · role · difficulty letter ·
+note · star. Hint and role hide on narrow screens rather than wrapping. Note and star fade in on
+hover, stay visible when set.
 
-- **Checkbox** → `PATCH { done }`, optimistic, strikethrough + dimmed when done
-- **Star** → `PATCH { starred }`, optimistic, filled amber when set
-- **Note icon** → `＋` when empty, `📝` when a note exists. Opens the popup.
+- **Checkbox** → `PATCH { done }`, optimistic; animated check, strikethrough when done
+- **Star** → `PATCH { starred }`, optimistic; pops on set
+- **Note** → opens the dialog; icon turns cyan when a note exists
 
-### Note popup
+Rows are `memo`ised and untouched rows keep the same state object reference, so a tick
+re-renders one row rather than 353.
 
-A dialog: problem title as the heading, a plain `<textarea>`, and a Save button. Autosave on a
-800 ms debounce plus on close, with a small "Saved" indicator. Plain text, not markdown — a
-markdown editor is a project of its own and you can add it later without touching the schema.
+### Note dialog
 
-Escape closes. Deleting all the text and saving clears the note.
+Title, link to LeetCode, monospace textarea, autosave on a 700 ms debounce plus a flush on
+close. A dot shows unsaved / saved. `Esc` or `⌘↵` closes. Plain text, not markdown — a markdown
+editor is its own project and needs no schema change to add later.
 
-### `/starred`
+### Keyboard
 
-Same components, `starred: true` only, grouped by pattern with the phase headers hidden when
-empty. Empty state: "Star a problem to revise it later."
+| Key | Does |
+| --- | --- |
+| `/` | focus search |
+| `j` `k` / `↓` `↑` | move between visible problems |
+| `x` `s` `n` | toggle done · toggle star · open note |
+| `r` | jump to a random unsolved problem |
+| `e` | expand / collapse all patterns |
+| `0` `1` `2` `3` | difficulty filter |
+| `?` | shortcuts overlay |
+| `Esc` | close, or clear search |
 
-### `/import`
-
-Three steps: upload or paste the JSON → dry run showing what would be imported with a preview
-of matched titles → confirm. Detailed in [04-migration.md](04-migration.md).
-
-Linked from the user menu, and a new account with zero progress lands here first.
+Navigation scrolls the row into view and opens its pattern if collapsed.
 
 ## Look and feel
 
-Keep the palette from `legacy/index.html` — it's good and it's familiar. Move it to CSS
-variables in Tailwind v4:
+Near-black blue-tinted surfaces with a fixed ambient gradient behind the page, glass cards with
+an inner highlight, and a violet→cyan accent.
 
 ```css
 @theme {
-  --color-bg:      #0d1117;
-  --color-card:    #161b22;
-  --color-border:  #30363d;
-  --color-text:    #c9d1d9;
-  --color-muted:   #8b949e;
-  --color-accent:  #58a6ff;
-  --color-easy:    #2ea043;
-  --color-medium:  #d29922;
-  --color-hard:    #f85149;
-  --color-star:    #d29922;
+  --color-base: #08090d;   --color-surface: #0e1016;  --color-raised: #14171f;
+  --color-line: #1e222c;   --color-hi: #f2f4f8;       --color-body: #b7bdcb;
+  --color-dim: #6f7788;    --color-accent: #7c6cff;   --color-accent-2: #35d6f5;
+  --color-easy: #34d399;   --color-medium: #fbbf24;   --color-hard: #fb7185;
 }
 ```
 
-Badges keep their existing colours: Warmup purple, Core blue, Stretch red, Contest orange.
+Motion: check draw-on, star pop, count roll, bar and ring easing, toast spring, skeleton
+shimmer. All of it disabled under `prefers-reduced-motion`.
+
+## Feedback
+
+Failed writes roll back and raise a toast. Toasts also confirm the random-problem jump. There is
+no inline error bar — it shifted layout every time it appeared.
 
 ## Mobile
 
-The table doesn't survive a phone. Below `md`, each row becomes a two-line card: title and
-difficulty on the first line, checkbox and star on the right, hint on the second line. The
-progress header stacks. That's the whole responsive story.
-
-## Nice to have later
-
-Keyboard shortcuts (`/` search, `j`/`k` move, `x` tick, `s` star) and a "random unsolved
-problem" button. Both are pure frontend, neither is v1.
+Rows keep their single line; hint and role badge drop out below `md`, the hero stacks, and the
+note dialog becomes a bottom sheet.

@@ -1,28 +1,22 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Difficulty, PhaseView, ProblemView, SheetView, Stats } from '@/lib/types';
 import { patchProblem } from '@/lib/api';
-import { ProgressHeader } from './ProgressHeader';
-import { Filters, type FilterState } from './Filters';
-import { PhaseSection } from './PhaseSection';
+import { HeroProgress } from './HeroProgress';
+import { CommandBar, type FilterState, type View } from './CommandBar';
+import { PhaseCard } from './PhaseCard';
 import { NoteDialog } from './NoteDialog';
+import { ShortcutsOverlay } from './ShortcutsOverlay';
+import { Toaster, type ToastMessage } from './Toast';
+import { Star } from '../icons';
 
 export type UserState = { done: boolean; starred: boolean; note: string | null };
 
 const EMPTY: UserState = { done: false, starred: false, note: null };
+const COLLAPSED_KEY = 'dsa-collapsed-patterns';
 
-export function SheetClient({
-  sheet,
-  starredOnly = false,
-  showImportHint = false,
-}: {
-  sheet: SheetView;
-  starredOnly?: boolean;
-  showImportHint?: boolean;
-}) {
-  // Content never changes; only this map does. Keeps ticking a single-key update
-  // rather than a walk of 353 rows.
+export function SheetClient({ sheet }: { sheet: SheetView }) {
   const [state, setState] = useState<Map<number, UserState>>(() => {
     const map = new Map<number, UserState>();
     for (const phase of sheet.phases) {
@@ -37,96 +31,285 @@ export function SheetClient({
     return map;
   });
 
+  const [view, setView] = useState<View>('all');
   const [filters, setFilters] = useState<FilterState>({
     q: '',
     difficulty: 'ALL',
     hideDone: false,
   });
   const [noteFor, setNoteFor] = useState<ProblemView | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [showShortcuts, setShowShortcuts] = useState(false);
+  const [activeId, setActiveId] = useState<number | null>(null);
+  const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  const allPatternIds = useMemo(
+    () => sheet.phases.flatMap((ph) => ph.patterns.map((p) => p.id)),
+    [sheet.phases],
+  );
+
+  const [openPatterns, setOpenPatterns] = useState<Set<number>>(() => new Set(allPatternIds));
+
+  // Restore collapsed patterns after mount — reading localStorage during render
+  // would mismatch the server-rendered HTML.
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(COLLAPSED_KEY);
+      if (!raw) return;
+      const collapsed: number[] = JSON.parse(raw);
+      setOpenPatterns(new Set(allPatternIds.filter((id) => !collapsed.includes(id))));
+    } catch {
+      /* unreadable storage isn't worth handling */
+    }
+  }, [allPatternIds]);
+
+  const persistCollapsed = useCallback(
+    (open: Set<number>) => {
+      try {
+        localStorage.setItem(
+          COLLAPSED_KEY,
+          JSON.stringify(allPatternIds.filter((id) => !open.has(id))),
+        );
+      } catch {
+        /* ignore */
+      }
+    },
+    [allPatternIds],
+  );
+
+  const toast = useCallback((text: string, tone: ToastMessage['tone'] = 'info') => {
+    setToasts((prev) => [...prev, { id: Date.now() + Math.random(), text, tone }]);
+  }, []);
+
+  const dismissToast = useCallback((id: number) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  }, []);
+
+  // A ref of the latest state, so update() can read the pre-patch value without
+  // doing it inside a state updater (React would run that twice in StrictMode and
+  // capture the already-patched value as the rollback target).
+  const stateRef = useRef(state);
+  stateRef.current = state;
 
   const get = useCallback((id: number) => state.get(id) ?? EMPTY, [state]);
 
-  /** Optimistic: apply immediately, roll back and surface the error if the write fails. */
+  /** Optimistic: apply now, roll back and say so if the write fails. */
   const update = useCallback(
     async (id: number, patch: Partial<UserState>) => {
-      const previous = state.get(id) ?? EMPTY;
-      const next = { ...previous, ...patch };
-
-      setState((prev) => new Map(prev).set(id, next));
-      setError(null);
+      const previous = stateRef.current.get(id) ?? EMPTY;
+      setState((prev) => new Map(prev).set(id, { ...previous, ...patch }));
 
       try {
         await patchProblem(id, patch);
-      } catch (err) {
-        setState((prev) => {
-          const rolled = new Map(prev);
-          rolled.set(id, previous);
-          return rolled;
-        });
-        setError(err instanceof Error ? err.message : 'Could not save — check your connection.');
+      } catch {
+        setState((prev) => new Map(prev).set(id, previous));
+        toast('Could not save — check your connection.', 'error');
       }
     },
-    [state],
+    [toast],
   );
+
+  const toggleDone = useCallback((id: number, done: boolean) => update(id, { done }), [update]);
+  const toggleStar = useCallback(
+    (id: number, starred: boolean) => update(id, { starred }),
+    [update],
+  );
+
+  const togglePattern = useCallback(
+    (id: number) => {
+      setOpenPatterns((prev) => {
+        const next = new Set(prev);
+        if (next.has(id)) next.delete(id);
+        else next.add(id);
+        persistCollapsed(next);
+        return next;
+      });
+    },
+    [persistCollapsed],
+  );
+
+  const allOpen = openPatterns.size === allPatternIds.length;
+
+  const toggleAll = useCallback(() => {
+    const next = allOpen ? new Set<number>() : new Set(allPatternIds);
+    setOpenPatterns(next);
+    persistCollapsed(next);
+  }, [allOpen, allPatternIds, persistCollapsed]);
 
   const stats = useMemo<Stats>(() => computeStats(sheet.phases, get), [sheet.phases, get]);
 
   const phases = useMemo(
-    () => filterPhases(sheet.phases, get, filters, starredOnly),
-    [sheet.phases, get, filters, starredOnly],
+    () => filterPhases(sheet.phases, get, filters, view === 'starred'),
+    [sheet.phases, get, filters, view],
   );
 
-  const visibleCount = phases.reduce(
-    (sum, phase) => sum + phase.patterns.reduce((s, p) => s + p.problems.length, 0),
-    0,
+  const visible = useMemo(
+    () => phases.flatMap((ph) => ph.patterns.flatMap((p) => p.problems)),
+    [phases],
   );
+
+  const jumpTo = useCallback(
+    (id: number) => {
+      setActiveId(id);
+      // Make sure its pattern is open before scrolling to it.
+      const pattern = sheet.phases
+        .flatMap((ph) => ph.patterns)
+        .find((p) => p.problems.some((pr) => pr.id === id));
+      if (pattern && !openPatterns.has(pattern.id)) {
+        setOpenPatterns((prev) => {
+          const next = new Set(prev).add(pattern.id);
+          persistCollapsed(next);
+          return next;
+        });
+      }
+      requestAnimationFrame(() => {
+        document
+          .getElementById(`problem-${id}`)
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    },
+    [sheet.phases, openPatterns, persistCollapsed],
+  );
+
+  const randomUnsolved = useCallback(() => {
+    const pool = sheet.phases
+      .flatMap((ph) => ph.patterns.flatMap((p) => p.problems))
+      .filter((p) => !get(p.id).done);
+    if (pool.length === 0) {
+      toast('Everything is done. All 353.');
+      return;
+    }
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    jumpTo(pick.id);
+    toast(pick.title);
+  }, [sheet.phases, get, jumpTo, toast]);
+
+  // ── Keyboard shortcuts ────────────────────────────────────────────
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null;
+      const typing =
+        el?.tagName === 'INPUT' || el?.tagName === 'TEXTAREA' || el?.isContentEditable;
+
+      if (typing) {
+        if (e.key === 'Escape') {
+          (el as HTMLInputElement).blur();
+          if (filters.q) setFilters((f) => ({ ...f, q: '' }));
+        }
+        return;
+      }
+      if (noteFor || showShortcuts) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      const index = activeId === null ? -1 : visible.findIndex((p) => p.id === activeId);
+      const move = (delta: number) => {
+        if (visible.length === 0) return;
+        const next = index === -1 ? 0 : Math.min(Math.max(index + delta, 0), visible.length - 1);
+        jumpTo(visible[next].id);
+      };
+
+      switch (e.key) {
+        case '/':
+          e.preventDefault();
+          searchRef.current?.focus();
+          break;
+        case 'j':
+        case 'ArrowDown':
+          e.preventDefault();
+          move(1);
+          break;
+        case 'k':
+        case 'ArrowUp':
+          e.preventDefault();
+          move(-1);
+          break;
+        case 'x':
+          if (activeId !== null) toggleDone(activeId, !get(activeId).done);
+          break;
+        case 's':
+          if (activeId !== null) toggleStar(activeId, !get(activeId).starred);
+          break;
+        case 'n':
+          if (activeId !== null) {
+            const problem = visible.find((p) => p.id === activeId);
+            if (problem) setNoteFor(problem);
+          }
+          break;
+        case 'r':
+          randomUnsolved();
+          break;
+        case 'e':
+          toggleAll();
+          break;
+        case '0':
+          setFilters((f) => ({ ...f, difficulty: 'ALL' }));
+          break;
+        case '1':
+          setFilters((f) => ({ ...f, difficulty: 'EASY' }));
+          break;
+        case '2':
+          setFilters((f) => ({ ...f, difficulty: 'MEDIUM' }));
+          break;
+        case '3':
+          setFilters((f) => ({ ...f, difficulty: 'HARD' }));
+          break;
+        case '?':
+          setShowShortcuts(true);
+          break;
+        case 'Escape':
+          setActiveId(null);
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [
+    activeId,
+    visible,
+    filters.q,
+    noteFor,
+    showShortcuts,
+    get,
+    toggleDone,
+    toggleStar,
+    jumpTo,
+    randomUnsolved,
+    toggleAll,
+  ]);
 
   return (
-    <div className="space-y-5">
-      <ProgressHeader stats={stats} />
+    <div className="space-y-4">
+      <HeroProgress stats={stats} />
 
-      {showImportHint && stats.done === 0 && (
-        <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-[--color-accent] bg-[--color-accent]/10 px-4 py-3 text-sm">
-          <span>Ticked problems on the old sheet? Bring them across.</span>
-          <a
-            href="/import"
-            className="rounded-md border border-[--color-accent] px-3 py-1.5 font-medium text-white transition hover:bg-[--color-accent]/20"
-          >
-            Import old progress
-          </a>
-        </div>
-      )}
+      <CommandBar
+        ref={searchRef}
+        view={view}
+        onViewChange={setView}
+        starredCount={stats.starred}
+        filters={filters}
+        onFiltersChange={setFilters}
+        allOpen={allOpen}
+        onToggleAll={toggleAll}
+        onRandom={randomUnsolved}
+        onShowShortcuts={() => setShowShortcuts(true)}
+        matchCount={visible.length}
+      />
 
-      {error && (
-        <div
-          role="alert"
-          className="flex items-center justify-between gap-3 rounded-md border border-[--color-hard] bg-[--color-hard]/10 px-4 py-2 text-sm"
-        >
-          <span>{error}</span>
-          <button onClick={() => setError(null)} className="text-[--color-muted] hover:text-white">
-            Dismiss
-          </button>
-        </div>
-      )}
-
-      <Filters value={filters} onChange={setFilters} />
-
-      {visibleCount === 0 ? (
-        <p className="rounded-lg border border-[--color-border] bg-[--color-card] px-4 py-10 text-center text-sm text-[--color-muted]">
-          {starredOnly
-            ? 'Nothing starred yet. Star a problem on the sheet to revisit it later.'
-            : 'No problems match these filters.'}
-        </p>
+      {visible.length === 0 ? (
+        <EmptyState starred={view === 'starred'} />
       ) : (
-        <div className="space-y-6">
+        <div className="space-y-4">
           {phases.map((phase) => (
-            <PhaseSection
+            <PhaseCard
               key={phase.id}
               phase={phase}
               get={get}
-              onToggleDone={(id, done) => update(id, { done })}
-              onToggleStar={(id, starred) => update(id, { starred })}
+              openPatterns={openPatterns}
+              onTogglePattern={togglePattern}
+              activeId={activeId}
+              onToggleDone={toggleDone}
+              onToggleStar={toggleStar}
               onOpenNote={setNoteFor}
             />
           ))}
@@ -140,6 +323,31 @@ export function SheetClient({
           onClose={() => setNoteFor(null)}
           onSave={(note) => update(noteFor.id, { note })}
         />
+      )}
+
+      {showShortcuts && <ShortcutsOverlay onClose={() => setShowShortcuts(false)} />}
+
+      <Toaster toasts={toasts} onDismiss={dismissToast} />
+    </div>
+  );
+}
+
+function EmptyState({ starred }: { starred: boolean }) {
+  return (
+    <div className="glass flex flex-col items-center gap-3 rounded-2xl px-6 py-16 text-center">
+      {starred ? (
+        <>
+          <Star size={26} className="text-[--color-dim]" />
+          <p className="text-sm text-[--color-body]">Nothing starred yet.</p>
+          <p className="max-w-xs text-xs text-[--color-dim]">
+            Star a problem on the sheet and it shows up here when you want another pass at it.
+          </p>
+        </>
+      ) : (
+        <>
+          <p className="text-sm text-[--color-body]">No problems match these filters.</p>
+          <p className="text-xs text-[--color-dim]">Try clearing the search or difficulty.</p>
+        </>
       )}
     </div>
   );
@@ -190,7 +398,8 @@ function filterPhases(
     if (filters.hideDone && mine.done) return false;
     if (filters.difficulty !== 'ALL' && problem.difficulty !== filters.difficulty) return false;
     if (q) {
-      const haystack = `${problem.title} ${problem.hint ?? ''} ${problem.lcNumber ?? ''}`.toLowerCase();
+      const haystack =
+        `${problem.title} ${problem.hint ?? ''} ${problem.lcNumber ?? ''}`.toLowerCase();
       if (!haystack.includes(q)) return false;
     }
     return true;

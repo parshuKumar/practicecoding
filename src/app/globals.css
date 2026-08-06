@@ -1,40 +1,181 @@
 @import 'tailwindcss';
 
-/* Palette carried over from the original legacy/index.html — it was good. */
 @theme {
-  --color-bg: #0d1117;
-  --color-card: #161b22;
-  --color-border: #30363d;
-  --color-text: #c9d1d9;
-  --color-muted: #8b949e;
-  --color-accent: #58a6ff;
+  /* Surfaces — deep, slightly blue-black with real elevation steps */
+  --color-base: #08090d;
+  --color-surface: #0e1016;
+  --color-raised: #14171f;
+  --color-line: #1e222c;
+  --color-line-soft: #171b23;
 
-  --color-easy: #2ea043;
-  --color-medium: #d29922;
-  --color-hard: #f85149;
+  /* Text */
+  --color-hi: #f2f4f8;
+  --color-body: #b7bdcb;
+  --color-dim: #6f7788;
 
-  --color-warmup: #8957e5;
-  --color-core: #1f6feb;
-  --color-stretch: #da3633;
-  --color-contest: #db6d28;
+  /* Accent — violet to cyan */
+  --color-accent: #7c6cff;
+  --color-accent-2: #35d6f5;
 
-  --color-star: #d29922;
+  /* Difficulty */
+  --color-easy: #34d399;
+  --color-medium: #fbbf24;
+  --color-hard: #fb7185;
+
+  /* Roles */
+  --color-warmup: #a78bfa;
+  --color-core: #60a5fa;
+  --color-stretch: #f472b6;
+  --color-contest: #fb923c;
+
+  --color-star: #fbbf24;
+}
+
+* {
+  border-color: var(--color-line);
 }
 
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--color-base);
+  color: var(--color-body);
   font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'tnum';
 }
 
-/* Accessible focus ring that survives the dark background. */
+/* Ambient glow behind the page — gives the flat dark some depth. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(58rem 30rem at 12% -8%, color-mix(in oklab, var(--color-accent) 16%, transparent), transparent 70%),
+    radial-gradient(46rem 26rem at 92% 4%, color-mix(in oklab, var(--color-accent-2) 11%, transparent), transparent 70%);
+}
+
+@layer utilities {
+  .glass {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-raised) 92%, white 3%),
+      var(--color-surface)
+    );
+    border: 1px solid var(--color-line);
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.04) inset,
+      0 10px 30px -12px rgb(0 0 0 / 0.7);
+  }
+
+  .gradient-text {
+    background: linear-gradient(100deg, var(--color-accent), var(--color-accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ring-glow {
+    filter: drop-shadow(0 0 10px color-mix(in oklab, var(--color-accent) 55%, transparent));
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-accent) 40%, transparent);
+  color: var(--color-hi);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+  border: 2px solid var(--color-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b3140;
+}
+
+/* ── Animations ───────────────────────────────────────────────── */
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+@keyframes check-in {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+.animate-pop { animation: pop 320ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.animate-rise { animation: rise 260ms ease-out both; }
+.animate-toast { animation: toast-in 200ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+.check-path {
+  stroke-dasharray: 24;
+  animation: check-in 240ms ease-out forwards;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-line-soft);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.05), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

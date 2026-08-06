@@ -1,5 +1,9 @@
 # 04 — Migration
 
+> **Done.** All 47 ticks were imported and the import UI has since been removed. Kept as the
+> record of how the mapping worked, and because `legacy/` is the only backup if the database is
+> ever lost — `npx tsx tools/verify-import.ts` still re-checks it.
+
 Two migrations: your ticks out of `localStorage`, and the sheet content out of `index.html`.
 
 ## Step 0 — Rescue your ticks ✅ done

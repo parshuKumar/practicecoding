@@ -11,10 +11,9 @@ throughout.
 - Sign in with Google
 - The full sheet: 4 phases → 35 patterns → 353 problems
 - Tick a problem done → saved to the database, visible on any device
-- ⭐ Star a problem = "revise this again". A tab filters to starred problems.
+- ⭐ Star a problem = "revise this again". A tab (client-side, instant) filters to starred.
 - A note per problem
 - `231 / 353` at the top, plus Easy / Medium / Hard split and a bar per pattern
-- One-time import of your existing localStorage ticks
 
 That is the whole app. Single user, no sharing, no scheduling, no analytics.
 
@@ -35,7 +34,7 @@ That is the whole app. Single user, no sharing, no scheduling, no analytics.
 | [01-architecture.md](01-architecture.md) | Folder layout and the few rules that keep it tidy |
 | [02-data-model.md](02-data-model.md) | The Prisma schema — 7 tables total |
 | [03-api-and-ui.md](03-api-and-ui.md) | The endpoints and the screens |
-| [04-migration.md](04-migration.md) | **Rescuing your ticks** + parsing the sheet into the database |
+| [04-migration.md](04-migration.md) | How the sheet was parsed and the 47 old ticks were brought across (done) |
 | [05-roadmap.md](05-roadmap.md) | 6 milestones, ~16 hours |
 | [06-deployment.md](06-deployment.md) | Neon, Vercel, Google OAuth setup, env vars |
 
@@ -50,7 +49,7 @@ That is the whole app. Single user, no sharing, no scheduling, no analytics.
 | 353 rows, duplicates kept | Matches the original sheet exactly, so the import is 1:1 |
 | Progress rows created lazily | No row means not done. A fresh account has zero rows, not 353. |
 
-## Do this first
+## Status
 
-[Rescue your localStorage ticks](04-migration.md#step-0-rescue-your-ticks). It takes 30 seconds
-and cannot be done after the fact — `localStorage` is tied to the old URL and isn't in git.
+Built and deployed. The 47 legacy ticks were imported and the import UI removed; the source
+files stay in [`legacy/`](../legacy/) as the permanent record.

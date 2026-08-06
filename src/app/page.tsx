@@ -5,38 +5,45 @@ export default async function LandingPage() {
   if (await getUser()) redirect('/sheet');
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center px-6 text-center">
-      <h1 className="text-3xl font-bold tracking-tight text-white">DSA Sheet</h1>
-      <p className="mt-3 text-[--color-muted]">
-        353 problems across 35 patterns. Tick them off, star what needs another pass, keep notes.
-      </p>
+    <main className="relative z-10 flex min-h-screen items-center justify-center px-6">
+      <div className="animate-rise w-full max-w-sm text-center">
+        <span className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-2xl bg-linear-to-br from-[--color-accent] to-[--color-accent-2] text-lg font-bold text-white">
+          D
+        </span>
 
-      <form
-        className="mt-8 w-full"
-        action={async () => {
-          'use server';
-          await signIn('google', { redirectTo: '/sheet' });
-        }}
-      >
-        <button
-          type="submit"
-          className="flex w-full items-center justify-center gap-3 rounded-md border border-[--color-border] bg-[--color-card] px-4 py-3 font-medium text-white transition hover:border-[--color-accent]"
+        <h1 className="text-3xl font-bold tracking-tight text-[--color-hi]">
+          DSA <span className="gradient-text">Sheet</span>
+        </h1>
+        <p className="mt-3 text-sm leading-relaxed text-[--color-dim]">
+          353 problems across 35 patterns. Tick them off, star what needs another pass, keep your
+          notes where you left them.
+        </p>
+
+        <form
+          className="mt-8"
+          action={async () => {
+            'use server';
+            await signIn('google', { redirectTo: '/sheet' });
+          }}
         >
-          <GoogleMark />
-          Continue with Google
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="glass flex w-full items-center justify-center gap-3 rounded-xl px-4 py-3 text-sm font-medium text-[--color-hi] transition hover:border-[--color-accent]"
+          >
+            <GoogleMark />
+            Continue with Google
+          </button>
+        </form>
 
-      <p className="mt-6 text-xs text-[--color-muted]">
-        Signing in keeps your progress on every device.
-      </p>
+        <p className="mt-5 text-xs text-[--color-dim]">Your progress follows you to any device.</p>
+      </div>
     </main>
   );
 }
 
 function GoogleMark() {
   return (
-    <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+    <svg width="17" height="17" viewBox="0 0 48 48" aria-hidden="true">
       <path
         fill="#4285F4"
         d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"
