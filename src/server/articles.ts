@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { prisma } from './db';
 import { NotFoundError } from './handler';
 import type { PatchArticle } from '@/lib/types';
@@ -11,9 +12,7 @@ import type { PatchArticle } from '@/lib/types';
 export async function updateArticle(userId: string, articleId: number, patch: PatchArticle) {
   if (!Number.isInteger(articleId)) throw new NotFoundError(`article ${articleId}`);
 
-  const exists = await prisma.sdArticle.findUnique({ where: { id: articleId }, select: { id: true } });
-  if (!exists) throw new NotFoundError(`article ${articleId}`);
-
+  // An unknown article is rejected by the foreign key on upsert; no separate lookup.
   const row = await prisma.$transaction(async (tx) => {
     const current = await tx.sdUserArticle.findUnique({
       where: { userId_articleId: { userId, articleId } },
@@ -36,6 +35,11 @@ export async function updateArticle(userId: string, articleId: number, patch: Pa
       create: { userId, articleId, ...data },
       update: data,
     });
+  }).catch((err: unknown) => {
+    if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2003') {
+      throw new NotFoundError(`article ${articleId}`);
+    }
+    throw err;
   });
 
   return {

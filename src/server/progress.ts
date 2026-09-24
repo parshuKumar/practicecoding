@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { prisma } from './db';
 import { NotFoundError } from './handler';
 import type { PatchProblem } from '@/lib/types';
@@ -11,14 +12,15 @@ import { approachesFor } from '@/lib/approaches';
 export async function updateProblem(userId: string, problemId: number, patch: PatchProblem) {
   if (!Number.isInteger(problemId)) throw new NotFoundError(`problem ${problemId}`);
 
-  const problem = await prisma.problem.findUnique({
-    where: { id: problemId },
-    select: { id: true, patternId: true },
-  });
-  if (!problem) throw new NotFoundError(`problem ${problemId}`);
-
+  // Only the approach set needs the pattern; everything else relies on the foreign key
+  // to reject an unknown problem, which saves a round trip on every tick.
   let approaches: string[] | undefined;
   if (patch.approaches !== undefined) {
+    const problem = await prisma.problem.findUnique({
+      where: { id: problemId },
+      select: { patternId: true },
+    });
+    if (!problem) throw new NotFoundError(`problem ${problemId}`);
     const allowed = new Set(approachesFor(problem.patternId).map((a) => a.key));
     approaches = [...new Set(patch.approaches.filter((k) => allowed.has(k)))];
   }
@@ -30,11 +32,18 @@ export async function updateProblem(userId: string, problemId: number, patch: Pa
     ...(approaches !== undefined && { approaches }),
   };
 
-  const row = await prisma.userProblem.upsert({
-    where: { userId_problemId: { userId, problemId } },
-    create: { userId, problemId, ...data },
-    update: data,
-  });
+  const row = await prisma.userProblem
+    .upsert({
+      where: { userId_problemId: { userId, problemId } },
+      create: { userId, problemId, ...data },
+      update: data,
+    })
+    .catch((err: unknown) => {
+      if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2003') {
+        throw new NotFoundError(`problem ${problemId}`);
+      }
+      throw err;
+    });
 
   return {
     problemId: row.problemId,

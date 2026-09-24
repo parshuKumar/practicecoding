@@ -90,6 +90,14 @@ async function getContent(): Promise<Content> {
   return value;
 }
 
+/**
+ * Fire-and-forget: the other sheet's page calls this so that switching tabs never pays
+ * the content join. A failure here is harmless; the real request will simply load it.
+ */
+export function warmSystemDesignContent(): void {
+  void getContent().catch(() => {});
+}
+
 export async function getSystemDesign(userId: string): Promise<SystemDesignView> {
   const [content, rows] = await Promise.all([
     getContent(),

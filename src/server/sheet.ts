@@ -111,6 +111,14 @@ async function getContent(): Promise<Content> {
   return value;
 }
 
+/**
+ * Fire-and-forget: the other sheet's page calls this so that switching tabs never pays
+ * the content join. A failure here is harmless; the real request will simply load it.
+ */
+export function warmSheetContent(): void {
+  void getContent().catch(() => {});
+}
+
 export async function getSheet(userId: string): Promise<SheetView> {
   // Content is usually memoised; only this second query actually hits Neon per view,
   // and it returns just the rows this user has touched.
