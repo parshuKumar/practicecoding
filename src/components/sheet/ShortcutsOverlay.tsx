@@ -3,7 +3,9 @@
 import { useEffect } from 'react';
 import { X } from '../icons';
 
-const SHORTCUTS: [string, string][] = [
+export type Shortcut = [string, string];
+
+const DEFAULT_SHORTCUTS: Shortcut[] = [
   ['/', 'Focus search'],
   ['j  ↓', 'Next problem'],
   ['k  ↑', 'Previous problem'],
@@ -17,7 +19,13 @@ const SHORTCUTS: [string, string][] = [
   ['Esc', 'Close, or clear search'],
 ];
 
-export function ShortcutsOverlay({ onClose }: { onClose: () => void }) {
+export function ShortcutsOverlay({
+  onClose,
+  shortcuts = DEFAULT_SHORTCUTS,
+}: {
+  onClose: () => void;
+  shortcuts?: Shortcut[];
+}) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -49,7 +57,7 @@ export function ShortcutsOverlay({ onClose }: { onClose: () => void }) {
         </div>
 
         <dl className="space-y-1.5">
-          {SHORTCUTS.map(([keys, label]) => (
+          {shortcuts.map(([keys, label]) => (
             <div key={keys} className="flex items-center justify-between gap-4 text-sm">
               <dd className="text-[--color-body]">{label}</dd>
               <dt className="flex shrink-0 gap-1">

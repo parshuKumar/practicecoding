@@ -1,21 +1,24 @@
 /**
- * Seeds sheet content from data/sheet.json. Idempotent — safe to re-run on every deploy.
+ * Seeds content from data/sheet.json (DSA) and data/system-design.json (System Design).
+ * Idempotent — safe to re-run on every deploy.
  *
- * Never deletes: removing a Problem row would orphan (or cascade away) real progress.
- * Never renumbers: Problem.id is the legacy localStorage index.
+ * Never deletes: removing a Problem or SdArticle row would orphan (or cascade away) real
+ * progress. Never renumbers: Problem.id is the legacy localStorage index, SdArticle.id is
+ * the curriculum number.
  *
  *   npm run db:seed
  */
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, type Prisma } from '@prisma/client';
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Sheet } from '../tools/extract-sheet';
+import type { SystemDesignData } from '../src/lib/system-design-data';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const prisma = new PrismaClient();
 
-async function main() {
+async function seedDsa() {
   const sheet: Sheet = JSON.parse(readFileSync(resolve(root, 'data/sheet.json'), 'utf8'));
 
   if (sheet.problems.length !== 353) {
@@ -51,6 +54,53 @@ async function main() {
   if (problems !== 353) {
     throw new Error(`expected 353 problems in the database, found ${problems}`);
   }
+}
+
+async function seedSystemDesign() {
+  const data: SystemDesignData = JSON.parse(
+    readFileSync(resolve(root, 'data/system-design.json'), 'utf8'),
+  );
+
+  if (data.articles.length !== 140) {
+    throw new Error(
+      `refusing to seed: expected 140 articles, data/system-design.json has ${data.articles.length}`,
+    );
+  }
+
+  for (const part of data.parts) {
+    await prisma.sdPart.upsert({ where: { id: part.id }, create: part, update: part });
+  }
+
+  for (const group of data.groups) {
+    await prisma.sdGroup.upsert({ where: { id: group.id }, create: group, update: group });
+  }
+
+  const CHUNK = 25;
+  for (let i = 0; i < data.articles.length; i += CHUNK) {
+    await prisma.$transaction(
+      data.articles.slice(i, i + CHUNK).map((article) => {
+        const row = { ...article, links: article.links as unknown as Prisma.InputJsonValue };
+        return prisma.sdArticle.upsert({ where: { id: article.id }, create: row, update: row });
+      }),
+    );
+  }
+
+  const [parts, groups, articles] = await Promise.all([
+    prisma.sdPart.count(),
+    prisma.sdGroup.count(),
+    prisma.sdArticle.count(),
+  ]);
+
+  console.log(`✔ seeded — ${parts} parts · ${groups} groups · ${articles} articles`);
+
+  if (articles !== 140) {
+    throw new Error(`expected 140 articles in the database, found ${articles}`);
+  }
+}
+
+async function main() {
+  await seedDsa();
+  await seedSystemDesign();
 }
 
 main()

@@ -1,9 +1,19 @@
 # 02 — Data Model
 
-Seven tables: three from Auth.js, three for the sheet content, one for your progress.
+Eleven tables: three from Auth.js, three for DSA content, one for DSA progress, three for
+System Design content, one for System Design progress.
 
-Content tables are seeded and identical forever. `UserProblem` is the only table the app
-writes to during normal use.
+Content tables are seeded and identical forever. `UserProblem` and `SdUserArticle` are the
+only tables the app writes to during normal use.
+
+The System Design tables (`SdPart` → `SdGroup` → `SdArticle`, plus `SdUserArticle`) mirror
+the DSA ones one-to-one, with two additions on the progress row: `readCount`, bumped by a
+±1 delta inside a transaction and clamped at zero, and `lastReadAt`. `SdArticle.id` is the
+curriculum number (1–140) and is never renumbered. `SdArticle.links` is a JSON array of
+`{ label, url }`. Full definitions are in `prisma/schema.prisma`; the seed source is
+`data/system-design.json`.
+
+The original DSA-only schema follows.
 
 ```prisma
 // prisma/schema.prisma

@@ -318,7 +318,11 @@ export function SheetClient({ sheet }: { sheet: SheetView }) {
 
       {noteFor && (
         <NoteDialog
-          problem={noteFor}
+          subject={{
+            title: noteFor.title,
+            url: noteFor.url,
+            linkLabel: noteFor.lcNumber !== null ? `LeetCode ${noteFor.lcNumber}` : 'Open problem',
+          }}
           note={get(noteFor.id).note}
           onClose={() => setNoteFor(null)}
           onSave={(note) => update(noteFor.id, { note })}

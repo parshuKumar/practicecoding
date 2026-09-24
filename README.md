@@ -1,9 +1,13 @@
 # DSA Sheet
 
-353 problems across 35 patterns, with a login so progress follows you to any machine.
+Two sheets behind one login, so progress follows you to any machine:
 
-Tick problems done, ★ star the ones worth another pass, keep a note on each. Built as one
-Next.js app on Vercel with Neon Postgres — free tier throughout.
+- **DSA** — 353 problems across 35 patterns. Tick, ★ star, note.
+- **System Design** — 140 articles across 7 parts, from foundations to HLD/LLD case studies.
+  Tick, count how many times you have read each one, ★ star, note. Must-read articles are
+  flagged 🔥 and every article carries curated outside links.
+
+Built as one Next.js app on Vercel with Neon Postgres — free tier throughout.
 
 Planning docs live in [docs/](docs/).
 
@@ -51,8 +55,8 @@ openssl rand -base64 32     # -> AUTH_SECRET
 ### 5. Database
 
 ```bash
-npx prisma migrate dev --name init    # create the schema
-npm run db:seed                       # load the 353 problems
+npx prisma migrate dev                # create the schema (both sheets)
+npm run db:seed                       # load the 353 problems and 140 articles
 ```
 
 ### 6. Run
@@ -74,6 +78,22 @@ Sign in at http://localhost:3000.
 | Everything else | press `?` |
 
 Starred is a tab, not a page — switching is instant client-side state, no network round trip.
+
+### The System Design sheet
+
+Switch with the **DSA / System Design** tabs in the header. Rows work the same, plus:
+
+| | |
+| --- | --- |
+| Count a read | the `+` on the row counter, or `+` on the focused row. Ticking an unread article counts as read #1; reading an unticked one ticks it. |
+| Undo a read | shift-click `+`, or `-` on the focused row. Never goes below zero. |
+| Must-reads | 🔥 rows. The **Must** tab shows only those; `m` toggles it. |
+| Extra links | the 🔗 button on a row opens curated outside reading for that topic. The **Bookshelf** at the bottom lists the sources once. |
+| Filter by kind | chips for Foundation / LLD / HLD / HLD Case / LLD Case / Advanced, or keys `1`–`6` (`0` for all). |
+
+Articles link to the markdown in
+[parshuKumar/Claude-notes](https://github.com/parshuKumar/Claude-notes/tree/main/SystemDesign-opus/docs/system-design).
+Content, groups, tiers and links live in `data/system-design.json`; edit it and re-run `npm run db:seed`.
 
 ## The legacy import
 
@@ -98,7 +118,7 @@ npx tsx tools/verify-import.ts
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run db:migrate` | Create/apply a migration locally |
 | `npm run db:deploy` | Apply migrations (production) |
-| `npm run db:seed` | Load `data/sheet.json` into Postgres — idempotent |
+| `npm run db:seed` | Load `data/sheet.json` and `data/system-design.json` into Postgres — idempotent |
 | `npm run db:studio` | Prisma Studio |
 | `npm run extract` | Re-parse `legacy/index.html` → `data/sheet.json` (already done) |
 
@@ -107,16 +127,17 @@ npx tsx tools/verify-import.ts
 ```
 src/
 ├── app/                    routes — thin
-│   ├── (app)/{sheet,starred,import}/
+│   ├── (app)/{sheet,system-design}/
 │   └── api/{auth,v1}/
 ├── server/                 all logic; imports no next/*, no React
 │   ├── db.ts  auth.ts  handler.ts
-│   └── sheet.ts  progress.ts  import.ts
-├── components/             UI
+│   ├── sheet.ts  progress.ts             DSA
+│   └── system-design.ts  articles.ts     System Design
+├── components/             UI — sheet/ (DSA, plus shared dialogs) and system-design/
 └── lib/                    shared types + zod schemas
 
 prisma/    schema + seed
-data/      sheet.json — content source of truth
+data/      sheet.json + system-design.json — content source of truth
 legacy/    the frozen original sheet + rescued ticks
 tools/     one-off parser and the import verifier
 ```

@@ -1,5 +1,6 @@
-// Seven tables: three from Auth.js, three for sheet content, one for your progress.
-// Content tables are seeded from data/sheet.json and never written to at runtime.
+// Eleven tables: three from Auth.js, three for DSA sheet content, one for DSA progress,
+// three for System Design content, one for System Design progress.
+// Content tables are seeded from data/*.json and never written to at runtime.
 
 generator client {
   provider        = "prisma-client-js"
@@ -26,6 +27,7 @@ model User {
   accounts Account[]
   sessions Session[]
   problems UserProblem[]
+  articles SdUserArticle[]
 }
 
 model Account {
@@ -138,4 +140,82 @@ enum Role {
   CORE
   STRETCH
   CONTEST
+}
+
+// ─────────────────────── System Design content ───────────────────────
+// Seeded from data/system-design.json. Article.id is the curriculum number (1..140)
+// and doubles as its display code, so it must never be renumbered.
+
+model SdPart {
+  id       Int     @id
+  title    String
+  subtitle String?
+
+  groups SdGroup[]
+}
+
+model SdGroup {
+  id     Int    @id
+  partId Int
+  code   String
+  title  String
+
+  part     SdPart      @relation(fields: [partId], references: [id])
+  articles SdArticle[]
+
+  @@index([partId])
+}
+
+/// One article of the curriculum. 140 rows.
+/// `links` is a JSON array of { label, url } — curated outside reading for the topic.
+model SdArticle {
+  id         Int          @id
+  groupId    Int
+  code       String
+  title      String
+  slug       String       @unique
+  url        String
+  kind       SdKind
+  importance SdImportance
+  summary    String?
+  links      Json         @default("[]")
+
+  group SdGroup         @relation(fields: [groupId], references: [id])
+  users SdUserArticle[]
+
+  @@index([groupId])
+}
+
+/// No row means: not read, not starred, zero reads, no note.
+model SdUserArticle {
+  userId     String
+  articleId  Int
+  done       Boolean   @default(false)
+  starred    Boolean   @default(false)
+  readCount  Int       @default(0)
+  note       String?   @db.Text
+  lastReadAt DateTime?
+  updatedAt  DateTime  @updatedAt
+
+  user    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  article SdArticle @relation(fields: [articleId], references: [id])
+
+  @@id([userId, articleId])
+  @@index([userId, done])
+  @@index([userId, starred])
+}
+
+enum SdKind {
+  FOUNDATION
+  LLD
+  HLD
+  HLD_CASE
+  LLD_CASE
+  ADVANCED
+}
+
+enum SdImportance {
+  MUST
+  CORE
+  EXTRA
 }

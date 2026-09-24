@@ -1,0 +1,3141 @@
+{
+  "parts": [
+    {
+      "id": 1,
+      "title": "FOUNDATIONS",
+      "subtitle": "Vocabulary and mental models"
+    },
+    {
+      "id": 2,
+      "title": "LLD FOUNDATIONS",
+      "subtitle": "OOP, SOLID, UML, relationships"
+    },
+    {
+      "id": 3,
+      "title": "LLD DESIGN PATTERNS",
+      "subtitle": "Creational, structural, behavioral, concurrency"
+    },
+    {
+      "id": 4,
+      "title": "HLD FUNDAMENTALS AND COMPONENTS",
+      "subtitle": "Every building block of distributed systems"
+    },
+    {
+      "id": 5,
+      "title": "HLD CASE STUDIES",
+      "subtitle": "Design real systems end to end"
+    },
+    {
+      "id": 6,
+      "title": "LLD CASE STUDIES",
+      "subtitle": "Design real systems class by class"
+    },
+    {
+      "id": 7,
+      "title": "ADVANCED TOPICS",
+      "subtitle": "Principal engineer level"
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "partId": 1,
+      "code": "1A",
+      "title": "Thinking Framework"
+    },
+    {
+      "id": 2,
+      "partId": 1,
+      "code": "1B",
+      "title": "Performance and Guarantees"
+    },
+    {
+      "id": 3,
+      "partId": 1,
+      "code": "1C",
+      "title": "Networking and the Web"
+    },
+    {
+      "id": 4,
+      "partId": 2,
+      "code": "2A",
+      "title": "OOP and SOLID"
+    },
+    {
+      "id": 5,
+      "partId": 2,
+      "code": "2B",
+      "title": "UML Modelling"
+    },
+    {
+      "id": 6,
+      "partId": 2,
+      "code": "2C",
+      "title": "Relationships and Principles"
+    },
+    {
+      "id": 7,
+      "partId": 3,
+      "code": "3A",
+      "title": "Intro and Creational Patterns"
+    },
+    {
+      "id": 8,
+      "partId": 3,
+      "code": "3B",
+      "title": "Structural Patterns"
+    },
+    {
+      "id": 9,
+      "partId": 3,
+      "code": "3C",
+      "title": "Behavioral Patterns"
+    },
+    {
+      "id": 10,
+      "partId": 3,
+      "code": "3D",
+      "title": "Concurrency"
+    },
+    {
+      "id": 11,
+      "partId": 4,
+      "code": "4A",
+      "title": "Traffic and Edge"
+    },
+    {
+      "id": 12,
+      "partId": 4,
+      "code": "4B",
+      "title": "Caching and CDN"
+    },
+    {
+      "id": 13,
+      "partId": 4,
+      "code": "4C",
+      "title": "Databases"
+    },
+    {
+      "id": 14,
+      "partId": 4,
+      "code": "4D",
+      "title": "Messaging and APIs"
+    },
+    {
+      "id": 15,
+      "partId": 4,
+      "code": "4E",
+      "title": "Microservices and Resilience"
+    },
+    {
+      "id": 16,
+      "partId": 4,
+      "code": "4F",
+      "title": "Distributed Data"
+    },
+    {
+      "id": 17,
+      "partId": 4,
+      "code": "4G",
+      "title": "Storage, Search, Observability, Security"
+    },
+    {
+      "id": 18,
+      "partId": 4,
+      "code": "4H",
+      "title": "Protocols and Coordination"
+    },
+    {
+      "id": 19,
+      "partId": 4,
+      "code": "4I",
+      "title": "Data Pipelines and Infrastructure"
+    },
+    {
+      "id": 20,
+      "partId": 5,
+      "code": "5A",
+      "title": "Framework and Starter Systems"
+    },
+    {
+      "id": 21,
+      "partId": 5,
+      "code": "5B",
+      "title": "Social and Media"
+    },
+    {
+      "id": 22,
+      "partId": 5,
+      "code": "5C",
+      "title": "Commerce and Infrastructure"
+    },
+    {
+      "id": 23,
+      "partId": 6,
+      "code": "6A",
+      "title": "Framework and Classic Starters"
+    },
+    {
+      "id": 24,
+      "partId": 6,
+      "code": "6B",
+      "title": "Booking and Games"
+    },
+    {
+      "id": 25,
+      "partId": 6,
+      "code": "6C",
+      "title": "Infrastructure Components"
+    },
+    {
+      "id": 26,
+      "partId": 6,
+      "code": "6D",
+      "title": "Product Systems"
+    },
+    {
+      "id": 27,
+      "partId": 7,
+      "code": "7A",
+      "title": "Principal Level"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "groupId": 1,
+      "code": "01",
+      "title": "What Is System Design and Why It Matters",
+      "slug": "01-what-is-system-design",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/01-what-is-system-design.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "The big picture: what system design is, why interviews ask it, why every senior engineer needs it.",
+      "links": [
+        {
+          "label": "Hello Interview: intro",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#index-of-system-design-topics"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "groupId": 1,
+      "code": "02",
+      "title": "HLD vs LLD, The Two Halves of System Design",
+      "slug": "02-hld-vs-lld",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/02-hld-vs-lld.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "High-level architecture vs low-level class design, when each is used, how they connect.",
+      "links": [
+        {
+          "label": "GeeksforGeeks: HLD vs LLD",
+          "url": "https://www.geeksforgeeks.org/system-design/difference-between-high-level-design-and-low-level-design/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "groupId": 1,
+      "code": "03",
+      "title": "How to Approach a System Design Problem",
+      "slug": "03-how-to-approach-system-design",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/03-how-to-approach-system-design.md",
+      "kind": "FOUNDATION",
+      "importance": "MUST",
+      "summary": "The universal step-by-step framework for any design question in interviews or real work.",
+      "links": [
+        {
+          "label": "ByteByteGo: the framework",
+          "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews"
+        },
+        {
+          "label": "Hello Interview: delivery framework",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#how-to-approach-a-system-design-interview-question"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "groupId": 1,
+      "code": "04",
+      "title": "Functional vs Non-Functional Requirements",
+      "slug": "04-functional-vs-non-functional-requirements",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/04-functional-vs-non-functional-requirements.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "What a system must do vs how well it must perform. The foundation of every design decision.",
+      "links": [
+        {
+          "label": "Hello Interview: requirements step",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "groupId": 1,
+      "code": "05",
+      "title": "Capacity Estimation and Back-of-the-Envelope Math",
+      "slug": "05-capacity-estimation",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/05-capacity-estimation.md",
+      "kind": "FOUNDATION",
+      "importance": "MUST",
+      "summary": "Estimate users, storage, bandwidth and QPS on a whiteboard.",
+      "links": [
+        {
+          "label": "ByteByteGo: estimation",
+          "url": "https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation"
+        },
+        {
+          "label": "Primer: powers of two",
+          "url": "https://github.com/donnemartin/system-design-primer#powers-of-two-table"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "groupId": 2,
+      "code": "06",
+      "title": "Latency vs Throughput, The Two Performance Kings",
+      "slug": "06-latency-and-throughput",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/06-latency-and-throughput.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "Response time vs request rate, real numbers, how to reason about performance.",
+      "links": [
+        {
+          "label": "Hello Interview: core concepts",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/core-concepts"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#performance-vs-scalability"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "groupId": 2,
+      "code": "07",
+      "title": "Availability and Reliability, Uptime Guarantees",
+      "slug": "07-availability-and-reliability",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/07-availability-and-reliability.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "99.9 vs 99.99 in real minutes, SLA vs SLO vs SLI, how reliability is guaranteed.",
+      "links": [
+        {
+          "label": "Google SRE: embracing risk",
+          "url": "https://sre.google/sre-book/embracing-risk/"
+        },
+        {
+          "label": "Google SRE: SLOs",
+          "url": "https://sre.google/sre-book/service-level-objectives/"
+        },
+        {
+          "label": "uptime.is calculator",
+          "url": "https://uptime.is/"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "groupId": 2,
+      "code": "08",
+      "title": "Consistency Models, Strong, Eventual and Between",
+      "slug": "08-consistency-models",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/08-consistency-models.md",
+      "kind": "FOUNDATION",
+      "importance": "MUST",
+      "summary": "What consistent data means, why distribution makes it hard, the spectrum of levels.",
+      "links": [
+        {
+          "label": "Jepsen consistency map",
+          "url": "https://jepsen.io/consistency"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#consistency-patterns"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "groupId": 2,
+      "code": "09",
+      "title": "CAP Theorem, The Impossible Triangle",
+      "slug": "09-cap-theorem",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/09-cap-theorem.md",
+      "kind": "FOUNDATION",
+      "importance": "MUST",
+      "summary": "Why you cannot have C, A and P at once, with real database examples.",
+      "links": [
+        {
+          "label": "Kleppmann: stop calling databases CP or AP",
+          "url": "https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html"
+        },
+        {
+          "label": "Coda Hale: you cannot sacrifice P (archive)",
+          "url": "https://web.archive.org/web/2023/https://codahale.com/you-cant-sacrifice-partition-tolerance/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#cap-theorem"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "groupId": 3,
+      "code": "10",
+      "title": "Networking Fundamentals for System Design",
+      "slug": "10-networking-fundamentals",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/10-networking-fundamentals.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "TCP vs UDP, HTTP/HTTPS, WebSockets, handshakes, ports, IP addressing.",
+      "links": [
+        {
+          "label": "Cloudflare: TCP/IP",
+          "url": "https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#communication"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "groupId": 3,
+      "code": "11",
+      "title": "How the Web Works End to End",
+      "slug": "11-how-the-web-works",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/11-how-the-web-works.md",
+      "kind": "FOUNDATION",
+      "importance": "CORE",
+      "summary": "What happens when you type a URL: DNS, TCP, TLS, HTTP, server, render.",
+      "links": [
+        {
+          "label": "what-happens-when (GitHub)",
+          "url": "https://github.com/alex/what-happens-when"
+        },
+        {
+          "label": "web.dev: how browsers work",
+          "url": "https://web.dev/articles/howbrowserswork"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "groupId": 3,
+      "code": "12",
+      "title": "Numbers Every Engineer Should Know",
+      "slug": "12-numbers-every-engineer-should-know",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/12-numbers-every-engineer-should-know.md",
+      "kind": "FOUNDATION",
+      "importance": "MUST",
+      "summary": "L1 cache vs RAM vs SSD vs network vs disk, memory sizes, bandwidth limits.",
+      "links": [
+        {
+          "label": "Latency numbers (gist)",
+          "url": "https://gist.github.com/jboner/2841832"
+        },
+        {
+          "label": "Interactive latency by year",
+          "url": "https://colin-scott.github.io/personal_website/research/interactive_latency.html"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "groupId": 4,
+      "code": "13",
+      "title": "OOP, The 4 Pillars for Design",
+      "slug": "13-oop-four-pillars",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/13-oop-four-pillars.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Encapsulation, abstraction, inheritance, polymorphism and why each matters for design.",
+      "links": [
+        {
+          "label": "MDN: OOP in JavaScript",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Object-oriented_programming"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "groupId": 4,
+      "code": "14",
+      "title": "SOLID: Single Responsibility Principle",
+      "slug": "14-solid-single-responsibility",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/14-solid-single-responsibility.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "A class should have one reason to change, with good vs bad examples.",
+      "links": [
+        {
+          "label": "Uncle Bob: SRP",
+          "url": "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html"
+        },
+        {
+          "label": "SOLID in TypeScript",
+          "url": "https://khalilstemmler.com/articles/solid-principles/solid-typescript/"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "groupId": 4,
+      "code": "15",
+      "title": "SOLID: Open/Closed Principle",
+      "slug": "15-solid-open-closed",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/15-solid-open-closed.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Open for extension, closed for modification. Code that grows without breaking.",
+      "links": [
+        {
+          "label": "Uncle Bob: OCP",
+          "url": "https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html"
+        },
+        {
+          "label": "SOLID in TypeScript",
+          "url": "https://khalilstemmler.com/articles/solid-principles/solid-typescript/"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "groupId": 4,
+      "code": "16",
+      "title": "SOLID: Liskov Substitution Principle",
+      "slug": "16-solid-liskov-substitution",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/16-solid-liskov-substitution.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Subtypes must be substitutable for base types. The most misunderstood principle.",
+      "links": [
+        {
+          "label": "Baeldung: SOLID",
+          "url": "https://www.baeldung.com/solid-principles"
+        },
+        {
+          "label": "Wikipedia: LSP",
+          "url": "https://en.wikipedia.org/wiki/Liskov_substitution_principle"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "groupId": 4,
+      "code": "17",
+      "title": "SOLID: Interface Segregation Principle",
+      "slug": "17-solid-interface-segregation",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/17-solid-interface-segregation.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "No client should depend on methods it does not use. Lean, focused interfaces.",
+      "links": [
+        {
+          "label": "Baeldung: SOLID",
+          "url": "https://www.baeldung.com/solid-principles"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "groupId": 4,
+      "code": "18",
+      "title": "SOLID: Dependency Inversion Principle",
+      "slug": "18-solid-dependency-inversion",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/18-solid-dependency-inversion.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "High-level modules should not depend on low-level ones. Flexible, testable code.",
+      "links": [
+        {
+          "label": "Fowler: Inversion of Control",
+          "url": "https://martinfowler.com/bliki/InversionOfControl.html"
+        },
+        {
+          "label": "Fowler: DI containers",
+          "url": "https://martinfowler.com/articles/injection.html"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "groupId": 4,
+      "code": "19",
+      "title": "DRY, KISS, YAGNI, The Clean Design Trinity",
+      "slug": "19-dry-kiss-yagni",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/19-dry-kiss-yagni.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Three rules that prevent over-engineering.",
+      "links": [
+        {
+          "label": "Fowler: YAGNI",
+          "url": "https://martinfowler.com/bliki/Yagni.html"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "groupId": 5,
+      "code": "20",
+      "title": "UML Class Diagrams",
+      "slug": "20-uml-class-diagrams",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/20-uml-class-diagrams.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Attributes, methods, visibility and relationships. The visual language of LLD.",
+      "links": [
+        {
+          "label": "Visual Paradigm: class diagram tutorial",
+          "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-class-diagram-tutorial/"
+        },
+        {
+          "label": "Mermaid class diagrams",
+          "url": "https://mermaid.js.org/syntax/classDiagram.html"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "groupId": 5,
+      "code": "21",
+      "title": "UML Sequence Diagrams",
+      "slug": "21-uml-sequence-diagrams",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/21-uml-sequence-diagrams.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "The flow of calls between objects over time. Essential for explaining a design.",
+      "links": [
+        {
+          "label": "Visual Paradigm: sequence diagrams",
+          "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/"
+        },
+        {
+          "label": "Mermaid sequence diagrams",
+          "url": "https://mermaid.js.org/syntax/sequenceDiagram.html"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "groupId": 5,
+      "code": "22",
+      "title": "UML Use Case Diagrams",
+      "slug": "22-uml-use-case-diagrams",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/22-uml-use-case-diagrams.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Capture what actors can do. The bridge between requirements and design.",
+      "links": [
+        {
+          "label": "Visual Paradigm: use case diagrams",
+          "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "groupId": 6,
+      "code": "23",
+      "title": "Class Relationships: Association, Aggregation, Composition, Inheritance",
+      "slug": "23-class-relationships",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/23-class-relationships.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "The four relationship types and the has-a vs is-a decision.",
+      "links": [
+        {
+          "label": "Visual Paradigm: aggregation vs composition",
+          "url": "https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "groupId": 6,
+      "code": "24",
+      "title": "Coupling and Cohesion",
+      "slug": "24-coupling-and-cohesion",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/24-coupling-and-cohesion.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Why loose coupling plus high cohesion equals maintainable code, and how to refactor toward it.",
+      "links": [
+        {
+          "label": "Enterprise Craftsmanship: cohesion vs coupling",
+          "url": "https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "groupId": 6,
+      "code": "25",
+      "title": "Design by Contract",
+      "slug": "25-design-by-contract",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/25-design-by-contract.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Preconditions, postconditions and invariants. Clear agreements between classes.",
+      "links": [
+        {
+          "label": "Eiffel: Design by Contract",
+          "url": "https://www.eiffel.org/doc/solutions/Design_by_Contract_and_Assertions"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "groupId": 6,
+      "code": "26",
+      "title": "Composition Over Inheritance",
+      "slug": "26-composition-over-inheritance",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/26-composition-over-inheritance.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Why the Gang of Four said favor composition, with cases where inheritance fails.",
+      "links": [
+        {
+          "label": "Fun Fun Function (video)",
+          "url": "https://www.youtube.com/watch?v=wfMtDGfHWpA"
+        },
+        {
+          "label": "Wikipedia: composition over inheritance",
+          "url": "https://en.wikipedia.org/wiki/Composition_over_inheritance"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "groupId": 6,
+      "code": "27",
+      "title": "Abstraction and Interfaces in Design",
+      "slug": "27-abstraction-and-interfaces",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/27-abstraction-and-interfaces.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Finding the right abstractions, when to create interfaces, flexibility at scale.",
+      "links": [
+        {
+          "label": "TypeScript handbook: object types",
+          "url": "https://www.typescriptlang.org/docs/handbook/2/objects.html"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "groupId": 7,
+      "code": "28",
+      "title": "What Are Design Patterns and Why They Exist",
+      "slug": "28-what-are-design-patterns",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/28-what-are-design-patterns.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "History, the three categories, and how to pick the right pattern.",
+      "links": [
+        {
+          "label": "Refactoring Guru: what is a pattern",
+          "url": "https://refactoring.guru/design-patterns/what-is-pattern"
+        },
+        {
+          "label": "Refactoring Guru: catalog",
+          "url": "https://refactoring.guru/design-patterns/catalog"
+        },
+        {
+          "label": "patterns.dev",
+          "url": "https://www.patterns.dev/"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "groupId": 7,
+      "code": "29",
+      "title": "Singleton Pattern",
+      "slug": "29-pattern-singleton",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/29-pattern-singleton.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "One instance per class. When it is necessary, when it is an anti-pattern, thread-safe forms.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/singleton"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/singleton-pattern"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "groupId": 7,
+      "code": "30",
+      "title": "Factory Method Pattern",
+      "slug": "30-pattern-factory-method",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/30-pattern-factory-method.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Delegate creation to subclasses. Create objects without naming exact classes.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/factory-method"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/factory-pattern"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "groupId": 7,
+      "code": "31",
+      "title": "Abstract Factory Pattern",
+      "slug": "31-pattern-abstract-factory",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/31-pattern-abstract-factory.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Families of related objects. A factory of factories.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/abstract-factory"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "groupId": 7,
+      "code": "32",
+      "title": "Builder Pattern",
+      "slug": "32-pattern-builder",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/32-pattern-builder.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Construct complex objects step by step. No more 15-parameter constructors.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/builder"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "groupId": 7,
+      "code": "33",
+      "title": "Prototype Pattern",
+      "slug": "33-pattern-prototype",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/33-pattern-prototype.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Create objects by cloning. When construction is expensive and copying is cheap.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/prototype"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/prototype-pattern"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "groupId": 8,
+      "code": "34",
+      "title": "Adapter Pattern",
+      "slug": "34-pattern-adapter",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/34-pattern-adapter.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Make incompatible interfaces work together. The translator between systems.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/adapter"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "groupId": 8,
+      "code": "35",
+      "title": "Decorator Pattern",
+      "slug": "35-pattern-decorator",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/35-pattern-decorator.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Add behavior dynamically without modifying original classes.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/decorator"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "groupId": 8,
+      "code": "36",
+      "title": "Facade Pattern",
+      "slug": "36-pattern-facade",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/36-pattern-facade.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "A simplified interface to a complex subsystem.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/facade"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "groupId": 8,
+      "code": "37",
+      "title": "Proxy Pattern",
+      "slug": "37-pattern-proxy",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/37-pattern-proxy.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Control access through a surrogate: lazy loading, access control, logging, caching.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/proxy"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/proxy-pattern"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "groupId": 8,
+      "code": "38",
+      "title": "Composite Pattern",
+      "slug": "38-pattern-composite",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/38-pattern-composite.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Treat objects and compositions uniformly. Tree structures like files and folders.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/composite"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "groupId": 8,
+      "code": "39",
+      "title": "Bridge Pattern",
+      "slug": "39-pattern-bridge",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/39-pattern-bridge.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Separate abstraction from implementation. Avoid the subclass explosion.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/bridge"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "groupId": 8,
+      "code": "40",
+      "title": "Flyweight Pattern",
+      "slug": "40-pattern-flyweight",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/40-pattern-flyweight.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Share common state between many objects. Millions of objects without running out of memory.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/flyweight"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/flyweight-pattern"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "groupId": 9,
+      "code": "41",
+      "title": "Observer Pattern",
+      "slug": "41-pattern-observer",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/41-pattern-observer.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "One-to-many dependency. Event systems and pub-sub.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/observer-pattern"
+        },
+        {
+          "label": "Node.js EventEmitter",
+          "url": "https://nodejs.org/api/events.html"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "groupId": 9,
+      "code": "42",
+      "title": "Strategy Pattern",
+      "slug": "42-pattern-strategy",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/42-pattern-strategy.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "A family of interchangeable algorithms. Swap behavior at runtime.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "groupId": 9,
+      "code": "43",
+      "title": "Command Pattern",
+      "slug": "43-pattern-command",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/43-pattern-command.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "A request as an object. Undo, redo, queuing and logging of operations.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/command"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/command-pattern"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "groupId": 9,
+      "code": "44",
+      "title": "Iterator Pattern",
+      "slug": "44-pattern-iterator",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/44-pattern-iterator.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Sequential access without exposing the underlying representation.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/iterator"
+        },
+        {
+          "label": "MDN: iterators and generators",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_generators"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "groupId": 9,
+      "code": "45",
+      "title": "Template Method Pattern",
+      "slug": "45-pattern-template-method",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/45-pattern-template-method.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "The skeleton of an algorithm with subclasses filling in the steps.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/template-method"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "groupId": 9,
+      "code": "46",
+      "title": "State Pattern",
+      "slug": "46-pattern-state",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/46-pattern-state.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Behavior changes with internal state. The state machine pattern.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "groupId": 9,
+      "code": "47",
+      "title": "Chain of Responsibility Pattern",
+      "slug": "47-pattern-chain-of-responsibility",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/47-pattern-chain-of-responsibility.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Pass a request along handlers: middleware, validation pipelines, approvals.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/chain-of-responsibility"
+        },
+        {
+          "label": "Express middleware",
+          "url": "https://expressjs.com/en/guide/using-middleware.html"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "groupId": 9,
+      "code": "48",
+      "title": "Mediator Pattern",
+      "slug": "48-pattern-mediator",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/48-pattern-mediator.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Centralize communication between objects: chat rooms, air traffic control.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/mediator"
+        },
+        {
+          "label": "patterns.dev (JS)",
+          "url": "https://www.patterns.dev/vanilla/mediator-pattern"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "groupId": 9,
+      "code": "49",
+      "title": "Memento Pattern",
+      "slug": "49-pattern-memento",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/49-pattern-memento.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Capture and restore state. How undo/redo and snapshots work.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/memento"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "groupId": 9,
+      "code": "50",
+      "title": "Visitor Pattern",
+      "slug": "50-pattern-visitor",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/50-pattern-visitor.md",
+      "kind": "LLD",
+      "importance": "EXTRA",
+      "summary": "Add operations to existing classes without modifying them. Double dispatch.",
+      "links": [
+        {
+          "label": "Refactoring Guru",
+          "url": "https://refactoring.guru/design-patterns/visitor"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "groupId": 10,
+      "code": "51",
+      "title": "Producer-Consumer Pattern",
+      "slug": "51-pattern-producer-consumer",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/51-pattern-producer-consumer.md",
+      "kind": "LLD",
+      "importance": "CORE",
+      "summary": "Decouple production from consumption with a shared buffer. Foundation of message queues.",
+      "links": [
+        {
+          "label": "Wikipedia: producer-consumer problem",
+          "url": "https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "groupId": 10,
+      "code": "52",
+      "title": "Concurrency Fundamentals: Thread Pool, Mutex, Locks, Event Loop",
+      "slug": "52-concurrency-fundamentals",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/52-concurrency-fundamentals.md",
+      "kind": "LLD",
+      "importance": "MUST",
+      "summary": "Thread pools, mutexes, semaphores, deadlocks, and how the Node.js event loop works.",
+      "links": [
+        {
+          "label": "Node.js: the event loop",
+          "url": "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
+        },
+        {
+          "label": "What the heck is the event loop? (video)",
+          "url": "https://www.youtube.com/watch?v=8aGhZQkoFbQ"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "groupId": 11,
+      "code": "53",
+      "title": "Client-Server Architecture",
+      "slug": "53-client-server-architecture",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/53-client-server-architecture.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Thin vs thick clients, request-response lifecycle, why everything builds on this.",
+      "links": [
+        {
+          "label": "MDN: client-server overview",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "groupId": 11,
+      "code": "54",
+      "title": "DNS Deep Dive",
+      "slug": "54-dns-deep-dive",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/54-dns-deep-dive.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Recursive resolvers, root servers, TTL, DNS-based load balancing.",
+      "links": [
+        {
+          "label": "Cloudflare: what is DNS",
+          "url": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#domain-name-system"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "groupId": 11,
+      "code": "55",
+      "title": "Load Balancing: Algorithms, L4 vs L7, Health Checks",
+      "slug": "55-load-balancing",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/55-load-balancing.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Round robin, least connections, IP hash, weighted, Layer 4 vs 7, health checks.",
+      "links": [
+        {
+          "label": "Cloudflare: load balancing",
+          "url": "https://www.cloudflare.com/learning/performance/what-is-load-balancing/"
+        },
+        {
+          "label": "AWS: implementing health checks",
+          "url": "https://aws.amazon.com/builders-library/implementing-health-checks/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#load-balancer"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "groupId": 11,
+      "code": "56",
+      "title": "Horizontal vs Vertical Scaling",
+      "slug": "56-horizontal-vs-vertical-scaling",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/56-horizontal-vs-vertical-scaling.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Scale out vs scale up: limits, costs and real decisions.",
+      "links": [
+        {
+          "label": "ByteByteGo: zero to millions",
+          "url": "https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "groupId": 11,
+      "code": "57",
+      "title": "Reverse Proxy",
+      "slug": "57-reverse-proxy",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/57-reverse-proxy.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Forward vs reverse proxy, Nginx, SSL termination, compression, vs a load balancer.",
+      "links": [
+        {
+          "label": "Cloudflare: reverse proxy",
+          "url": "https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "groupId": 11,
+      "code": "58",
+      "title": "API Gateway: The Front Door of Microservices",
+      "slug": "58-api-gateway",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/58-api-gateway.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Routing, auth, rate limiting, request transformation, vs a reverse proxy.",
+      "links": [
+        {
+          "label": "microservices.io: API gateway",
+          "url": "https://microservices.io/patterns/apigateway.html"
+        },
+        {
+          "label": "Hello Interview: API gateway",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/api-gateway"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "groupId": 12,
+      "code": "59",
+      "title": "Caching: Strategies, Layers and Pitfalls",
+      "slug": "59-caching-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/59-caching-in-depth.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Cache-aside, write-through, write-behind, eviction, stampede, invalidation.",
+      "links": [
+        {
+          "label": "AWS: caching challenges",
+          "url": "https://aws.amazon.com/builders-library/caching-challenges-and-strategies/"
+        },
+        {
+          "label": "AWS: caching best practices",
+          "url": "https://aws.amazon.com/caching/best-practices/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#cache"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "groupId": 12,
+      "code": "60",
+      "title": "CDN: Content Delivery Networks",
+      "slug": "60-cdn",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/60-cdn.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "How CDNs work, push vs pull, edge servers, invalidation, Netflix and YouTube.",
+      "links": [
+        {
+          "label": "Cloudflare: what is a CDN",
+          "url": "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#content-delivery-network"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "groupId": 13,
+      "code": "61",
+      "title": "Databases: SQL vs NoSQL Deep Dive",
+      "slug": "61-databases-sql-vs-nosql",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/61-databases-sql-vs-nosql.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Relational vs document vs key-value vs column vs graph, ACID vs BASE.",
+      "links": [
+        {
+          "label": "MongoDB: NoSQL vs SQL",
+          "url": "https://www.mongodb.com/resources/basics/databases/nosql-explained/nosql-vs-sql"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#sql-or-nosql"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "groupId": 13,
+      "code": "62",
+      "title": "Database Indexing Under the Hood",
+      "slug": "62-database-indexing",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/62-database-indexing.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "B-tree, B+ tree, hash, composite and covering indexes. When they help and hurt.",
+      "links": [
+        {
+          "label": "Use The Index, Luke",
+          "url": "https://use-the-index-luke.com/"
+        },
+        {
+          "label": "PostgreSQL: indexes",
+          "url": "https://www.postgresql.org/docs/current/indexes.html"
+        }
+      ]
+    },
+    {
+      "id": 63,
+      "groupId": 13,
+      "code": "63",
+      "title": "Database Replication",
+      "slug": "63-database-replication",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/63-database-replication.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Master-slave, master-master, lag, read replicas, sync vs async, failover.",
+      "links": [
+        {
+          "label": "PostgreSQL: high availability",
+          "url": "https://www.postgresql.org/docs/current/high-availability.html"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#master-slave-replication"
+        },
+        {
+          "label": "DDIA ch. 5 Replication",
+          "url": "https://dataintensive.net/"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "groupId": 13,
+      "code": "64",
+      "title": "Database Sharding",
+      "slug": "64-database-sharding",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/64-database-sharding.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Range, hash and directory sharding, hotspots, resharding.",
+      "links": [
+        {
+          "label": "AWS: what is sharding",
+          "url": "https://aws.amazon.com/what-is/database-sharding/"
+        },
+        {
+          "label": "DigitalOcean: sharding explained",
+          "url": "https://www.digitalocean.com/community/tutorials/understanding-database-sharding"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#sharding"
+        }
+      ]
+    },
+    {
+      "id": 65,
+      "groupId": 13,
+      "code": "65",
+      "title": "Database Connection Pooling",
+      "slug": "65-database-connection-pooling",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/65-database-connection-pooling.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Why connections are expensive, pool sizing, lifecycle, libraries.",
+      "links": [
+        {
+          "label": "HikariCP: about pool sizing",
+          "url": "https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing"
+        },
+        {
+          "label": "Cockroach: what is connection pooling",
+          "url": "https://www.cockroachlabs.com/blog/what-is-connection-pooling/"
+        }
+      ]
+    },
+    {
+      "id": 66,
+      "groupId": 13,
+      "code": "66",
+      "title": "Database Transactions and Isolation Levels",
+      "slug": "66-database-transactions-and-isolation",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/66-database-transactions-and-isolation.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Read uncommitted to serializable, the anomalies each prevents, performance cost.",
+      "links": [
+        {
+          "label": "PostgreSQL: transaction isolation",
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+        },
+        {
+          "label": "DDIA ch. 7 Transactions",
+          "url": "https://dataintensive.net/"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "groupId": 14,
+      "code": "67",
+      "title": "Message Queues and Async Processing",
+      "slug": "67-message-queues",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/67-message-queues.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Producers and consumers, Kafka vs RabbitMQ, delivery guarantees.",
+      "links": [
+        {
+          "label": "Kafka: design",
+          "url": "https://kafka.apache.org/documentation/#design"
+        },
+        {
+          "label": "Hello Interview: Kafka",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/kafka"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#message-queues"
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "groupId": 14,
+      "code": "68",
+      "title": "Event-Driven Architecture",
+      "slug": "68-event-driven-architecture",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/68-event-driven-architecture.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Events vs commands, event sourcing, CQRS, when events beat request-response.",
+      "links": [
+        {
+          "label": "Fowler: event sourcing",
+          "url": "https://martinfowler.com/eaaDev/EventSourcing.html"
+        },
+        {
+          "label": "Fowler: CQRS",
+          "url": "https://martinfowler.com/bliki/CQRS.html"
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "groupId": 14,
+      "code": "69",
+      "title": "API Design: REST vs GraphQL vs gRPC",
+      "slug": "69-api-design-rest-graphql-grpc",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/69-api-design-rest-graphql-grpc.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "When to use each, REST maturity, over-fetching, versioning, pagination.",
+      "links": [
+        {
+          "label": "Fowler: Richardson maturity model",
+          "url": "https://martinfowler.com/articles/richardsonMaturityModel.html"
+        },
+        {
+          "label": "GraphQL: learn",
+          "url": "https://graphql.org/learn/"
+        },
+        {
+          "label": "gRPC: introduction",
+          "url": "https://grpc.io/docs/what-is-grpc/introduction/"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "groupId": 14,
+      "code": "70",
+      "title": "Rate Limiting: Algorithms and Implementation",
+      "slug": "70-rate-limiting",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/70-rate-limiting.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Token bucket, leaky bucket, fixed window, sliding log, sliding counter.",
+      "links": [
+        {
+          "label": "Stripe: scaling your API with rate limiters",
+          "url": "https://stripe.com/blog/rate-limiters"
+        },
+        {
+          "label": "Cloudflare: counting things",
+          "url": "https://blog.cloudflare.com/counting-things-a-lot-of-different-things/"
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "groupId": 15,
+      "code": "71",
+      "title": "Microservices vs Monolith",
+      "slug": "71-microservices-vs-monolith",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/71-microservices-vs-monolith.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "When each makes sense, migration, service boundaries, the distributed monolith trap.",
+      "links": [
+        {
+          "label": "Fowler: microservices",
+          "url": "https://martinfowler.com/articles/microservices.html"
+        },
+        {
+          "label": "Fowler: monolith first",
+          "url": "https://martinfowler.com/bliki/MonolithFirst.html"
+        }
+      ]
+    },
+    {
+      "id": 72,
+      "groupId": 15,
+      "code": "72",
+      "title": "Service Discovery",
+      "slug": "72-service-discovery",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/72-service-discovery.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Client-side vs server-side discovery, registries, Consul, etcd, Kubernetes.",
+      "links": [
+        {
+          "label": "microservices.io: client-side discovery",
+          "url": "https://microservices.io/patterns/client-side-discovery.html"
+        },
+        {
+          "label": "NGINX: service discovery",
+          "url": "https://www.nginx.com/blog/service-discovery-in-a-microservices-architecture/"
+        }
+      ]
+    },
+    {
+      "id": 73,
+      "groupId": 15,
+      "code": "73",
+      "title": "Circuit Breaker Pattern",
+      "slug": "73-circuit-breaker",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/73-circuit-breaker.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Closed, open, half-open. Preventing cascading failures.",
+      "links": [
+        {
+          "label": "Fowler: circuit breaker",
+          "url": "https://martinfowler.com/bliki/CircuitBreaker.html"
+        },
+        {
+          "label": "AWS: timeouts, retries, backoff",
+          "url": "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "groupId": 16,
+      "code": "74",
+      "title": "Consistent Hashing",
+      "slug": "74-consistent-hashing",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/74-consistent-hashing.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "The naive hashing problem, hash rings, virtual nodes, distributed caches and databases.",
+      "links": [
+        {
+          "label": "ByteByteGo: consistent hashing",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-consistent-hashing"
+        },
+        {
+          "label": "Toptal: consistent hashing",
+          "url": "https://www.toptal.com/big-data/consistent-hashing"
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "groupId": 16,
+      "code": "75",
+      "title": "Data Partitioning Strategies",
+      "slug": "75-data-partitioning",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/75-data-partitioning.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Range, hash, directory and geographic partitioning, cross-partition queries.",
+      "links": [
+        {
+          "label": "DDIA ch. 6 Partitioning",
+          "url": "https://dataintensive.net/"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer#federation"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "groupId": 16,
+      "code": "76",
+      "title": "Eventual Consistency in Practice",
+      "slug": "76-eventual-consistency",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/76-eventual-consistency.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Conflict resolution, vector clocks, last-writer-wins, CRDTs.",
+      "links": [
+        {
+          "label": "Vogels: eventually consistent",
+          "url": "https://www.allthingsdistributed.com/2008/12/eventually_consistent.html"
+        },
+        {
+          "label": "crdt.tech",
+          "url": "https://crdt.tech/"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "groupId": 16,
+      "code": "77",
+      "title": "Distributed Transactions: 2PC and SAGA",
+      "slug": "77-distributed-transactions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/77-distributed-transactions.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Two-phase commit and its limits, SAGA choreography vs orchestration, compensations.",
+      "links": [
+        {
+          "label": "Fowler: two-phase commit",
+          "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/two-phase-commit.html"
+        },
+        {
+          "label": "microservices.io: saga",
+          "url": "https://microservices.io/patterns/data/saga.html"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "groupId": 17,
+      "code": "78",
+      "title": "Blob Storage at Scale",
+      "slug": "78-blob-storage",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/78-blob-storage.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "How S3 works, multipart upload, pre-signed URLs, storage classes, lifecycle.",
+      "links": [
+        {
+          "label": "AWS S3 user guide",
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+        },
+        {
+          "label": "Hello Interview: Dropbox",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/dropbox"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "groupId": 17,
+      "code": "79",
+      "title": "Search Systems",
+      "slug": "79-search-systems",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/79-search-systems.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Inverted index, tokenization, TF-IDF, BM25, Elasticsearch architecture.",
+      "links": [
+        {
+          "label": "Elastic: inverted index",
+          "url": "https://www.elastic.co/guide/en/elasticsearch/guide/current/inverted-index.html"
+        },
+        {
+          "label": "Hello Interview: Elasticsearch",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/elasticsearch"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "groupId": 17,
+      "code": "80",
+      "title": "Monitoring and Observability",
+      "slug": "80-monitoring-and-observability",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/80-monitoring-and-observability.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Logs, metrics, traces, Prometheus, Grafana, distributed tracing, alerting.",
+      "links": [
+        {
+          "label": "Google SRE: monitoring",
+          "url": "https://sre.google/sre-book/monitoring-distributed-systems/"
+        },
+        {
+          "label": "OpenTelemetry: observability primer",
+          "url": "https://opentelemetry.io/docs/concepts/observability-primer/"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "groupId": 17,
+      "code": "81",
+      "title": "Security Fundamentals in System Design",
+      "slug": "81-security-fundamentals",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/81-security-fundamentals.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Auth at scale, OAuth 2.0, JWT, TLS vs at-rest encryption, secrets, OWASP.",
+      "links": [
+        {
+          "label": "OAuth 2.0",
+          "url": "https://oauth.net/2/"
+        },
+        {
+          "label": "JWT introduction",
+          "url": "https://jwt.io/introduction"
+        },
+        {
+          "label": "OWASP Top Ten",
+          "url": "https://owasp.org/www-project-top-ten/"
+        }
+      ]
+    },
+    {
+      "id": 82,
+      "groupId": 18,
+      "code": "82",
+      "title": "Protocols: HTTP/2, HTTP/3, WebSockets, SSE, Long Polling",
+      "slug": "82-content-negotiation-and-protocols",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/82-content-negotiation-and-protocols.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Which protocol when: multiplexing, server push, bidirectional, real-time patterns.",
+      "links": [
+        {
+          "label": "Cloudflare: HTTP/3",
+          "url": "https://www.cloudflare.com/learning/performance/what-is-http3/"
+        },
+        {
+          "label": "MDN: WebSockets API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API"
+        },
+        {
+          "label": "MDN: server-sent events",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events"
+        }
+      ]
+    },
+    {
+      "id": 83,
+      "groupId": 18,
+      "code": "83",
+      "title": "Leader Election in Distributed Systems",
+      "slug": "83-leader-election",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/83-leader-election.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Why leaders, Bully algorithm, Raft basics, ZooKeeper election.",
+      "links": [
+        {
+          "label": "Raft visualised",
+          "url": "https://thesecretlivesofdata.com/raft/"
+        },
+        {
+          "label": "raft.github.io",
+          "url": "https://raft.github.io/"
+        },
+        {
+          "label": "AWS: leader election",
+          "url": "https://aws.amazon.com/builders-library/leader-election-in-distributed-systems/"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "groupId": 18,
+      "code": "84",
+      "title": "Distributed Locking",
+      "slug": "84-distributed-locking",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/84-distributed-locking.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "Why local locks fail, Redlock, ZooKeeper locks, fencing tokens.",
+      "links": [
+        {
+          "label": "Kleppmann: how to do distributed locking",
+          "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html"
+        },
+        {
+          "label": "Redis: distributed locks",
+          "url": "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "groupId": 18,
+      "code": "85",
+      "title": "Idempotency: Designing Safe Retries",
+      "slug": "85-idempotency",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/85-idempotency.md",
+      "kind": "HLD",
+      "importance": "MUST",
+      "summary": "Idempotency keys, why payments need it, making APIs idempotent.",
+      "links": [
+        {
+          "label": "Stripe: designing robust APIs",
+          "url": "https://stripe.com/blog/idempotency"
+        },
+        {
+          "label": "AWS: idempotent APIs",
+          "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/"
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "groupId": 16,
+      "code": "86",
+      "title": "Data Replication Strategies: Quorum, Gossip, Anti-Entropy",
+      "slug": "86-data-replication-strategies",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/86-data-replication-strategies.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "W+R>N, gossip protocol, Merkle trees, tunable consistency.",
+      "links": [
+        {
+          "label": "Fowler: quorum",
+          "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/quorum.html"
+        },
+        {
+          "label": "Fowler: gossip",
+          "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/gossip-dissemination.html"
+        },
+        {
+          "label": "Dynamo paper (PDF)",
+          "url": "https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf"
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "groupId": 19,
+      "code": "87",
+      "title": "Batch vs Stream Processing",
+      "slug": "87-batch-vs-stream-processing",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/87-batch-vs-stream-processing.md",
+      "kind": "HLD",
+      "importance": "CORE",
+      "summary": "MapReduce, Hadoop, Kafka Streams, Flink, Lambda and Kappa architectures.",
+      "links": [
+        {
+          "label": "MapReduce paper",
+          "url": "https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/"
+        },
+        {
+          "label": "Kreps: questioning the Lambda architecture",
+          "url": "https://www.oreilly.com/radar/questioning-the-lambda-architecture/"
+        },
+        {
+          "label": "Hello Interview: Flink",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/flink"
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "groupId": 19,
+      "code": "88",
+      "title": "Containers and Orchestration: Docker and Kubernetes",
+      "slug": "88-containers-and-orchestration",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/88-containers-and-orchestration.md",
+      "kind": "HLD",
+      "importance": "EXTRA",
+      "summary": "What containers are, why they matter, pods, services and deployments conceptually.",
+      "links": [
+        {
+          "label": "Docker overview",
+          "url": "https://docs.docker.com/get-started/docker-overview/"
+        },
+        {
+          "label": "Kubernetes overview",
+          "url": "https://kubernetes.io/docs/concepts/overview/"
+        }
+      ]
+    },
+    {
+      "id": 89,
+      "groupId": 19,
+      "code": "89",
+      "title": "Serverless Architecture",
+      "slug": "89-serverless-architecture",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/89-serverless-architecture.md",
+      "kind": "HLD",
+      "importance": "EXTRA",
+      "summary": "Lambda concepts, cold starts, when serverless makes sense, limits at scale.",
+      "links": [
+        {
+          "label": "AWS: Lambda performance, part 1",
+          "url": "https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "groupId": 19,
+      "code": "90",
+      "title": "Disaster Recovery and Backup Strategies",
+      "slug": "90-disaster-recovery",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/90-disaster-recovery.md",
+      "kind": "HLD",
+      "importance": "EXTRA",
+      "summary": "RPO vs RTO, hot/warm/cold standby, multi-region, chaos engineering.",
+      "links": [
+        {
+          "label": "AWS: DR options in the cloud",
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html"
+        },
+        {
+          "label": "Principles of chaos engineering",
+          "url": "https://principlesofchaos.org/"
+        }
+      ]
+    },
+    {
+      "id": 91,
+      "groupId": 19,
+      "code": "91",
+      "title": "Data Lakes and Data Warehouses",
+      "slug": "91-data-lakes-and-warehouses",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/91-data-lakes-and-warehouses.md",
+      "kind": "HLD",
+      "importance": "EXTRA",
+      "summary": "OLTP vs OLAP, lake vs warehouse vs lakehouse, ETL vs ELT, columnar storage.",
+      "links": [
+        {
+          "label": "Databricks: data lakehouse",
+          "url": "https://www.databricks.com/glossary/data-lakehouse"
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "groupId": 19,
+      "code": "92",
+      "title": "Graph Databases and Relationship-Heavy Systems",
+      "slug": "92-graph-databases-and-relationships",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/92-graph-databases-and-relationships.md",
+      "kind": "HLD",
+      "importance": "EXTRA",
+      "summary": "When relational is not enough, Neo4j, social graphs, recommendations, shortest path.",
+      "links": [
+        {
+          "label": "Neo4j: what is a graph database",
+          "url": "https://neo4j.com/docs/getting-started/graph-database/"
+        }
+      ]
+    },
+    {
+      "id": 93,
+      "groupId": 20,
+      "code": "93",
+      "title": "How to Approach Any HLD Problem: The 5-Step Framework",
+      "slug": "93-hld-approach-framework",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/93-hld-approach-framework.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Requirements, estimation, high-level design, deep dive, bottlenecks.",
+      "links": [
+        {
+          "label": "ByteByteGo: the framework",
+          "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews"
+        },
+        {
+          "label": "Hello Interview: delivery framework",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/delivery"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "groupId": 20,
+      "code": "94",
+      "title": "Design a URL Shortener (TinyURL)",
+      "slug": "94-hld-url-shortener",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/94-hld-url-shortener.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Base62, key generation service, redirection, analytics, read-heavy design.",
+      "links": [
+        {
+          "label": "ByteByteGo: URL shortener",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-url-shortener"
+        },
+        {
+          "label": "Hello Interview: Bitly",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/bitly"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "groupId": 20,
+      "code": "95",
+      "title": "Design a Rate Limiter",
+      "slug": "95-hld-rate-limiter",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/95-hld-rate-limiter.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Distributed limiting, algorithm choice, Redis implementation, rules engine.",
+      "links": [
+        {
+          "label": "ByteByteGo: rate limiter",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter"
+        },
+        {
+          "label": "Stripe: rate limiters",
+          "url": "https://stripe.com/blog/rate-limiters"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "groupId": 20,
+      "code": "96",
+      "title": "Design a Distributed Key-Value Store",
+      "slug": "96-hld-key-value-store",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/96-hld-key-value-store.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Partitioning, replication, consistency, failure detection. A mini DynamoDB.",
+      "links": [
+        {
+          "label": "ByteByteGo: key-value store",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-key-value-store"
+        },
+        {
+          "label": "Dynamo paper (PDF)",
+          "url": "https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf"
+        },
+        {
+          "label": "Hello Interview: DynamoDB",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/dynamodb"
+        }
+      ]
+    },
+    {
+      "id": 97,
+      "groupId": 20,
+      "code": "97",
+      "title": "Design a Pastebin",
+      "slug": "97-hld-pastebin",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/97-hld-pastebin.md",
+      "kind": "HLD_CASE",
+      "importance": "EXTRA",
+      "summary": "Content storage, unique URLs, expiry, read-heavy optimisation, abuse prevention.",
+      "links": [
+        {
+          "label": "Primer: Pastebin solution",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "groupId": 20,
+      "code": "98",
+      "title": "Design a Notification System",
+      "slug": "98-hld-notification-system",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/98-hld-notification-system.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Push, SMS, email; prioritisation, rate limits, templates, delivery guarantees, fanout.",
+      "links": [
+        {
+          "label": "ByteByteGo: notification system",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-notification-system"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "groupId": 21,
+      "code": "99",
+      "title": "Design WhatsApp / Real-Time Chat",
+      "slug": "99-hld-chat-system",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/99-hld-chat-system.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "WebSockets, delivery, group chat, presence, storage, end-to-end encryption concepts.",
+      "links": [
+        {
+          "label": "ByteByteGo: chat system",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-chat-system"
+        },
+        {
+          "label": "Hello Interview: WhatsApp",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/whatsapp"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "groupId": 21,
+      "code": "100",
+      "title": "Design Instagram / Photo Sharing",
+      "slug": "100-hld-instagram",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/100-hld-instagram.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Feed generation, image storage and CDN, fanout on write vs read, the celebrity problem.",
+      "links": [
+        {
+          "label": "ByteByteGo: news feed",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-news-feed-system"
+        },
+        {
+          "label": "Hello Interview: FB news feed",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/fb-news-feed"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "groupId": 21,
+      "code": "101",
+      "title": "Design YouTube / Video Streaming",
+      "slug": "101-hld-youtube",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/101-hld-youtube.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Upload pipeline, transcoding, adaptive bitrate, CDN, recommendations.",
+      "links": [
+        {
+          "label": "ByteByteGo: YouTube",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-youtube"
+        },
+        {
+          "label": "Hello Interview: YouTube",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/youtube"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "groupId": 21,
+      "code": "102",
+      "title": "Design Uber / Ride Sharing",
+      "slug": "102-hld-uber",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/102-hld-uber.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Location tracking, matching, QuadTree and Geohash, surge pricing, ETA.",
+      "links": [
+        {
+          "label": "Hello Interview: Uber",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/uber"
+        },
+        {
+          "label": "Uber: H3 hexagonal index",
+          "url": "https://www.uber.com/blog/h3/"
+        },
+        {
+          "label": "Uber: engineering blog",
+          "url": "https://www.uber.com/blog/engineering/"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "groupId": 21,
+      "code": "103",
+      "title": "Design Twitter / Social Feed",
+      "slug": "103-hld-twitter",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/103-hld-twitter.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Tweet fanout, timelines, trending, search, celebrity optimisation, caching.",
+      "links": [
+        {
+          "label": "Primer: Twitter timeline solution",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md"
+        },
+        {
+          "label": "InfoQ: Twitter timeline scalability",
+          "url": "https://www.infoq.com/presentations/Twitter-Timeline-Scalability/"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "groupId": 22,
+      "code": "104",
+      "title": "Design Amazon / E-Commerce Platform",
+      "slug": "104-hld-amazon",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/104-hld-amazon.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Catalog, cart, order pipeline, inventory, payment, search, recommendations.",
+      "links": [
+        {
+          "label": "Primer: Amazon sales rank solution",
+          "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md"
+        },
+        {
+          "label": "Stripe: online migrations at scale",
+          "url": "https://stripe.com/blog/online-migrations"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "groupId": 22,
+      "code": "105",
+      "title": "Design a Distributed Cache (Redis)",
+      "slug": "105-hld-distributed-cache",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/105-hld-distributed-cache.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Partitioning, replication, eviction, persistence, pub-sub, cluster mode.",
+      "links": [
+        {
+          "label": "Hello Interview: Redis",
+          "url": "https://www.hellointerview.com/learn/system-design/deep-dives/redis"
+        },
+        {
+          "label": "Redis: scaling with cluster",
+          "url": "https://redis.io/docs/latest/operate/oss_and_stack/management/scaling/"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "groupId": 22,
+      "code": "106",
+      "title": "Design a Search Autocomplete System",
+      "slug": "106-hld-search-autocomplete",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/106-hld-search-autocomplete.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Trie, ranking, real-time updates, distributed trie, typeahead service.",
+      "links": [
+        {
+          "label": "ByteByteGo: autocomplete",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-search-autocomplete-system"
+        }
+      ]
+    },
+    {
+      "id": 107,
+      "groupId": 22,
+      "code": "107",
+      "title": "Design a Payment System",
+      "slug": "107-hld-payment-system",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/107-hld-payment-system.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Payment flow, idempotency, double-entry ledger, reconciliation, fraud, PCI.",
+      "links": [
+        {
+          "label": "Hello Interview: payment system",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/payment-system"
+        },
+        {
+          "label": "Pragmatic Engineer: designing a payment system",
+          "url": "https://newsletter.pragmaticengineer.com/p/designing-a-payment-system"
+        },
+        {
+          "label": "Stripe: idempotency",
+          "url": "https://stripe.com/blog/idempotency"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "groupId": 22,
+      "code": "108",
+      "title": "Design Google Docs / Collaborative Editing",
+      "slug": "108-hld-google-docs",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/108-hld-google-docs.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "Real-time collaboration, OT, CRDT, conflict resolution, WebSocket architecture.",
+      "links": [
+        {
+          "label": "Hello Interview: Google Docs",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/google-docs"
+        },
+        {
+          "label": "Figma: how multiplayer works",
+          "url": "https://www.figma.com/blog/how-figmas-multiplayer-technology-works/"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "groupId": 22,
+      "code": "109",
+      "title": "Design a Web Crawler",
+      "slug": "109-hld-web-crawler",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/109-hld-web-crawler.md",
+      "kind": "HLD_CASE",
+      "importance": "CORE",
+      "summary": "URL frontier, politeness, dedup, distributed crawling, robots.txt, parsing pipeline.",
+      "links": [
+        {
+          "label": "ByteByteGo: web crawler",
+          "url": "https://bytebytego.com/courses/system-design-interview/design-a-web-crawler"
+        },
+        {
+          "label": "Hello Interview: web crawler",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/web-crawler"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "groupId": 22,
+      "code": "110",
+      "title": "Design Ticketmaster / Event Booking",
+      "slug": "110-hld-ticket-master",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/110-hld-ticket-master.md",
+      "kind": "HLD_CASE",
+      "importance": "MUST",
+      "summary": "Seat reservation, distributed locks, flash sales, virtual queue, payment timeout.",
+      "links": [
+        {
+          "label": "Hello Interview: Ticketmaster",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/ticketmaster"
+        },
+        {
+          "label": "ByteByteGo: hotel reservation",
+          "url": "https://bytebytego.com/courses/system-design-interview/hotel-reservation-system"
+        }
+      ]
+    },
+    {
+      "id": 111,
+      "groupId": 23,
+      "code": "111",
+      "title": "How to Approach Any LLD Problem",
+      "slug": "111-lld-approach-framework",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/111-lld-approach-framework.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Requirements, identify objects, define relationships, apply patterns, write code.",
+      "links": [
+        {
+          "label": "awesome-low-level-design (repo)",
+          "url": "https://github.com/ashishps1/awesome-low-level-design"
+        },
+        {
+          "label": "low-level-design-primer",
+          "url": "https://github.com/prasadgujar/low-level-design-primer"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "groupId": 23,
+      "code": "112",
+      "title": "Design a Parking Lot System",
+      "slug": "112-lld-parking-lot",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/112-lld-parking-lot.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Vehicles, spots, floors, ticketing, payment. The classic starter.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/parking-lot.md"
+        },
+        {
+          "label": "Refactoring Guru: strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": 113,
+      "groupId": 23,
+      "code": "113",
+      "title": "Design a Library Management System",
+      "slug": "113-lld-library-management",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/113-lld-library-management.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Books, members, borrowing, reservations, fines.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/library-management-system.md"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "groupId": 23,
+      "code": "114",
+      "title": "Design an ATM Machine",
+      "slug": "114-lld-atm-machine",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/114-lld-atm-machine.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Idle, card inserted, PIN entered, transaction. State pattern in practice.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/atm.md"
+        },
+        {
+          "label": "Refactoring Guru: state",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "groupId": 23,
+      "code": "115",
+      "title": "Design an Elevator System",
+      "slug": "115-lld-elevator-system",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/115-lld-elevator-system.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "SCAN and LOOK scheduling, multiple elevators, request queues, state.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/elevator-system.md"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "groupId": 23,
+      "code": "116",
+      "title": "Design a Vending Machine",
+      "slug": "116-lld-vending-machine",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/116-lld-vending-machine.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "State pattern, inventory, payment, dispensing.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/vending-machine.md"
+        },
+        {
+          "label": "Refactoring Guru: state",
+          "url": "https://refactoring.guru/design-patterns/state"
+        }
+      ]
+    },
+    {
+      "id": 117,
+      "groupId": 24,
+      "code": "117",
+      "title": "Design a Hotel Booking System",
+      "slug": "117-lld-hotel-booking",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/117-lld-hotel-booking.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Rooms, reservations, availability, pricing, cancellation policies, search.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/hotel-management-system.md"
+        },
+        {
+          "label": "ByteByteGo: hotel reservation",
+          "url": "https://bytebytego.com/courses/system-design-interview/hotel-reservation-system"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "groupId": 24,
+      "code": "118",
+      "title": "Design BookMyShow / Movie Ticket Booking",
+      "slug": "118-lld-movie-ticket-booking",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/118-lld-movie-ticket-booking.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Theaters, shows, seat selection, concurrent booking, payment, locking.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/movie-ticket-booking-system.md"
+        }
+      ]
+    },
+    {
+      "id": 119,
+      "groupId": 24,
+      "code": "119",
+      "title": "Design a Chess Game",
+      "slug": "119-lld-chess-game",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/119-lld-chess-game.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Board, pieces, move validation, check and checkmate, game state.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/chess-game.md"
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "groupId": 24,
+      "code": "120",
+      "title": "Design a Snake and Ladder Game",
+      "slug": "120-lld-snake-and-ladder",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/120-lld-snake-and-ladder.md",
+      "kind": "LLD_CASE",
+      "importance": "EXTRA",
+      "summary": "Board generation, dice, turns, snakes and ladders, win detection.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/snake-and-ladder.md"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "groupId": 24,
+      "code": "121",
+      "title": "Design Splitwise / Expense Sharing",
+      "slug": "121-lld-splitwise",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/121-lld-splitwise.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Users, groups, expenses, split strategies, debt simplification, balances.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/splitwise.md"
+        },
+        {
+          "label": "Debt simplification algorithm",
+          "url": "https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688"
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "groupId": 25,
+      "code": "122",
+      "title": "Design a Logging Framework",
+      "slug": "122-lld-logging-framework",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/122-lld-logging-framework.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Levels, formatters, appenders, sinks, singleton logger, strategy for output.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/logging-framework.md"
+        },
+        {
+          "label": "Refactoring Guru: chain of responsibility",
+          "url": "https://refactoring.guru/design-patterns/chain-of-responsibility"
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "groupId": 25,
+      "code": "123",
+      "title": "Design a Rate Limiter (Class Level)",
+      "slug": "123-lld-rate-limiter",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/123-lld-rate-limiter.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Token bucket and sliding window as classes, interface design, pluggable algorithms.",
+      "links": [
+        {
+          "label": "Stripe: rate limiters",
+          "url": "https://stripe.com/blog/rate-limiters"
+        },
+        {
+          "label": "Refactoring Guru: strategy",
+          "url": "https://refactoring.guru/design-patterns/strategy"
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "groupId": 25,
+      "code": "124",
+      "title": "Design an LRU Cache",
+      "slug": "124-lld-lru-cache",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/124-lld-lru-cache.md",
+      "kind": "LLD_CASE",
+      "importance": "MUST",
+      "summary": "Doubly linked list plus hash map, O(1) get and put, eviction.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/lru-cache.md"
+        },
+        {
+          "label": "LeetCode 146: LRU Cache",
+          "url": "https://leetcode.com/problems/lru-cache/"
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "groupId": 25,
+      "code": "125",
+      "title": "Design a Notification Service (Class Level)",
+      "slug": "125-lld-notification-service",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/125-lld-notification-service.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Types, channels, templates, observer, priority queue, delivery tracking.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/pub-sub-system.md"
+        },
+        {
+          "label": "Refactoring Guru: observer",
+          "url": "https://refactoring.guru/design-patterns/observer"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "groupId": 26,
+      "code": "126",
+      "title": "Design a Food Delivery App (Zomato/Swiggy)",
+      "slug": "126-lld-food-delivery",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/126-lld-food-delivery.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Restaurants, menus, orders, agents, tracking, pricing, assignment.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/food-delivery-service.md"
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "groupId": 26,
+      "code": "127",
+      "title": "Design Uber Driver-Rider Matching (Class Level)",
+      "slug": "127-lld-uber-matching",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/127-lld-uber-matching.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Location, matching, ride states, fare calculation, trip management.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/ride-sharing-service.md"
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "groupId": 26,
+      "code": "128",
+      "title": "Design a Social Media Feed (Class Level)",
+      "slug": "128-lld-social-media-feed",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/128-lld-social-media-feed.md",
+      "kind": "LLD_CASE",
+      "importance": "EXTRA",
+      "summary": "Posts, users, feed generation, ranking, pagination, likes and comments.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/social-networking-service.md"
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "groupId": 25,
+      "code": "129",
+      "title": "Design an API Gateway (Class Level)",
+      "slug": "129-lld-api-gateway",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/129-lld-api-gateway.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Routing, middleware chain, auth, rate limiting, request and response transforms.",
+      "links": [
+        {
+          "label": "Express middleware",
+          "url": "https://expressjs.com/en/guide/using-middleware.html"
+        },
+        {
+          "label": "Refactoring Guru: chain of responsibility",
+          "url": "https://refactoring.guru/design-patterns/chain-of-responsibility"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "groupId": 25,
+      "code": "130",
+      "title": "Design a Task Scheduler",
+      "slug": "130-lld-task-scheduler",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/130-lld-task-scheduler.md",
+      "kind": "LLD_CASE",
+      "importance": "CORE",
+      "summary": "Cron-like scheduling, priority queue, delayed execution, recurring tasks, retries.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/task-management-system.md"
+        },
+        {
+          "label": "node-cron",
+          "url": "https://github.com/node-cron/node-cron"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "groupId": 26,
+      "code": "131",
+      "title": "Design an Online Auction System (eBay)",
+      "slug": "131-lld-online-auction",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/131-lld-online-auction.md",
+      "kind": "LLD_CASE",
+      "importance": "EXTRA",
+      "summary": "Bidding, lifecycle, validation, auto-bidding, winner determination, concurrency.",
+      "links": [
+        {
+          "label": "awesome-low-level-design",
+          "url": "https://github.com/ashishps1/awesome-low-level-design/blob/main/problems/online-auction-system.md"
+        },
+        {
+          "label": "Hello Interview: online auction",
+          "url": "https://www.hellointerview.com/learn/system-design/problem-breakdowns/online-auction"
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "groupId": 25,
+      "code": "132",
+      "title": "Design an In-Memory File System",
+      "slug": "132-lld-file-system",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/132-lld-file-system.md",
+      "kind": "LLD_CASE",
+      "importance": "EXTRA",
+      "summary": "Files, directories, composite pattern, path resolution, permissions, CRUD.",
+      "links": [
+        {
+          "label": "Refactoring Guru: composite",
+          "url": "https://refactoring.guru/design-patterns/composite"
+        },
+        {
+          "label": "LeetCode 588: in-memory file system",
+          "url": "https://leetcode.com/problems/design-in-memory-file-system/"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "groupId": 27,
+      "code": "133",
+      "title": "The System Design Trade-Off Matrix",
+      "slug": "133-system-design-trade-off-matrix",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/133-system-design-trade-off-matrix.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "summary": "Every major trade-off in one matrix, and how to reason about them.",
+      "links": [
+        {
+          "label": "Primer: trade-offs",
+          "url": "https://github.com/donnemartin/system-design-primer#performance-vs-scalability"
+        },
+        {
+          "label": "DDIA (book)",
+          "url": "https://dataintensive.net/"
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "groupId": 27,
+      "code": "134",
+      "title": "Multi-Region Architecture and Global Systems",
+      "slug": "134-multi-region-architecture",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/134-multi-region-architecture.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "summary": "Active-active vs active-passive, data sovereignty, global LB, cross-region replication.",
+      "links": [
+        {
+          "label": "Netflix: active-active for multi-regional resiliency",
+          "url": "https://netflixtechblog.com/active-active-for-multi-regional-resiliency-c47719f6685b"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "groupId": 27,
+      "code": "135",
+      "title": "Zero Downtime Deployments",
+      "slug": "135-zero-downtime-deployments",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/135-zero-downtime-deployments.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "summary": "Blue-green, canary, rolling, feature flags, migrations without downtime.",
+      "links": [
+        {
+          "label": "Fowler: blue-green deployment",
+          "url": "https://martinfowler.com/bliki/BlueGreenDeployment.html"
+        },
+        {
+          "label": "Fowler: canary release",
+          "url": "https://martinfowler.com/bliki/CanaryRelease.html"
+        },
+        {
+          "label": "AWS: safe hands-off deployments",
+          "url": "https://aws.amazon.com/builders-library/automating-safe-hands-off-deployments/"
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "groupId": 27,
+      "code": "136",
+      "title": "Cost Optimization in System Design",
+      "slug": "136-cost-optimization",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/136-cost-optimization.md",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "summary": "Estimating infra cost, reserved vs on-demand, caching ROI, right-sizing.",
+      "links": [
+        {
+          "label": "AWS Well-Architected: cost pillar",
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html"
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "groupId": 27,
+      "code": "137",
+      "title": "Performance Optimization Patterns",
+      "slug": "137-performance-optimization",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/137-performance-optimization.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "summary": "Pooling, batching, compression, lazy loading, pre-computation, denormalisation.",
+      "links": [
+        {
+          "label": "Primer: denormalisation",
+          "url": "https://github.com/donnemartin/system-design-primer#denormalization"
+        },
+        {
+          "label": "Use The Index, Luke",
+          "url": "https://use-the-index-luke.com/"
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "groupId": 27,
+      "code": "138",
+      "title": "Testing Distributed Systems",
+      "slug": "138-testing-distributed-systems",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/138-testing-distributed-systems.md",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "summary": "Integration, contract testing, chaos, load testing, fault injection.",
+      "links": [
+        {
+          "label": "Jepsen analyses",
+          "url": "https://jepsen.io/analyses"
+        },
+        {
+          "label": "Pact: contract testing",
+          "url": "https://pact.io/"
+        },
+        {
+          "label": "Principles of chaos engineering",
+          "url": "https://principlesofchaos.org/"
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "groupId": 27,
+      "code": "139",
+      "title": "Evolutionary Architecture: Designing for Change",
+      "slug": "139-evolutionary-architecture",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/139-evolutionary-architecture.md",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "summary": "Fitness functions, avoiding big-bang rewrites, the strangler fig pattern.",
+      "links": [
+        {
+          "label": "Fowler: strangler fig",
+          "url": "https://martinfowler.com/bliki/StranglerFigApplication.html"
+        },
+        {
+          "label": "Building Evolutionary Architectures (book)",
+          "url": "https://www.thoughtworks.com/insights/books/building-evolutionary-architectures"
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "groupId": 27,
+      "code": "140",
+      "title": "System Design Interview Playbook",
+      "slug": "140-system-design-interview-playbook",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SystemDesign-opus/docs/system-design/140-system-design-interview-playbook.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "summary": "Time management, communication, common mistakes, rubric, practice plan, final checklist.",
+      "links": [
+        {
+          "label": "Hello Interview: in a hurry",
+          "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction"
+        },
+        {
+          "label": "ByteByteGo: the framework",
+          "url": "https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews"
+        },
+        {
+          "label": "Google mock system design interview (video)",
+          "url": "https://www.youtube.com/watch?v=ZgdS0EUmn70"
+        }
+      ]
+    }
+  ],
+  "bookshelf": [
+    {
+      "title": "Designing Data-Intensive Applications",
+      "by": "Martin Kleppmann",
+      "url": "https://dataintensive.net/",
+      "when": "The one book. Replication, partitioning, transactions and consistency, explained properly."
+    },
+    {
+      "title": "System Design Primer",
+      "by": "Donne Martin",
+      "url": "https://github.com/donnemartin/system-design-primer",
+      "when": "Free, broad, with worked solutions. Good first pass on any HLD component."
+    },
+    {
+      "title": "ByteByteGo",
+      "by": "Alex Xu",
+      "url": "https://bytebytego.com/",
+      "when": "The two interview books online. Best diagrams for classic case studies."
+    },
+    {
+      "title": "Hello Interview",
+      "by": "Evan King, Stefan Mai",
+      "url": "https://www.hellointerview.com/learn/system-design/in-a-hurry/introduction",
+      "when": "Sharpest interview-style breakdowns, with what a senior vs staff answer looks like."
+    },
+    {
+      "title": "Refactoring Guru",
+      "by": "Alexander Shvets",
+      "url": "https://refactoring.guru/design-patterns/",
+      "when": "Every Gang of Four pattern with intent, structure, and code. Read before each pattern article."
+    },
+    {
+      "title": "patterns.dev",
+      "by": "Lydia Hallie, Addy Osmani",
+      "url": "https://www.patterns.dev/",
+      "when": "The same patterns, idiomatic in JavaScript."
+    },
+    {
+      "title": "awesome-low-level-design",
+      "by": "Ashish Pratap Singh",
+      "url": "https://github.com/ashishps1/awesome-low-level-design",
+      "when": "Reference solutions for nearly every LLD case study."
+    },
+    {
+      "title": "Patterns of Distributed Systems",
+      "by": "Unmesh Joshi (martinfowler.com)",
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/",
+      "when": "Quorum, leases, clocks, replicated logs. When an HLD article mentions a mechanism and you want the guts."
+    },
+    {
+      "title": "Amazon Builders’ Library",
+      "by": "AWS",
+      "url": "https://aws.amazon.com/builders-library/",
+      "when": "How Amazon actually does retries, health checks, deployments and leader election."
+    },
+    {
+      "title": "Google SRE Book",
+      "by": "Google",
+      "url": "https://sre.google/sre-book/",
+      "when": "Availability, SLOs, monitoring, on-call. The reliability half of system design."
+    },
+    {
+      "title": "Latency numbers",
+      "by": "Jeff Dean, Peter Norvig",
+      "url": "https://gist.github.com/jboner/2841832",
+      "when": "Memorise these before any estimation question."
+    }
+  ]
+}

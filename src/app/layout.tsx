@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'DSA Sheet',
-  description: '353 problems, 35 patterns, one checklist.',
+  description: '353 DSA problems and 140 system design articles, one checklist.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

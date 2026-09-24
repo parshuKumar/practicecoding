@@ -16,5 +16,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/sheet/:path*'],
+  matcher: ['/sheet/:path*', '/system-design/:path*'],
 };

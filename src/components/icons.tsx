@@ -111,3 +111,44 @@ export const Logout = (p: IconProps) => (
     <path d="M10 8 6 12l4 4M6 12h9" />
   </Svg>
 );
+
+export const Plus = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M12 5v14M5 12h14" />
+  </Svg>
+);
+
+export const Minus = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M5 12h14" />
+  </Svg>
+);
+
+export const Flame = ({ filled, ...p }: IconProps & { filled?: boolean }) => (
+  <Svg {...p} fill={filled ? 'currentColor' : 'none'}>
+    <path d="M12 22c4.4 0 7-2.9 7-6.8 0-3.2-1.9-5.4-3.4-7.2-.3 1.3-1 2.4-2.1 3-.1-3.6-1.8-6.4-4.5-8 .4 3.1-1.2 4.5-2.6 6.2C5 10.9 5 12.9 5 15.2 5 19.1 7.6 22 12 22Z" />
+  </Svg>
+);
+
+export const Link = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.2 1.2" />
+    <path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.2-1.2" />
+  </Svg>
+);
+
+export const Book = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Z" />
+    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+  </Svg>
+);
+
+export const Repeat = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M17 2l4 4-4 4" />
+    <path d="M3 11v-1a4 4 0 0 1 4-4h14" />
+    <path d="M7 22l-4-4 4-4" />
+    <path d="M21 13v1a4 4 0 0 1-4 4H3" />
+  </Svg>
+);
