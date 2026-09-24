@@ -5,6 +5,8 @@ export const patchProblemSchema = z
     done: z.boolean().optional(),
     starred: z.boolean().optional(),
     note: z.string().max(20_000).nullable().optional(),
+    /** Full replacement set of ticked approach keys (DP and graph problems only). */
+    approaches: z.array(z.string().max(20)).max(6).optional(),
   })
   .refine((o) => Object.keys(o).length > 0, { message: 'patch must change at least one field' });
 
@@ -12,6 +14,11 @@ export type PatchProblem = z.infer<typeof patchProblemSchema>;
 
 export type Difficulty = 'EASY' | 'MEDIUM' | 'HARD';
 export type Role = 'WARMUP' | 'CORE' | 'STRETCH' | 'CONTEST';
+
+export type ProblemLink = { label: string; url: string };
+
+/** One alternative approach a problem can be solved with (see src/lib/approaches.ts). */
+export type ApproachOption = { key: string; label: string; title: string };
 
 export type ProblemView = {
   id: number;
@@ -21,9 +28,15 @@ export type ProblemView = {
   difficulty: Difficulty;
   role: Role;
   hint: string | null;
+  /** Solution and approach write-ups for this problem. */
+  links: ProblemLink[];
+  /** Approaches worth ticking separately; empty for most problems. */
+  approachOptions: ApproachOption[];
   done: boolean;
   starred: boolean;
   note: string | null;
+  /** Keys from approachOptions the user has ticked. */
+  approaches: string[];
 };
 
 export type PatternView = {

@@ -42,6 +42,7 @@ export function SdHero({ stats }: { stats: SdStats }) {
 
   return (
     <section className="glass animate-rise relative overflow-hidden rounded-2xl p-6 sm:p-7">
+      <div className="dotgrid pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-[--color-accent-2] opacity-[0.07] blur-3xl" />
 
       <div className="relative flex flex-col items-center gap-7 sm:flex-row sm:gap-9">
@@ -71,19 +72,22 @@ export function SdHero({ stats }: { stats: SdStats }) {
 
         <div className="grid shrink-0 grid-cols-3 gap-2 sm:grid-cols-1">
           <Tile
-            icon={<Flame filled size={16} className="text-[--color-hard]" />}
+            icon={<Flame filled size={15} />}
+            color="var(--color-hard)"
             value={`${stats.must.done}/${stats.must.total}`}
             label="must-read"
             title="Must-read articles finished"
           />
           <Tile
-            icon={<Repeat size={16} className="text-[--color-accent-2]" />}
+            icon={<Repeat size={15} />}
+            color="var(--color-accent-2)"
             value={String(reads)}
             label="total reads"
             title="Every pass over every article, added up"
           />
           <Tile
-            icon={<Star filled size={16} className="text-[--color-star]" />}
+            icon={<Star filled size={15} />}
+            color="var(--color-star)"
             value={String(stats.starred)}
             label="starred"
             title="Starred to revisit"
@@ -96,21 +100,28 @@ export function SdHero({ stats }: { stats: SdStats }) {
 
 function Tile({
   icon,
+  color,
   value,
   label,
   title,
 }: {
   icon: React.ReactNode;
+  color: string;
   value: string;
   label: string;
   title: string;
 }) {
   return (
     <div
-      className="flex flex-col items-center gap-0.5 rounded-xl border border-[--color-line] bg-black/20 px-4 py-2.5 sm:flex-row sm:gap-3 sm:px-4"
+      className="flex flex-col items-center gap-1 rounded-xl border border-[--color-line] bg-black/25 px-4 py-2.5 sm:flex-row sm:gap-3 sm:px-4"
       title={title}
     >
-      {icon}
+      <span
+        className="grid h-8 w-8 shrink-0 place-items-center rounded-full"
+        style={{ color, backgroundColor: `color-mix(in oklab, ${color} 15%, transparent)` }}
+      >
+        {icon}
+      </span>
       <div className="flex flex-col items-center sm:items-start">
         <span className="tnum text-base font-semibold leading-tight text-[--color-hi]">{value}</span>
         <span className="text-[10px] uppercase tracking-wider text-[--color-dim]">{label}</span>

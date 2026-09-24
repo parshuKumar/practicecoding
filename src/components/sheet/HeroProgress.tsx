@@ -48,6 +48,7 @@ export function HeroProgress({ stats }: { stats: Stats }) {
 
   return (
     <section className="glass animate-rise relative overflow-hidden rounded-2xl p-6 sm:p-7">
+      <div className="dotgrid pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-[--color-accent] opacity-[0.07] blur-3xl" />
 
       <div className="relative flex flex-col items-center gap-7 sm:flex-row sm:gap-9">
@@ -76,12 +77,18 @@ export function HeroProgress({ stats }: { stats: Stats }) {
         </div>
 
         {stats.starred > 0 && (
-          <div className="flex shrink-0 flex-col items-center gap-1 rounded-xl border border-[--color-line] bg-black/20 px-5 py-4">
-            <Star filled size={18} className="text-[--color-star]" />
-            <span className="tnum text-xl font-semibold text-[--color-hi]">{stats.starred}</span>
-            <span className="text-[11px] uppercase tracking-wider text-[--color-dim]">
-              starred
+          <div className="flex shrink-0 items-center gap-3 rounded-xl border border-[--color-line] bg-black/25 px-4 py-3">
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-[--color-star]/15 text-[--color-star]">
+              <Star filled size={16} />
             </span>
+            <div className="flex flex-col">
+              <span className="tnum text-base font-semibold leading-tight text-[--color-hi]">
+                {stats.starred}
+              </span>
+              <span className="text-[10px] uppercase tracking-wider text-[--color-dim]">
+                starred
+              </span>
+            </div>
           </div>
         )}
       </div>

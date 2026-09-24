@@ -188,7 +188,7 @@ function Chip({
     <button
       onClick={onClick}
       aria-pressed={active}
-      className="rounded-lg border px-2.5 py-1.5 text-xs font-medium transition"
+      className="flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-medium transition"
       style={{
         borderColor: active ? (color ?? 'var(--color-accent)') : 'var(--color-line)',
         color: active ? (color ?? 'var(--color-hi)') : 'var(--color-dim)',
@@ -197,6 +197,7 @@ function Chip({
           : 'var(--color-surface)',
       }}
     >
+      {color && <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: color }} />}
       {children}
     </button>
   );

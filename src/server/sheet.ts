@@ -1,5 +1,31 @@
 import { prisma } from './db';
-import type { Difficulty, PhaseView, ProblemView, SheetView, Stats } from '@/lib/types';
+import type { Difficulty, PhaseView, ProblemLink, ProblemView, SheetView, Stats } from '@/lib/types';
+import { approachesFor } from '@/lib/approaches';
+import neetcodeJs from '../../data/neetcode-js.json';
+import gfgLinks from '../../data/gfg-links.json';
+
+const NEETCODE: Record<string, string> = neetcodeJs;
+const GFG: Record<string, string> = gfgLinks;
+
+/**
+ * Where to read solutions for a problem. GeeksforGeeks article URLs were resolved once
+ * per problem and live in data/gfg-links.json; a problem without one simply has no GfG
+ * link. NeetCode has a JS solution for about 150 of them, and algo.monster walks through
+ * the idea for every number.
+ */
+function solutionLinks(lcNumber: number | null): ProblemLink[] {
+  const links: ProblemLink[] = [];
+  if (lcNumber !== null) {
+    const gfg = GFG[String(lcNumber)];
+    if (gfg) links.push({ label: 'GeeksforGeeks article', url: gfg });
+    const file = NEETCODE[String(lcNumber)];
+    if (file) {
+      links.push({ label: 'NeetCode solution (JS)', url: `https://github.com/neetcode-gh/leetcode/blob/main/javascript/${file}` });
+    }
+    links.push({ label: 'algo.monster walkthrough', url: `https://algo.monster/liteproblems/${lcNumber}` });
+  }
+  return links;
+}
 
 /**
  * Sheet content — the 353 problems, their patterns and phases — only changes when
@@ -23,7 +49,7 @@ type Content = {
       title: string;
       difficulty: string | null;
       timeEstimate: string | null;
-      problems: Omit<ProblemView, 'done' | 'starred' | 'note'>[];
+      problems: Omit<ProblemView, 'done' | 'starred' | 'note' | 'approaches'>[];
     }[];
   }[];
   total: number;
@@ -68,6 +94,8 @@ async function loadContent(): Promise<Content> {
           difficulty,
           role: problem.role,
           hint: problem.hint,
+          links: solutionLinks(problem.lcNumber),
+          approachOptions: approachesFor(pattern.id),
         };
       }),
     })),
@@ -90,7 +118,7 @@ export async function getSheet(userId: string): Promise<SheetView> {
     getContent(),
     prisma.userProblem.findMany({
       where: { userId },
-      select: { problemId: true, done: true, starred: true, note: true },
+      select: { problemId: true, done: true, starred: true, note: true, approaches: true },
     }),
   ]);
 
@@ -130,6 +158,7 @@ export async function getSheet(userId: string): Promise<SheetView> {
           done: row?.done ?? false,
           starred: row?.starred ?? false,
           note: row?.note ?? null,
+          approaches: row?.approaches ?? [],
         };
       }),
     })),

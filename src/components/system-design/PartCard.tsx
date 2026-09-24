@@ -30,10 +30,16 @@ export function PartCard({
   const percent = articles.length === 0 ? 0 : (done / articles.length) * 100;
 
   return (
-    <section className="glass overflow-hidden rounded-2xl">
-      <header className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-[--color-line] px-4 py-3.5 sm:px-5">
+    <section className="glass relative overflow-hidden rounded-2xl">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-5 right-4 select-none text-[112px] font-extrabold leading-none tracking-tighter text-white/[0.025]"
+      >
+        {String(part.id).padStart(2, '0')}
+      </span>
+      <header className="relative flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-[--color-line] px-4 py-3.5 sm:px-5">
         <div className="flex min-w-0 flex-1 items-center gap-3">
-          <span className="tnum grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-linear-to-br from-[--color-accent] to-[--color-accent-2] text-xs font-bold text-white">
+          <span className="tnum grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-linear-to-br from-[--color-accent] to-[--color-accent-2] text-xs font-bold text-white shadow-[0_6px_16px_-6px_color-mix(in_oklab,var(--color-accent)_70%,transparent)]">
             {part.id}
           </span>
           <div className="min-w-0">
@@ -57,7 +63,7 @@ export function PartCard({
         </div>
       </header>
 
-      <div className="space-y-2 p-2 sm:p-3">
+      <div className="relative space-y-2 p-2 sm:p-3">
         {part.groups.map((group) => (
           <GroupCard
             key={group.id}

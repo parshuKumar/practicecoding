@@ -112,14 +112,17 @@ model Problem {
 
 // ──────────────────────────── Your data ────────────────────────────
 
-/// No row means: not done, not starred, no note.
+/// No row means: not done, not starred, no note, no approaches ticked.
+/// `approaches` holds the approach keys ticked for DP and graph problems (see src/lib/approaches.ts);
+/// empty for every other problem.
 model UserProblem {
-  userId    String
-  problemId Int
-  done      Boolean  @default(false)
-  starred   Boolean  @default(false)
-  note      String?  @db.Text
-  updatedAt DateTime @updatedAt
+  userId     String
+  problemId  Int
+  done       Boolean  @default(false)
+  starred    Boolean  @default(false)
+  note       String?  @db.Text
+  approaches String[] @default([])
+  updatedAt  DateTime @updatedAt
 
   user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
   problem Problem @relation(fields: [problemId], references: [id])

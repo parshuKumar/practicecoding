@@ -4,6 +4,7 @@ import { memo } from 'react';
 import type { Difficulty, ProblemView, Role } from '@/lib/types';
 import { ROLE_LABEL } from '@/lib/types';
 import { Check, External, Note, Star } from '../icons';
+import { LinksMenu } from '../LinksMenu';
 import type { UserState } from './SheetClient';
 
 const DIFF_COLOR: Record<Difficulty, string> = {
@@ -31,6 +32,7 @@ export const ProblemRow = memo(function ProblemRow({
   active,
   onToggleDone,
   onToggleStar,
+  onToggleApproach,
   onOpenNote,
 }: {
   problem: ProblemView;
@@ -38,9 +40,11 @@ export const ProblemRow = memo(function ProblemRow({
   active: boolean;
   onToggleDone: (id: number, done: boolean) => void;
   onToggleStar: (id: number, starred: boolean) => void;
+  onToggleApproach: (id: number, key: string) => void;
   onOpenNote: (problem: ProblemView) => void;
 }) {
   const hasNote = Boolean(state.note?.trim());
+  const diffColor = DIFF_COLOR[problem.difficulty];
 
   return (
     <li
@@ -49,15 +53,24 @@ export const ProblemRow = memo(function ProblemRow({
         active ? 'bg-[--color-accent]/[0.07]' : 'hover:bg-white/[0.025]'
       }`}
     >
-      {active && (
-        <span className="absolute inset-y-0 left-0 w-[2px] bg-linear-to-b from-[--color-accent] to-[--color-accent-2]" />
-      )}
+      {/* Difficulty hairline: lets a mixed list be scanned by colour. */}
+      <span
+        className="absolute inset-y-[7px] left-0 w-[2px] rounded-r"
+        style={{
+          background: active ? 'linear-gradient(var(--color-accent), var(--color-accent-2))' : diffColor,
+          opacity: active ? 1 : 0.55,
+        }}
+      />
 
       <Checkbox
         checked={state.done}
         label={`Mark ${problem.title} as done`}
         onChange={(v) => onToggleDone(problem.id, v)}
       />
+
+      <span className="mono hidden w-9 shrink-0 text-right text-[11px] text-[--color-dim] sm:block">
+        {problem.lcNumber}
+      </span>
 
       <a
         href={problem.url}
@@ -71,9 +84,6 @@ export const ProblemRow = memo(function ProblemRow({
         }`}
       >
         {problem.title}
-        {problem.lcNumber !== null && (
-          <span className="tnum ml-1.5 text-[11px] text-[--color-dim]">{problem.lcNumber}</span>
-        )}
         <External
           size={11}
           className="ml-1.5 inline-block align-[-1px] text-[--color-dim] opacity-0 transition group-hover:opacity-100"
@@ -81,12 +91,36 @@ export const ProblemRow = memo(function ProblemRow({
       </a>
 
       <span
-        className="hidden shrink-0 truncate text-[11px] md:block md:max-w-[190px] lg:max-w-[260px]"
+        className="hidden shrink-0 truncate text-[11px] md:block md:max-w-[170px] lg:max-w-[240px]"
         style={{ color: 'var(--color-dim)' }}
         title={problem.hint ?? undefined}
       >
         {problem.hint}
       </span>
+
+      {problem.approachOptions.length > 0 && (
+        <span className="flex shrink-0 items-center gap-1" role="group" aria-label="Approaches done">
+          {problem.approachOptions.map((option) => {
+            const on = state.approaches.includes(option.key);
+            return (
+              <button
+                key={option.key}
+                onClick={() => onToggleApproach(problem.id, option.key)}
+                aria-pressed={on}
+                title={`${option.title}${on ? ' — done' : ''}`}
+                className="rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide transition"
+                style={{
+                  color: on ? 'var(--color-base)' : 'var(--color-dim)',
+                  backgroundColor: on ? 'var(--color-accent-2)' : 'var(--color-line-soft)',
+                  boxShadow: on ? '0 0 8px color-mix(in oklab, var(--color-accent-2) 50%, transparent)' : 'none',
+                }}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </span>
+      )}
 
       <span
         className="hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide sm:block"
@@ -101,13 +135,19 @@ export const ProblemRow = memo(function ProblemRow({
       <span
         className="grid h-[18px] w-[18px] shrink-0 place-items-center rounded text-[10px] font-bold"
         style={{
-          color: DIFF_COLOR[problem.difficulty],
-          backgroundColor: `color-mix(in oklab, ${DIFF_COLOR[problem.difficulty]} 15%, transparent)`,
+          color: diffColor,
+          backgroundColor: `color-mix(in oklab, ${diffColor} 15%, transparent)`,
         }}
         title={problem.difficulty}
       >
         {DIFF_SHORT[problem.difficulty]}
       </span>
+
+      <LinksMenu
+        links={problem.links}
+        heading="Solutions and approaches"
+        ariaLabel={`Solutions for ${problem.title}`}
+      />
 
       <div className="flex shrink-0 items-center">
         <button

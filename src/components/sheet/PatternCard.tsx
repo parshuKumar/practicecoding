@@ -13,6 +13,7 @@ export function PatternCard({
   activeId,
   onToggleDone,
   onToggleStar,
+  onToggleApproach,
   onOpenNote,
 }: {
   pattern: PatternView;
@@ -22,6 +23,7 @@ export function PatternCard({
   activeId: number | null;
   onToggleDone: (id: number, done: boolean) => void;
   onToggleStar: (id: number, starred: boolean) => void;
+  onToggleApproach: (id: number, key: string) => void;
   onOpenNote: (problem: ProblemView) => void;
 }) {
   const total = pattern.problems.length;
@@ -39,7 +41,7 @@ export function PatternCard({
         <Chevron open={open} size={14} className="shrink-0 text-[--color-dim]" />
 
         <span
-          className="tnum shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
+          className="mono shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
           style={{
             color: complete ? 'var(--color-easy)' : 'var(--color-dim)',
             backgroundColor: complete
@@ -89,6 +91,7 @@ export function PatternCard({
               active={activeId === problem.id}
               onToggleDone={onToggleDone}
               onToggleStar={onToggleStar}
+              onToggleApproach={onToggleApproach}
               onOpenNote={onOpenNote}
             />
           ))}

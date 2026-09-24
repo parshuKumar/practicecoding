@@ -1,10 +1,10 @@
 'use client';
 
-import { memo, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { memo, useState } from 'react';
 import type { ArticleView, SdImportance, SdKind } from '@/lib/types';
 import { SD_IMPORTANCE_LABEL, SD_KIND_LABEL } from '@/lib/types';
-import { Check, External, Flame, Link, Minus, Note, Plus, Star } from '../icons';
+import { Check, External, Flame, Minus, Note, Plus, Star } from '../icons';
+import { LinksMenu } from '../LinksMenu';
 import type { ArticleState } from './SdClient';
 
 export const KIND_COLOR: Record<SdKind, string> = {
@@ -45,6 +45,7 @@ export const ArticleRow = memo(function ArticleRow({
 }) {
   const hasNote = Boolean(state.note?.trim());
   const must = article.importance === 'MUST';
+  const kindColor = KIND_COLOR[article.kind];
 
   return (
     <li
@@ -53,9 +54,14 @@ export const ArticleRow = memo(function ArticleRow({
         active ? 'bg-[--color-accent]/[0.07]' : 'hover:bg-white/[0.025]'
       }`}
     >
-      {active && (
-        <span className="absolute inset-y-0 left-0 w-[2px] bg-linear-to-b from-[--color-accent] to-[--color-accent-2]" />
-      )}
+      {/* Kind hairline: lets a mixed list be scanned by colour. */}
+      <span
+        className="absolute inset-y-[7px] left-0 w-[2px] rounded-r"
+        style={{
+          background: active ? 'linear-gradient(var(--color-accent), var(--color-accent-2))' : kindColor,
+          opacity: active ? 1 : 0.55,
+        }}
+      />
 
       <Checkbox
         checked={state.done}
@@ -63,7 +69,7 @@ export const ArticleRow = memo(function ArticleRow({
         onChange={(v) => onToggleDone(article.id, v)}
       />
 
-      <span className="tnum w-6 shrink-0 text-right text-[11px] text-[--color-dim]">
+      <span className="mono w-6 shrink-0 text-right text-[11px] text-[--color-dim]">
         {article.code}
       </span>
 
@@ -119,14 +125,18 @@ export const ArticleRow = memo(function ArticleRow({
       <span
         className="hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide md:block"
         style={{
-          color: KIND_COLOR[article.kind],
-          backgroundColor: `color-mix(in oklab, ${KIND_COLOR[article.kind]} 13%, transparent)`,
+          color: kindColor,
+          backgroundColor: `color-mix(in oklab, ${kindColor} 13%, transparent)`,
         }}
       >
         {SD_KIND_LABEL[article.kind]}
       </span>
 
-      {article.links.length > 0 && <LinksMenu article={article} />}
+      <LinksMenu
+        links={article.links}
+        heading="Extra reading"
+        ariaLabel={`Extra reading for ${article.title}`}
+      />
 
       <ReadCounter
         count={state.readCount}
@@ -167,8 +177,8 @@ export const ArticleRow = memo(function ArticleRow({
 });
 
 /**
- * The read counter. Click "+" for another pass; shift-click (or the "-" key on the
- * focused row) takes one back. Read zero times renders dim so unread rows stay quiet.
+ * The read counter as a stepper: minus, three dots that fill as you re-read, the count,
+ * plus. Always visible, so it works on touch too. Minus is disabled at zero.
  */
 function ReadCounter({
   count,
@@ -181,166 +191,55 @@ function ReadCounter({
 }) {
   const [pop, setPop] = useState(0);
   const read = count > 0;
+  const border = read ? 'color-mix(in oklab, var(--color-accent) 45%, transparent)' : 'var(--color-line)';
 
   return (
     <span
-      className="flex shrink-0 items-center overflow-hidden rounded-md border text-[11px] transition"
+      className="flex h-6 shrink-0 items-center overflow-hidden rounded-md border text-[11px] transition"
       style={{
-        borderColor: read ? 'color-mix(in oklab, var(--color-accent) 45%, transparent)' : 'var(--color-line)',
+        borderColor: border,
         backgroundColor: read ? 'color-mix(in oklab, var(--color-accent) 10%, transparent)' : 'transparent',
       }}
       title={`Read ${count} ${count === 1 ? 'time' : 'times'}`}
     >
       <button
-        onClick={() => {
-          if (count === 0) return;
-          onBump(-1);
-        }}
+        onClick={() => onBump(-1)}
         aria-label={`Remove one read of ${title}`}
         disabled={count === 0}
-        className="hidden h-6 w-5 place-items-center text-[--color-dim] transition hover:bg-white/[0.06] hover:text-[--color-hi] disabled:pointer-events-none disabled:opacity-30 group-hover:grid"
+        className="grid h-6 w-5 place-items-center text-[--color-dim] transition hover:bg-white/[0.06] hover:text-[--color-hi] disabled:pointer-events-none disabled:opacity-30"
       >
         <Minus size={11} />
       </button>
+      <span className="flex items-center gap-[3px] pl-1 pr-1.5" aria-hidden="true">
+        {[1, 2, 3].map((n) => (
+          <span
+            key={n}
+            className="h-[5px] w-[5px] rounded-full transition-colors"
+            style={{ backgroundColor: count >= n ? 'var(--color-accent)' : 'var(--color-line)' }}
+          />
+        ))}
+      </span>
       <span
         key={pop}
-        className={`tnum min-w-[22px] px-1 text-center font-semibold ${
-          read ? 'text-[--color-hi] animate-pop' : 'text-[--color-dim]'
+        className={`mono min-w-[14px] text-center font-semibold ${
+          read ? 'animate-pop text-[--color-hi]' : 'text-[--color-dim]'
         }`}
       >
         {count}
       </span>
       <button
-        onClick={(e) => {
-          if (e.shiftKey) {
-            if (count > 0) onBump(-1);
-            return;
-          }
+        onClick={() => {
           setPop((n) => n + 1);
           onBump(1);
         }}
         aria-label={`Add one read of ${title}`}
-        title="Read it again (+). Shift-click to undo."
+        title="Read it again (+)"
         className="grid h-6 w-6 place-items-center border-l text-[--color-dim] transition hover:bg-[--color-accent]/20 hover:text-[--color-hi]"
-        style={{ borderColor: 'inherit' }}
+        style={{ borderColor: border }}
       >
         <Plus size={12} />
       </button>
     </span>
-  );
-}
-
-/**
- * Curated outside reading for this topic, in a small popover.
- *
- * Rendered through a portal with fixed positioning: the group and part cards clip their
- * overflow for the rounded corners, so an in-flow menu under the last row of a group was
- * cut off. It flips above the button when there is no room below.
- */
-function LinksMenu({ article }: { article: ArticleView }) {
-  const [open, setOpen] = useState(false);
-  const [pos, setPos] = useState<{ top?: number; bottom?: number; right: number } | null>(null);
-  const button = useRef<HTMLButtonElement>(null);
-  const menu = useRef<HTMLDivElement>(null);
-
-  const MENU_WIDTH = 288; // w-72
-  const ROW_HEIGHT = 36;
-  const GAP = 4;
-
-  useLayoutEffect(() => {
-    if (!open || !button.current) return;
-
-    const place = () => {
-      const rect = button.current!.getBoundingClientRect();
-      const estimated = article.links.length * ROW_HEIGHT + 32;
-      const spaceBelow = window.innerHeight - rect.bottom;
-      const right = Math.max(8, window.innerWidth - rect.right);
-      // Keep the menu on screen on narrow viewports.
-      const clampedRight = Math.min(right, window.innerWidth - MENU_WIDTH - 8);
-
-      if (spaceBelow < estimated + GAP && rect.top > spaceBelow) {
-        setPos({ bottom: window.innerHeight - rect.top + GAP, right: Math.max(8, clampedRight) });
-      } else {
-        setPos({ top: rect.bottom + GAP, right: Math.max(8, clampedRight) });
-      }
-    };
-
-    place();
-    window.addEventListener('resize', place);
-    window.addEventListener('scroll', place, true);
-    return () => {
-      window.removeEventListener('resize', place);
-      window.removeEventListener('scroll', place, true);
-    };
-  }, [open, article.links.length]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: MouseEvent) => {
-      const target = e.target as Node;
-      if (!button.current?.contains(target) && !menu.current?.contains(target)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        e.stopPropagation();
-        setOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', onDown);
-    window.addEventListener('keydown', onKey, true);
-    return () => {
-      document.removeEventListener('mousedown', onDown);
-      window.removeEventListener('keydown', onKey, true);
-    };
-  }, [open]);
-
-  return (
-    <div className="relative shrink-0">
-      <button
-        ref={button}
-        onClick={() => setOpen((o) => !o)}
-        aria-haspopup="menu"
-        aria-expanded={open}
-        title={`${article.links.length} extra ${article.links.length === 1 ? 'link' : 'links'}`}
-        aria-label={`Extra reading for ${article.title}`}
-        className={`flex items-center gap-1 rounded-md px-1.5 py-1 text-[11px] transition hover:bg-white/[0.06] ${
-          open ? 'text-[--color-accent-2]' : 'text-[--color-dim] hover:text-[--color-hi]'
-        }`}
-      >
-        <Link size={13} />
-        <span className="tnum">{article.links.length}</span>
-      </button>
-
-      {open &&
-        pos &&
-        createPortal(
-          <div
-            ref={menu}
-            role="menu"
-            className="glass animate-rise fixed z-50 w-72 overflow-hidden rounded-xl p-1"
-            style={pos}
-          >
-            <p className="px-2.5 pb-1 pt-1.5 text-[10px] uppercase tracking-wider text-[--color-dim]">
-              Extra reading
-            </p>
-            {article.links.map((link) => (
-              <a
-                key={link.url}
-                role="menuitem"
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="flex items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-[12.5px] text-[--color-body] transition hover:bg-white/[0.05] hover:text-[--color-hi]"
-              >
-                <span className="truncate">{link.label}</span>
-                <External size={11} className="shrink-0 text-[--color-dim]" />
-              </a>
-            ))}
-          </div>,
-          document.body,
-        )}
-    </div>
   );
 }
 

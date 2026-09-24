@@ -11,9 +11,14 @@ import { ShortcutsOverlay } from './ShortcutsOverlay';
 import { Toaster, type ToastMessage } from './Toast';
 import { Star } from '../icons';
 
-export type UserState = { done: boolean; starred: boolean; note: string | null };
+export type UserState = {
+  done: boolean;
+  starred: boolean;
+  note: string | null;
+  approaches: string[];
+};
 
-const EMPTY: UserState = { done: false, starred: false, note: null };
+const EMPTY: UserState = { done: false, starred: false, note: null, approaches: [] };
 const COLLAPSED_KEY = 'dsa-collapsed-patterns';
 
 export function SheetClient({ sheet }: { sheet: SheetView }) {
@@ -22,8 +27,13 @@ export function SheetClient({ sheet }: { sheet: SheetView }) {
     for (const phase of sheet.phases) {
       for (const pattern of phase.patterns) {
         for (const p of pattern.problems) {
-          if (p.done || p.starred || p.note) {
-            map.set(p.id, { done: p.done, starred: p.starred, note: p.note });
+          if (p.done || p.starred || p.note || p.approaches.length > 0) {
+            map.set(p.id, {
+              done: p.done,
+              starred: p.starred,
+              note: p.note,
+              approaches: p.approaches,
+            });
           }
         }
       }
@@ -112,6 +122,18 @@ export function SheetClient({ sheet }: { sheet: SheetView }) {
   const toggleDone = useCallback((id: number, done: boolean) => update(id, { done }), [update]);
   const toggleStar = useCallback(
     (id: number, starred: boolean) => update(id, { starred }),
+    [update],
+  );
+
+  /** Tick or untick one approach; the full set is sent so the server can validate it. */
+  const toggleApproach = useCallback(
+    (id: number, key: string) => {
+      const current = stateRef.current.get(id)?.approaches ?? [];
+      const approaches = current.includes(key)
+        ? current.filter((k) => k !== key)
+        : [...current, key];
+      return update(id, { approaches });
+    },
     [update],
   );
 
@@ -310,6 +332,7 @@ export function SheetClient({ sheet }: { sheet: SheetView }) {
               activeId={activeId}
               onToggleDone={toggleDone}
               onToggleStar={toggleStar}
+              onToggleApproach={toggleApproach}
               onOpenNote={setNoteFor}
             />
           ))}

@@ -108,7 +108,7 @@ export const CommandBar = forwardRef<
                 key={chip.value}
                 onClick={() => onFiltersChange({ ...filters, difficulty: chip.value })}
                 aria-pressed={active}
-                className="rounded-lg border px-2.5 py-1.5 text-xs font-medium transition"
+                className="flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-medium transition"
                 style={{
                   borderColor: active ? (chip.color ?? 'var(--color-accent)') : 'var(--color-line)',
                   color: active ? (chip.color ?? 'var(--color-hi)') : 'var(--color-dim)',
@@ -117,6 +117,12 @@ export const CommandBar = forwardRef<
                     : 'var(--color-surface)',
                 }}
               >
+                {chip.color && (
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: chip.color }}
+                  />
+                )}
                 {chip.label}
               </button>
             );

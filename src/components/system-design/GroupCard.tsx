@@ -31,7 +31,6 @@ export function GroupCard({
   const mustLeft = group.articles.filter(
     (a) => a.importance === 'MUST' && !get(a.id).done,
   ).length;
-  const percent = total === 0 ? 0 : (done / total) * 100;
   const complete = done === total && total > 0;
 
   return (
@@ -44,7 +43,7 @@ export function GroupCard({
         <Chevron open={open} size={14} className="shrink-0 text-[--color-dim]" />
 
         <span
-          className="tnum shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
+          className="mono shrink-0 rounded-md px-1.5 py-0.5 text-[11px] font-bold"
           style={{
             color: complete ? 'var(--color-easy)' : 'var(--color-dim)',
             backgroundColor: complete
@@ -70,16 +69,24 @@ export function GroupCard({
         )}
 
         <span className="flex shrink-0 items-center gap-2.5">
-          <span className="hidden h-1 w-16 overflow-hidden rounded-full bg-[--color-line] sm:block">
-            <span
-              className="block h-full rounded-full transition-[width] duration-500 ease-out"
-              style={{
-                width: `${percent}%`,
-                background: complete
-                  ? 'var(--color-easy)'
-                  : 'linear-gradient(90deg, var(--color-accent), var(--color-accent-2))',
-              }}
-            />
+          {/* One segment per article, so progress reads as "3 of 8" at a glance. */}
+          <span className="hidden gap-[3px] sm:flex" aria-hidden="true">
+            {group.articles.map((a) => {
+              const isDone = get(a.id).done;
+              return (
+                <span
+                  key={a.id}
+                  className="h-1 w-3 rounded-sm transition-colors"
+                  style={{
+                    backgroundColor: isDone
+                      ? complete
+                        ? 'var(--color-easy)'
+                        : 'var(--color-accent)'
+                      : 'var(--color-line)',
+                  }}
+                />
+              );
+            })}
           </span>
           <span className="tnum w-12 text-right text-[11px] text-[--color-dim]">
             <span className={complete ? 'text-[--color-easy]' : 'text-[--color-body]'}>{done}</span>
