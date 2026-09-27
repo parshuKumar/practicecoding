@@ -76,7 +76,7 @@ Sign in at http://localhost:3000.
 | Write a note | the note icon, or `n`. Autosaves. |
 | Move around | `j` / `k`, `/` to search, `r` for a random unsolved problem |
 | See solutions | the 🔗 button on a row: the GeeksforGeeks article for the same problem where one exists (273 of 353 rows, resolved once and stored in `data/gfg-links.json`), the NeetCode JavaScript solution where one exists, and an algo.monster walkthrough for every problem. |
-| Tick an approach | DP problems show **Memo / Tab / Space** chips, graph BFS/DFS problems show **BFS / DFS**, topological sort shows **Kahn / DFS**. Click to tick each approach you have done. Which patterns get which chips is in `src/lib/approaches.ts`. |
+| Tick an approach | DP problems show **Memo / Tab / Space** chips, graph BFS/DFS problems show **BFS / DFS**, topological sort shows **Kahn / DFS**, and the two tree patterns show **BFS**, **DFS** or both depending on which traversal fits that question. Click to tick each approach you have done. The pattern map and per-problem overrides are in `src/lib/approaches.ts`. |
 | Everything else | press `?` |
 
 Starred is a tab, not a page — switching is instant client-side state, no network round trip.

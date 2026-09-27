@@ -95,7 +95,7 @@ async function loadContent(): Promise<Content> {
           role: problem.role,
           hint: problem.hint,
           links: solutionLinks(problem.lcNumber),
-          approachOptions: approachesFor(pattern.id),
+          approachOptions: approachesFor(pattern.id, problem.lcNumber),
         };
       }),
     })),

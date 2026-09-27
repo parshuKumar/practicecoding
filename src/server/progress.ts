@@ -18,10 +18,10 @@ export async function updateProblem(userId: string, problemId: number, patch: Pa
   if (patch.approaches !== undefined) {
     const problem = await prisma.problem.findUnique({
       where: { id: problemId },
-      select: { patternId: true },
+      select: { patternId: true, lcNumber: true },
     });
     if (!problem) throw new NotFoundError(`problem ${problemId}`);
-    const allowed = new Set(approachesFor(problem.patternId).map((a) => a.key));
+    const allowed = new Set(approachesFor(problem.patternId, problem.lcNumber).map((a) => a.key));
     approaches = [...new Set(patch.approaches.filter((k) => allowed.has(k)))];
   }
 
