@@ -146,7 +146,7 @@ export type SdStats = {
 export type BookshelfEntry = { title: string; by: string; url: string; when: string };
 
 export type ReadingSheetView = {
-  track: 'system-design' | 'javascript';
+  track: 'system-design' | 'javascript' | 'sql';
   parts: PartView[];
   stats: SdStats;
   bookshelf: BookshelfEntry[];

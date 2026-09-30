@@ -3,6 +3,7 @@ import type { ArticleLink, ArticleView, PartView, SdImportance, SdStats, Reading
 import { TRACKS, type TrackKey } from '@/lib/tracks';
 import systemDesign from '../../data/system-design.json';
 import javascript from '../../data/javascript.json';
+import sql from '../../data/sql.json';
 import type { SystemDesignData } from '@/lib/system-design-data';
 
 /**
@@ -14,15 +15,21 @@ const CONTENT_TTL_MS = 10 * 60 * 1000;
 const FILES: Record<TrackKey, SystemDesignData> = {
   'system-design': systemDesign as SystemDesignData,
   javascript: javascript as SystemDesignData,
+  sql: sql as SystemDesignData,
 };
 
 type ArticleContent = Omit<ArticleView, 'done' | 'starred' | 'readCount' | 'note'>;
 
-/** "NS10" when a row links to Namaste JavaScript episode 10; derived, so no column needed. */
+/**
+ * "NS10" when a row links to Namaste JavaScript episode 10, "B6" when it links to Data
+ * with Baraa's PDF 06; derived from link labels, so no column needed.
+ */
 function badgeFor(url: string, links: ArticleLink[]): string | null {
   for (const l of links) {
-    const m = l.label.match(/^Namaste JS Ep (\d+)/);
-    if (m) return `NS${m[1]}`;
+    const ns = l.label.match(/^Namaste JS Ep (\d+)/);
+    if (ns) return `NS${ns[1]}`;
+    const b = l.label.match(/^Baraa PDF (\d+)/);
+    if (b) return `B${b[1]}`;
   }
   const m = url.match(/namaste-javascript-notes\/blob\/master\/notes\/season-(\d)\/lecture-(\d+)\.md/);
   if (m) return `NS${m[1] === '1' ? Number(m[2]) : 19 + Number(m[2])}`;

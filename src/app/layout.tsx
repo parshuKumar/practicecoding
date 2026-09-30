@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'DSA Sheet',
-  description: 'DSA, System Design and JavaScript revision sheets, one checklist.',
+  description: 'DSA, System Design, JavaScript and SQL revision sheets, one checklist.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

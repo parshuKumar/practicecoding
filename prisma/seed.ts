@@ -60,6 +60,7 @@ async function seedDsa() {
 const TRACK_FILES: { file: string; track: string; expected: number }[] = [
   { file: 'data/system-design.json', track: 'system-design', expected: 140 },
   { file: 'data/javascript.json', track: 'javascript', expected: 87 },
+  { file: 'data/sql.json', track: 'sql', expected: 154 },
 ];
 
 async function seedTrack({ file, track, expected }: (typeof TRACK_FILES)[number]) {

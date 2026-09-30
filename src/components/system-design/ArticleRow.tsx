@@ -63,7 +63,7 @@ export const ArticleRow = memo(function ArticleRow({
         onChange={(v) => onToggleDone(article.id, v)}
       />
 
-      <span className="mono w-6 shrink-0 text-right text-[11px] text-[--color-dim]">
+      <span className="mono w-9 shrink-0 text-right text-[11px] text-[--color-dim]">
         {article.code}
       </span>
 
@@ -89,7 +89,11 @@ export const ArticleRow = memo(function ArticleRow({
         {article.badge && (
           <sup
             className="mono ml-1 text-[9px] font-semibold tracking-wide text-[--color-accent-2]"
-            title={`Covered by Namaste JavaScript episode ${article.badge.replace('NS', '')}`}
+            title={
+              article.badge.startsWith('NS')
+                ? `Covered by Namaste JavaScript episode ${article.badge.slice(2)}`
+                : `Covered by Data with Baraa PDF ${article.badge.slice(1)}`
+            }
           >
             {article.badge}
           </sup>

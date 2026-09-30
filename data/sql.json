@@ -1,0 +1,4919 @@
+{
+  "track": "sql",
+  "parts": [
+    {
+      "id": 201,
+      "title": "HOW SQL EXECUTES",
+      "subtitle": "Pipeline, logical order, the planner, EXPLAIN",
+      "track": "sql"
+    },
+    {
+      "id": 202,
+      "title": "SELECT, FILTERING AND NULL",
+      "subtitle": "Projection, WHERE, three-valued logic, CASE",
+      "track": "sql"
+    },
+    {
+      "id": 203,
+      "title": "JOINS",
+      "subtitle": "Every join type, the classic bugs, join performance",
+      "track": "sql"
+    },
+    {
+      "id": 204,
+      "title": "AGGREGATION",
+      "subtitle": "GROUP BY, aggregates, HAVING, FILTER, rollups",
+      "track": "sql"
+    },
+    {
+      "id": 205,
+      "title": "SUBQUERIES AND CTES",
+      "subtitle": "Correlated subqueries, EXISTS, CTEs, recursion, LATERAL",
+      "track": "sql"
+    },
+    {
+      "id": 206,
+      "title": "WINDOW FUNCTIONS",
+      "subtitle": "Ranking, LAG and LEAD, frames, top-N per group",
+      "track": "sql"
+    },
+    {
+      "id": 207,
+      "title": "INDEXES AND OPTIMISATION",
+      "subtitle": "Index design, scan types, a method for slow queries",
+      "track": "sql"
+    },
+    {
+      "id": 208,
+      "title": "TRANSACTIONS AND CONCURRENCY",
+      "subtitle": "Isolation, row locks, deadlocks, Node.js patterns",
+      "track": "sql"
+    },
+    {
+      "id": 209,
+      "title": "ADVANCED SQL AND POSTGRES",
+      "subtitle": "Upserts, pivots, JSONB, partitioning, plus Baraa’s DDL and procedures",
+      "track": "sql"
+    },
+    {
+      "id": 210,
+      "title": "INTERVIEW PREP",
+      "subtitle": "Top questions, live coding, dialect differences, where to drill",
+      "track": "sql"
+    }
+  ],
+  "groups": [
+    {
+      "id": 201,
+      "partId": 201,
+      "code": "1A",
+      "title": "Pipeline and Planner",
+      "track": "sql"
+    },
+    {
+      "id": 202,
+      "partId": 202,
+      "code": "2A",
+      "title": "Select and Where",
+      "track": "sql"
+    },
+    {
+      "id": 203,
+      "partId": 202,
+      "code": "2B",
+      "title": "NULL and CASE",
+      "track": "sql"
+    },
+    {
+      "id": 204,
+      "partId": 202,
+      "code": "2C",
+      "title": "Practice: Select and Strings",
+      "track": "sql"
+    },
+    {
+      "id": 205,
+      "partId": 203,
+      "code": "3A",
+      "title": "Join Types",
+      "track": "sql"
+    },
+    {
+      "id": 206,
+      "partId": 203,
+      "code": "3B",
+      "title": "Joins in Practice",
+      "track": "sql"
+    },
+    {
+      "id": 207,
+      "partId": 203,
+      "code": "3C",
+      "title": "Practice: Basic Joins",
+      "track": "sql"
+    },
+    {
+      "id": 208,
+      "partId": 203,
+      "code": "3D",
+      "title": "Practice: Advanced Joins",
+      "track": "sql"
+    },
+    {
+      "id": 209,
+      "partId": 204,
+      "code": "4A",
+      "title": "Grouping and Aggregates",
+      "track": "sql"
+    },
+    {
+      "id": 210,
+      "partId": 204,
+      "code": "4B",
+      "title": "Practice: Aggregates",
+      "track": "sql"
+    },
+    {
+      "id": 211,
+      "partId": 204,
+      "code": "4C",
+      "title": "Practice: Sorting and Grouping",
+      "track": "sql"
+    },
+    {
+      "id": 212,
+      "partId": 205,
+      "code": "5A",
+      "title": "Subqueries and CTEs",
+      "track": "sql"
+    },
+    {
+      "id": 213,
+      "partId": 205,
+      "code": "5B",
+      "title": "Practice: Subqueries",
+      "track": "sql"
+    },
+    {
+      "id": 214,
+      "partId": 206,
+      "code": "6A",
+      "title": "Window Fundamentals",
+      "track": "sql"
+    },
+    {
+      "id": 215,
+      "partId": 206,
+      "code": "6B",
+      "title": "Value, Frames and Top-N",
+      "track": "sql"
+    },
+    {
+      "id": 216,
+      "partId": 206,
+      "code": "6C",
+      "title": "Practice: Window Functions",
+      "track": "sql"
+    },
+    {
+      "id": 217,
+      "partId": 207,
+      "code": "7A",
+      "title": "Index Design",
+      "track": "sql"
+    },
+    {
+      "id": 218,
+      "partId": 207,
+      "code": "7B",
+      "title": "Optimisation Method",
+      "track": "sql"
+    },
+    {
+      "id": 219,
+      "partId": 208,
+      "code": "8A",
+      "title": "Transactions and Locking",
+      "track": "sql"
+    },
+    {
+      "id": 220,
+      "partId": 209,
+      "code": "9A",
+      "title": "Advanced Patterns",
+      "track": "sql"
+    },
+    {
+      "id": 221,
+      "partId": 209,
+      "code": "9B",
+      "title": "Practice: Updates and Pivots",
+      "track": "sql"
+    },
+    {
+      "id": 222,
+      "partId": 209,
+      "code": "9C",
+      "title": "Postgres Power Features",
+      "track": "sql"
+    },
+    {
+      "id": 223,
+      "partId": 209,
+      "code": "9D",
+      "title": "Baraa: DDL, DML, Views, Procedures",
+      "track": "sql"
+    },
+    {
+      "id": 224,
+      "partId": 210,
+      "code": "10A",
+      "title": "Interview Playbook",
+      "track": "sql"
+    }
+  ],
+  "articles": [
+    {
+      "id": 2001,
+      "track": "sql",
+      "groupId": 201,
+      "code": "01",
+      "title": "The SQL Processing Pipeline",
+      "slug": "sql-01-the-sql-processing-pipeline",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/01-how-sql-is-processed.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Parse, analyse, rewrite, plan, execute: what happens at each stage as your query becomes a plan",
+      "links": [
+        {
+          "label": "PostgreSQL docs: The Path of a Query",
+          "url": "https://www.postgresql.org/docs/current/query-path.html"
+        },
+        {
+          "label": "PostgreSQL docs: Overview of Internals",
+          "url": "https://www.postgresql.org/docs/current/overview.html"
+        }
+      ]
+    },
+    {
+      "id": 2002,
+      "track": "sql",
+      "groupId": 201,
+      "code": "02",
+      "title": "The Logical Execution Order",
+      "slug": "sql-02-the-logical-execution-order",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/02-logical-execution-order.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "FROM, JOIN, WHERE, GROUP BY, HAVING, SELECT, DISTINCT, window, ORDER BY, LIMIT: why this order matters",
+      "links": [
+        {
+          "label": "Baraa PDF 2: Query Data (SELECT)",
+          "url": "https://drive.google.com/file/d/1NMNG6AGqcZPoydQKC9vKAqSfsX1EOLa1/view"
+        },
+        {
+          "label": "Baraa video: Query Data (SELECT)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=2041s"
+        },
+        {
+          "label": "SQLBolt: Order of execution",
+          "url": "https://sqlbolt.com/lesson/select_queries_order_of_execution"
+        },
+        {
+          "label": "PostgreSQL docs: SELECT reference",
+          "url": "https://www.postgresql.org/docs/current/sql-select.html"
+        }
+      ]
+    },
+    {
+      "id": 2003,
+      "track": "sql",
+      "groupId": 201,
+      "code": "03",
+      "title": "The Query Planner in Depth",
+      "slug": "sql-03-the-query-planner-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/03-the-query-planner.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "How Postgres estimates cost, the statistics it uses (pg_stats), why estimates go wrong, when to step in",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Planner/Optimizer",
+          "url": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+        },
+        {
+          "label": "PostgreSQL docs: Statistics used by the planner",
+          "url": "https://www.postgresql.org/docs/current/planner-stats.html"
+        },
+        {
+          "label": "PostgreSQL docs: Row estimation examples",
+          "url": "https://www.postgresql.org/docs/current/row-estimation-examples.html"
+        }
+      ]
+    },
+    {
+      "id": 2004,
+      "track": "sql",
+      "groupId": 201,
+      "code": "04",
+      "title": "Reading EXPLAIN and EXPLAIN ANALYZE",
+      "slug": "sql-04-reading-explain-and-explain-analyze",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/04-reading-explain-analyze.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Every plan node (Seq/Index/Bitmap scan, Hash/Merge/Nested Loop), bottlenecks, actual vs estimated rows",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Execution Plan",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=73231s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Using EXPLAIN",
+          "url": "https://www.postgresql.org/docs/current/using-explain.html"
+        },
+        {
+          "label": "Use The Index, Luke: PostgreSQL plan operations",
+          "url": "https://use-the-index-luke.com/sql/explain-plan/postgresql/operations"
+        },
+        {
+          "label": "Practice: explain.dalibo.com plan visualiser",
+          "url": "https://explain.dalibo.com/"
+        }
+      ]
+    },
+    {
+      "id": 2005,
+      "track": "sql",
+      "groupId": 202,
+      "code": "05",
+      "title": "SELECT and Projection",
+      "slug": "sql-05-select-and-projection",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/05-select-and-projection.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "What SELECT does in the pipeline, aliasing, expressions, DISTINCT cost, why SELECT * is dangerous in prod",
+      "links": [
+        {
+          "label": "Baraa PDF 2: Query Data (SELECT)",
+          "url": "https://drive.google.com/file/d/1NMNG6AGqcZPoydQKC9vKAqSfsX1EOLa1/view"
+        },
+        {
+          "label": "Baraa video: Query Data (SELECT)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=2041s"
+        },
+        {
+          "label": "Dialect notes: Case Sensitivity, Quoting and Identifiers",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#5-case-sensitivity-quoting-and-identifiers"
+        },
+        {
+          "label": "PostgreSQL docs: Select lists",
+          "url": "https://www.postgresql.org/docs/current/queries-select-lists.html"
+        },
+        {
+          "label": "SQLBolt: SELECT queries introduction",
+          "url": "https://sqlbolt.com/lesson/select_queries_introduction"
+        },
+        {
+          "label": "Practice: pgexercises Basic",
+          "url": "https://pgexercises.com/questions/basic/"
+        }
+      ]
+    },
+    {
+      "id": 2006,
+      "track": "sql",
+      "groupId": 202,
+      "code": "06",
+      "title": "WHERE Clause Mastery",
+      "slug": "sql-06-where-clause-mastery",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/06-where-clause-mastery.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Comparison ops, IS NULL vs = NULL, BETWEEN, IN, LIKE/ILIKE, ANY, ALL, EXISTS: exact semantics and cost",
+      "links": [
+        {
+          "label": "Baraa PDF 5: Filtering Data",
+          "url": "https://drive.google.com/file/d/1os_Yv35ODco5W1NLCVC7gLx4_2YPPXTJ/view"
+        },
+        {
+          "label": "Baraa video: Filtering Data",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=7683s"
+        },
+        {
+          "label": "Dialect notes: Strings and Concatenation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#4-strings-and-concatenation"
+        },
+        {
+          "label": "PostgreSQL docs: Comparison functions and operators",
+          "url": "https://www.postgresql.org/docs/current/functions-comparison.html"
+        },
+        {
+          "label": "SQLBolt: Queries with constraints",
+          "url": "https://sqlbolt.com/lesson/select_queries_with_constraints"
+        },
+        {
+          "label": "Practice: pgexercises Control which rows are retrieved",
+          "url": "https://pgexercises.com/questions/basic/where.html"
+        }
+      ]
+    },
+    {
+      "id": 2007,
+      "track": "sql",
+      "groupId": 202,
+      "code": "08",
+      "title": "Filtering Performance and Sargability",
+      "slug": "sql-08-filtering-performance-and-sargability",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/08-filtering-performance.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Which WHERE conditions can use indexes and which cannot: functions on columns, type mismatches, wildcards",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: 30x Performance Tips",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=78219s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "Use The Index, Luke: Obfuscated conditions",
+          "url": "https://use-the-index-luke.com/sql/where-clause/obfuscation"
+        },
+        {
+          "label": "Use The Index, Luke: LIKE performance tuning",
+          "url": "https://use-the-index-luke.com/sql/where-clause/searching-for-ranges/like-performance-tuning"
+        },
+        {
+          "label": "PostgreSQL docs: Indexes on expressions",
+          "url": "https://www.postgresql.org/docs/current/indexes-expressional.html"
+        }
+      ]
+    },
+    {
+      "id": 2008,
+      "track": "sql",
+      "groupId": 203,
+      "code": "07",
+      "title": "NULL in Depth",
+      "slug": "sql-07-null-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/07-null-in-depth.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Three-valued logic, NULL in comparisons, aggregates and JOINs, COALESCE, NULLIF, IS DISTINCT FROM",
+      "links": [
+        {
+          "label": "Baraa PDF 7: Row-Level Functions",
+          "url": "https://drive.google.com/file/d/1zpPRG9GcjDLaWK1qMR4PS_WXySYALL4r/view"
+        },
+        {
+          "label": "Baraa video: NULL Functions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=25146s"
+        },
+        {
+          "label": "Dialect notes: NULL Handling Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#7-null-handling-functions"
+        },
+        {
+          "label": "Modern SQL: Three-valued logic",
+          "url": "https://modern-sql.com/concept/three-valued-logic"
+        },
+        {
+          "label": "DataLemur: NULL values tutorial",
+          "url": "https://datalemur.com/sql-tutorial/sql-null-values"
+        },
+        {
+          "label": "Practice: SQLZoo Using Null",
+          "url": "https://sqlzoo.net/wiki/Using_Null"
+        }
+      ]
+    },
+    {
+      "id": 2009,
+      "track": "sql",
+      "groupId": 203,
+      "code": "09",
+      "title": "CASE Expressions",
+      "slug": "sql-09-case-expressions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/09-case-expressions.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Simple vs searched CASE, CASE in SELECT/WHERE/ORDER BY/GROUP BY and aggregates, CASE vs COALESCE vs NULLIF",
+      "links": [
+        {
+          "label": "Baraa PDF 7: Row-Level Functions",
+          "url": "https://drive.google.com/file/d/1zpPRG9GcjDLaWK1qMR4PS_WXySYALL4r/view"
+        },
+        {
+          "label": "Baraa video: Case Statement",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=29270s"
+        },
+        {
+          "label": "Dialect notes: NULL Handling Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#7-null-handling-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Conditional expressions",
+          "url": "https://www.postgresql.org/docs/current/functions-conditional.html"
+        },
+        {
+          "label": "Mode: SQL CASE",
+          "url": "https://mode.com/sql-tutorial/sql-case/"
+        },
+        {
+          "label": "Practice: pgexercises Classify results into buckets",
+          "url": "https://pgexercises.com/questions/basic/classify.html"
+        }
+      ]
+    },
+    {
+      "id": 2010,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC1",
+      "title": "Recyclable and Low Fat Products",
+      "slug": "sql-lc1-recyclable-and-low-fat-products",
+      "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Select · two AND conditions on Y/N flag columns, no join needed",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1757/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/recyclable-and-low-fat-products.sql"
+        }
+      ]
+    },
+    {
+      "id": 2011,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC2",
+      "title": "Find Customer Referee",
+      "slug": "sql-lc2-find-customer-referee",
+      "url": "https://leetcode.com/problems/find-customer-referee/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Select · NULL-safe filter: referee_id != 2 OR referee_id IS NULL",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/584/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/584_Find_Customer_Referee.sql"
+        }
+      ]
+    },
+    {
+      "id": 2012,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC3",
+      "title": "Big Countries",
+      "slug": "sql-lc3-big-countries",
+      "url": "https://leetcode.com/problems/big-countries/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Select · OR of two thresholds; UNION of two range scans as index-friendly variant",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/595/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/595_Big_Countries.sql"
+        }
+      ]
+    },
+    {
+      "id": 2013,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC4",
+      "title": "Article Views I",
+      "slug": "sql-lc4-article-views-i",
+      "url": "https://leetcode.com/problems/article-views-i/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Select · WHERE author_id = viewer_id, then DISTINCT and ORDER BY id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1148/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1148_Article_Views_I.sql"
+        }
+      ]
+    },
+    {
+      "id": 2014,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC5",
+      "title": "Invalid Tweets",
+      "slug": "sql-lc5-invalid-tweets",
+      "url": "https://leetcode.com/problems/invalid-tweets/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Select · LENGTH(content) > 15; CHAR_LENGTH vs LEN differs by dialect",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1683/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/invalid-tweets.sql"
+        }
+      ]
+    },
+    {
+      "id": 2015,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC44",
+      "title": "Fix Names in a Table",
+      "slug": "sql-lc44-fix-names-in-a-table",
+      "url": "https://leetcode.com/problems/fix-names-in-a-table/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · String Functions · CONCAT(UPPER(LEFT(name,1)), LOWER(SUBSTRING(name,2))); INITCAP in Postgres",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1667/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/fix-names-in-a-table.sql"
+        }
+      ]
+    },
+    {
+      "id": 2016,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC45",
+      "title": "Patients With a Condition",
+      "slug": "sql-lc45-patients-with-a-condition",
+      "url": "https://leetcode.com/problems/patients-with-a-condition/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · String Functions · LIKE 'DIAB1%' OR LIKE '% DIAB1%' so the prefix starts a word",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1527/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/patients-with-a-condition.sql"
+        }
+      ]
+    },
+    {
+      "id": 2017,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC46",
+      "title": "Delete Duplicate Emails",
+      "slug": "sql-lc46-delete-duplicate-emails",
+      "url": "https://leetcode.com/problems/delete-duplicate-emails/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Clause · DELETE p1 FROM Person p1 JOIN Person p2 ON same email AND p1.id > p2.id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/196/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/196_Delete_Duplicate_Emails.sql"
+        }
+      ]
+    },
+    {
+      "id": 2018,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC47",
+      "title": "Second Highest Salary",
+      "slug": "sql-lc47-second-highest-salary",
+      "url": "https://leetcode.com/problems/second-highest-salary/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Clause · MAX(salary) WHERE salary < MAX, or DISTINCT ORDER BY DESC LIMIT 1 OFFSET 1 in subquery",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/176/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/176_Second_Highest_Salary.sql"
+        }
+      ]
+    },
+    {
+      "id": 2019,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC48",
+      "title": "Group Sold Products By The Date",
+      "slug": "sql-lc48-group-sold-products-by-the-date",
+      "url": "https://leetcode.com/problems/group-sold-products-by-the-date/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · String Functions · GROUP BY sell_date, COUNT(DISTINCT), GROUP_CONCAT(DISTINCT product ORDER BY product)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1484/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/group-sold-products-by-the-date.sql"
+        }
+      ]
+    },
+    {
+      "id": 2020,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC49",
+      "title": "List the Products Ordered in a Period",
+      "slug": "sql-lc49-list-the-products-ordered-in-a-period",
+      "url": "https://leetcode.com/problems/list-the-products-ordered-in-a-period/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Clause · JOIN, Feb-2020 date range, GROUP BY product HAVING SUM(unit) >= 100",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1327/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/list-the-products-ordered-in-a-period.sql"
+        }
+      ]
+    },
+    {
+      "id": 2021,
+      "track": "sql",
+      "groupId": 204,
+      "code": "LC50",
+      "title": "Find Users With Valid E-Mails",
+      "slug": "sql-lc50-find-users-with-valid-e-mails",
+      "url": "https://leetcode.com/problems/find-users-with-valid-e-mails/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Regex · REGEXP '^[A-Za-z][A-Za-z0-9._-]*@leetcode\\\\.com$'; anchor both ends",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1517/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/find-users-with-valid-e-mails.sql"
+        }
+      ]
+    },
+    {
+      "id": 2022,
+      "track": "sql",
+      "groupId": 205,
+      "code": "10",
+      "title": "JOIN Fundamentals and Mental Model",
+      "slug": "sql-10-join-fundamentals-and-mental-model",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/10-join-fundamentals.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "What a JOIN does at the engine level: the cross product every JOIN starts with and how ON filters it",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Basics)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=10077s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "PostgreSQL tutorial: Joins between tables",
+          "url": "https://www.postgresql.org/docs/current/tutorial-join.html"
+        },
+        {
+          "label": "Mode: SQL Joins",
+          "url": "https://mode.com/sql-tutorial/sql-joins/"
+        },
+        {
+          "label": "Practice: SQLZoo The JOIN operation",
+          "url": "https://sqlzoo.net/wiki/The_JOIN_operation"
+        }
+      ]
+    },
+    {
+      "id": 2023,
+      "track": "sql",
+      "groupId": 205,
+      "code": "11",
+      "title": "INNER JOIN in Depth",
+      "slug": "sql-11-inner-join-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/11-inner-join.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Exact semantics, which rows appear and why, nested loop vs hash vs merge and when each algorithm is chosen",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Basics)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=10077s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "PostgreSQL docs: Joined tables",
+          "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-JOIN"
+        },
+        {
+          "label": "Mode: SQL INNER JOIN",
+          "url": "https://mode.com/sql-tutorial/sql-inner-join/"
+        },
+        {
+          "label": "Practice: pgexercises Retrieve start times of members' bookings",
+          "url": "https://pgexercises.com/questions/joins/simplejoin.html"
+        }
+      ]
+    },
+    {
+      "id": 2024,
+      "track": "sql",
+      "groupId": 205,
+      "code": "12",
+      "title": "LEFT JOIN and RIGHT JOIN",
+      "slug": "sql-12-left-join-and-right-join",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/12-left-right-join.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "All rows from the left side, NULLs in results, the asymmetry, the classic LEFT JOIN + WHERE-on-right bug",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Basics)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=10077s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "Mode: SQL LEFT JOIN",
+          "url": "https://mode.com/sql-tutorial/sql-left-join/"
+        },
+        {
+          "label": "SQLBolt: OUTER JOINs",
+          "url": "https://sqlbolt.com/lesson/select_queries_with_outer_joins"
+        },
+        {
+          "label": "Practice: LeetCode 175 Combine Two Tables",
+          "url": "https://leetcode.com/problems/combine-two-tables/"
+        }
+      ]
+    },
+    {
+      "id": 2025,
+      "track": "sql",
+      "groupId": 205,
+      "code": "13",
+      "title": "FULL OUTER JOIN",
+      "slug": "sql-13-full-outer-join",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/13-full-outer-join.md",
+      "kind": "JOINS",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "When you actually need it, the reconciliation pattern it enables, why it is rare, its performance cost",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Basics)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=10077s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "Mode: SQL FULL OUTER JOIN",
+          "url": "https://mode.com/sql-tutorial/sql-full-outer-join/"
+        },
+        {
+          "label": "PostgreSQL Tutorial: FULL OUTER JOIN",
+          "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-full-outer-join/"
+        }
+      ]
+    },
+    {
+      "id": 2026,
+      "track": "sql",
+      "groupId": 205,
+      "code": "14",
+      "title": "CROSS JOIN",
+      "slug": "sql-14-cross-join",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/14-cross-join.md",
+      "kind": "JOINS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The cartesian product, deliberate uses (combinations, calendar tables) and accidental cross joins",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Advanced)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=12449s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "PostgreSQL docs: Table expressions and CROSS JOIN",
+          "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-JOIN"
+        },
+        {
+          "label": "PostgreSQL Tutorial: CROSS JOIN",
+          "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-cross-join/"
+        }
+      ]
+    },
+    {
+      "id": 2027,
+      "track": "sql",
+      "groupId": 205,
+      "code": "15",
+      "title": "Self JOIN",
+      "slug": "sql-15-self-join",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/15-self-join.md",
+      "kind": "JOINS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Joining a table to itself for hierarchies and row-to-row comparison; why aliases are mandatory",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Advanced)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=12449s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "LearnSQL: What is a self join",
+          "url": "https://learnsql.com/blog/what-is-self-join-sql/"
+        },
+        {
+          "label": "Practice: SQLZoo Self join",
+          "url": "https://sqlzoo.net/wiki/Self_join"
+        },
+        {
+          "label": "Practice: pgexercises Members who recommended another member",
+          "url": "https://pgexercises.com/questions/joins/self.html"
+        }
+      ]
+    },
+    {
+      "id": 2028,
+      "track": "sql",
+      "groupId": 206,
+      "code": "16",
+      "title": "Multiple JOINs",
+      "slug": "sql-16-multiple-joins",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/16-multiple-joins.md",
+      "kind": "JOINS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Joining 3-5+ tables, join order and the planner, when the planner picks a bad order and how to diagnose it",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Advanced)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=12449s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "PostgreSQL docs: Controlling the planner with explicit JOINs",
+          "url": "https://www.postgresql.org/docs/current/explicit-joins.html"
+        },
+        {
+          "label": "Practice: pgexercises Members who have used a tennis court",
+          "url": "https://pgexercises.com/questions/joins/threejoin.html"
+        },
+        {
+          "label": "Practice: SQLZoo More JOIN operations",
+          "url": "https://sqlzoo.net/wiki/More_JOIN_operations"
+        }
+      ]
+    },
+    {
+      "id": 2029,
+      "track": "sql",
+      "groupId": 206,
+      "code": "17",
+      "title": "JOIN Performance Deep Dive",
+      "slug": "sql-17-join-performance-deep-dive",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/17-join-performance.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Nested loop (index needed), hash join (memory, batching), merge join (sort needed); reading them in EXPLAIN",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Execution Plan",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=73231s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "Cybertec: Join strategies and performance in PostgreSQL",
+          "url": "https://www.cybertec-postgresql.com/en/join-strategies-and-performance-in-postgresql/"
+        },
+        {
+          "label": "Use The Index, Luke: Nested loops join",
+          "url": "https://use-the-index-luke.com/sql/join/nested-loops-join"
+        },
+        {
+          "label": "pganalyze: Hash Join node",
+          "url": "https://pganalyze.com/docs/explain/join-nodes/hash-join"
+        }
+      ]
+    },
+    {
+      "id": 2030,
+      "track": "sql",
+      "groupId": 206,
+      "code": "18",
+      "title": "The N+1 Query Problem",
+      "slug": "sql-18-the-n-1-query-problem",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/18-n-plus-one-problem.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "What it is, why ORMs cause it, detecting it via query logging, fixing with JOINs, eager loading and DataLoader",
+      "links": [
+        {
+          "label": "PlanetScale: What is the N+1 query problem",
+          "url": "https://planetscale.com/blog/what-is-n-1-query-problem-and-how-to-solve-it"
+        },
+        {
+          "label": "GitHub: graphql/dataloader",
+          "url": "https://github.com/graphql/dataloader"
+        }
+      ]
+    },
+    {
+      "id": 2031,
+      "track": "sql",
+      "groupId": 206,
+      "code": "19",
+      "title": "JOIN Alternatives",
+      "slug": "sql-19-join-alternatives",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/19-join-alternatives.md",
+      "kind": "JOINS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "EXISTS vs JOIN, IN vs JOIN, correlated subquery vs JOIN: when each is faster and how the planner treats them",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: SQL Joins (Advanced)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=12449s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: Subquery expressions",
+          "url": "https://www.postgresql.org/docs/current/functions-subquery.html"
+        },
+        {
+          "label": "PostgreSQL wiki: Don't use NOT IN",
+          "url": "https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_NOT_IN"
+        },
+        {
+          "label": "Practice: LeetCode 183 Customers Who Never Order",
+          "url": "https://leetcode.com/problems/customers-who-never-order/"
+        }
+      ]
+    },
+    {
+      "id": 2032,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC6",
+      "title": "Replace Employee ID With The Unique Identifier",
+      "slug": "sql-lc6-replace-employee-id-with-the-unique-identifier",
+      "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · LEFT JOIN Employees to EmployeeUNI so missing unique_id stays NULL",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1378/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/replace-employee-id-with-the-unique-identifier.sql"
+        }
+      ]
+    },
+    {
+      "id": 2033,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC7",
+      "title": "Product Sales Analysis I",
+      "slug": "sql-lc7-product-sales-analysis-i",
+      "url": "https://leetcode.com/problems/product-sales-analysis-i/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · plain INNER JOIN Sales to Product on product_id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1068/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1068_Product_Sales_Analysis_I.sql"
+        }
+      ]
+    },
+    {
+      "id": 2034,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC8",
+      "title": "Customer Who Visited but Did Not Make Any Transactions",
+      "slug": "sql-lc8-customer-who-visited-but-did-not-make-any-transactions",
+      "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · LEFT JOIN anti-join: WHERE transaction_id IS NULL, COUNT per customer",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1581/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/customer-who-visited-but-did-not-make-any-transactions.sql"
+        }
+      ]
+    },
+    {
+      "id": 2035,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC9",
+      "title": "Rising Temperature",
+      "slug": "sql-lc9-rising-temperature",
+      "url": "https://leetcode.com/problems/rising-temperature/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · self-join on DATEDIFF(w1.date, w2.date) = 1 to compare with previous day",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/197/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/197_Rising_Temperature.sql"
+        }
+      ]
+    },
+    {
+      "id": 2036,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC10",
+      "title": "Average Time of Process per Machine",
+      "slug": "sql-lc10-average-time-of-process-per-machine",
+      "url": "https://leetcode.com/problems/average-time-of-process-per-machine/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · self-join start/end rows per machine+process, ROUND(AVG(end - start), 3)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1661/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/average-time-of-process-per-machine.sql"
+        }
+      ]
+    },
+    {
+      "id": 2037,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC11",
+      "title": "Employee Bonus",
+      "slug": "sql-lc11-employee-bonus",
+      "url": "https://leetcode.com/problems/employee-bonus/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · LEFT JOIN Bonus, keep bonus < 1000 OR bonus IS NULL",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/577/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/577_Employee_Bonus.sql"
+        }
+      ]
+    },
+    {
+      "id": 2038,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC12",
+      "title": "Students and Examinations",
+      "slug": "sql-lc12-students-and-examinations",
+      "url": "https://leetcode.com/problems/students-and-examinations/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · CROSS JOIN students x subjects, LEFT JOIN exams, COUNT(e.subject_name)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1280/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/students-and-examinations.sql"
+        }
+      ]
+    },
+    {
+      "id": 2039,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC13",
+      "title": "Managers with at Least 5 Direct Reports",
+      "slug": "sql-lc13-managers-with-at-least-5-direct-reports",
+      "url": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Basic Joins · GROUP BY managerId HAVING COUNT(*) >= 5, then join back for the name",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/570/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/570_Managers_with_at_Least_5_Direct_Reports.sql"
+        }
+      ]
+    },
+    {
+      "id": 2040,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC14",
+      "title": "Confirmation Rate",
+      "slug": "sql-lc14-confirmation-rate",
+      "url": "https://leetcode.com/problems/confirmation-rate/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Basic Joins · LEFT JOIN Confirmations, ROUND(AVG(action = 'confirmed'), 2); 0 when none",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1934/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/confirmation-rate.sql"
+        }
+      ]
+    },
+    {
+      "id": 2041,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC51",
+      "title": "Combine Two Tables",
+      "slug": "sql-lc51-combine-two-tables",
+      "url": "https://leetcode.com/problems/combine-two-tables/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · LEFT JOIN Person to Address; city/state NULL when no address",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/175/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/175_Combine_Two_Tables.sql"
+        }
+      ]
+    },
+    {
+      "id": 2042,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC54",
+      "title": "Employees Earning More Than Their Managers",
+      "slug": "sql-lc54-employees-earning-more-than-their-managers",
+      "url": "https://leetcode.com/problems/employees-earning-more-than-their-managers/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · self-join Employee e JOIN Employee m ON e.managerId = m.id WHERE e.salary > m.salary",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/181/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/181_Employees_Earning_More_Than_Their_Managers.sql"
+        }
+      ]
+    },
+    {
+      "id": 2043,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC56",
+      "title": "Customers Who Never Order",
+      "slug": "sql-lc56-customers-who-never-order",
+      "url": "https://leetcode.com/problems/customers-who-never-order/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · LEFT JOIN ... WHERE o.id IS NULL, or NOT IN / NOT EXISTS anti-join",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/183/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/183_Customers_Who_Never_Order.sql"
+        }
+      ]
+    },
+    {
+      "id": 2044,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC62",
+      "title": "Sales Person",
+      "slug": "sql-lc62-sales-person",
+      "url": "https://leetcode.com/problems/sales-person/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · NOT IN salespeople with orders for company 'RED'; NOT EXISTS variant",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/607/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/607_Sales_Person.sql"
+        }
+      ]
+    },
+    {
+      "id": 2045,
+      "track": "sql",
+      "groupId": 207,
+      "code": "LC65",
+      "title": "Actors and Directors Who Cooperated At Least Three Times",
+      "slug": "sql-lc65-actors-and-directors-who-cooperated-at-least-three-times",
+      "url": "https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Basic Joins · GROUP BY actor_id, director_id HAVING COUNT(*) >= 3",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1050/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1050_Actors_and_Directors_Who_Cooperated_At_Least_Three_Times.sql"
+        }
+      ]
+    },
+    {
+      "id": 2046,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC30",
+      "title": "The Number of Employees Which Report to Each Employee",
+      "slug": "sql-lc30-the-number-of-employees-which-report-to-each-employee",
+      "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Advanced Joins · self-join manager to reports, COUNT(*), ROUND(AVG(age)); rounding differs",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1731/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/the-number-of-employees-which-report-to-each-employee.sql"
+        }
+      ]
+    },
+    {
+      "id": 2047,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC31",
+      "title": "Primary Department for Each Employee",
+      "slug": "sql-lc31-primary-department-for-each-employee",
+      "url": "https://leetcode.com/problems/primary-department-for-each-employee/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Advanced Joins · primary_flag = 'Y' UNION employees with exactly one department",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1789/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/primary-department-for-each-employee.sql"
+        }
+      ]
+    },
+    {
+      "id": 2048,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC32",
+      "title": "Triangle Judgement",
+      "slug": "sql-lc32-triangle-judgement",
+      "url": "https://leetcode.com/problems/triangle-judgement/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Advanced Joins · CASE WHEN x+y>z AND x+z>y AND y+z>x THEN 'Yes' ELSE 'No'",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/610/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/610_Triangle_Judgement.sql"
+        }
+      ]
+    },
+    {
+      "id": 2049,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC33",
+      "title": "Consecutive Numbers",
+      "slug": "sql-lc33-consecutive-numbers",
+      "url": "https://leetcode.com/problems/consecutive-numbers/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Advanced Joins · triple self-join on id+1/id+2, or LAG and LEAD; SELECT DISTINCT",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/180/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/180_Consecutive_Numbers.sql"
+        }
+      ]
+    },
+    {
+      "id": 2050,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC34",
+      "title": "Product Price at a Given Date",
+      "slug": "sql-lc34-product-price-at-a-given-date",
+      "url": "https://leetcode.com/problems/product-price-at-a-given-date/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Advanced Joins · latest change_date <= 2019-08-16 per product, default 10; window or NOT EXISTS",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1164/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1164_Product_Price_at_a_Given_Date.sql"
+        }
+      ]
+    },
+    {
+      "id": 2051,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC35",
+      "title": "Last Person to Fit in the Bus",
+      "slug": "sql-lc35-last-person-to-fit-in-the-bus",
+      "url": "https://leetcode.com/problems/last-person-to-fit-in-the-bus/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Advanced Joins · running SUM(weight) OVER (ORDER BY turn) <= 1000, take the max turn",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1204/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        }
+      ]
+    },
+    {
+      "id": 2052,
+      "track": "sql",
+      "groupId": 208,
+      "code": "LC36",
+      "title": "Count Salary Categories",
+      "slug": "sql-lc36-count-salary-categories",
+      "url": "https://leetcode.com/problems/count-salary-categories/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Advanced Joins · three SELECT ... UNION ALL branches so zero-count buckets still appear",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1907/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/count-salary-categories.sql"
+        }
+      ]
+    },
+    {
+      "id": 2053,
+      "track": "sql",
+      "groupId": 209,
+      "code": "20",
+      "title": "GROUP BY Fundamentals",
+      "slug": "sql-20-group-by-fundamentals",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/20-group-by-fundamentals.md",
+      "kind": "AGGREGATE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "What grouping does in the engine, which columns must be in GROUP BY and why, functional-dependency exception",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Aggregate Functions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31416s"
+        },
+        {
+          "label": "Dialect notes: Aggregation and GROUP BY Rules",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#10-aggregation-and-group-by-rules"
+        },
+        {
+          "label": "PostgreSQL docs: GROUP BY and HAVING",
+          "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-GROUP"
+        },
+        {
+          "label": "Mode: SQL GROUP BY",
+          "url": "https://mode.com/sql-tutorial/sql-group-by/"
+        },
+        {
+          "label": "Practice: pgexercises Aggregates",
+          "url": "https://pgexercises.com/questions/aggregates/"
+        }
+      ]
+    },
+    {
+      "id": 2054,
+      "track": "sql",
+      "groupId": 209,
+      "code": "21",
+      "title": "Aggregate Functions in Depth",
+      "slug": "sql-21-aggregate-functions-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/21-aggregate-functions.md",
+      "kind": "AGGREGATE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "COUNT(*) vs COUNT(col) vs COUNT(DISTINCT), SUM/AVG/MIN/MAX, STRING_AGG, ARRAY_AGG, BOOL_AND/OR, JSON_AGG, NULL",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Aggregate Functions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31416s"
+        },
+        {
+          "label": "Dialect notes: Aggregation and GROUP BY Rules",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#10-aggregation-and-group-by-rules"
+        },
+        {
+          "label": "PostgreSQL docs: Aggregate functions",
+          "url": "https://www.postgresql.org/docs/current/functions-aggregate.html"
+        },
+        {
+          "label": "Mode: SQL aggregate functions",
+          "url": "https://mode.com/sql-tutorial/sql-aggregate-functions/"
+        },
+        {
+          "label": "Practice: SQLZoo SUM and COUNT",
+          "url": "https://sqlzoo.net/wiki/SUM_and_COUNT"
+        }
+      ]
+    },
+    {
+      "id": 2055,
+      "track": "sql",
+      "groupId": 209,
+      "code": "22",
+      "title": "HAVING",
+      "slug": "sql-22-having",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/22-having.md",
+      "kind": "AGGREGATE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Filtering groups vs filtering rows, the HAVING vs WHERE decision rule, complex aggregates, performance",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Aggregate Functions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31416s"
+        },
+        {
+          "label": "Dialect notes: Aggregation and GROUP BY Rules",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#10-aggregation-and-group-by-rules"
+        },
+        {
+          "label": "Mode: SQL HAVING",
+          "url": "https://mode.com/sql-tutorial/sql-having/"
+        },
+        {
+          "label": "SQLBolt: Aggregates part 2 (HAVING)",
+          "url": "https://sqlbolt.com/lesson/select_queries_with_aggregates_pt_2"
+        },
+        {
+          "label": "Practice: pgexercises Facilities with total revenue less than 1000",
+          "url": "https://pgexercises.com/questions/aggregates/facrev2.html"
+        }
+      ]
+    },
+    {
+      "id": 2056,
+      "track": "sql",
+      "groupId": 209,
+      "code": "23",
+      "title": "FILTER Clause",
+      "slug": "sql-23-filter-clause",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/23-filter-clause.md",
+      "kind": "AGGREGATE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Per-aggregate filtering with COUNT(*) FILTER (WHERE ...), why it beats CASE inside aggregates and pivot hacks",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Case Statement",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=29270s"
+        },
+        {
+          "label": "Dialect notes: Pivoting and Conditional Aggregation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#17-pivoting-and-conditional-aggregation"
+        },
+        {
+          "label": "Modern SQL: FILTER clause",
+          "url": "https://modern-sql.com/feature/filter"
+        },
+        {
+          "label": "PostgreSQL docs: Aggregate expressions",
+          "url": "https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-AGGREGATES"
+        },
+        {
+          "label": "Practice: pgexercises Count the number of expensive facilities",
+          "url": "https://pgexercises.com/questions/aggregates/count2.html"
+        }
+      ]
+    },
+    {
+      "id": 2057,
+      "track": "sql",
+      "groupId": 209,
+      "code": "24",
+      "title": "GROUPING SETS, ROLLUP, CUBE",
+      "slug": "sql-24-grouping-sets-rollup-cube",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/24-grouping-sets-rollup-cube.md",
+      "kind": "AGGREGATE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Multiple groupings in one query, the GROUPING() function, reading NULL markers, when reports need this",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Dialect notes: Aggregation and GROUP BY Rules",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#10-aggregation-and-group-by-rules"
+        },
+        {
+          "label": "PostgreSQL docs: GROUPING SETS, CUBE and ROLLUP",
+          "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-GROUPING-SETS"
+        },
+        {
+          "label": "Modern SQL: GROUPING SETS",
+          "url": "https://modern-sql.com/feature/grouping"
+        },
+        {
+          "label": "PostgreSQL Tutorial: GROUPING SETS",
+          "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-grouping-sets/"
+        }
+      ]
+    },
+    {
+      "id": 2058,
+      "track": "sql",
+      "groupId": 209,
+      "code": "25",
+      "title": "Aggregate Performance",
+      "slug": "sql-25-aggregate-performance",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/25-aggregate-performance.md",
+      "kind": "AGGREGATE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Hash aggregate vs sort aggregate and when each is chosen, work_mem, spilling to disk, GROUP BY on big tables",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: 30x Performance Tips",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=78219s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "pgmustard: Hash Aggregate node",
+          "url": "https://www.pgmustard.com/docs/explain/hash-aggregate"
+        },
+        {
+          "label": "PostgreSQL docs: work_mem",
+          "url": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-WORK-MEM"
+        },
+        {
+          "label": "Cybertec: PostgreSQL count(*) made fast",
+          "url": "https://www.cybertec-postgresql.com/en/postgresql-count-made-fast/"
+        }
+      ]
+    },
+    {
+      "id": 2059,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC15",
+      "title": "Not Boring Movies",
+      "slug": "sql-lc15-not-boring-movies",
+      "url": "https://leetcode.com/problems/not-boring-movies/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · id % 2 = 1 AND description <> 'boring', ORDER BY rating DESC",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/620/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/620_Not_Boring_Movies.sql"
+        }
+      ]
+    },
+    {
+      "id": 2060,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC16",
+      "title": "Average Selling Price",
+      "slug": "sql-lc16-average-selling-price",
+      "url": "https://leetcode.com/problems/average-selling-price/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · LEFT JOIN on date range, SUM(units*price)/SUM(units), IFNULL(...,0)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1251/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/average-selling-price.sql"
+        }
+      ]
+    },
+    {
+      "id": 2061,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC17",
+      "title": "Project Employees I",
+      "slug": "sql-lc17-project-employees-i",
+      "url": "https://leetcode.com/problems/project-employees-i/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · JOIN then GROUP BY project_id, ROUND(AVG(experience_years), 2)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1075/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1075_Project_Employees_I.sql"
+        }
+      ]
+    },
+    {
+      "id": 2062,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC18",
+      "title": "Percentage of Users Attended a Contest",
+      "slug": "sql-lc18-percentage-of-users-attended-a-contest",
+      "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · COUNT(DISTINCT user_id) * 100 / scalar subquery (SELECT COUNT(*) FROM Users)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1633/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/percentage-of-users-attended-a-contest.sql"
+        }
+      ]
+    },
+    {
+      "id": 2063,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC19",
+      "title": "Queries Quality and Percentage",
+      "slug": "sql-lc19-queries-quality-and-percentage",
+      "url": "https://leetcode.com/problems/queries-quality-and-percentage/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · AVG(rating / position) and AVG(rating < 3) * 100 per query_name",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1211/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/queries-quality-and-percentage.sql"
+        }
+      ]
+    },
+    {
+      "id": 2064,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC20",
+      "title": "Monthly Transactions I",
+      "slug": "sql-lc20-monthly-transactions-i",
+      "url": "https://leetcode.com/problems/monthly-transactions-i/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Aggregate · GROUP BY DATE_FORMAT(trans_date, '%Y-%m'), country; conditional SUM/COUNT",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1193/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/monthly-transactions-i.sql"
+        }
+      ]
+    },
+    {
+      "id": 2065,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC21",
+      "title": "Immediate Food Delivery II",
+      "slug": "sql-lc21-immediate-food-delivery-ii",
+      "url": "https://leetcode.com/problems/immediate-food-delivery-ii/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Aggregate · first order per customer via MIN(order_date), then AVG(order = delivery)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1174/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1174_Immediate_Food_Delivery_II.sql"
+        }
+      ]
+    },
+    {
+      "id": 2066,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC22",
+      "title": "Game Play Analysis IV",
+      "slug": "sql-lc22-game-play-analysis-iv",
+      "url": "https://leetcode.com/problems/game-play-analysis-iv/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Aggregate · MIN(event_date) per player, check (player, first+1 day) exists, divide",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/550/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/game-play-analysis-iv.sql"
+        }
+      ]
+    },
+    {
+      "id": 2067,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC59",
+      "title": "Game Play Analysis I",
+      "slug": "sql-lc59-game-play-analysis-i",
+      "url": "https://leetcode.com/problems/game-play-analysis-i/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · MIN(event_date) GROUP BY player_id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/511/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/game-play-analysis-i.sql"
+        }
+      ]
+    },
+    {
+      "id": 2068,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC60",
+      "title": "Customer Placing the Largest Number of Orders",
+      "slug": "sql-lc60-customer-placing-the-largest-number-of-orders",
+      "url": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · GROUP BY customer_number ORDER BY COUNT(*) DESC LIMIT 1",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/586/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/586_Customer_Placing_the_Largest_Number_of_Orders.sql"
+        }
+      ]
+    },
+    {
+      "id": 2069,
+      "track": "sql",
+      "groupId": 210,
+      "code": "LC66",
+      "title": "Sales Analysis III",
+      "slug": "sql-lc66-sales-analysis-iii",
+      "url": "https://leetcode.com/problems/sales-analysis-iii/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Aggregate · GROUP BY product HAVING MIN(sale_date) >= '2019-01-01' AND MAX(sale_date) <= '2019-03-31'",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1084/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1084_Sales_Analysis_III.sql"
+        }
+      ]
+    },
+    {
+      "id": 2070,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC23",
+      "title": "Number of Unique Subjects Taught by Each Teacher",
+      "slug": "sql-lc23-number-of-unique-subjects-taught-by-each-teacher",
+      "url": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · COUNT(DISTINCT subject_id) GROUP BY teacher_id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/2356/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/number-of-unique-subjects-taught-by-each-teacher.sql"
+        }
+      ]
+    },
+    {
+      "id": 2071,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC24",
+      "title": "User Activity for the Past 30 Days I",
+      "slug": "sql-lc24-user-activity-for-the-past-30-days-i",
+      "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-i/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · date window 2019-06-28..2019-07-27, COUNT(DISTINCT user_id) per day",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1141/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1141_User_Activity_for_the_Past_30_Days_I.sql"
+        }
+      ]
+    },
+    {
+      "id": 2072,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC25",
+      "title": "Product Sales Analysis III",
+      "slug": "sql-lc25-product-sales-analysis-iii",
+      "url": "https://leetcode.com/problems/product-sales-analysis-iii/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Sorting and Grouping · (product_id, year) IN (SELECT product_id, MIN(year) ...) tuple filter",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1070/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1070_Product_Sales_Analysis_III.sql"
+        }
+      ]
+    },
+    {
+      "id": 2073,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC26",
+      "title": "Classes With at Least 5 Students",
+      "slug": "sql-lc26-classes-with-at-least-5-students",
+      "url": "https://leetcode.com/problems/classes-with-at-least-5-students/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · GROUP BY class HAVING COUNT(student) >= 5",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/596/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/596_Classes_More_Than_5_Students.sql"
+        }
+      ]
+    },
+    {
+      "id": 2074,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC27",
+      "title": "Find Followers Count",
+      "slug": "sql-lc27-find-followers-count",
+      "url": "https://leetcode.com/problems/find-followers-count/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · COUNT(*) per user_id, ORDER BY user_id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1729/"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/find-followers-count.sql"
+        }
+      ]
+    },
+    {
+      "id": 2075,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC28",
+      "title": "Biggest Single Number",
+      "slug": "sql-lc28-biggest-single-number",
+      "url": "https://leetcode.com/problems/biggest-single-number/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · MAX over subquery of nums HAVING COUNT(*) = 1; yields NULL when none",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/619/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/619_Biggest_Single_Number.sql"
+        }
+      ]
+    },
+    {
+      "id": 2076,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC29",
+      "title": "Customers Who Bought All Products",
+      "slug": "sql-lc29-customers-who-bought-all-products",
+      "url": "https://leetcode.com/problems/customers-who-bought-all-products/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Sorting and Grouping · COUNT(DISTINCT product_key) = (SELECT COUNT(*) FROM Product)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1045/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1045_Customers_Who_Bought_All_Products.sql"
+        }
+      ]
+    },
+    {
+      "id": 2077,
+      "track": "sql",
+      "groupId": 211,
+      "code": "LC55",
+      "title": "Duplicate Emails",
+      "slug": "sql-lc55-duplicate-emails",
+      "url": "https://leetcode.com/problems/duplicate-emails/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Sorting and Grouping · GROUP BY email HAVING COUNT(*) > 1",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/182/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/182_Duplicate_Emails.sql"
+        }
+      ]
+    },
+    {
+      "id": 2078,
+      "track": "sql",
+      "groupId": 212,
+      "code": "26",
+      "title": "Subqueries in Depth",
+      "slug": "sql-26-subqueries-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/26-subqueries-in-depth.md",
+      "kind": "SUBQUERY",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Scalar, row and table subqueries; correlated vs uncorrelated; where they may appear and how each executes",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Subqueries",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=46684s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: Subquery expressions",
+          "url": "https://www.postgresql.org/docs/current/functions-subquery.html"
+        },
+        {
+          "label": "Mode: SQL subqueries",
+          "url": "https://mode.com/sql-tutorial/sql-sub-queries/"
+        },
+        {
+          "label": "Practice: SQLZoo SELECT within SELECT",
+          "url": "https://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial"
+        }
+      ]
+    },
+    {
+      "id": 2079,
+      "track": "sql",
+      "groupId": 212,
+      "code": "27",
+      "title": "EXISTS and NOT EXISTS",
+      "slug": "sql-27-exists-and-not-exists",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/27-exists-not-exists.md",
+      "kind": "SUBQUERY",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Semi-join and anti-join patterns, why EXISTS stops at first match, vs IN vs JOIN, NULL trap in NOT IN",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Subqueries",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=46684s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: EXISTS",
+          "url": "https://www.postgresql.org/docs/current/functions-subquery.html#FUNCTIONS-SUBQUERY-EXISTS"
+        },
+        {
+          "label": "DataLemur: SQL EXISTS tutorial",
+          "url": "https://datalemur.com/sql-tutorial/sql-exists"
+        },
+        {
+          "label": "Practice: LeetCode 183 Customers Who Never Order",
+          "url": "https://leetcode.com/problems/customers-who-never-order/"
+        }
+      ]
+    },
+    {
+      "id": 2080,
+      "track": "sql",
+      "groupId": 212,
+      "code": "28",
+      "title": "CTEs (Common Table Expressions)",
+      "slug": "sql-28-ctes-common-table-expressions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/28-ctes.md",
+      "kind": "SUBQUERY",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The WITH clause, readability and reuse, pre-PG12 optimisation fence vs PG12+ default, MATERIALIZED or not",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Common Table Expressions (CTE)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=51488s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: WITH queries",
+          "url": "https://www.postgresql.org/docs/current/queries-with.html"
+        },
+        {
+          "label": "Modern SQL: WITH clause",
+          "url": "https://modern-sql.com/feature/with"
+        },
+        {
+          "label": "DataLemur: CTE vs subquery tutorial",
+          "url": "https://datalemur.com/sql-tutorial/sql-cte-subquery"
+        }
+      ]
+    },
+    {
+      "id": 2081,
+      "track": "sql",
+      "groupId": 212,
+      "code": "29",
+      "title": "Recursive CTEs",
+      "slug": "sql-29-recursive-ctes",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/29-recursive-ctes.md",
+      "kind": "SUBQUERY",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "WITH RECURSIVE: anchor + recursive member, termination, hierarchies, graphs, series, cycle detection",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Common Table Expressions (CTE)",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=51488s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: Recursive queries",
+          "url": "https://www.postgresql.org/docs/current/queries-with.html#QUERIES-WITH-RECURSIVE"
+        },
+        {
+          "label": "LearnSQL: SQL recursive CTE",
+          "url": "https://learnsql.com/blog/sql-recursive-cte/"
+        },
+        {
+          "label": "Practice: pgexercises Recursive",
+          "url": "https://pgexercises.com/questions/recursive/"
+        }
+      ]
+    },
+    {
+      "id": 2082,
+      "track": "sql",
+      "groupId": 212,
+      "code": "30",
+      "title": "Subquery vs CTE vs JOIN",
+      "slug": "sql-30-subquery-vs-cte-vs-join",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/30-subquery-vs-cte-vs-join.md",
+      "kind": "SUBQUERY",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Decision framework and performance comparison: when the planner treats them the same, when they differ",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Compare Advanced Techniques",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=62251s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: CTE materialization",
+          "url": "https://www.postgresql.org/docs/current/queries-with.html#QUERIES-WITH-CTE-MATERIALIZATION"
+        },
+        {
+          "label": "LearnSQL: CTE vs subquery",
+          "url": "https://learnsql.com/blog/cte-vs-subquery/"
+        },
+        {
+          "label": "pgmustard: CTE Scan node",
+          "url": "https://www.pgmustard.com/docs/explain/cte-scan"
+        }
+      ]
+    },
+    {
+      "id": 2083,
+      "track": "sql",
+      "groupId": 212,
+      "code": "31",
+      "title": "Lateral Joins",
+      "slug": "sql-31-lateral-joins",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/31-lateral-joins.md",
+      "kind": "SUBQUERY",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "LATERAL: a correlated subquery in FROM, top-N per group without windows, per-row function calls, performance",
+      "links": [
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: LATERAL subqueries",
+          "url": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-LATERAL"
+        },
+        {
+          "label": "Heap: PostgreSQL's powerful new join type, LATERAL",
+          "url": "https://www.heap.io/blog/postgresqls-powerful-new-join-type-lateral"
+        },
+        {
+          "label": "Cybertec: Understanding LATERAL joins",
+          "url": "https://www.cybertec-postgresql.com/en/understanding-lateral-joins-in-postgresql/"
+        }
+      ]
+    },
+    {
+      "id": 2084,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC37",
+      "title": "Employees Whose Manager Left the Company",
+      "slug": "sql-lc37-employees-whose-manager-left-the-company",
+      "url": "https://leetcode.com/problems/employees-whose-manager-left-the-company/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Easy · Subqueries · salary < 30000 AND manager_id NOT IN (SELECT employee_id ...); NULL trap",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1978/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/employees-whose-manager-left-the-company.sql"
+        }
+      ]
+    },
+    {
+      "id": 2085,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC38",
+      "title": "Exchange Seats",
+      "slug": "sql-lc38-exchange-seats",
+      "url": "https://leetcode.com/problems/exchange-seats/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Subqueries · self-join on seat id parity, or LAG/LEAD; CASE with COUNT(*) for last odd id",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/626/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/626_Exchange_Seats.sql"
+        }
+      ]
+    },
+    {
+      "id": 2086,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC39",
+      "title": "Movie Rating",
+      "slug": "sql-lc39-movie-rating",
+      "url": "https://leetcode.com/problems/movie-rating/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Subqueries · two ranked subqueries (most ratings, best Feb-2020 avg) UNION ALL, LIMIT 1 each",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1341/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/movie-rating.sql"
+        }
+      ]
+    },
+    {
+      "id": 2087,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC40",
+      "title": "Restaurant Growth",
+      "slug": "sql-lc40-restaurant-growth",
+      "url": "https://leetcode.com/problems/restaurant-growth/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Subqueries · daily SUM then window SUM over 6 PRECEDING rows, or RANGE INTERVAL 6 DAY",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1321/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: kamyu104 MySQL",
+          "url": "https://github.com/kamyu104/LeetCode-Solutions/blob/master/MySQL/restaurant-growth.sql"
+        }
+      ]
+    },
+    {
+      "id": 2088,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC41",
+      "title": "Friend Requests II: Who Has the Most Friends",
+      "slug": "sql-lc41-friend-requests-ii-who-has-the-most-friends",
+      "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Subqueries · UNION ALL requester/accepter ids, GROUP BY, ORDER BY COUNT DESC LIMIT 1",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/602/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/602_Friend_Requests_II-_Who_Has_the_Most_Friends.sql"
+        }
+      ]
+    },
+    {
+      "id": 2089,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC42",
+      "title": "Investments in 2016",
+      "slug": "sql-lc42-investments-in-2016",
+      "url": "https://leetcode.com/problems/investments-in-2016/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Medium · Subqueries · tiv_2015 shared by > 1 (window COUNT), (lat, lon) unique; ROUND(SUM, 2)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/585/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/585_Investments_in_2016.sql"
+        }
+      ]
+    },
+    {
+      "id": 2090,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC43",
+      "title": "Department Top Three Salaries",
+      "slug": "sql-lc43-department-top-three-salaries",
+      "url": "https://leetcode.com/problems/department-top-three-salaries/",
+      "kind": "PRACTICE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Hard · Subqueries · DENSE_RANK() OVER (PARTITION BY departmentId ORDER BY salary DESC) <= 3",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/185/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub write-up: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/tree/master/LeetCode/185_Department_Top_Three_Salaries"
+        }
+      ]
+    },
+    {
+      "id": 2091,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC58",
+      "title": "Trips and Users",
+      "slug": "sql-lc58-trips-and-users",
+      "url": "https://leetcode.com/problems/trips-and-users/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Hard · Subqueries · exclude banned clients and drivers, AVG(status != 'completed') per day, ROUND 2",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/262/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub write-up: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/tree/master/LeetCode/262_Trips_and_Users"
+        }
+      ]
+    },
+    {
+      "id": 2092,
+      "track": "sql",
+      "groupId": 213,
+      "code": "LC63",
+      "title": "Tree Node",
+      "slug": "sql-lc63-tree-node",
+      "url": "https://leetcode.com/problems/tree-node/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Medium · Subqueries · CASE: p_id IS NULL -> Root, id in parents -> Inner, else Leaf",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/608/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/608_Tree_Node.sql"
+        }
+      ]
+    },
+    {
+      "id": 2093,
+      "track": "sql",
+      "groupId": 214,
+      "code": "32",
+      "title": "Window Functions Fundamentals",
+      "slug": "sql-32-window-functions-fundamentals",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/32-window-functions-fundamentals.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The window concept, how it differs from GROUP BY (rows kept), the OVER clause, where in the pipeline it runs",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Functions Basics",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31811s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL tutorial: Window functions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-window.html"
+        },
+        {
+          "label": "Mode: SQL window functions",
+          "url": "https://mode.com/sql-tutorial/sql-window-functions/"
+        },
+        {
+          "label": "Practice: windowfunctions.com interactive course",
+          "url": "https://www.windowfunctions.com/"
+        }
+      ]
+    },
+    {
+      "id": 2094,
+      "track": "sql",
+      "groupId": 214,
+      "code": "33",
+      "title": "PARTITION BY and ORDER BY in OVER",
+      "slug": "sql-33-partition-by-and-order-by-in-over",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/33-partition-by-order-by.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "What each does to the window, combinations, the default window, how partitioning differs from grouping",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Functions Basics",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31811s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Window function calls",
+          "url": "https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS"
+        },
+        {
+          "label": "DataLemur: Window functions tutorial",
+          "url": "https://datalemur.com/sql-tutorial/sql-window-functions"
+        },
+        {
+          "label": "Practice: pgexercises Member names with total member count",
+          "url": "https://pgexercises.com/questions/aggregates/countmembers.html"
+        }
+      ]
+    },
+    {
+      "id": 2095,
+      "track": "sql",
+      "groupId": 214,
+      "code": "34",
+      "title": "Ranking Functions",
+      "slug": "sql-34-ranking-functions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/34-ranking-functions.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "ROW_NUMBER vs RANK vs DENSE_RANK with ties, when to use each, the interview trap with tied values",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Ranking",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=39189s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Window functions list",
+          "url": "https://www.postgresql.org/docs/current/functions-window.html"
+        },
+        {
+          "label": "DataLemur: RANK, DENSE_RANK, ROW_NUMBER",
+          "url": "https://datalemur.com/sql-tutorial/sql-rank-dense-rank-row-number"
+        },
+        {
+          "label": "Practice: LeetCode 178 Rank Scores",
+          "url": "https://leetcode.com/problems/rank-scores/"
+        }
+      ]
+    },
+    {
+      "id": 2096,
+      "track": "sql",
+      "groupId": 214,
+      "code": "35",
+      "title": "NTILE, PERCENT_RANK, CUME_DIST",
+      "slug": "sql-35-ntile-percent-rank-cume-dist",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/35-ntile-percent-rank-cume-dist.md",
+      "kind": "WINDOW",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Bucketing rows, percentile calculations, real reporting use cases and the edge cases",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Ranking",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=39189s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Window functions list",
+          "url": "https://www.postgresql.org/docs/current/functions-window.html"
+        },
+        {
+          "label": "PostgreSQL Tutorial: NTILE",
+          "url": "https://www.postgresqltutorial.com/postgresql-window-function/postgresql-ntile-function/"
+        },
+        {
+          "label": "Practice: pgexercises Classify facilities by value",
+          "url": "https://pgexercises.com/questions/aggregates/classify.html"
+        }
+      ]
+    },
+    {
+      "id": 2097,
+      "track": "sql",
+      "groupId": 215,
+      "code": "36",
+      "title": "LAG and LEAD",
+      "slug": "sql-36-lag-and-lead",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/36-lag-lead.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Previous/next row access, offset and default args, day-over-day change, gap finding, session detection",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Value",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=42965s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "DataLemur: LEAD and LAG tutorial",
+          "url": "https://datalemur.com/sql-tutorial/sql-lead-lag"
+        },
+        {
+          "label": "Practice: SQLZoo Window LAG",
+          "url": "https://sqlzoo.net/wiki/Window_LAG"
+        },
+        {
+          "label": "Practice: LeetCode 180 Consecutive Numbers",
+          "url": "https://leetcode.com/problems/consecutive-numbers/"
+        }
+      ]
+    },
+    {
+      "id": 2098,
+      "track": "sql",
+      "groupId": 215,
+      "code": "37",
+      "title": "FIRST_VALUE, LAST_VALUE, NTH_VALUE",
+      "slug": "sql-37-first-value-last-value-nth-value",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/37-first-last-nth-value.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Reading specific rows in a window and the LAST_VALUE default-frame trap that catches seniors",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Value",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=42965s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Window functions list",
+          "url": "https://www.postgresql.org/docs/current/functions-window.html"
+        },
+        {
+          "label": "PostgreSQL Tutorial: LAST_VALUE and the frame",
+          "url": "https://www.postgresqltutorial.com/postgresql-window-function/postgresql-last_value-function/"
+        },
+        {
+          "label": "LearnSQL: Window functions cheat sheet",
+          "url": "https://learnsql.com/blog/sql-window-functions-cheat-sheet/"
+        }
+      ]
+    },
+    {
+      "id": 2099,
+      "track": "sql",
+      "groupId": 215,
+      "code": "38",
+      "title": "Aggregate Functions as Window Functions",
+      "slug": "sql-38-aggregate-functions-as-window-functions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/38-aggregate-window-functions.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "SUM/AVG/COUNT OVER for running totals, moving averages and cumulative distributions",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Aggregate",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=35220s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL tutorial: Window functions",
+          "url": "https://www.postgresql.org/docs/current/tutorial-window.html"
+        },
+        {
+          "label": "Practice: pgexercises Rolling average of total revenue",
+          "url": "https://pgexercises.com/questions/aggregates/rollingavg.html"
+        },
+        {
+          "label": "Practice: HackerRank SQL domain",
+          "url": "https://www.hackerrank.com/domains/sql"
+        }
+      ]
+    },
+    {
+      "id": 2100,
+      "track": "sql",
+      "groupId": 215,
+      "code": "39",
+      "title": "Frame Clauses in Depth",
+      "slug": "sql-39-frame-clauses-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/39-frame-clauses.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "ROWS vs RANGE vs GROUPS, UNBOUNDED PRECEDING/FOLLOWING, CURRENT ROW, offsets, the default frame trap",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Functions Basics",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=31811s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: Window function calls and frames",
+          "url": "https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS"
+        },
+        {
+          "label": "LearnSQL: The ROWS clause",
+          "url": "https://learnsql.com/blog/sql-window-functions-rows-clause/"
+        },
+        {
+          "label": "LearnSQL: The RANGE clause",
+          "url": "https://learnsql.com/blog/range-clause/"
+        }
+      ]
+    },
+    {
+      "id": 2101,
+      "track": "sql",
+      "groupId": 215,
+      "code": "40",
+      "title": "Window Function Performance",
+      "slug": "sql-40-window-function-performance",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/40-window-function-performance.md",
+      "kind": "WINDOW",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Sort and memory costs, multiple windows (reuse vs recompute), the named WINDOW clause, optimisation moves",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Aggregate",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=35220s"
+        },
+        {
+          "label": "Dialect notes: Window Functions",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#11-window-functions"
+        },
+        {
+          "label": "PostgreSQL docs: WINDOW clause",
+          "url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-WINDOW"
+        },
+        {
+          "label": "Use The Index, Luke: Window functions for pagination",
+          "url": "https://use-the-index-luke.com/sql/partial-results/window-functions"
+        },
+        {
+          "label": "pgmustard: WindowAgg node",
+          "url": "https://www.pgmustard.com/docs/explain/window-agg"
+        }
+      ]
+    },
+    {
+      "id": 2102,
+      "track": "sql",
+      "groupId": 215,
+      "code": "41",
+      "title": "Top-N Per Group",
+      "slug": "sql-41-top-n-per-group",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/41-top-n-per-group.md",
+      "kind": "WINDOW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The canonical interview problem: ROW_NUMBER, LATERAL and DISTINCT ON approaches with performance comparison",
+      "links": [
+        {
+          "label": "Baraa PDF 8: Aggregation and Analytics",
+          "url": "https://drive.google.com/file/d/1o2lYA5wiOq7XrOlLt8_LmjJ0bpEDboIL/view"
+        },
+        {
+          "label": "Baraa video: Window Ranking",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=39189s"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "PostgreSQL docs: DISTINCT ON",
+          "url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-DISTINCT"
+        },
+        {
+          "label": "Use The Index, Luke: Top-N queries",
+          "url": "https://use-the-index-luke.com/sql/partial-results/top-n-queries"
+        },
+        {
+          "label": "Practice: LeetCode 185 Department Top Three Salaries",
+          "url": "https://leetcode.com/problems/department-top-three-salaries/"
+        }
+      ]
+    },
+    {
+      "id": 2103,
+      "track": "sql",
+      "groupId": 216,
+      "code": "LC52",
+      "title": "Nth Highest Salary",
+      "slug": "sql-lc52-nth-highest-salary",
+      "url": "https://leetcode.com/problems/nth-highest-salary/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": true,
+      "summary": "Medium · Window Functions · LIMIT 1 OFFSET N-1 on DISTINCT salaries, or DENSE_RANK() = N; NULL if absent",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/177/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/177_Nth_Highest_Salary.sql"
+        }
+      ]
+    },
+    {
+      "id": 2104,
+      "track": "sql",
+      "groupId": 216,
+      "code": "LC53",
+      "title": "Rank Scores",
+      "slug": "sql-lc53-rank-scores",
+      "url": "https://leetcode.com/problems/rank-scores/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": true,
+      "summary": "Medium · Window Functions · DENSE_RANK() OVER (ORDER BY score DESC); RANK would leave gaps",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/178/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/178_Rank_Scores.sql"
+        }
+      ]
+    },
+    {
+      "id": 2105,
+      "track": "sql",
+      "groupId": 216,
+      "code": "LC57",
+      "title": "Department Highest Salary",
+      "slug": "sql-lc57-department-highest-salary",
+      "url": "https://leetcode.com/problems/department-highest-salary/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": true,
+      "summary": "Medium · Window Functions · (departmentId, salary) IN (SELECT deptId, MAX(salary) ...) or RANK per dept",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/184/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/184_Department_Highest_Salary.sql"
+        }
+      ]
+    },
+    {
+      "id": 2106,
+      "track": "sql",
+      "groupId": 216,
+      "code": "LC61",
+      "title": "Human Traffic of Stadium",
+      "slug": "sql-lc61-human-traffic-of-stadium",
+      "url": "https://leetcode.com/problems/human-traffic-of-stadium/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Hard · Window Functions · id - ROW_NUMBER() island trick on people >= 100, keep islands of size >= 3",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/601/"
+        },
+        {
+          "label": "GitHub write-up: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/tree/master/LeetCode/601_Human_Traffic_of_Stadium"
+        }
+      ]
+    },
+    {
+      "id": 2107,
+      "track": "sql",
+      "groupId": 216,
+      "code": "LC67",
+      "title": "Market Analysis I",
+      "slug": "sql-lc67-market-analysis-i",
+      "url": "https://leetcode.com/problems/market-analysis-i/",
+      "kind": "PRACTICE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Medium · Window Functions · LEFT JOIN Orders with YEAR(order_date) = 2019 in the ON clause, COUNT(order_id)",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1158/"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1158_Market_Analysis_I.sql"
+        }
+      ]
+    },
+    {
+      "id": 2108,
+      "track": "sql",
+      "groupId": 217,
+      "code": "42",
+      "title": "Index Types in PostgreSQL",
+      "slug": "sql-42-index-types-in-postgresql",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/42-index-types.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "B-tree, Hash, GIN, GiST, SP-GiST, BRIN: what each is optimised for and which queries each accelerates",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Indexes",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=66222s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Index Types",
+          "url": "https://www.postgresql.org/docs/current/indexes-types.html"
+        },
+        {
+          "label": "Use The Index, Luke: Anatomy of an Index",
+          "url": "https://use-the-index-luke.com/sql/anatomy"
+        }
+      ]
+    },
+    {
+      "id": 2109,
+      "track": "sql",
+      "groupId": 217,
+      "code": "43",
+      "title": "Index Scan Types",
+      "slug": "sql-43-index-scan-types",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/43-index-scan-types.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Seq Scan, Index Scan, Index Only Scan, Bitmap Index + Heap Scan: when each is chosen, cost, and how to steer",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Execution Plan",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=73231s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Bitmap Scans",
+          "url": "https://www.postgresql.org/docs/current/indexes-bitmap-scans.html"
+        },
+        {
+          "label": "Use The Index, Luke: PostgreSQL plan operations",
+          "url": "https://use-the-index-luke.com/sql/explain-plan/postgresql/operations"
+        }
+      ]
+    },
+    {
+      "id": 2110,
+      "track": "sql",
+      "groupId": 217,
+      "code": "44",
+      "title": "Composite Index Strategy",
+      "slug": "sql-44-composite-index-strategy",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/44-composite-indexes.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Column order matters: leftmost-prefix rule, covering indexes, INCLUDE, designing for real query patterns",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Indexes",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=66222s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Multicolumn Indexes",
+          "url": "https://www.postgresql.org/docs/current/indexes-multicolumn.html"
+        },
+        {
+          "label": "Use The Index, Luke: Concatenated keys",
+          "url": "https://use-the-index-luke.com/sql/where-clause/the-equals-operator/concatenated-keys"
+        }
+      ]
+    },
+    {
+      "id": 2111,
+      "track": "sql",
+      "groupId": 217,
+      "code": "45",
+      "title": "Partial Indexes",
+      "slug": "sql-45-partial-indexes",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/45-partial-indexes.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Index a subset of rows with WHERE on CREATE INDEX; when partial indexes dramatically beat full ones",
+      "links": [
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Partial Indexes",
+          "url": "https://www.postgresql.org/docs/current/indexes-partial.html"
+        },
+        {
+          "label": "Use The Index, Luke: Partial and filtered indexes",
+          "url": "https://use-the-index-luke.com/sql/where-clause/partial-and-filtered-indexes"
+        }
+      ]
+    },
+    {
+      "id": 2112,
+      "track": "sql",
+      "groupId": 217,
+      "code": "46",
+      "title": "Expression Indexes",
+      "slug": "sql-46-expression-indexes",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/46-expression-indexes.md",
+      "kind": "PERFORMANCE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Indexing function results: why WHERE lower(email) = $1 cannot use a plain index, the fix, maintenance cost",
+      "links": [
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Indexes on Expressions",
+          "url": "https://www.postgresql.org/docs/current/indexes-expressional.html"
+        },
+        {
+          "label": "Use The Index, Luke: Case-insensitive search",
+          "url": "https://use-the-index-luke.com/sql/where-clause/functions/case-insensitive-search"
+        }
+      ]
+    },
+    {
+      "id": 2113,
+      "track": "sql",
+      "groupId": 217,
+      "code": "47",
+      "title": "Index-Only Scans",
+      "slug": "sql-47-index-only-scans",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/47-index-only-scans.md",
+      "kind": "PERFORMANCE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Answer queries entirely from the index: visibility map dependency, INCLUDE columns, designing for it",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Indexes",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=66222s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Index-Only Scans",
+          "url": "https://www.postgresql.org/docs/current/indexes-index-only-scans.html"
+        },
+        {
+          "label": "Use The Index, Luke: Index-only scan / covering index",
+          "url": "https://use-the-index-luke.com/sql/clustering/index-only-scan-covering-index"
+        }
+      ]
+    },
+    {
+      "id": 2114,
+      "track": "sql",
+      "groupId": 217,
+      "code": "48",
+      "title": "When Indexes Hurt",
+      "slug": "sql-48-when-indexes-hurt",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/48-when-indexes-hurt.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Write amplification, index bloat, planner ignoring indexes (stats, cost model), too many indexes, seq scans",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Indexes",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=66222s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "Use The Index, Luke: Insert cost of indexes",
+          "url": "https://use-the-index-luke.com/sql/dml/insert"
+        },
+        {
+          "label": "PostgreSQL wiki: Index Maintenance",
+          "url": "https://wiki.postgresql.org/wiki/Index_Maintenance"
+        }
+      ]
+    },
+    {
+      "id": 2115,
+      "track": "sql",
+      "groupId": 218,
+      "code": "49",
+      "title": "Query Optimisation Methodology",
+      "slug": "sql-49-query-optimisation-methodology",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/49-query-optimisation-methodology.md",
+      "kind": "PERFORMANCE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "The workflow: identify, EXPLAIN ANALYZE, find bottleneck, hypothesis, test, measure; systematic not guessing",
+      "links": [
+        {
+          "label": "Baraa PDF 10T: 30 Performance Tips",
+          "url": "https://drive.google.com/file/d/1-kYc1sVmdaEigM0p97qal5ySAa1x0bp9/view"
+        },
+        {
+          "label": "Baraa video: 30x Performance Tips",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=78219s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Performance Tips",
+          "url": "https://www.postgresql.org/docs/current/performance-tips.html"
+        },
+        {
+          "label": "PostgreSQL wiki: Slow Query Questions",
+          "url": "https://wiki.postgresql.org/wiki/Slow_Query_Questions"
+        }
+      ]
+    },
+    {
+      "id": 2116,
+      "track": "sql",
+      "groupId": 218,
+      "code": "50",
+      "title": "Statistics and the Planner",
+      "slug": "sql-50-statistics-and-the-planner",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/50-statistics-and-planner.md",
+      "kind": "PERFORMANCE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "pg_stats, ANALYZE, autovacuum, histograms, correlation, MCVs: why estimates go wrong and how to fix them",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Execution Plan",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=73231s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Statistics Used by the Planner",
+          "url": "https://www.postgresql.org/docs/current/planner-stats.html"
+        },
+        {
+          "label": "PostgreSQL docs: ANALYZE",
+          "url": "https://www.postgresql.org/docs/current/sql-analyze.html"
+        }
+      ]
+    },
+    {
+      "id": 2117,
+      "track": "sql",
+      "groupId": 218,
+      "code": "51",
+      "title": "Optimizer Hints and Interventions",
+      "slug": "sql-51-optimizer-hints-and-interventions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/51-optimizer-interventions.md",
+      "kind": "PERFORMANCE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "No hints in PostgreSQL: enable_* flags, CTE materialisation, statistics targets, planner-guiding rewrites",
+      "links": [
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Planner Method Configuration",
+          "url": "https://www.postgresql.org/docs/current/runtime-config-query.html"
+        },
+        {
+          "label": "PostgreSQL wiki: Optimizer Hints Discussion",
+          "url": "https://wiki.postgresql.org/wiki/OptimizerHintsDiscussion"
+        }
+      ]
+    },
+    {
+      "id": 2118,
+      "track": "sql",
+      "groupId": 219,
+      "code": "52",
+      "title": "Transaction Syntax in Depth",
+      "slug": "sql-52-transaction-syntax-in-depth",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/52-transaction-syntax.md",
+      "kind": "TRANSACTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "BEGIN, COMMIT, ROLLBACK, SAVEPOINT, ROLLBACK TO, RELEASE: full TCL, nested savepoints, autocommit default",
+      "links": [
+        {
+          "label": "Dialect notes: Transactions, Locking and Isolation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#15-transactions-locking-and-isolation"
+        },
+        {
+          "label": "PostgreSQL docs: Transactions tutorial",
+          "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+        },
+        {
+          "label": "PostgreSQL docs: SAVEPOINT",
+          "url": "https://www.postgresql.org/docs/current/sql-savepoint.html"
+        }
+      ]
+    },
+    {
+      "id": 2119,
+      "track": "sql",
+      "groupId": 219,
+      "code": "53",
+      "title": "Isolation Levels in SQL",
+      "slug": "sql-53-isolation-levels-in-sql",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/53-isolation-levels.md",
+      "kind": "TRANSACTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The four levels, which anomalies each prevents, how to choose, PostgreSQL defaults, effect on concurrency",
+      "links": [
+        {
+          "label": "Dialect notes: Transactions, Locking and Isolation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#15-transactions-locking-and-isolation"
+        },
+        {
+          "label": "PostgreSQL docs: Transaction Isolation",
+          "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+        },
+        {
+          "label": "PostgreSQL docs: MVCC Introduction",
+          "url": "https://www.postgresql.org/docs/current/mvcc-intro.html"
+        }
+      ]
+    },
+    {
+      "id": 2120,
+      "track": "sql",
+      "groupId": 219,
+      "code": "54",
+      "title": "SELECT FOR UPDATE / FOR SHARE",
+      "slug": "sql-54-select-for-update-for-share",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/54-select-for-update.md",
+      "kind": "TRANSACTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Pessimistic locking, SKIP LOCKED for queues, NOWAIT for non-blocking, lock granularity, Node.js workers",
+      "links": [
+        {
+          "label": "Dialect notes: Transactions, Locking and Isolation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#15-transactions-locking-and-isolation"
+        },
+        {
+          "label": "PostgreSQL docs: Row-Level Locks",
+          "url": "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-ROWS"
+        },
+        {
+          "label": "PostgreSQL docs: SELECT locking clause",
+          "url": "https://www.postgresql.org/docs/current/sql-select.html#SQL-FOR-UPDATE-SHARE"
+        }
+      ]
+    },
+    {
+      "id": 2121,
+      "track": "sql",
+      "groupId": 219,
+      "code": "55",
+      "title": "Deadlocks in Practice",
+      "slug": "sql-55-deadlocks-in-practice",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/55-deadlocks.md",
+      "kind": "TRANSACTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "How deadlocks happen, lock-ordering convention to avoid them, detecting in logs, deadlock_timeout setting",
+      "links": [
+        {
+          "label": "Dialect notes: Transactions, Locking and Isolation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#15-transactions-locking-and-isolation"
+        },
+        {
+          "label": "PostgreSQL docs: Deadlocks",
+          "url": "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS"
+        },
+        {
+          "label": "PostgreSQL wiki: Lock Monitoring",
+          "url": "https://wiki.postgresql.org/wiki/Lock_Monitoring"
+        }
+      ]
+    },
+    {
+      "id": 2122,
+      "track": "sql",
+      "groupId": 219,
+      "code": "56",
+      "title": "Advisory Locks",
+      "slug": "sql-56-advisory-locks",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/56-advisory-locks.md",
+      "kind": "TRANSACTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "pg_advisory_lock, session vs transaction scope, distributed mutex, preventing duplicate job runs in Node.js",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Advisory Locks",
+          "url": "https://www.postgresql.org/docs/current/explicit-locking.html#ADVISORY-LOCKS"
+        },
+        {
+          "label": "PostgreSQL docs: Advisory lock functions",
+          "url": "https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADVISORY-LOCKS"
+        }
+      ]
+    },
+    {
+      "id": 2123,
+      "track": "sql",
+      "groupId": 219,
+      "code": "57",
+      "title": "Transaction Patterns in Node.js",
+      "slug": "sql-57-transaction-patterns-in-node-js",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/57-transaction-patterns-nodejs.md",
+      "kind": "TRANSACTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Transactions with pg: try/catch/finally, helpers, Unit of Work, retrying serialization failures",
+      "links": [
+        {
+          "label": "Dialect notes: Transactions, Locking and Isolation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#15-transactions-locking-and-isolation"
+        },
+        {
+          "label": "node-postgres: Transactions",
+          "url": "https://node-postgres.com/features/transactions"
+        },
+        {
+          "label": "node-postgres: Pooling",
+          "url": "https://node-postgres.com/features/pooling"
+        }
+      ]
+    },
+    {
+      "id": 2124,
+      "track": "sql",
+      "groupId": 220,
+      "code": "58",
+      "title": "Set Operations",
+      "slug": "sql-58-set-operations",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/58-set-operations.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "UNION vs UNION ALL (why ALL is usually right), INTERSECT, EXCEPT: semantics, performance, dedup cost",
+      "links": [
+        {
+          "label": "Baraa PDF 6: Joins and Set",
+          "url": "https://drive.google.com/file/d/1Rzn1M29S4-ES8-eCXATDqW-kKRx-umpV/view"
+        },
+        {
+          "label": "Baraa video: Set Operators",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=14529s"
+        },
+        {
+          "label": "Dialect notes: Joins and Set Operators",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#9-joins-and-set-operators"
+        },
+        {
+          "label": "PostgreSQL docs: Combining Queries",
+          "url": "https://www.postgresql.org/docs/current/queries-union.html"
+        },
+        {
+          "label": "Mode: SQL UNION",
+          "url": "https://mode.com/sql-tutorial/sql-union/"
+        }
+      ]
+    },
+    {
+      "id": 2125,
+      "track": "sql",
+      "groupId": 220,
+      "code": "59",
+      "title": "Upsert Patterns",
+      "slug": "sql-59-upsert-patterns",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/59-upsert-patterns.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "INSERT ON CONFLICT DO NOTHING/DO UPDATE, the EXCLUDED table, concurrency trap, idempotent writes for APIs",
+      "links": [
+        {
+          "label": "Dialect notes: Upsert, INSERT and DELETE Patterns",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#13-upsert-insert-and-delete-patterns"
+        },
+        {
+          "label": "PostgreSQL docs: INSERT ON CONFLICT",
+          "url": "https://www.postgresql.org/docs/current/sql-insert.html#SQL-ON-CONFLICT"
+        },
+        {
+          "label": "pgexercises: Modifying data",
+          "url": "https://pgexercises.com/questions/updates/"
+        }
+      ]
+    },
+    {
+      "id": 2126,
+      "track": "sql",
+      "groupId": 220,
+      "code": "60",
+      "title": "Bulk Operations",
+      "slug": "sql-60-bulk-operations",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/60-bulk-operations.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Multi-row INSERT, COPY for bulk import, UPDATE FROM, DELETE USING, batch sizes, transaction sizing",
+      "links": [
+        {
+          "label": "Baraa PDF 4: DML",
+          "url": "https://drive.google.com/file/d/1b_w1NXccrYWW2KiEwzF9Fn06ONc-4-XU/view"
+        },
+        {
+          "label": "Baraa video: DML Commands",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=6224s"
+        },
+        {
+          "label": "Dialect notes: Upsert, INSERT and DELETE Patterns",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#13-upsert-insert-and-delete-patterns"
+        },
+        {
+          "label": "PostgreSQL docs: COPY",
+          "url": "https://www.postgresql.org/docs/current/sql-copy.html"
+        },
+        {
+          "label": "PostgreSQL docs: Populating a Database",
+          "url": "https://www.postgresql.org/docs/current/populate.html"
+        }
+      ]
+    },
+    {
+      "id": 2127,
+      "track": "sql",
+      "groupId": 220,
+      "code": "61",
+      "title": "Pivot and Crosstab",
+      "slug": "sql-61-pivot-and-crosstab",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/61-pivot-crosstab.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Rotating rows to columns: CASE + GROUP BY pivot, crosstab() function, the dynamic-pivot limitation",
+      "links": [
+        {
+          "label": "Baraa PDF 7: Row-Level Functions",
+          "url": "https://drive.google.com/file/d/1zpPRG9GcjDLaWK1qMR4PS_WXySYALL4r/view"
+        },
+        {
+          "label": "Baraa video: Case Statement",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=29270s"
+        },
+        {
+          "label": "Dialect notes: Pivoting and Conditional Aggregation",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#17-pivoting-and-conditional-aggregation"
+        },
+        {
+          "label": "PostgreSQL docs: tablefunc (crosstab)",
+          "url": "https://www.postgresql.org/docs/current/tablefunc.html"
+        },
+        {
+          "label": "Mode: Pivoting data in SQL",
+          "url": "https://mode.com/sql-tutorial/sql-pivot-table/"
+        }
+      ]
+    },
+    {
+      "id": 2128,
+      "track": "sql",
+      "groupId": 220,
+      "code": "62",
+      "title": "Generating Data",
+      "slug": "sql-62-generating-data",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/62-generating-data.md",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "generate_series(), calendar table pattern, filling time-series gaps, generating test data with SQL",
+      "links": [
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: Set Returning Functions",
+          "url": "https://www.postgresql.org/docs/current/functions-srf.html"
+        },
+        {
+          "label": "pgexercises: Date exercises",
+          "url": "https://pgexercises.com/questions/date/"
+        }
+      ]
+    },
+    {
+      "id": 2129,
+      "track": "sql",
+      "groupId": 220,
+      "code": "63",
+      "title": "Date and Time Mastery",
+      "slug": "sql-63-date-and-time-mastery",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/63-date-time-mastery.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "timestamp vs timestamptz (the production disaster), date arithmetic, date_trunc, extract, interval, timezones",
+      "links": [
+        {
+          "label": "Baraa PDF 7: Row-Level Functions",
+          "url": "https://drive.google.com/file/d/1zpPRG9GcjDLaWK1qMR4PS_WXySYALL4r/view"
+        },
+        {
+          "label": "Baraa video: Date and Time Functions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=19368s"
+        },
+        {
+          "label": "Dialect notes: Date and Time",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#6-date-and-time"
+        },
+        {
+          "label": "PostgreSQL docs: Date/Time Types",
+          "url": "https://www.postgresql.org/docs/current/datatype-datetime.html"
+        },
+        {
+          "label": "PostgreSQL docs: Date/Time Functions",
+          "url": "https://www.postgresql.org/docs/current/functions-datetime.html"
+        },
+        {
+          "label": "pgexercises: Date exercises",
+          "url": "https://pgexercises.com/questions/date/"
+        }
+      ]
+    },
+    {
+      "id": 2130,
+      "track": "sql",
+      "groupId": 220,
+      "code": "64",
+      "title": "JSON and JSONB in PostgreSQL",
+      "slug": "sql-64-json-and-jsonb-in-postgresql",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/64-json-jsonb.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "JSONB vs JSON, operators (->, ->>, #>, @>, ?), GIN indexing, when JSONB is right vs a schema smell",
+      "links": [
+        {
+          "label": "Dialect notes: JSON, Arrays and Regex",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#16-json-arrays-and-regex"
+        },
+        {
+          "label": "PostgreSQL docs: JSON Types",
+          "url": "https://www.postgresql.org/docs/current/datatype-json.html"
+        },
+        {
+          "label": "PostgreSQL docs: JSON Functions and Operators",
+          "url": "https://www.postgresql.org/docs/current/functions-json.html"
+        }
+      ]
+    },
+    {
+      "id": 2131,
+      "track": "sql",
+      "groupId": 220,
+      "code": "65",
+      "title": "Array Operations",
+      "slug": "sql-65-array-operations",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/65-array-operations.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "PostgreSQL arrays, operators, ANY/ALL with arrays, unnest(), array_agg(), when arrays solve real problems",
+      "links": [
+        {
+          "label": "Dialect notes: JSON, Arrays and Regex",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#16-json-arrays-and-regex"
+        },
+        {
+          "label": "PostgreSQL docs: Arrays",
+          "url": "https://www.postgresql.org/docs/current/arrays.html"
+        },
+        {
+          "label": "PostgreSQL docs: Array Functions and Operators",
+          "url": "https://www.postgresql.org/docs/current/functions-array.html"
+        }
+      ]
+    },
+    {
+      "id": 2132,
+      "track": "sql",
+      "groupId": 220,
+      "code": "66",
+      "title": "Full-Text Search",
+      "slug": "sql-66-full-text-search",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/66-full-text-search.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "tsvector, tsquery, @@, GIN indexes for FTS, ts_rank, when PostgreSQL FTS vs Elasticsearch",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Full Text Search intro",
+          "url": "https://www.postgresql.org/docs/current/textsearch-intro.html"
+        },
+        {
+          "label": "PostgreSQL docs: Tables and Indexes for FTS",
+          "url": "https://www.postgresql.org/docs/current/textsearch-tables.html"
+        },
+        {
+          "label": "PostgreSQL docs: pg_trgm",
+          "url": "https://www.postgresql.org/docs/current/pgtrgm.html"
+        }
+      ]
+    },
+    {
+      "id": 2133,
+      "track": "sql",
+      "groupId": 220,
+      "code": "67",
+      "title": "Materialized Views",
+      "slug": "sql-67-materialized-views",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/67-materialized-views.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "CREATE/REFRESH MATERIALIZED VIEW, CONCURRENTLY, indexing, the refresh-strategy problem, when they fit",
+      "links": [
+        {
+          "label": "Baraa PDF 9: Advanced Techniques",
+          "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view"
+        },
+        {
+          "label": "Baraa video: Views",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=56102s"
+        },
+        {
+          "label": "PostgreSQL docs: Materialized Views",
+          "url": "https://www.postgresql.org/docs/current/rules-materializedviews.html"
+        },
+        {
+          "label": "PostgreSQL docs: REFRESH MATERIALIZED VIEW",
+          "url": "https://www.postgresql.org/docs/current/sql-refreshmaterializedview.html"
+        }
+      ]
+    },
+    {
+      "id": 2134,
+      "track": "sql",
+      "groupId": 221,
+      "code": "LC64",
+      "title": "Swap Sex of Employees",
+      "slug": "sql-lc64-swap-sex-of-employees",
+      "url": "https://leetcode.com/problems/swap-sex-of-employees/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Updates · UPDATE Salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END, or IF()",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/627/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/627_Swap_Salary.sql"
+        }
+      ]
+    },
+    {
+      "id": 2135,
+      "track": "sql",
+      "groupId": 221,
+      "code": "LC68",
+      "title": "Reformat Department Table",
+      "slug": "sql-lc68-reformat-department-table",
+      "url": "https://leetcode.com/problems/reformat-department-table/",
+      "kind": "PRACTICE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Easy · Pivots · conditional aggregation SUM(CASE WHEN month = 'Jan' THEN revenue END) per month",
+      "links": [
+        {
+          "label": "walkccc solution",
+          "url": "https://walkccc.me/LeetCode/problems/1179/"
+        },
+        {
+          "label": "GitHub solution: Beyond-LeetCode-SQL",
+          "url": "https://github.com/shawlu95/Beyond-LeetCode-SQL/blob/master/LeetCode/others/1179_Reformat_Department_Table.sql"
+        }
+      ]
+    },
+    {
+      "id": 2136,
+      "track": "sql",
+      "groupId": 222,
+      "code": "68",
+      "title": "EXPLAIN Options Deep Dive",
+      "slug": "sql-68-explain-options-deep-dive",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/68-explain-options.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "ANALYZE, BUFFERS, FORMAT JSON, TIMING, SUMMARY: what each adds; diagnosing I/O vs CPU bound from buffers",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Execution Plan",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=73231s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: EXPLAIN",
+          "url": "https://www.postgresql.org/docs/current/sql-explain.html"
+        },
+        {
+          "label": "PostgreSQL docs: Using EXPLAIN",
+          "url": "https://www.postgresql.org/docs/current/using-explain.html"
+        },
+        {
+          "label": "explain.depesz.com plan visualiser",
+          "url": "https://explain.depesz.com/"
+        }
+      ]
+    },
+    {
+      "id": 2137,
+      "track": "sql",
+      "groupId": 222,
+      "code": "69",
+      "title": "pg_stat_statements",
+      "slug": "sql-69-pg-stat-statements",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/69-pg-stat-statements.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Enable the extension, key columns (mean_exec_time, calls, total_exec_time), find slow queries, normalisation",
+      "links": [
+        {
+          "label": "PostgreSQL docs: pg_stat_statements",
+          "url": "https://www.postgresql.org/docs/current/pgstatstatements.html"
+        },
+        {
+          "label": "PostgreSQL wiki: Slow Query Questions",
+          "url": "https://wiki.postgresql.org/wiki/Slow_Query_Questions"
+        }
+      ]
+    },
+    {
+      "id": 2138,
+      "track": "sql",
+      "groupId": 222,
+      "code": "70",
+      "title": "Table Partitioning",
+      "slug": "sql-70-table-partitioning",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/70-table-partitioning.md",
+      "kind": "ADVANCED",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Declarative RANGE/LIST/HASH partitioning, pruning, partition-wise joins, attach/detach for time-series",
+      "links": [
+        {
+          "label": "Baraa PDF 10: Performance",
+          "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view"
+        },
+        {
+          "label": "Baraa video: Partitions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=76263s"
+        },
+        {
+          "label": "PostgreSQL docs: Table Partitioning",
+          "url": "https://www.postgresql.org/docs/current/ddl-partitioning.html"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE INDEX",
+          "url": "https://www.postgresql.org/docs/current/sql-createindex.html"
+        }
+      ]
+    },
+    {
+      "id": 2139,
+      "track": "sql",
+      "groupId": 222,
+      "code": "71",
+      "title": "Schema Design Patterns",
+      "slug": "sql-71-schema-design-patterns",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/71-schema-design-patterns.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Schemas as namespaces, the public default, multi-tenant patterns: row-level vs schema-level vs database-level",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Schemas",
+          "url": "https://www.postgresql.org/docs/current/ddl-schemas.html"
+        },
+        {
+          "label": "PostgreSQL wiki: Don't Do This",
+          "url": "https://wiki.postgresql.org/wiki/Don%27t_Do_This"
+        }
+      ]
+    },
+    {
+      "id": 2140,
+      "track": "sql",
+      "groupId": 222,
+      "code": "72",
+      "title": "Row Level Security (RLS)",
+      "slug": "sql-72-row-level-security-rls",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/72-row-level-security.md",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Enabling RLS, CREATE POLICY, USING/CHECK clauses, the multi-tenant security pattern, performance implications",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Row Security Policies",
+          "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE POLICY",
+          "url": "https://www.postgresql.org/docs/current/sql-createpolicy.html"
+        }
+      ]
+    },
+    {
+      "id": 2141,
+      "track": "sql",
+      "groupId": 222,
+      "code": "73",
+      "title": "Essential Extensions",
+      "slug": "sql-73-essential-extensions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/73-extensions.md",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "pg_stat_statements, pgcrypto, uuid-ossp, pg_trgm (fuzzy search), PostGIS and TimescaleDB concepts",
+      "links": [
+        {
+          "label": "PostgreSQL docs: Additional Supplied Modules",
+          "url": "https://www.postgresql.org/docs/current/contrib.html"
+        },
+        {
+          "label": "PostgreSQL docs: pg_trgm",
+          "url": "https://www.postgresql.org/docs/current/pgtrgm.html"
+        }
+      ]
+    },
+    {
+      "id": 2142,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B3",
+      "title": "DDL Commands",
+      "slug": "sql-b3-ddl-commands",
+      "url": "https://drive.google.com/file/d/1hdX1g1Q33w7A9oTO8_rRrx6zVusM4fOy/view",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "CREATE, ALTER, DROP tables and columns; constraints and data types (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: DDL Commands",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=5551s"
+        },
+        {
+          "label": "Dialect notes: Auto-increment and Identity",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#3-auto-increment-and-identity"
+        },
+        {
+          "label": "PostgreSQL docs: Data Definition",
+          "url": "https://www.postgresql.org/docs/current/ddl.html"
+        }
+      ]
+    },
+    {
+      "id": 2143,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B4",
+      "title": "DML Commands",
+      "slug": "sql-b4-dml-commands",
+      "url": "https://drive.google.com/file/d/1b_w1NXccrYWW2KiEwzF9Fn06ONc-4-XU/view",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "INSERT, UPDATE, DELETE, TRUNCATE and copying rows between tables (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: DML Commands",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=6224s"
+        },
+        {
+          "label": "Dialect notes: Upsert, INSERT and DELETE Patterns",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#13-upsert-insert-and-delete-patterns"
+        },
+        {
+          "label": "PostgreSQL docs: Data Manipulation",
+          "url": "https://www.postgresql.org/docs/current/dml.html"
+        }
+      ]
+    },
+    {
+      "id": 2144,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B9a",
+      "title": "Views",
+      "slug": "sql-b9a-views",
+      "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Virtual tables over a query: abstraction, security, reuse; when views hide cost (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: Views",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=56102s"
+        },
+        {
+          "label": "Dialect notes: Subqueries, CTEs and Recursion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#12-subqueries-ctes-and-recursion"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE VIEW",
+          "url": "https://www.postgresql.org/docs/current/sql-createview.html"
+        }
+      ]
+    },
+    {
+      "id": 2145,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B9b",
+      "title": "CTAS and Temp Tables",
+      "slug": "sql-b9b-ctas-and-temp-tables",
+      "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "CREATE TABLE AS / SELECT INTO and #temp tables vs CTEs and views (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: CTAS and Temp Tables",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=59800s"
+        },
+        {
+          "label": "Dialect notes: Upsert, INSERT and DELETE Patterns",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#13-upsert-insert-and-delete-patterns"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE TABLE AS",
+          "url": "https://www.postgresql.org/docs/current/sql-createtableas.html"
+        }
+      ]
+    },
+    {
+      "id": 2146,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B9c",
+      "title": "Stored Procedures",
+      "slug": "sql-b9c-stored-procedures",
+      "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view",
+      "kind": "ADVANCED",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Parameterised procedures, variables, control flow and error handling in T-SQL (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: Stored Procedures",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=62824s"
+        },
+        {
+          "label": "Dialect notes: Quick Reference Matrix",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#1-quick-reference-matrix"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE PROCEDURE",
+          "url": "https://www.postgresql.org/docs/current/sql-createprocedure.html"
+        }
+      ]
+    },
+    {
+      "id": 2147,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B9d",
+      "title": "Triggers",
+      "slug": "sql-b9d-triggers",
+      "url": "https://drive.google.com/file/d/1GOHFj_aEIn80V4QVjViKb9pebRBr48A5/view",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "AFTER/INSTEAD OF triggers, inserted/deleted tables, auditing and the hidden-logic trap (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: Triggers",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=65578s"
+        },
+        {
+          "label": "Dialect notes: Quick Reference Matrix",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#1-quick-reference-matrix"
+        },
+        {
+          "label": "PostgreSQL docs: CREATE TRIGGER",
+          "url": "https://www.postgresql.org/docs/current/sql-createtrigger.html"
+        }
+      ]
+    },
+    {
+      "id": 2148,
+      "track": "sql",
+      "groupId": 223,
+      "code": "B10a",
+      "title": "Table Partitions in SQL Server",
+      "slug": "sql-b10a-table-partitions-in-sql-server",
+      "url": "https://drive.google.com/file/d/1bFuThMpuOK5CIIZrnbX0YzTCf9xLg4MS/view",
+      "kind": "ADVANCED",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Partition functions and schemes, filegroups, partition switching for large tables (SQL Server dialect)",
+      "links": [
+        {
+          "label": "Baraa video: Partitions",
+          "url": "https://www.youtube.com/watch?v=SSKVgrwhzus&t=76263s"
+        },
+        {
+          "label": "Dialect notes: Indexes and EXPLAIN",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#14-indexes-and-explain"
+        },
+        {
+          "label": "PostgreSQL docs: Table Partitioning",
+          "url": "https://www.postgresql.org/docs/current/ddl-partitioning.html"
+        }
+      ]
+    },
+    {
+      "id": 2149,
+      "track": "sql",
+      "groupId": 224,
+      "code": "74",
+      "title": "The 20 Most Common SQL Interview Questions",
+      "slug": "sql-74-the-20-most-common-sql-interview-questions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/74-top-20-interview-questions.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Principal-level answers, the follow-ups interviewers ask, and the mistakes that eliminate candidates",
+      "links": [
+        {
+          "label": "Dialect notes: Quick Reference Matrix",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#1-quick-reference-matrix"
+        },
+        {
+          "label": "DataLemur SQL questions",
+          "url": "https://datalemur.com/questions?category=SQL"
+        },
+        {
+          "label": "HackerRank SQL",
+          "url": "https://www.hackerrank.com/domains/sql"
+        }
+      ]
+    },
+    {
+      "id": 2150,
+      "track": "sql",
+      "groupId": 224,
+      "code": "75",
+      "title": "Live Coding Patterns",
+      "slug": "sql-75-live-coding-patterns",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/75-live-coding-patterns.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Unseen SQL problems: think-aloud framework, edge cases (NULLs, ties, empty tables), optimise after correctness",
+      "links": [
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "LeetCode SQL 50 study plan",
+          "url": "https://leetcode.com/studyplan/top-sql-50/"
+        },
+        {
+          "label": "pgexercises",
+          "url": "https://pgexercises.com/"
+        }
+      ]
+    },
+    {
+      "id": 2151,
+      "track": "sql",
+      "groupId": 224,
+      "code": "76",
+      "title": "System Design SQL Questions",
+      "slug": "sql-76-system-design-sql-questions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/76-system-design-sql.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Frameworks for 'design the schema for X', 'query Y efficiently' and 'diagnose this slow query'",
+      "links": [
+        {
+          "label": "Use The Index, Luke",
+          "url": "https://use-the-index-luke.com/"
+        },
+        {
+          "label": "PostgreSQL docs: Data Definition",
+          "url": "https://www.postgresql.org/docs/current/ddl.html"
+        },
+        {
+          "label": "System Design Primer",
+          "url": "https://github.com/donnemartin/system-design-primer"
+        }
+      ]
+    },
+    {
+      "id": 2152,
+      "track": "sql",
+      "groupId": 224,
+      "code": "77",
+      "title": "Canonical Hard SQL Problems",
+      "slug": "sql-77-canonical-hard-sql-problems",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/77-canonical-hard-problems.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Top-N per group, running totals, gaps and islands, streaks, hierarchies, sessionisation, dedup, median, pivots",
+      "links": [
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        },
+        {
+          "label": "pgexercises: Recursive queries",
+          "url": "https://pgexercises.com/questions/recursive/"
+        },
+        {
+          "label": "Mode: Window functions",
+          "url": "https://mode.com/sql-tutorial/sql-window-functions/"
+        },
+        {
+          "label": "SQLZoo: Window functions",
+          "url": "https://sqlzoo.net/wiki/Window_functions"
+        }
+      ]
+    },
+    {
+      "id": 2153,
+      "track": "sql",
+      "groupId": 224,
+      "code": "78",
+      "title": "SQL Dialect Differences: MySQL vs SQL Server vs PostgreSQL",
+      "slug": "sql-78-sql-dialect-differences-mysql-vs-sql-server-vs-postgresql",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Side-by-side syntax and behaviour gaps: dates, pagination, strings, NULLs, upserts, and LeetCode gotchas",
+      "links": [
+        {
+          "label": "Dialect notes: Date and Time",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#6-date-and-time"
+        },
+        {
+          "label": "Dialect notes: LIMIT, OFFSET, TOP and Pagination",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#8-limit-offset-top-and-pagination"
+        },
+        {
+          "label": "Dialect notes: LeetCode Gotchas by Dialect",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+        }
+      ]
+    },
+    {
+      "id": 2154,
+      "track": "sql",
+      "groupId": 224,
+      "code": "79",
+      "title": "Practice Plan: Where to Drill",
+      "slug": "sql-79-practice-plan-where-to-drill",
+      "url": "https://pgexercises.com/",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Free drill sites by value: pgexercises, LeetCode SQL 50, DataLemur, StrataScratch, HackerRank, SQLZoo, Mode",
+      "links": [
+        {
+          "label": "LeetCode SQL 50 study plan",
+          "url": "https://leetcode.com/studyplan/top-sql-50/"
+        },
+        {
+          "label": "DataLemur SQL questions",
+          "url": "https://datalemur.com/questions?category=SQL"
+        },
+        {
+          "label": "StrataScratch free tier",
+          "url": "https://platform.stratascratch.com/coding?is_freemium=1"
+        },
+        {
+          "label": "HackerRank SQL",
+          "url": "https://www.hackerrank.com/domains/sql"
+        },
+        {
+          "label": "SQLZoo tutorial",
+          "url": "https://sqlzoo.net/wiki/SQL_Tutorial"
+        },
+        {
+          "label": "Mode SQL tutorial",
+          "url": "https://mode.com/sql-tutorial/"
+        }
+      ]
+    }
+  ],
+  "bookshelf": [
+    {
+      "title": "SQL Full Course (30 hours)",
+      "by": "Data with Baraa",
+      "url": "https://www.youtube.com/watch?v=SSKVgrwhzus",
+      "when": "The video behind the Baraa links. Each topic opens it at the right chapter."
+    },
+    {
+      "title": "Baraa course PDFs",
+      "by": "your Drive folder",
+      "url": "https://drive.google.com/drive/folders/1D7mS3a_8bhRU21EkxPMw1WnBA8gT4q_w",
+      "when": "All 15 PDFs including the AI chapter and the three project decks that are not rows."
+    },
+    {
+      "title": "Your SQL docs",
+      "by": "you",
+      "url": "https://github.com/parshuKumar/Claude-notes/tree/main/SQL",
+      "when": "77 PostgreSQL-first docs, the primary link on every topic row."
+    },
+    {
+      "title": "Dialect differences",
+      "by": "you",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md",
+      "when": "MySQL vs SQL Server vs PostgreSQL, section by section. Open before any LeetCode session."
+    },
+    {
+      "title": "pgexercises",
+      "by": "Alisdair Owens",
+      "url": "https://pgexercises.com/",
+      "when": "Best free PostgreSQL drill site. Do a category after reading its part."
+    },
+    {
+      "title": "DataLemur SQL questions",
+      "by": "Nick Singh",
+      "url": "https://datalemur.com/questions?category=SQL",
+      "when": "Real company questions with a free tier. Interview-flavoured."
+    },
+    {
+      "title": "StrataScratch",
+      "by": "StrataScratch",
+      "url": "https://platform.stratascratch.com/coding?is_freemium=1",
+      "when": "Large free set of analytics questions. Good for windows and aggregation reps."
+    },
+    {
+      "title": "HackerRank SQL",
+      "by": "HackerRank",
+      "url": "https://www.hackerrank.com/domains/sql",
+      "when": "Classic warm-ups, useful for speed."
+    },
+    {
+      "title": "SQLBolt",
+      "by": "Alan Shen",
+      "url": "https://sqlbolt.com/",
+      "when": "Interactive basics. Ten minutes per lesson if a fundamental feels shaky."
+    },
+    {
+      "title": "Use The Index, Luke",
+      "by": "Markus Winand",
+      "url": "https://use-the-index-luke.com/",
+      "when": "The book on indexing. Pairs with Part 7."
+    },
+    {
+      "title": "PostgreSQL documentation",
+      "by": "PostgreSQL Global Development Group",
+      "url": "https://www.postgresql.org/docs/current/",
+      "when": "The exact answer when two sources disagree."
+    },
+    {
+      "title": "LeetCode SQL 50",
+      "by": "LeetCode",
+      "url": "https://leetcode.com/studyplan/top-sql-50/",
+      "when": "The study plan the LC1 to LC50 rows come from, for the official progress badge."
+    }
+  ],
+  "lastDayKit": [
+    {
+      "label": "Dialect notes: LeetCode gotchas",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#18-leetcode-gotchas-by-dialect"
+    },
+    {
+      "label": "Dialect notes: date and time",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/78-dialect-differences.md#6-date-and-time"
+    },
+    {
+      "label": "Your top 20 interview questions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/74-top-20-interview-questions.md"
+    },
+    {
+      "label": "Your live-coding patterns",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/SQL/75-live-coding-patterns.md"
+    },
+    {
+      "label": "Baraa: 30 performance tips (PDF)",
+      "url": "https://drive.google.com/file/d/1-kYc1sVmdaEigM0p97qal5ySAa1x0bp9/view"
+    },
+    {
+      "label": "LeetCode SQL 50",
+      "url": "https://leetcode.com/studyplan/top-sql-50/"
+    }
+  ]
+}

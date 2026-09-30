@@ -10,6 +10,9 @@ Two sheets behind one login, so progress follows you to any machine:
   Claude-notes/JS with the matching Namaste JavaScript episode, javascript.info chapter and
   hand-picked articles alongside. Same features, plus a **Last day** view: the 30 topics to
   re-read the night before, with a kit of cheat-sheet links.
+- **SQL** — your 77 SQL docs, Data with Baraa's course PDFs and video chapters, a dialect-differences
+  file (MySQL vs SQL Server vs PostgreSQL) linked per topic, and every free LeetCode database
+  problem: the SQL 50 as `LC1`–`LC50` plus 18 more, slotted into the topic they exercise.
 
 Built as one Next.js app on Vercel with Neon Postgres — free tier throughout.
 
@@ -111,8 +114,19 @@ Same rows and shortcuts as System Design. Extras:
 | Links per topic | your doc first, then the Namaste JS episode notes and video, javascript.info, and picked articles from dev.to, Medium and freeCodeCamp. |
 | Kinds | Core, Functions, Data, OOP, Async, Browser, Interview. |
 
-Content lives in `data/javascript.json`. Both reading sheets share the same tables, told apart by a
+Content lives in `data/javascript.json`. All reading sheets share the same tables, told apart by a
 `track` column; adding another sheet is a JSON file plus one entry in `src/lib/tracks.ts`.
+
+### The SQL sheet
+
+| | |
+| --- | --- |
+| Rows | 77 topic rows from `Claude-notes/SQL`, 7 Data with Baraa chapters that have no doc of yours (DDL, DML, views, temp tables, procedures, triggers, partitions), a dialect-differences row, a practice-plan row, and 68 LeetCode problems (`LC1`–`LC68`). |
+| Superscript | `ᴮ⁶` after a title means Baraa's PDF 06 covers it; the popover has the PDF and the video at that chapter's timestamp. |
+| Dialect notes | every topic where MySQL, SQL Server and PostgreSQL differ links the matching section of `SQL/78-dialect-differences.md` in your notes repo. |
+| Practice | the **Practice** kind chip shows only problems. Each links LeetCode plus a solution write-up; the practice-plan row and bookshelf list pgexercises, DataLemur, StrataScratch, HackerRank and SQLZoo. |
+
+Content lives in `data/sql.json`.
 
 ## The legacy import
 
@@ -137,7 +151,7 @@ npx tsx tools/verify-import.ts
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run db:migrate` | Create/apply a migration locally |
 | `npm run db:deploy` | Apply migrations (production) |
-| `npm run db:seed` | Load `data/sheet.json`, `data/system-design.json` and `data/javascript.json` into Postgres — idempotent |
+| `npm run db:seed` | Load `data/sheet.json` and every `data/<track>.json` into Postgres — idempotent |
 | `npm run db:studio` | Prisma Studio |
 | `npm run extract` | Re-parse `legacy/index.html` → `data/sheet.json` (already done) |
 
@@ -146,17 +160,17 @@ npx tsx tools/verify-import.ts
 ```
 src/
 ├── app/                    routes — thin
-│   ├── (app)/{sheet,system-design,javascript}/
+│   ├── (app)/{sheet,system-design,javascript,sql}/
 │   └── api/{auth,v1}/
 ├── server/                 all logic; imports no next/*, no React
 │   ├── db.ts  auth.ts  handler.ts
 │   ├── sheet.ts  progress.ts             DSA
-│   └── reading.ts  articles.ts           reading sheets (System Design, JavaScript)
+│   └── reading.ts  articles.ts           reading sheets (System Design, JavaScript, SQL)
 ├── components/             UI — sheet/ (DSA, plus shared dialogs) and system-design/
 └── lib/                    shared types + zod schemas
 
 prisma/    schema + seed
-data/      sheet.json + system-design.json + javascript.json — content sources of truth
+data/      sheet.json + one JSON per reading track — content sources of truth
 legacy/    the frozen original sheet + rescued ticks
 tools/     one-off parser and the import verifier
 ```

@@ -5,7 +5,7 @@
  * a JSON file plus one entry in this list.
  */
 
-export type TrackKey = 'system-design' | 'javascript';
+export type TrackKey = 'system-design' | 'javascript' | 'sql';
 
 export type KindDef = { key: string; label: string; color: string };
 
@@ -67,9 +67,30 @@ export const TRACKS: Record<TrackKey, TrackConfig> = {
     notePlaceholder: 'The one-line definition, the gotcha, the snippet you would write on a whiteboard…',
     source: 'your JS docs, the Namaste JavaScript notes and javascript.info',
   },
+  sql: {
+    key: 'sql',
+    path: '/sql',
+    tab: 'SQL',
+    title: 'SQL',
+    noun: ['item', 'items'],
+    kinds: [
+      { key: 'CORE', label: 'Core', color: 'var(--color-warmup)' },
+      { key: 'JOINS', label: 'Joins', color: 'var(--color-core)' },
+      { key: 'AGGREGATE', label: 'Aggregate', color: 'var(--color-accent-2)' },
+      { key: 'WINDOW', label: 'Window', color: 'var(--color-stretch)' },
+      { key: 'SUBQUERY', label: 'Subquery', color: 'var(--color-contest)' },
+      { key: 'PERFORMANCE', label: 'Performance', color: 'var(--color-medium)' },
+      { key: 'TRANSACTIONS', label: 'Transactions', color: 'var(--color-hard)' },
+      { key: 'ADVANCED', label: 'Advanced', color: 'var(--color-accent)' },
+      { key: 'PRACTICE', label: 'Practice', color: 'var(--color-easy)' },
+    ],
+    noteLink: (code) => (code.startsWith('LC') ? `${code} on LeetCode` : `Topic ${code}: open the doc`),
+    notePlaceholder: 'The query shape, the trap, the dialect difference to remember…',
+    source: 'your SQL docs, Data with Baraa, and LeetCode',
+  },
 };
 
-export const TRACK_ORDER: TrackKey[] = ['system-design', 'javascript'];
+export const TRACK_ORDER: TrackKey[] = ['system-design', 'javascript', 'sql'];
 
 export function isTrackKey(value: string): value is TrackKey {
   return value in TRACKS;

@@ -15,7 +15,8 @@ export default async function LandingPage() {
           DSA <span className="gradient-text">Sheet</span>
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-[--color-dim]">
-          353 DSA problems, 140 system design articles and 87 JavaScript topics. Tick them off,
+          353 DSA problems, 140 system design articles, 87 JavaScript topics and an SQL sheet with
+          the LeetCode SQL 50. Tick them off,
           count your re-reads, star what needs another pass, keep your notes where you left them.
         </p>
 

@@ -6,7 +6,7 @@ export type SdLink = { label: string; url: string };
 
 export type SystemDesignData = {
   /** Absent in the original System Design file; the seed defaults it. */
-  track?: 'system-design' | 'javascript';
+  track?: 'system-design' | 'javascript' | 'sql';
   parts: { id: number; track?: string; title: string; subtitle: string | null }[];
   groups: { id: number; track?: string; partId: number; code: string; title: string }[];
   articles: {
