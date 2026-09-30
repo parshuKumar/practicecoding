@@ -94,7 +94,8 @@ export const patchArticleSchema = z
 
 export type PatchArticle = z.infer<typeof patchArticleSchema>;
 
-export type SdKind = 'FOUNDATION' | 'LLD' | 'HLD' | 'HLD_CASE' | 'LLD_CASE' | 'ADVANCED';
+/** Free-form per track; labels, colours and order come from src/lib/tracks.ts. */
+export type SdKind = string;
 export type SdImportance = 'MUST' | 'CORE' | 'EXTRA';
 
 export type ArticleLink = { label: string; url: string };
@@ -106,6 +107,10 @@ export type ArticleView = {
   url: string;
   kind: SdKind;
   importance: SdImportance;
+  /** On the short list to re-read the night before an interview. */
+  lastDay: boolean;
+  /** Short source marker shown as a superscript after the title, e.g. "NS10" for Namaste JS episode 10. */
+  badge: string | null;
   summary: string | null;
   links: ArticleLink[];
   done: boolean;
@@ -134,27 +139,23 @@ export type SdStats = {
   starred: number;
   reads: number;
   must: { total: number; done: number };
-  byKind: Record<SdKind, { total: number; done: number }>;
+  lastDay: { total: number; done: number };
+  byKind: Record<string, { total: number; done: number }>;
 };
 
 export type BookshelfEntry = { title: string; by: string; url: string; when: string };
 
-export type SystemDesignView = {
+export type ReadingSheetView = {
+  track: 'system-design' | 'javascript';
   parts: PartView[];
   stats: SdStats;
   bookshelf: BookshelfEntry[];
+  /** Cheat-sheet links shown with the last-day view; empty when a track has none. */
+  lastDayKit: ArticleLink[];
 };
 
-export const SD_KIND_ORDER: SdKind[] = ['FOUNDATION', 'LLD', 'HLD', 'HLD_CASE', 'LLD_CASE', 'ADVANCED'];
-
-export const SD_KIND_LABEL: Record<SdKind, string> = {
-  FOUNDATION: 'Foundation',
-  LLD: 'LLD',
-  HLD: 'HLD',
-  HLD_CASE: 'HLD Case',
-  LLD_CASE: 'LLD Case',
-  ADVANCED: 'Advanced',
-};
+/** @deprecated kept as an alias while the System Design names are phased out. */
+export type SystemDesignView = ReadingSheetView;
 
 export const SD_IMPORTANCE_LABEL: Record<SdImportance, string> = {
   MUST: 'Must',

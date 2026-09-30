@@ -6,9 +6,10 @@ import { usePathname } from 'next/navigation';
 const TABS = [
   { href: '/sheet', label: 'DSA' },
   { href: '/system-design', label: 'System Design' },
+  { href: '/javascript', label: 'JavaScript' },
 ];
 
-/** The two sheets. Plain links, so a tab switch is a normal server-rendered page load. */
+/** The sheets. Plain links, so a tab switch is a normal server-rendered page load. */
 export function NavTabs() {
   const pathname = usePathname();
 

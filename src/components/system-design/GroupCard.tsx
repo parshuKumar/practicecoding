@@ -1,11 +1,13 @@
 'use client';
 
 import type { ArticleView, GroupView } from '@/lib/types';
+import type { TrackConfig } from '@/lib/tracks';
 import { Chevron, Flame } from '../icons';
 import { ArticleRow } from './ArticleRow';
 import type { ArticleState } from './SdClient';
 
 export function GroupCard({
+  track,
   group,
   get,
   open,
@@ -16,6 +18,7 @@ export function GroupCard({
   onBumpRead,
   onOpenNote,
 }: {
+  track: TrackConfig;
   group: GroupView;
   get: (id: number) => ArticleState;
   open: boolean;
@@ -100,6 +103,7 @@ export function GroupCard({
           {group.articles.map((article) => (
             <ArticleRow
               key={article.id}
+              track={track}
               article={article}
               state={get(article.id)}
               active={activeId === article.id}

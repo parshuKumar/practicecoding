@@ -6,12 +6,12 @@ import { SdClient } from '@/components/system-design/SdClient';
 
 export const dynamic = 'force-dynamic';
 
-export default async function SystemDesignPage() {
+export default async function JavaScriptPage() {
   const user = await getUser();
   if (!user) redirect('/');
 
-  const view = await getReadingSheet('system-design', user.id);
-  warmTracks('system-design');
+  const view = await getReadingSheet('javascript', user.id);
+  warmTracks('javascript');
   warmSheetContent();
 
   return <SdClient view={view} />;

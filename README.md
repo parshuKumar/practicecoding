@@ -6,6 +6,10 @@ Two sheets behind one login, so progress follows you to any machine:
 - **System Design** — 140 articles across 7 parts, from foundations to HLD/LLD case studies.
   Tick, count how many times you have read each one, ★ star, note. Must-read articles are
   flagged 🔥 and every article carries curated outside links.
+- **JavaScript** — 87 interview topics across 9 parts, each opening your own doc in
+  Claude-notes/JS with the matching Namaste JavaScript episode, javascript.info chapter and
+  hand-picked articles alongside. Same features, plus a **Last day** view: the 30 topics to
+  re-read the night before, with a kit of cheat-sheet links.
 
 Built as one Next.js app on Vercel with Neon Postgres — free tier throughout.
 
@@ -97,6 +101,19 @@ Articles link to the markdown in
 [parshuKumar/Claude-notes](https://github.com/parshuKumar/Claude-notes/tree/main/SystemDesign-opus/docs/system-design).
 Content, groups, tiers and links live in `data/system-design.json`; edit it and re-run `npm run db:seed`.
 
+### The JavaScript sheet
+
+Same rows and shortcuts as System Design. Extras:
+
+| | |
+| --- | --- |
+| Last day | the **Last day** tab (or `l`) shows the 30 topics flagged for night-before revision, with a kit of cheat-sheet links above the list. |
+| Links per topic | your doc first, then the Namaste JS episode notes and video, javascript.info, and picked articles from dev.to, Medium and freeCodeCamp. |
+| Kinds | Core, Functions, Data, OOP, Async, Browser, Interview. |
+
+Content lives in `data/javascript.json`. Both reading sheets share the same tables, told apart by a
+`track` column; adding another sheet is a JSON file plus one entry in `src/lib/tracks.ts`.
+
 ## The legacy import
 
 The original tracker kept ticks in `localStorage` keyed by row position
@@ -120,7 +137,7 @@ npx tsx tools/verify-import.ts
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run db:migrate` | Create/apply a migration locally |
 | `npm run db:deploy` | Apply migrations (production) |
-| `npm run db:seed` | Load `data/sheet.json` and `data/system-design.json` into Postgres — idempotent |
+| `npm run db:seed` | Load `data/sheet.json`, `data/system-design.json` and `data/javascript.json` into Postgres — idempotent |
 | `npm run db:studio` | Prisma Studio |
 | `npm run extract` | Re-parse `legacy/index.html` → `data/sheet.json` (already done) |
 
@@ -129,17 +146,17 @@ npx tsx tools/verify-import.ts
 ```
 src/
 ├── app/                    routes — thin
-│   ├── (app)/{sheet,system-design}/
+│   ├── (app)/{sheet,system-design,javascript}/
 │   └── api/{auth,v1}/
 ├── server/                 all logic; imports no next/*, no React
 │   ├── db.ts  auth.ts  handler.ts
 │   ├── sheet.ts  progress.ts             DSA
-│   └── system-design.ts  articles.ts     System Design
+│   └── reading.ts  articles.ts           reading sheets (System Design, JavaScript)
 ├── components/             UI — sheet/ (DSA, plus shared dialogs) and system-design/
 └── lib/                    shared types + zod schemas
 
 prisma/    schema + seed
-data/      sheet.json + system-design.json — content source of truth
+data/      sheet.json + system-design.json + javascript.json — content sources of truth
 legacy/    the frozen original sheet + rescued ticks
 tools/     one-off parser and the import verifier
 ```

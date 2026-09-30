@@ -1,20 +1,12 @@
 'use client';
 
 import { memo, useState } from 'react';
-import type { ArticleView, SdImportance, SdKind } from '@/lib/types';
-import { SD_IMPORTANCE_LABEL, SD_KIND_LABEL } from '@/lib/types';
-import { Check, External, Flame, Minus, Note, Plus, Star } from '../icons';
+import type { ArticleView, SdImportance } from '@/lib/types';
+import { SD_IMPORTANCE_LABEL } from '@/lib/types';
+import { kindColor, kindLabel, type TrackConfig } from '@/lib/tracks';
+import { Check, External, Flame, Minus, Moon, Note, Plus, Star } from '../icons';
 import { LinksMenu } from '../LinksMenu';
 import type { ArticleState } from './SdClient';
-
-export const KIND_COLOR: Record<SdKind, string> = {
-  FOUNDATION: 'var(--color-warmup)',
-  LLD: 'var(--color-core)',
-  HLD: 'var(--color-accent-2)',
-  HLD_CASE: 'var(--color-stretch)',
-  LLD_CASE: 'var(--color-contest)',
-  ADVANCED: 'var(--color-medium)',
-};
 
 export const IMPORTANCE_COLOR: Record<SdImportance, string> = {
   MUST: 'var(--color-hard)',
@@ -27,6 +19,7 @@ export const IMPORTANCE_COLOR: Record<SdImportance, string> = {
  * same ArticleState reference, so only the changed row re-renders.
  */
 export const ArticleRow = memo(function ArticleRow({
+  track,
   article,
   state,
   active,
@@ -35,6 +28,7 @@ export const ArticleRow = memo(function ArticleRow({
   onBumpRead,
   onOpenNote,
 }: {
+  track: TrackConfig;
   article: ArticleView;
   state: ArticleState;
   active: boolean;
@@ -45,7 +39,7 @@ export const ArticleRow = memo(function ArticleRow({
 }) {
   const hasNote = Boolean(state.note?.trim());
   const must = article.importance === 'MUST';
-  const kindColor = KIND_COLOR[article.kind];
+  const color = kindColor(track, article.kind);
 
   return (
     <li
@@ -58,7 +52,7 @@ export const ArticleRow = memo(function ArticleRow({
       <span
         className="absolute inset-y-[7px] left-0 w-[2px] rounded-r"
         style={{
-          background: active ? 'linear-gradient(var(--color-accent), var(--color-accent-2))' : kindColor,
+          background: active ? 'linear-gradient(var(--color-accent), var(--color-accent-2))' : color,
           opacity: active ? 1 : 0.55,
         }}
       />
@@ -92,6 +86,14 @@ export const ArticleRow = memo(function ArticleRow({
           />
         )}
         {article.title}
+        {article.badge && (
+          <sup
+            className="mono ml-1 text-[9px] font-semibold tracking-wide text-[--color-accent-2]"
+            title={`Covered by Namaste JavaScript episode ${article.badge.replace('NS', '')}`}
+          >
+            {article.badge}
+          </sup>
+        )}
         <External
           size={11}
           className="ml-1.5 inline-block align-[-1px] text-[--color-dim] opacity-0 transition group-hover:opacity-100"
@@ -104,6 +106,20 @@ export const ArticleRow = memo(function ArticleRow({
       >
         {article.summary}
       </span>
+
+      {article.lastDay && (
+        <span
+          className="hidden shrink-0 items-center gap-1 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide sm:flex"
+          style={{
+            color: 'var(--color-accent-2)',
+            backgroundColor: 'color-mix(in oklab, var(--color-accent-2) 13%, transparent)',
+          }}
+          title="On the last-day revision list"
+        >
+          <Moon size={10} />
+          Last day
+        </span>
+      )}
 
       <span
         className="hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide sm:block"
@@ -125,11 +141,11 @@ export const ArticleRow = memo(function ArticleRow({
       <span
         className="hidden shrink-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide md:block"
         style={{
-          color: kindColor,
-          backgroundColor: `color-mix(in oklab, ${kindColor} 13%, transparent)`,
+          color,
+          backgroundColor: `color-mix(in oklab, ${color} 13%, transparent)`,
         }}
       >
-        {SD_KIND_LABEL[article.kind]}
+        {kindLabel(track, article.kind)}
       </span>
 
       <LinksMenu

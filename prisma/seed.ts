@@ -1,5 +1,6 @@
 /**
- * Seeds content from data/sheet.json (DSA) and data/system-design.json (System Design).
+ * Seeds content from data/sheet.json (DSA) and one JSON per reading track
+ * (data/system-design.json, data/javascript.json).
  * Idempotent — safe to re-run on every deploy.
  *
  * Never deletes: removing a Problem or SdArticle row would orphan (or cascade away) real
@@ -56,51 +57,59 @@ async function seedDsa() {
   }
 }
 
-async function seedSystemDesign() {
-  const data: SystemDesignData = JSON.parse(
-    readFileSync(resolve(root, 'data/system-design.json'), 'utf8'),
-  );
+const TRACK_FILES: { file: string; track: string; expected: number }[] = [
+  { file: 'data/system-design.json', track: 'system-design', expected: 140 },
+  { file: 'data/javascript.json', track: 'javascript', expected: 87 },
+];
 
-  if (data.articles.length !== 140) {
-    throw new Error(
-      `refusing to seed: expected 140 articles, data/system-design.json has ${data.articles.length}`,
-    );
+async function seedTrack({ file, track, expected }: (typeof TRACK_FILES)[number]) {
+  const data: SystemDesignData = JSON.parse(readFileSync(resolve(root, file), 'utf8'));
+
+  if (data.articles.length !== expected) {
+    throw new Error(`refusing to seed: expected ${expected} articles, ${file} has ${data.articles.length}`);
   }
 
   for (const part of data.parts) {
-    await prisma.sdPart.upsert({ where: { id: part.id }, create: part, update: part });
+    const row = { ...part, track };
+    await prisma.sdPart.upsert({ where: { id: part.id }, create: row, update: row });
   }
 
   for (const group of data.groups) {
-    await prisma.sdGroup.upsert({ where: { id: group.id }, create: group, update: group });
+    const row = { ...group, track };
+    await prisma.sdGroup.upsert({ where: { id: group.id }, create: row, update: row });
   }
 
   const CHUNK = 25;
   for (let i = 0; i < data.articles.length; i += CHUNK) {
     await prisma.$transaction(
       data.articles.slice(i, i + CHUNK).map((article) => {
-        const row = { ...article, links: article.links as unknown as Prisma.InputJsonValue };
+        const row = {
+          ...article,
+          track,
+          lastDay: article.lastDay ?? false,
+          links: article.links as unknown as Prisma.InputJsonValue,
+        };
         return prisma.sdArticle.upsert({ where: { id: article.id }, create: row, update: row });
       }),
     );
   }
 
   const [parts, groups, articles] = await Promise.all([
-    prisma.sdPart.count(),
-    prisma.sdGroup.count(),
-    prisma.sdArticle.count(),
+    prisma.sdPart.count({ where: { track } }),
+    prisma.sdGroup.count({ where: { track } }),
+    prisma.sdArticle.count({ where: { track } }),
   ]);
 
-  console.log(`✔ seeded — ${parts} parts · ${groups} groups · ${articles} articles`);
+  console.log(`✔ seeded ${track} — ${parts} parts · ${groups} groups · ${articles} articles`);
 
-  if (articles !== 140) {
-    throw new Error(`expected 140 articles in the database, found ${articles}`);
+  if (articles !== expected) {
+    throw new Error(`expected ${expected} ${track} articles in the database, found ${articles}`);
   }
 }
 
 async function main() {
   await seedDsa();
-  await seedSystemDesign();
+  for (const t of TRACK_FILES) await seedTrack(t);
 }
 
 main()

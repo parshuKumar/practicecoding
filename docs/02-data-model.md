@@ -6,12 +6,14 @@ System Design content, one for System Design progress.
 Content tables are seeded and identical forever. `UserProblem` and `SdUserArticle` are the
 only tables the app writes to during normal use.
 
-The System Design tables (`SdPart` → `SdGroup` → `SdArticle`, plus `SdUserArticle`) mirror
-the DSA ones one-to-one, with two additions on the progress row: `readCount`, bumped by a
-±1 delta inside a transaction and clamped at zero, and `lastReadAt`. `SdArticle.id` is the
-curriculum number (1–140) and is never renumbered. `SdArticle.links` is a JSON array of
-`{ label, url }`. Full definitions are in `prisma/schema.prisma`; the seed source is
-`data/system-design.json`.
+The reading-sheet tables (`SdPart` → `SdGroup` → `SdArticle`, plus `SdUserArticle`) mirror
+the DSA ones one-to-one and hold every reading sheet, told apart by a `track` column
+(`system-design`, `javascript`). The "Sd" prefix is historical. Two additions on the
+progress row: `readCount`, bumped by a ±1 delta inside a transaction and clamped at zero,
+and `lastReadAt`. `SdArticle.id` is stable per track (System Design 1–140, JavaScript 1001+)
+and is never renumbered. `kind` is free text whose meaning per track lives in
+`src/lib/tracks.ts`; `lastDay` flags the night-before revision list; `links` is a JSON array
+of `{ label, url }`. Seed sources are `data/system-design.json` and `data/javascript.json`.
 
 The original DSA-only schema follows.
 

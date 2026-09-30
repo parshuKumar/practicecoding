@@ -1,16 +1,14 @@
 'use client';
 
 import { forwardRef } from 'react';
-import type { SdKind } from '@/lib/types';
-import { SD_KIND_LABEL, SD_KIND_ORDER } from '@/lib/types';
-import { Dice, Expand, Flame, Keyboard, Search, Star, X } from '../icons';
-import { KIND_COLOR } from './ArticleRow';
+import type { TrackConfig } from '@/lib/tracks';
+import { Dice, Expand, Flame, Keyboard, Moon, Search, Star, X } from '../icons';
 
-export type SdView = 'all' | 'starred' | 'must';
+export type SdView = 'all' | 'starred' | 'must' | 'lastday';
 
 export type SdFilterState = {
   q: string;
-  kind: SdKind | 'ALL';
+  kind: string | 'ALL';
   hideDone: boolean;
 };
 
@@ -19,10 +17,13 @@ export const EMPTY_FILTERS: SdFilterState = { q: '', kind: 'ALL', hideDone: fals
 export const SdCommandBar = forwardRef<
   HTMLInputElement,
   {
+    track: TrackConfig;
     view: SdView;
     onViewChange: (v: SdView) => void;
     starredCount: number;
     mustLeft: number;
+    lastDayLeft: number;
+    hasLastDay: boolean;
     filters: SdFilterState;
     onFiltersChange: (f: SdFilterState) => void;
     allOpen: boolean;
@@ -33,10 +34,13 @@ export const SdCommandBar = forwardRef<
   }
 >(function SdCommandBar(
   {
+    track,
     view,
     onViewChange,
     starredCount,
     mustLeft,
+    lastDayLeft,
+    hasLastDay,
     filters,
     onFiltersChange,
     allOpen,
@@ -48,6 +52,7 @@ export const SdCommandBar = forwardRef<
   ref,
 ) {
   const filtering = filters.q !== '' || filters.kind !== 'ALL' || filters.hideDone;
+  const [singular, plural] = track.noun;
 
   return (
     <div className="sticky top-[57px] z-20 -mx-4 border-b border-[--color-line] bg-[--color-base]/85 px-4 py-3 backdrop-blur-xl">
@@ -65,6 +70,17 @@ export const SdCommandBar = forwardRef<
               </span>
             )}
           </SegButton>
+          {hasLastDay && (
+            <SegButton active={view === 'lastday'} onClick={() => onViewChange('lastday')}>
+              <Moon size={13} className="text-[--color-accent-2]" />
+              Last day
+              {lastDayLeft > 0 && (
+                <span className="tnum ml-0.5 rounded bg-[--color-accent-2]/15 px-1.5 text-[11px] text-[--color-accent-2]">
+                  {lastDayLeft}
+                </span>
+              )}
+            </SegButton>
+          )}
           <SegButton active={view === 'starred'} onClick={() => onViewChange('starred')}>
             <Star filled={view === 'starred'} size={13} className="text-[--color-star]" />
             Starred
@@ -86,8 +102,8 @@ export const SdCommandBar = forwardRef<
             type="text"
             value={filters.q}
             onChange={(e) => onFiltersChange({ ...filters, q: e.target.value })}
-            placeholder="Search articles…"
-            aria-label="Search articles"
+            placeholder={`Search ${plural}…`}
+            aria-label={`Search ${plural}`}
             className="w-full rounded-lg border border-[--color-line] bg-[--color-surface] py-2 pl-9 pr-16 text-sm text-[--color-hi] transition placeholder:text-[--color-dim] focus:border-[--color-accent]"
           />
           {filters.q ? (
@@ -112,14 +128,14 @@ export const SdCommandBar = forwardRef<
           >
             All
           </Chip>
-          {SD_KIND_ORDER.map((k) => (
+          {track.kinds.map((k) => (
             <Chip
-              key={k}
-              active={filters.kind === k}
-              color={KIND_COLOR[k]}
-              onClick={() => onFiltersChange({ ...filters, kind: k })}
+              key={k.key}
+              active={filters.kind === k.key}
+              color={k.color}
+              onClick={() => onFiltersChange({ ...filters, kind: k.key })}
             >
-              {SD_KIND_LABEL[k]}
+              {k.label}
             </Chip>
           ))}
         </div>
@@ -144,7 +160,7 @@ export const SdCommandBar = forwardRef<
         </label>
 
         <div className="ml-auto flex items-center gap-1">
-          <IconButton onClick={onRandom} label="Jump to a random unread article (r)">
+          <IconButton onClick={onRandom} label={`Jump to a random unread ${singular} (r)`}>
             <Dice size={15} />
           </IconButton>
           <IconButton onClick={onToggleAll} label={allOpen ? 'Collapse all (e)' : 'Expand all (e)'}>
@@ -159,7 +175,7 @@ export const SdCommandBar = forwardRef<
       {filtering && (
         <div className="mt-2 flex items-center gap-2 text-xs text-[--color-dim]">
           <span className="tnum">
-            {matchCount} {matchCount === 1 ? 'article' : 'articles'} match
+            {matchCount} {matchCount === 1 ? singular : plural} match
           </span>
           <button
             onClick={() => onFiltersChange(EMPTY_FILTERS)}

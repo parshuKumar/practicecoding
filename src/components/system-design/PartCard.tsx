@@ -1,10 +1,12 @@
 'use client';
 
 import type { ArticleView, PartView } from '@/lib/types';
+import type { TrackConfig } from '@/lib/tracks';
 import { GroupCard } from './GroupCard';
 import type { ArticleState } from './SdClient';
 
 export function PartCard({
+  track,
   part,
   get,
   openGroups,
@@ -15,6 +17,7 @@ export function PartCard({
   onBumpRead,
   onOpenNote,
 }: {
+  track: TrackConfig;
   part: PartView;
   get: (id: number) => ArticleState;
   openGroups: Set<number>;
@@ -67,6 +70,7 @@ export function PartCard({
         {part.groups.map((group) => (
           <GroupCard
             key={group.id}
+            track={track}
             group={group}
             get={get}
             open={openGroups.has(group.id)}

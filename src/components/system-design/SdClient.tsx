@@ -1,44 +1,52 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { ArticleView, PartView, SdKind, SdStats, SystemDesignView } from '@/lib/types';
-import { SD_KIND_ORDER } from '@/lib/types';
+import type { ArticleView, PartView, ReadingSheetView, SdStats } from '@/lib/types';
+import { TRACKS, type TrackConfig } from '@/lib/tracks';
 import { patchArticle } from '@/lib/api';
 import { NoteDialog } from '../sheet/NoteDialog';
 import { ShortcutsOverlay, type Shortcut } from '../sheet/ShortcutsOverlay';
 import { Toaster, type ToastMessage } from '../sheet/Toast';
-import { Flame, Star } from '../icons';
+import { Flame, Moon, Star } from '../icons';
 import { SdHero } from './SdHero';
 import { SdCommandBar, EMPTY_FILTERS, type SdFilterState, type SdView } from './SdCommandBar';
 import { PartCard } from './PartCard';
 import { Bookshelf } from './Bookshelf';
+import { LastDayKit } from './LastDayKit';
 
 export type ArticleState = { done: boolean; starred: boolean; readCount: number; note: string | null };
 
 const EMPTY: ArticleState = { done: false, starred: false, readCount: 0, note: null };
-const COLLAPSED_KEY = 'sd-collapsed-groups';
 
-const SHORTCUTS: Shortcut[] = [
-  ['/', 'Focus search'],
-  ['j  ↓', 'Next article'],
-  ['k  ↑', 'Previous article'],
-  ['x', 'Toggle read'],
-  ['+  =', 'Read it one more time'],
-  ['-', 'Take one read back'],
-  ['s', 'Toggle star'],
-  ['n', 'Open note'],
-  ['m', 'Must-read view on / off'],
-  ['r', 'Jump to a random unread article'],
-  ['e', 'Expand / collapse all groups'],
-  ['1 … 6  0', 'Filter by kind / all'],
-  ['?', 'This help'],
-  ['Esc', 'Close, or clear search'],
-];
+function shortcutsFor(track: TrackConfig): Shortcut[] {
+  const [singular] = track.noun;
+  return [
+    ['/', 'Focus search'],
+    ['j  ↓', `Next ${singular}`],
+    ['k  ↑', `Previous ${singular}`],
+    ['x', 'Toggle read'],
+    ['+  =', 'Read it one more time'],
+    ['-', 'Take one read back'],
+    ['s', 'Toggle star'],
+    ['n', 'Open note'],
+    ['m', 'Must-read view on / off'],
+    ['l', 'Last-day view on / off'],
+    ['r', `Jump to a random unread ${singular}`],
+    ['e', 'Expand / collapse all groups'],
+    [`1 … ${track.kinds.length}  0`, 'Filter by kind / all'],
+    ['?', 'This help'],
+    ['Esc', 'Close, or clear search'],
+  ];
+}
 
 /** What one PATCH will change, given the current row and the intent. */
 type Patch = { done?: boolean; starred?: boolean; note?: string | null; readDelta?: 1 | -1 };
 
-export function SdClient({ view: initial }: { view: SystemDesignView }) {
+/** One component renders every reading sheet; `view.track` picks the config. */
+export function SdClient({ view: initial }: { view: ReadingSheetView }) {
+  const track = TRACKS[initial.track];
+  const collapsedKey = `${track.key}-collapsed-groups`;
+
   const [state, setState] = useState<Map<number, ArticleState>>(() => {
     const map = new Map<number, ArticleState>();
     for (const part of initial.parts) {
@@ -70,27 +78,27 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(COLLAPSED_KEY);
+      const raw = localStorage.getItem(collapsedKey);
       if (!raw) return;
       const collapsed: number[] = JSON.parse(raw);
       setOpenGroups(new Set(allGroupIds.filter((id) => !collapsed.includes(id))));
     } catch {
       /* unreadable storage isn't worth handling */
     }
-  }, [allGroupIds]);
+  }, [allGroupIds, collapsedKey]);
 
   const persistCollapsed = useCallback(
     (open: Set<number>) => {
       try {
         localStorage.setItem(
-          COLLAPSED_KEY,
+          collapsedKey,
           JSON.stringify(allGroupIds.filter((id) => !open.has(id))),
         );
       } catch {
         /* ignore */
       }
     },
-    [allGroupIds],
+    [allGroupIds, collapsedKey],
   );
 
   const toast = useCallback((text: string, tone: ToastMessage['tone'] = 'info') => {
@@ -128,7 +136,7 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
     [toast],
   );
 
-  // Ticking an unread article counts as its first read; reading an unticked one ticks it.
+  // Ticking an unread item counts as its first read; reading an unticked one ticks it.
   const toggleDone = useCallback(
     (id: number, done: boolean) => {
       const current = stateRef.current.get(id) ?? EMPTY;
@@ -174,7 +182,10 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
     persistCollapsed(next);
   }, [allOpen, allGroupIds, persistCollapsed]);
 
-  const stats = useMemo<SdStats>(() => computeStats(initial.parts, get), [initial.parts, get]);
+  const stats = useMemo<SdStats>(
+    () => computeStats(track, initial.parts, get),
+    [track, initial.parts, get],
+  );
 
   const parts = useMemo(
     () => filterParts(initial.parts, get, filters, view),
@@ -208,17 +219,18 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
     [initial.parts, openGroups, persistCollapsed],
   );
 
-  // Random unread article, must-reads first while any are left.
+  // Random unread item: last-day list first, then must-reads, then anything.
   const randomUnread = useCallback(() => {
     const unread = initial.parts
       .flatMap((p) => p.groups.flatMap((g) => g.articles))
       .filter((a) => !get(a.id).done);
     if (unread.length === 0) {
-      toast('Everything is read. All 140.');
+      toast(`Everything is read. All ${initial.parts.flatMap((p) => p.groups.flatMap((g) => g.articles)).length}.`);
       return;
     }
+    const lastDay = unread.filter((a) => a.lastDay);
     const must = unread.filter((a) => a.importance === 'MUST');
-    const pool = must.length > 0 ? must : unread;
+    const pool = lastDay.length > 0 ? lastDay : must.length > 0 ? must : unread;
     const pick = pool[Math.floor(Math.random() * pool.length)];
     jumpTo(pick.id);
     toast(pick.title);
@@ -247,7 +259,11 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
         jumpTo(visible[next].id);
       };
 
-      const kindIndex = Number(e.key) - 1;
+      if (/^[1-9]$/.test(e.key)) {
+        const kind = track.kinds[Number(e.key) - 1];
+        if (kind) setFilters((f) => ({ ...f, kind: kind.key }));
+        return;
+      }
 
       switch (e.key) {
         case '/':
@@ -287,6 +303,9 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
         case 'm':
           setView((v) => (v === 'must' ? 'all' : 'must'));
           break;
+        case 'l':
+          if (stats.lastDay.total > 0) setView((v) => (v === 'lastday' ? 'all' : 'lastday'));
+          break;
         case 'r':
           randomUnread();
           break;
@@ -295,14 +314,6 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
           break;
         case '0':
           setFilters((f) => ({ ...f, kind: 'ALL' }));
-          break;
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-          setFilters((f) => ({ ...f, kind: SD_KIND_ORDER[kindIndex] }));
           break;
         case '?':
           setShowShortcuts(true);
@@ -316,11 +327,13 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [
+    track,
     activeId,
     visible,
     filters.q,
     noteFor,
     showShortcuts,
+    stats.lastDay.total,
     get,
     toggleDone,
     bumpRead,
@@ -331,17 +344,21 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
   ]);
 
   const mustLeft = stats.must.total - stats.must.done;
+  const lastDayLeft = stats.lastDay.total - stats.lastDay.done;
 
   return (
     <div className="space-y-4">
-      <SdHero stats={stats} />
+      <SdHero track={track} stats={stats} />
 
       <SdCommandBar
         ref={searchRef}
+        track={track}
         view={view}
         onViewChange={setView}
         starredCount={stats.starred}
         mustLeft={mustLeft}
+        lastDayLeft={lastDayLeft}
+        hasLastDay={stats.lastDay.total > 0}
         filters={filters}
         onFiltersChange={setFilters}
         allOpen={allOpen}
@@ -351,13 +368,18 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
         matchCount={visible.length}
       />
 
+      {view === 'lastday' && (
+        <LastDayKit links={initial.lastDayKit} left={lastDayLeft} total={stats.lastDay.total} />
+      )}
+
       {visible.length === 0 ? (
-        <EmptyState view={view} />
+        <EmptyState view={view} noun={track.noun} />
       ) : (
         <div className="space-y-4">
           {parts.map((part) => (
             <PartCard
               key={part.id}
+              track={track}
               part={part}
               get={get}
               openGroups={openGroups}
@@ -379,8 +401,8 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
           subject={{
             title: noteFor.title,
             url: noteFor.url,
-            linkLabel: `Article ${noteFor.code} on GitHub`,
-            placeholder: 'Key idea, the trade-off to remember, what to say in an interview…',
+            linkLabel: track.noteLink(noteFor.code),
+            placeholder: track.notePlaceholder,
           }}
           note={get(noteFor.id).note}
           onClose={() => setNoteFor(null)}
@@ -389,7 +411,7 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
       )}
 
       {showShortcuts && (
-        <ShortcutsOverlay shortcuts={SHORTCUTS} onClose={() => setShowShortcuts(false)} />
+        <ShortcutsOverlay shortcuts={shortcutsFor(track)} onClose={() => setShowShortcuts(false)} />
       )}
 
       <Toaster toasts={toasts} onDismiss={dismissToast} />
@@ -397,7 +419,8 @@ export function SdClient({ view: initial }: { view: SystemDesignView }) {
   );
 }
 
-function EmptyState({ view }: { view: SdView }) {
+function EmptyState({ view, noun }: { view: SdView; noun: [string, string] }) {
+  const [singular, plural] = noun;
   return (
     <div className="glass flex flex-col items-center gap-3 rounded-2xl px-6 py-16 text-center">
       {view === 'starred' ? (
@@ -405,20 +428,26 @@ function EmptyState({ view }: { view: SdView }) {
           <Star size={26} className="text-[--color-dim]" />
           <p className="text-sm text-[--color-body]">Nothing starred yet.</p>
           <p className="max-w-xs text-xs text-[--color-dim]">
-            Star an article and it shows up here when you want another pass at it.
+            Star a {singular} and it shows up here when you want another pass at it.
           </p>
         </>
       ) : view === 'must' ? (
         <>
           <Flame size={26} className="text-[--color-dim]" />
-          <p className="text-sm text-[--color-body]">No must-read articles match.</p>
+          <p className="text-sm text-[--color-body]">No must-read {plural} match.</p>
           <p className="text-xs text-[--color-dim]">
             Either they are all read, or a filter is hiding them.
           </p>
         </>
+      ) : view === 'lastday' ? (
+        <>
+          <Moon size={26} className="text-[--color-dim]" />
+          <p className="text-sm text-[--color-body]">No last-day {plural} match.</p>
+          <p className="text-xs text-[--color-dim]">Clear the search or kind filter to see the list.</p>
+        </>
       ) : (
         <>
-          <p className="text-sm text-[--color-body]">No articles match these filters.</p>
+          <p className="text-sm text-[--color-body]">No {plural} match these filters.</p>
           <p className="text-xs text-[--color-dim]">Try clearing the search or kind.</p>
         </>
       )}
@@ -426,30 +455,36 @@ function EmptyState({ view }: { view: SdView }) {
   );
 }
 
-function computeStats(parts: PartView[], get: (id: number) => ArticleState): SdStats {
+function computeStats(
+  track: TrackConfig,
+  parts: PartView[],
+  get: (id: number) => ArticleState,
+): SdStats {
   const stats: SdStats = {
     total: 0,
     done: 0,
     starred: 0,
     reads: 0,
     must: { total: 0, done: 0 },
-    byKind: Object.fromEntries(
-      SD_KIND_ORDER.map((k) => [k, { total: 0, done: 0 }]),
-    ) as Record<SdKind, { total: number; done: number }>,
+    lastDay: { total: 0, done: 0 },
+    byKind: Object.fromEntries(track.kinds.map((k) => [k.key, { total: 0, done: 0 }])),
   };
 
   for (const part of parts) {
     for (const group of part.groups) {
       for (const article of group.articles) {
         const mine = get(article.id);
+        const bucket = (stats.byKind[article.kind] ??= { total: 0, done: 0 });
         stats.total += 1;
-        stats.byKind[article.kind].total += 1;
+        bucket.total += 1;
         stats.reads += mine.readCount;
         if (article.importance === 'MUST') stats.must.total += 1;
+        if (article.lastDay) stats.lastDay.total += 1;
         if (mine.done) {
           stats.done += 1;
-          stats.byKind[article.kind].done += 1;
+          bucket.done += 1;
           if (article.importance === 'MUST') stats.must.done += 1;
+          if (article.lastDay) stats.lastDay.done += 1;
         }
         if (mine.starred) stats.starred += 1;
       }
@@ -471,6 +506,7 @@ function filterParts(
     const mine = get(article.id);
     if (view === 'starred' && !mine.starred) return false;
     if (view === 'must' && article.importance !== 'MUST') return false;
+    if (view === 'lastday' && !article.lastDay) return false;
     if (filters.hideDone && mine.done) return false;
     if (filters.kind !== 'ALL' && article.kind !== filters.kind) return false;
     if (q) {

@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { SdStats } from '@/lib/types';
-import { SD_KIND_LABEL, SD_KIND_ORDER } from '@/lib/types';
-import { Flame, Repeat, Star } from '../icons';
-import { KIND_COLOR } from './ArticleRow';
+import type { TrackConfig } from '@/lib/tracks';
+import { Flame, Moon, Repeat, Star } from '../icons';
 
 function useCountUp(value: number, ms = 500) {
   const [display, setDisplay] = useState(value);
@@ -35,10 +34,12 @@ function useCountUp(value: number, ms = 500) {
   return display;
 }
 
-export function SdHero({ stats }: { stats: SdStats }) {
+export function SdHero({ track, stats }: { track: TrackConfig; stats: SdStats }) {
   const percent = stats.total === 0 ? 0 : (stats.done / stats.total) * 100;
   const shown = useCountUp(stats.done);
   const reads = useCountUp(stats.reads);
+  const [, plural] = track.noun;
+  const cols = track.kinds.length > 6 ? 'sm:grid-cols-4' : 'sm:grid-cols-3';
 
   return (
     <section className="glass animate-rise relative overflow-hidden rounded-2xl p-6 sm:p-7">
@@ -46,7 +47,7 @@ export function SdHero({ stats }: { stats: SdStats }) {
       <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-[--color-accent-2] opacity-[0.07] blur-3xl" />
 
       <div className="relative flex flex-col items-center gap-7 sm:flex-row sm:gap-9">
-        <Ring percent={percent} />
+        <Ring percent={percent} id={`ring-${track.key}`} />
 
         <div className="min-w-0 flex-1">
           <div className="flex items-baseline justify-center gap-2 sm:justify-start">
@@ -54,36 +55,45 @@ export function SdHero({ stats }: { stats: SdStats }) {
               {shown}
             </span>
             <span className="tnum text-xl text-[--color-dim]">/ {stats.total}</span>
-            <span className="ml-1 text-sm text-[--color-dim]">articles read</span>
+            <span className="ml-1 text-sm text-[--color-dim]">{plural} read</span>
           </div>
 
-          <div className="mt-5 grid gap-x-5 gap-y-3 sm:grid-cols-3">
-            {SD_KIND_ORDER.map((k) => (
+          <div className={`mt-5 grid gap-x-5 gap-y-3 ${cols}`}>
+            {track.kinds.map((k) => (
               <Meter
-                key={k}
-                label={SD_KIND_LABEL[k]}
-                color={KIND_COLOR[k]}
-                done={stats.byKind[k].done}
-                total={stats.byKind[k].total}
+                key={k.key}
+                label={k.label}
+                color={k.color}
+                done={stats.byKind[k.key]?.done ?? 0}
+                total={stats.byKind[k.key]?.total ?? 0}
               />
             ))}
           </div>
         </div>
 
-        <div className="grid shrink-0 grid-cols-3 gap-2 sm:grid-cols-1">
+        <div className="grid shrink-0 grid-cols-2 gap-2 sm:grid-cols-1">
           <Tile
             icon={<Flame filled size={15} />}
             color="var(--color-hard)"
             value={`${stats.must.done}/${stats.must.total}`}
             label="must-read"
-            title="Must-read articles finished"
+            title="Must-read finished"
           />
+          {stats.lastDay.total > 0 && (
+            <Tile
+              icon={<Moon size={15} />}
+              color="var(--color-accent-2)"
+              value={`${stats.lastDay.done}/${stats.lastDay.total}`}
+              label="last day"
+              title="Last-day revision list finished"
+            />
+          )}
           <Tile
             icon={<Repeat size={15} />}
-            color="var(--color-accent-2)"
+            color="var(--color-accent)"
             value={String(reads)}
             label="total reads"
-            title="Every pass over every article, added up"
+            title="Every pass over every item, added up"
           />
           <Tile
             icon={<Star filled size={15} />}
@@ -113,7 +123,7 @@ function Tile({
 }) {
   return (
     <div
-      className="flex flex-col items-center gap-1 rounded-xl border border-[--color-line] bg-black/25 px-4 py-2.5 sm:flex-row sm:gap-3 sm:px-4"
+      className="flex items-center gap-3 rounded-xl border border-[--color-line] bg-black/25 px-3.5 py-2"
       title={title}
     >
       <span
@@ -122,8 +132,8 @@ function Tile({
       >
         {icon}
       </span>
-      <div className="flex flex-col items-center sm:items-start">
-        <span className="tnum text-base font-semibold leading-tight text-[--color-hi]">{value}</span>
+      <div className="flex flex-col">
+        <span className="tnum text-[15px] font-semibold leading-tight text-[--color-hi]">{value}</span>
         <span className="text-[10px] uppercase tracking-wider text-[--color-dim]">{label}</span>
       </div>
     </div>
@@ -163,7 +173,7 @@ function Meter({
   );
 }
 
-function Ring({ percent }: { percent: number }) {
+function Ring({ percent, id }: { percent: number; id: string }) {
   const r = 46;
   const c = 2 * Math.PI * r;
 
@@ -171,7 +181,7 @@ function Ring({ percent }: { percent: number }) {
     <div className="relative h-[116px] w-[116px] shrink-0">
       <svg width="116" height="116" viewBox="0 0 116 116" className="-rotate-90">
         <defs>
-          <linearGradient id="sd-ring-grad" x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="var(--color-accent-2)" />
             <stop offset="100%" stopColor="var(--color-accent)" />
           </linearGradient>
@@ -182,7 +192,7 @@ function Ring({ percent }: { percent: number }) {
           cy="58"
           r={r}
           fill="none"
-          stroke="url(#sd-ring-grad)"
+          stroke={`url(#${id})`}
           strokeWidth="9"
           strokeLinecap="round"
           strokeDasharray={c}

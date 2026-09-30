@@ -1,0 +1,2234 @@
+{
+  "track": "javascript",
+  "parts": [
+    {
+      "id": 101,
+      "title": "HOW JAVASCRIPT RUNS",
+      "subtitle": "Execution context, call stack, scope, the engine",
+      "track": "javascript"
+    },
+    {
+      "id": 102,
+      "title": "LANGUAGE CORE",
+      "subtitle": "Types, coercion, operators, strings, numbers, control flow",
+      "track": "javascript"
+    },
+    {
+      "id": 103,
+      "title": "FUNCTIONS AND CLOSURES",
+      "subtitle": "The heart of every JavaScript interview",
+      "track": "javascript"
+    },
+    {
+      "id": 104,
+      "title": "ARRAYS AND OBJECTS",
+      "subtitle": "Methods, traps, copying, polyfills",
+      "track": "javascript"
+    },
+    {
+      "id": 105,
+      "title": "THIS, PROTOTYPES AND CLASSES",
+      "subtitle": "How objects really inherit",
+      "track": "javascript"
+    },
+    {
+      "id": 106,
+      "title": "ASYNCHRONOUS JAVASCRIPT",
+      "subtitle": "Event loop, promises, async/await, output questions",
+      "track": "javascript"
+    },
+    {
+      "id": 107,
+      "title": "ERRORS, MODULES AND MODERN FEATURES",
+      "subtitle": "The parts senior interviewers probe",
+      "track": "javascript"
+    },
+    {
+      "id": 108,
+      "title": "DOM AND BROWSER",
+      "subtitle": "Events, delegation, forms, storage",
+      "track": "javascript"
+    },
+    {
+      "id": 109,
+      "title": "PATTERNS AND INTERVIEW PREP",
+      "subtitle": "Drills, traps, machine coding",
+      "track": "javascript"
+    }
+  ],
+  "groups": [
+    {
+      "id": 101,
+      "partId": 101,
+      "code": "1A",
+      "title": "Execution Model",
+      "track": "javascript"
+    },
+    {
+      "id": 102,
+      "partId": 101,
+      "code": "1B",
+      "title": "Scope and Declarations",
+      "track": "javascript"
+    },
+    {
+      "id": 103,
+      "partId": 101,
+      "code": "1C",
+      "title": "The Engine",
+      "track": "javascript"
+    },
+    {
+      "id": 104,
+      "partId": 102,
+      "code": "2A",
+      "title": "Types and Coercion",
+      "track": "javascript"
+    },
+    {
+      "id": 105,
+      "partId": 102,
+      "code": "2B",
+      "title": "Strings, Numbers, Control Flow",
+      "track": "javascript"
+    },
+    {
+      "id": 106,
+      "partId": 103,
+      "code": "3A",
+      "title": "Function Basics",
+      "track": "javascript"
+    },
+    {
+      "id": 107,
+      "partId": 103,
+      "code": "3B",
+      "title": "Closures",
+      "track": "javascript"
+    },
+    {
+      "id": 108,
+      "partId": 103,
+      "code": "3C",
+      "title": "Functional Toolkit",
+      "track": "javascript"
+    },
+    {
+      "id": 109,
+      "partId": 104,
+      "code": "4A",
+      "title": "Arrays",
+      "track": "javascript"
+    },
+    {
+      "id": 110,
+      "partId": 104,
+      "code": "4B",
+      "title": "Objects",
+      "track": "javascript"
+    },
+    {
+      "id": 111,
+      "partId": 104,
+      "code": "4C",
+      "title": "Copying and Polyfills",
+      "track": "javascript"
+    },
+    {
+      "id": 112,
+      "partId": 105,
+      "code": "5A",
+      "title": "this and Prototypes",
+      "track": "javascript"
+    },
+    {
+      "id": 113,
+      "partId": 105,
+      "code": "5B",
+      "title": "Classes",
+      "track": "javascript"
+    },
+    {
+      "id": 114,
+      "partId": 106,
+      "code": "6A",
+      "title": "Event Loop",
+      "track": "javascript"
+    },
+    {
+      "id": 115,
+      "partId": 106,
+      "code": "6B",
+      "title": "Promises and async/await",
+      "track": "javascript"
+    },
+    {
+      "id": 116,
+      "partId": 106,
+      "code": "6C",
+      "title": "Async Interview Drills",
+      "track": "javascript"
+    },
+    {
+      "id": 117,
+      "partId": 107,
+      "code": "7A",
+      "title": "Errors",
+      "track": "javascript"
+    },
+    {
+      "id": 118,
+      "partId": 107,
+      "code": "7B",
+      "title": "Modules and Modern Features",
+      "track": "javascript"
+    },
+    {
+      "id": 119,
+      "partId": 108,
+      "code": "8A",
+      "title": "DOM",
+      "track": "javascript"
+    },
+    {
+      "id": 120,
+      "partId": 108,
+      "code": "8B",
+      "title": "Events, Forms, Storage",
+      "track": "javascript"
+    },
+    {
+      "id": 121,
+      "partId": 109,
+      "code": "9A",
+      "title": "Patterns",
+      "track": "javascript"
+    },
+    {
+      "id": 122,
+      "partId": 109,
+      "code": "9B",
+      "title": "Interview Drills",
+      "track": "javascript"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1001,
+      "track": "javascript",
+      "groupId": 101,
+      "code": "01",
+      "title": "Execution Context",
+      "slug": "js-01-execution-context",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-01.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The memory and code phases every piece of JS runs inside.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 1 video",
+          "url": "https://www.youtube.com/watch?v=ZvbzSrg0afE"
+        },
+        {
+          "label": "Lydia Hallie: JS engine visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "track": "javascript",
+      "groupId": 101,
+      "code": "02",
+      "title": "Call Stack and How JS Executes",
+      "slug": "js-02-call-stack-and-how-js-executes",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-02.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "How execution contexts are pushed and popped, and why JS is single-threaded.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 2 video",
+          "url": "https://www.youtube.com/watch?v=iLWTnMzWtj4"
+        },
+        {
+          "label": "freeCodeCamp: the call stack",
+          "url": "https://www.freecodecamp.org/news/understanding-the-javascript-call-stack-861e41ae61d4/"
+        },
+        {
+          "label": "Your ref: recursion and the call stack",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#30-recursion-the-call-stack-and-iterative-conversion"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "track": "javascript",
+      "groupId": 101,
+      "code": "03",
+      "title": "Function Invocation and Variable Environments",
+      "slug": "js-03-function-invocation-and-variable-environments",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-04.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Each call gets its own variable environment; same name, different memory.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 4 video",
+          "url": "https://www.youtube.com/watch?v=gSDncyuGw0s"
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "track": "javascript",
+      "groupId": 101,
+      "code": "04",
+      "title": "Shortest JS Program, window and globalThis",
+      "slug": "js-04-shortest-js-program-window-and-globalthis",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-05.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "What exists before you write a line: the global object and global this.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 5 video",
+          "url": "https://www.youtube.com/watch?v=QCRpVw2KXf8"
+        },
+        {
+          "label": "MDN: globalThis",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis"
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "track": "javascript",
+      "groupId": 101,
+      "code": "05",
+      "title": "undefined vs not defined",
+      "slug": "js-05-undefined-vs-not-defined",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-06.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "undefined is a placeholder value; not defined is a missing binding.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 6 video",
+          "url": "https://www.youtube.com/watch?v=B7iF6G3EyIk"
+        },
+        {
+          "label": "javascript.info: data types",
+          "url": "https://javascript.info/types"
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "track": "javascript",
+      "groupId": 102,
+      "code": "06",
+      "title": "Hoisting",
+      "slug": "js-06-hoisting",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/01-variables.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Why functions run before their line and var reads undefined, with let and const in the TDZ.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 3 notes: Hoisting",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-03.md"
+        },
+        {
+          "label": "Namaste JS Ep 3 video",
+          "url": "https://www.youtube.com/watch?v=Fnlnw8uY6jo"
+        },
+        {
+          "label": "Lydia Hallie: hoisting visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-hoisting-478h"
+        },
+        {
+          "label": "Your ref: scope and hoisting",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#3-variables-scope-hoisting-and-closures"
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "track": "javascript",
+      "groupId": 102,
+      "code": "07",
+      "title": "Scope Chain and Lexical Environment",
+      "slug": "js-07-scope-chain-and-lexical-environment",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/18-scope.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "How identifier lookup walks outward through lexical parents.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 7 notes: Scope Chain & Lexical Environment",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-07.md"
+        },
+        {
+          "label": "Namaste JS Ep 7 video",
+          "url": "https://www.youtube.com/watch?v=uH-tVP8MUs8"
+        },
+        {
+          "label": "Lydia Hallie: scope chain visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-scope-chain-13pd"
+        },
+        {
+          "label": "javascript.info: variable scope",
+          "url": "https://javascript.info/closure"
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "track": "javascript",
+      "groupId": 102,
+      "code": "08",
+      "title": "let, const and the Temporal Dead Zone",
+      "slug": "js-08-let-const-and-the-temporal-dead-zone",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/01-variables.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Block scoping, the TDZ, and the real differences from var.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 8 notes: let & const, Temporal Dead Zone",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-08.md"
+        },
+        {
+          "label": "Namaste JS Ep 8 video",
+          "url": "https://www.youtube.com/watch?v=BNC6slYCj50"
+        },
+        {
+          "label": "javascript.info: the old var",
+          "url": "https://javascript.info/var"
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "track": "javascript",
+      "groupId": 102,
+      "code": "09",
+      "title": "Block Scope and Shadowing",
+      "slug": "js-09-block-scope-and-shadowing",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-09.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "What a block owns, legal and illegal shadowing.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 9 video",
+          "url": "https://www.youtube.com/watch?v=lW_erSjyMeM"
+        },
+        {
+          "label": "javascript.info: variable scope",
+          "url": "https://javascript.info/closure"
+        }
+      ]
+    },
+    {
+      "id": 1010,
+      "track": "javascript",
+      "groupId": 103,
+      "code": "10",
+      "title": "The JS Engine and V8",
+      "slug": "js-10-the-js-engine-and-v8",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-16.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Parser, interpreter, JIT compiler, and why hot loops get fast.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 16 video",
+          "url": "https://www.youtube.com/watch?v=2WJL19wDH68"
+        },
+        {
+          "label": "Lydia Hallie: JS engine visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-the-javascript-engine-4cdf"
+        },
+        {
+          "label": "Your ref: V8 gotchas",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#31-performance-and-v8-gotchas"
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "track": "javascript",
+      "groupId": 103,
+      "code": "11",
+      "title": "Garbage Collection and Memory Leaks",
+      "slug": "js-11-garbage-collection-and-memory-leaks",
+      "url": "https://javascript.info/garbage-collection",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Reachability, mark and sweep, and the leaks closures and listeners cause.",
+      "links": [
+        {
+          "label": "MDN: memory management",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Memory_management"
+        }
+      ]
+    },
+    {
+      "id": 1012,
+      "track": "javascript",
+      "groupId": 104,
+      "code": "12",
+      "title": "Data Types and typeof",
+      "slug": "js-12-data-types-and-typeof",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/02-data-types.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Seven primitives plus object, and the typeof null quirk.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/types"
+        },
+        {
+          "label": "Your ref: types and equality",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#2-types-coercion-and-equality"
+        }
+      ]
+    },
+    {
+      "id": 1013,
+      "track": "javascript",
+      "groupId": 104,
+      "code": "13",
+      "title": "Type Coercion, == vs ===",
+      "slug": "js-13-type-coercion-vs",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/03-type-coercion.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The abstract equality algorithm, ToPrimitive, and the classic gotchas.",
+      "links": [
+        {
+          "label": "javascript.info: type conversions",
+          "url": "https://javascript.info/type-conversions"
+        },
+        {
+          "label": "javascript.info: comparisons",
+          "url": "https://javascript.info/comparison"
+        },
+        {
+          "label": "Your ref: coercion table",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#2-types-coercion-and-equality"
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "track": "javascript",
+      "groupId": 104,
+      "code": "14",
+      "title": "Operators, ?? and Logical Assignment",
+      "slug": "js-14-operators-and-logical-assignment",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/04-operators.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Precedence, short-circuiting, nullish coalescing and ||=, &&=, ??=.",
+      "links": [
+        {
+          "label": "Your doc 64: logical assignment",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/64-logical-assignment.md"
+        },
+        {
+          "label": "javascript.info: ??",
+          "url": "https://javascript.info/nullish-coalescing-operator"
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "track": "javascript",
+      "groupId": 104,
+      "code": "15",
+      "title": "Truthy and Falsy",
+      "slug": "js-15-truthy-and-falsy",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/08-truthy-and-falsy.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The eight falsy values and what that does to conditions.",
+      "links": [
+        {
+          "label": "MDN: falsy",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/Falsy"
+        }
+      ]
+    },
+    {
+      "id": 1016,
+      "track": "javascript",
+      "groupId": 105,
+      "code": "16",
+      "title": "Strings and String Methods",
+      "slug": "js-16-strings-and-string-methods",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/05-string-methods.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Immutability, the method table, slice vs substring, split and replace traps.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/string"
+        },
+        {
+          "label": "Your ref: string traps",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#10-string-and-string-methods"
+        }
+      ]
+    },
+    {
+      "id": 1017,
+      "track": "javascript",
+      "groupId": 105,
+      "code": "17",
+      "title": "Numbers, Precision, Math and BigInt",
+      "slug": "js-17-numbers-precision-math-and-bigint",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/06-number-methods.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "0.1 + 0.2, safe integers, NaN, parseInt vs Number, BigInt.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/number"
+        },
+        {
+          "label": "Your ref: IEEE-754 reality",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#1-numbers-bigint-and-the-ieee-754-reality"
+        }
+      ]
+    },
+    {
+      "id": 1018,
+      "track": "javascript",
+      "groupId": 105,
+      "code": "18",
+      "title": "Conditionals and switch",
+      "slug": "js-18-conditionals-and-switch",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/07-conditionals.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "if chains vs switch, fall-through, when to use a lookup object instead.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/switch"
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "track": "javascript",
+      "groupId": 105,
+      "code": "19",
+      "title": "Loops: for, while, for-of, for-in, break, continue",
+      "slug": "js-19-loops-for-while-for-of-for-in-break-continue",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/09-for-loop.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Picking the right loop, the for-in trap, labeled breaks.",
+      "links": [
+        {
+          "label": "Your doc 10",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/10-while-and-do-while.md"
+        },
+        {
+          "label": "Your doc 11",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/11-for-of.md"
+        },
+        {
+          "label": "Your doc 12",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/12-for-in.md"
+        },
+        {
+          "label": "Your doc 13",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/13-break-and-continue.md"
+        },
+        {
+          "label": "Your ref: for-of vs for-in",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#7-iteration-protocols-generators-for-of-vs-for-in"
+        }
+      ]
+    },
+    {
+      "id": 1020,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "20",
+      "title": "Function Declarations vs Expressions",
+      "slug": "js-20-function-declarations-vs-expressions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/14-functions-declarations-and-expressions.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Hoisting differences, named expressions, when each reads better.",
+      "links": [
+        {
+          "label": "javascript.info: function expressions",
+          "url": "https://javascript.info/function-expressions"
+        }
+      ]
+    },
+    {
+      "id": 1021,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "21",
+      "title": "Arrow Functions",
+      "slug": "js-21-arrow-functions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/15-arrow-functions.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Lexical this, no arguments, no prototype, and when not to use them.",
+      "links": [
+        {
+          "label": "javascript.info: arrow functions revisited",
+          "url": "https://javascript.info/arrow-functions"
+        }
+      ]
+    },
+    {
+      "id": 1022,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "22",
+      "title": "Parameters: Default, Rest and Spread",
+      "slug": "js-22-parameters-default-rest-and-spread",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/16-parameters-in-depth.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Defaults evaluated at call time, rest vs arguments, spread into calls.",
+      "links": [
+        {
+          "label": "javascript.info: rest and spread",
+          "url": "https://javascript.info/rest-parameters-spread"
+        }
+      ]
+    },
+    {
+      "id": 1023,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "23",
+      "title": "Return Values",
+      "slug": "js-23-return-values",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/17-return-values.md",
+      "kind": "FUNCTIONS",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Implicit undefined, early returns, and the newline-after-return trap.",
+      "links": []
+    },
+    {
+      "id": 1024,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "24",
+      "title": "First-Class and Anonymous Functions",
+      "slug": "js-24-first-class-and-anonymous-functions",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-13.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Functions as values: assigned, passed, returned.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 13 video",
+          "url": "https://www.youtube.com/watch?v=SHINoHxvTso"
+        },
+        {
+          "label": "MDN: first-class function",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function"
+        }
+      ]
+    },
+    {
+      "id": 1025,
+      "track": "javascript",
+      "groupId": 106,
+      "code": "25",
+      "title": "IIFE",
+      "slug": "js-25-iife",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/22-iife.md",
+      "kind": "FUNCTIONS",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Immediately invoked function expressions and why older code is full of them.",
+      "links": [
+        {
+          "label": "MDN: IIFE",
+          "url": "https://developer.mozilla.org/en-US/docs/Glossary/IIFE"
+        }
+      ]
+    },
+    {
+      "id": 1026,
+      "track": "javascript",
+      "groupId": 107,
+      "code": "26",
+      "title": "Closures",
+      "slug": "js-26-closures",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/19-closures.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "A function bundled with its lexical scope; the basis of private state and every callback.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 10 notes: Closures",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-10.md"
+        },
+        {
+          "label": "Namaste JS Ep 10 video",
+          "url": "https://www.youtube.com/watch?v=qikxEIxsXco"
+        },
+        {
+          "label": "Eric Elliott: what is a closure?",
+          "url": "https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36"
+        },
+        {
+          "label": "javascript.info: closure",
+          "url": "https://javascript.info/closure"
+        }
+      ]
+    },
+    {
+      "id": 1027,
+      "track": "javascript",
+      "groupId": 107,
+      "code": "27",
+      "title": "setTimeout plus Closures Interview Question",
+      "slug": "js-27-settimeout-plus-closures-interview-question",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-11.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The var-in-a-loop question and its three fixes: let, IIFE, extra parameter.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 11 video",
+          "url": "https://www.youtube.com/watch?v=eBTBG4nda2A"
+        },
+        {
+          "label": "javascript.info: setTimeout",
+          "url": "https://javascript.info/settimeout-setinterval"
+        }
+      ]
+    },
+    {
+      "id": 1028,
+      "track": "javascript",
+      "groupId": 107,
+      "code": "28",
+      "title": "Famous Closure Interview Questions",
+      "slug": "js-28-famous-closure-interview-questions",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-12.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Counters, once, data hiding, memory implications, and the follow-ups interviewers ask.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 12 video",
+          "url": "https://www.youtube.com/watch?v=t1nFAMws5FI"
+        },
+        {
+          "label": "sudheerj: closure questions",
+          "url": "https://github.com/sudheerj/javascript-interview-questions#what-is-a-closure"
+        }
+      ]
+    },
+    {
+      "id": 1029,
+      "track": "javascript",
+      "groupId": 107,
+      "code": "29",
+      "title": "Higher-Order Functions",
+      "slug": "js-29-higher-order-functions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/20-higher-order-functions.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Functions that take or return functions; the foundation of map, filter, reduce.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 18 notes: Higher-Order Functions",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-18.md"
+        },
+        {
+          "label": "Namaste JS Ep 18 video",
+          "url": "https://www.youtube.com/watch?v=HkWxvB1RJq0"
+        }
+      ]
+    },
+    {
+      "id": 1030,
+      "track": "javascript",
+      "groupId": 107,
+      "code": "30",
+      "title": "Callback Functions and Event Listeners",
+      "slug": "js-30-callback-functions-and-event-listeners",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/21-callback-functions.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Synchronous callbacks, listener closures, removing listeners to free memory.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 14 notes: Callback Functions & Event Listeners",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-14.md"
+        },
+        {
+          "label": "Namaste JS Ep 14 video",
+          "url": "https://www.youtube.com/watch?v=btj35dh3_U8"
+        }
+      ]
+    },
+    {
+      "id": 1031,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "31",
+      "title": "Pure Functions and Side Effects",
+      "slug": "js-31-pure-functions-and-side-effects",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/41-pure-functions-and-side-effects.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Determinism, referential transparency, and why React and tests care.",
+      "links": []
+    },
+    {
+      "id": 1032,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "32",
+      "title": "Recursion",
+      "slug": "js-32-recursion",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/42-recursion.md",
+      "kind": "FUNCTIONS",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Base case, the stack limit, converting to iteration.",
+      "links": [
+        {
+          "label": "Your ref: recursion and iterative conversion",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#30-recursion-the-call-stack-and-iterative-conversion"
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "33",
+      "title": "Currying",
+      "slug": "js-33-currying",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/43-currying.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Turning f(a, b, c) into f(a)(b)(c); the infinite sum(1)(2)(3) question.",
+      "links": [
+        {
+          "label": "javascript.info: currying",
+          "url": "https://javascript.info/currying-partials"
+        }
+      ]
+    },
+    {
+      "id": 1034,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "34",
+      "title": "Memoization",
+      "slug": "js-34-memoization",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/44-memoization.md",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "Caching by arguments; a generic memoize and its cache-key pitfalls.",
+      "links": []
+    },
+    {
+      "id": 1035,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "35",
+      "title": "Debounce and Throttle",
+      "slug": "js-35-debounce-and-throttle",
+      "url": "https://css-tricks.com/debouncing-throttling-explained-examples/",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Rate-limiting handlers: write both from scratch with leading and trailing options.",
+      "links": [
+        {
+          "label": "freeCodeCamp: debounce in JavaScript",
+          "url": "https://www.freecodecamp.org/news/javascript-debounce-example/"
+        }
+      ]
+    },
+    {
+      "id": 1036,
+      "track": "javascript",
+      "groupId": 108,
+      "code": "36",
+      "title": "call, apply, bind and the bind Polyfill",
+      "slug": "js-36-call-apply-bind-and-the-bind-polyfill",
+      "url": "https://javascript.info/bind",
+      "kind": "FUNCTIONS",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Explicit this binding, partial application, and writing Function.prototype.myBind.",
+      "links": [
+        {
+          "label": "javascript.info: call and apply",
+          "url": "https://javascript.info/call-apply-decorators"
+        },
+        {
+          "label": "Your ref: this and call/apply/bind",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#4-functions-arrow-functions-and-this"
+        }
+      ]
+    },
+    {
+      "id": 1037,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "37",
+      "title": "Array Basics and Mutation Methods",
+      "slug": "js-37-array-basics-and-mutation-methods",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/23-array-basics.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "push, pop, shift, unshift, splice; shift is O(n); the fill([]) trap.",
+      "links": [
+        {
+          "label": "Your doc 24: mutation methods",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/24-array-mutation-methods.md"
+        },
+        {
+          "label": "Your ref: array fundamentals",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#8-array-fundamentals"
+        }
+      ]
+    },
+    {
+      "id": 1038,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "38",
+      "title": "Non-mutating Methods and the sort, slice, splice Traps",
+      "slug": "js-38-non-mutating-methods-and-the-sort-slice-splice-traps",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/25-array-non-mutation-methods.md",
+      "kind": "DATA",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "slice, concat, flat, toSorted; the lexicographic default sort that bites everyone.",
+      "links": [
+        {
+          "label": "Your ref: complete array method table",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#9-the-complete-array-method-reference"
+        },
+        {
+          "label": "javascript.info: array methods",
+          "url": "https://javascript.info/array-methods"
+        }
+      ]
+    },
+    {
+      "id": 1039,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "39",
+      "title": "forEach vs map",
+      "slug": "js-39-foreach-vs-map",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/26-foreach.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Return values, breaking out, and why map for side effects is a smell.",
+      "links": [
+        {
+          "label": "Your doc 27: map",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/27-map.md"
+        }
+      ]
+    },
+    {
+      "id": 1040,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "40",
+      "title": "filter and reduce",
+      "slug": "js-40-filter-and-reduce",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/28-filter.md",
+      "kind": "DATA",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "reduce as the universal fold: group by, count, flatten, compose.",
+      "links": [
+        {
+          "label": "Your doc 29: reduce",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/29-reduce.md"
+        },
+        {
+          "label": "Namaste JS Ep 19 notes: map, filter & reduce",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-19.md"
+        },
+        {
+          "label": "Namaste JS Ep 19 video",
+          "url": "https://www.youtube.com/watch?v=zdp0zrpKzIE"
+        }
+      ]
+    },
+    {
+      "id": 1041,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "41",
+      "title": "find, findIndex, some, every",
+      "slug": "js-41-find-findindex-some-every",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/30-find-and-findindex.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Search and predicate methods, and includes vs indexOf with NaN.",
+      "links": [
+        {
+          "label": "Your doc 31: some and every",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/31-some-and-every.md"
+        }
+      ]
+    },
+    {
+      "id": 1042,
+      "track": "javascript",
+      "groupId": 109,
+      "code": "42",
+      "title": "Spread and Destructuring Arrays",
+      "slug": "js-42-spread-and-destructuring-arrays",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/32-spread-arrays.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Copying, merging, swapping, skipping, defaults and nested patterns.",
+      "links": [
+        {
+          "label": "Your doc 33: array destructuring",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/33-array-destructuring.md"
+        },
+        {
+          "label": "javascript.info: destructuring",
+          "url": "https://javascript.info/destructuring-assignment"
+        }
+      ]
+    },
+    {
+      "id": 1043,
+      "track": "javascript",
+      "groupId": 110,
+      "code": "43",
+      "title": "Object Basics and Property Access",
+      "slug": "js-43-object-basics-and-property-access",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/34-object-basics.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Dot vs bracket, existence checks, delete, property order.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/object"
+        }
+      ]
+    },
+    {
+      "id": 1044,
+      "track": "javascript",
+      "groupId": 110,
+      "code": "44",
+      "title": "Object Methods and this",
+      "slug": "js-44-object-methods-and-this",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/35-object-methods-and-this.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Methods, method shorthand, and losing this when a method is detached.",
+      "links": [
+        {
+          "label": "javascript.info: object methods and this",
+          "url": "https://javascript.info/object-methods"
+        }
+      ]
+    },
+    {
+      "id": 1045,
+      "track": "javascript",
+      "groupId": 110,
+      "code": "45",
+      "title": "Object Destructuring and Spread",
+      "slug": "js-45-object-destructuring-and-spread",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/36-object-destructuring.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Renaming, defaults, nested, rest properties, shallow merge order.",
+      "links": [
+        {
+          "label": "Your doc 37: spread with objects",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/37-spread-objects.md"
+        }
+      ]
+    },
+    {
+      "id": 1046,
+      "track": "javascript",
+      "groupId": 110,
+      "code": "46",
+      "title": "Object.keys, values, entries",
+      "slug": "js-46-object-keys-values-entries",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/38-object-keys-values-entries.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Iterating objects, round-tripping with fromEntries, key ordering rules.",
+      "links": [
+        {
+          "label": "javascript.info: keys, values, entries",
+          "url": "https://javascript.info/keys-values-entries"
+        }
+      ]
+    },
+    {
+      "id": 1047,
+      "track": "javascript",
+      "groupId": 110,
+      "code": "47",
+      "title": "Optional Chaining and Computed Keys",
+      "slug": "js-47-optional-chaining-and-computed-keys",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/39-optional-chaining.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Safe access with ?. and dynamic property names.",
+      "links": [
+        {
+          "label": "Your doc 40: computed property names",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/40-computed-property-names.md"
+        },
+        {
+          "label": "javascript.info: optional chaining",
+          "url": "https://javascript.info/optional-chaining"
+        }
+      ]
+    },
+    {
+      "id": 1048,
+      "track": "javascript",
+      "groupId": 111,
+      "code": "48",
+      "title": "Shallow vs Deep Copy and structuredClone",
+      "slug": "js-48-shallow-vs-deep-copy-and-structuredclone",
+      "url": "https://javascript.info/object-copy",
+      "kind": "DATA",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Spread copies one level; JSON round-trip loses types; structuredClone and a hand-written deep clone.",
+      "links": [
+        {
+          "label": "MDN: structuredClone",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone"
+        }
+      ]
+    },
+    {
+      "id": 1049,
+      "track": "javascript",
+      "groupId": 111,
+      "code": "49",
+      "title": "Immutability and Object.freeze",
+      "slug": "js-49-immutability-and-object-freeze",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/75-immutability.md",
+      "kind": "DATA",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Shallow freeze, deep freeze, and immutable update patterns.",
+      "links": [
+        {
+          "label": "MDN: Object.freeze",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze"
+        }
+      ]
+    },
+    {
+      "id": 1050,
+      "track": "javascript",
+      "groupId": 111,
+      "code": "50",
+      "title": "Polyfills: map, filter, reduce, forEach",
+      "slug": "js-50-polyfills-map-filter-reduce-foreach",
+      "url": "https://github.com/sudheerj/javascript-interview-questions#what-is-a-polyfill",
+      "kind": "DATA",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Write each on Array.prototype from scratch, handling this, holes and the initial value.",
+      "links": [
+        {
+          "label": "BFE.dev: JavaScript coding problems",
+          "url": "https://bigfrontend.dev/problem"
+        }
+      ]
+    },
+    {
+      "id": 1051,
+      "track": "javascript",
+      "groupId": 112,
+      "code": "51",
+      "title": "The this Keyword: the Four Rules",
+      "slug": "js-51-the-this-keyword-the-four-rules",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-06.md",
+      "kind": "OOP",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Default, implicit, explicit, new; arrow functions; this in callbacks and classes.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 25 video",
+          "url": "https://www.youtube.com/watch?v=75W8UPQ5l7k"
+        },
+        {
+          "label": "Your doc 35: object methods and this",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/35-object-methods-and-this.md"
+        },
+        {
+          "label": "Your ref: the 4 rules",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#4-functions-arrow-functions-and-this"
+        },
+        {
+          "label": "javascript.info: this",
+          "url": "https://javascript.info/object-methods"
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "track": "javascript",
+      "groupId": 112,
+      "code": "52",
+      "title": "Constructor Functions and new",
+      "slug": "js-52-constructor-functions-and-new",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/45-constructor-functions.md",
+      "kind": "OOP",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "What new does in four steps, and writing your own new.",
+      "links": [
+        {
+          "label": "javascript.info: constructor and new",
+          "url": "https://javascript.info/constructor-new"
+        }
+      ]
+    },
+    {
+      "id": 1053,
+      "track": "javascript",
+      "groupId": 112,
+      "code": "53",
+      "title": "Prototypes and the Prototype Chain",
+      "slug": "js-53-prototypes-and-the-prototype-chain",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/46-prototypes-and-prototype-chain.md",
+      "kind": "OOP",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "__proto__ vs prototype, lookup order, Object.create, instanceof.",
+      "links": [
+        {
+          "label": "Lydia Hallie: prototypal inheritance visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-prototypal-inheritance-47co"
+        },
+        {
+          "label": "javascript.info: prototypal inheritance",
+          "url": "https://javascript.info/prototype-inheritance"
+        },
+        {
+          "label": "Your ref: prototypes and classes",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#5-objects-prototypes-and-classes"
+        }
+      ]
+    },
+    {
+      "id": 1054,
+      "track": "javascript",
+      "groupId": 113,
+      "code": "54",
+      "title": "ES6 Classes",
+      "slug": "js-54-es6-classes",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/47-es6-classes.md",
+      "kind": "OOP",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Syntax over prototypes: constructor, methods, fields, and what is still a function.",
+      "links": [
+        {
+          "label": "javascript.info: class basics",
+          "url": "https://javascript.info/class"
+        }
+      ]
+    },
+    {
+      "id": 1055,
+      "track": "javascript",
+      "groupId": 113,
+      "code": "55",
+      "title": "Inheritance",
+      "slug": "js-55-inheritance",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/48-inheritance.md",
+      "kind": "OOP",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "extends, super, method overriding, and class vs prototypal inheritance.",
+      "links": [
+        {
+          "label": "Eric Elliott: class vs prototypal inheritance",
+          "url": "https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9"
+        },
+        {
+          "label": "javascript.info: class inheritance",
+          "url": "https://javascript.info/class-inheritance"
+        }
+      ]
+    },
+    {
+      "id": 1056,
+      "track": "javascript",
+      "groupId": 113,
+      "code": "56",
+      "title": "Static, Getters and Setters, Private Fields",
+      "slug": "js-56-static-getters-and-setters-private-fields",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/49-static-methods-and-properties.md",
+      "kind": "OOP",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Class-level members, accessor properties, and # private fields.",
+      "links": [
+        {
+          "label": "Your doc 50: getters and setters",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/50-getters-and-setters.md"
+        },
+        {
+          "label": "Your doc 51: private class fields",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/51-private-class-fields.md"
+        }
+      ]
+    },
+    {
+      "id": 1057,
+      "track": "javascript",
+      "groupId": 114,
+      "code": "57",
+      "title": "Sync vs Async and the Event Loop",
+      "slug": "js-57-sync-vs-async-and-the-event-loop",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/52-sync-async-event-loop.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Call stack, Web APIs, task and microtask queues, and the loop that ties them.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 15 notes: Async JS & Event Loop",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-15.md"
+        },
+        {
+          "label": "Namaste JS Ep 15 video",
+          "url": "https://www.youtube.com/watch?v=8zKuNo4ay8E"
+        },
+        {
+          "label": "Lydia Hallie: event loop visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif"
+        },
+        {
+          "label": "Philip Roberts: what the heck is the event loop? (video)",
+          "url": "https://www.youtube.com/watch?v=8aGhZQkoFbQ"
+        },
+        {
+          "label": "Loupe: event loop visualiser",
+          "url": "http://latentflip.com/loupe/"
+        }
+      ]
+    },
+    {
+      "id": 1058,
+      "track": "javascript",
+      "groupId": 114,
+      "code": "58",
+      "title": "Trust Issues with setTimeout",
+      "slug": "js-58-trust-issues-with-settimeout",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-1/lecture-17.md",
+      "kind": "ASYNC",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Why setTimeout(fn, 0) is a minimum, not a promise, and how the stack delays it.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 17 video",
+          "url": "https://www.youtube.com/watch?v=nqsPmuicJJc"
+        },
+        {
+          "label": "javascript.info: setTimeout and setInterval",
+          "url": "https://javascript.info/settimeout-setinterval"
+        }
+      ]
+    },
+    {
+      "id": 1059,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "59",
+      "title": "Callbacks and Callback Hell",
+      "slug": "js-59-callbacks-and-callback-hell",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/53-callbacks-and-callback-hell.md",
+      "kind": "ASYNC",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Inversion of control, the pyramid of doom, and what promises fix.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 20 notes: Callback Hell",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-01.md"
+        },
+        {
+          "label": "Namaste JS Ep 20 video",
+          "url": "https://www.youtube.com/watch?v=yEKtJGha3yM"
+        }
+      ]
+    },
+    {
+      "id": 1060,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "60",
+      "title": "Promises",
+      "slug": "js-60-promises",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/54-promises.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "States, then, immutability of a settled promise, and why they beat callbacks.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 21 notes: Promises",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-02.md"
+        },
+        {
+          "label": "Namaste JS Ep 21 video",
+          "url": "https://www.youtube.com/watch?v=ap-6PPAuK1Y"
+        },
+        {
+          "label": "Eric Elliott: what is a promise?",
+          "url": "https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261"
+        },
+        {
+          "label": "javascript.info: promise basics",
+          "url": "https://javascript.info/promise-basics"
+        }
+      ]
+    },
+    {
+      "id": 1061,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "61",
+      "title": "Creating Promises, Chaining and Error Handling",
+      "slug": "js-61-creating-promises-chaining-and-error-handling",
+      "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-03.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The executor, returning from then, catch placement, finally.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 22 video",
+          "url": "https://www.youtube.com/watch?v=U74BJcr8NeQ"
+        },
+        {
+          "label": "Your doc 54: promises",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/54-promises.md"
+        },
+        {
+          "label": "javascript.info: promise chaining",
+          "url": "https://javascript.info/promise-chaining"
+        },
+        {
+          "label": "javascript.info: error handling with promises",
+          "url": "https://javascript.info/promise-error-handling"
+        }
+      ]
+    },
+    {
+      "id": 1062,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "62",
+      "title": "Promise Combinators: all, allSettled, race, any",
+      "slug": "js-62-promise-combinators-all-allsettled-race-any",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/55-promise-combinators.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Fail-fast vs settle-all, first-settled vs first-fulfilled, and the questions they generate.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 24 notes: Promise APIs",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-05.md"
+        },
+        {
+          "label": "Namaste JS Ep 24 video",
+          "url": "https://www.youtube.com/watch?v=DlTVt1rZjIo"
+        },
+        {
+          "label": "javascript.info: promise API",
+          "url": "https://javascript.info/promise-api"
+        }
+      ]
+    },
+    {
+      "id": 1063,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "63",
+      "title": "async and await",
+      "slug": "js-63-async-and-await",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/56-async-await.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Syntax over promises, sequential vs parallel awaits, error handling with try/catch.",
+      "links": [
+        {
+          "label": "Namaste JS Ep 23 notes: async await",
+          "url": "https://github.com/alok722/namaste-javascript-notes/blob/master/notes/season-2/lecture-04.md"
+        },
+        {
+          "label": "Namaste JS Ep 23 video",
+          "url": "https://www.youtube.com/watch?v=6nv3qy3oNkc"
+        },
+        {
+          "label": "Lydia Hallie: promises and async/await visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-promises-async-await-5gke"
+        },
+        {
+          "label": "javascript.info: async/await",
+          "url": "https://javascript.info/async-await"
+        }
+      ]
+    },
+    {
+      "id": 1064,
+      "track": "javascript",
+      "groupId": 115,
+      "code": "64",
+      "title": "Fetch API",
+      "slug": "js-64-fetch-api",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/58-fetch-api.md",
+      "kind": "ASYNC",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Request and Response, JSON parsing, aborting, and why fetch does not reject on 404.",
+      "links": [
+        {
+          "label": "javascript.info: fetch",
+          "url": "https://javascript.info/fetch"
+        }
+      ]
+    },
+    {
+      "id": 1065,
+      "track": "javascript",
+      "groupId": 116,
+      "code": "65",
+      "title": "Microtask vs Macrotask Output Questions",
+      "slug": "js-65-microtask-vs-macrotask-output-questions",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/52-sync-async-event-loop.md",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Predict the order of logs mixing setTimeout, promises, async functions and nextTick.",
+      "links": [
+        {
+          "label": "Jake Archibald: tasks, microtasks, queues and schedules",
+          "url": "https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/"
+        },
+        {
+          "label": "javascript.info: microtask queue",
+          "url": "https://javascript.info/microtask-queue"
+        },
+        {
+          "label": "Node.js: event loop, timers, nextTick",
+          "url": "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
+        }
+      ]
+    },
+    {
+      "id": 1066,
+      "track": "javascript",
+      "groupId": 116,
+      "code": "66",
+      "title": "Promise Polyfills: Promise.all and a Custom Promise",
+      "slug": "js-66-promise-polyfills-promise-all-and-a-custom-promise",
+      "url": "https://github.com/sudheerj/javascript-interview-questions#how-do-you-implement-promise-all-polyfill",
+      "kind": "ASYNC",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Implement Promise.all, allSettled, race, any, and a minimal Promise class.",
+      "links": [
+        {
+          "label": "BFE.dev: implement Promise.all",
+          "url": "https://bigfrontend.dev/problem/implement-Promise-all"
+        }
+      ]
+    },
+    {
+      "id": 1067,
+      "track": "javascript",
+      "groupId": 117,
+      "code": "67",
+      "title": "Error Handling: try, catch, finally",
+      "slug": "js-67-error-handling-try-catch-finally",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/57-error-handling.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Sync vs async errors, rethrowing, finally semantics, unhandled rejections.",
+      "links": [
+        {
+          "label": "Your doc 72: try, catch, finally",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/72-try-catch-finally.md"
+        },
+        {
+          "label": "javascript.info: error handling",
+          "url": "https://javascript.info/try-catch"
+        }
+      ]
+    },
+    {
+      "id": 1068,
+      "track": "javascript",
+      "groupId": 117,
+      "code": "68",
+      "title": "Error Types and Custom Error Classes",
+      "slug": "js-68-error-types-and-custom-error-classes",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/71-types-of-js-errors.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The built-in error hierarchy and extending Error with a cause and a name.",
+      "links": [
+        {
+          "label": "Your doc 73: custom error classes",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/73-custom-error-classes.md"
+        },
+        {
+          "label": "javascript.info: custom errors",
+          "url": "https://javascript.info/custom-errors"
+        }
+      ]
+    },
+    {
+      "id": 1069,
+      "track": "javascript",
+      "groupId": 117,
+      "code": "69",
+      "title": "Debugging",
+      "slug": "js-69-debugging",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/74-debugging.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Breakpoints, the debugger statement, console tricks, source maps.",
+      "links": [
+        {
+          "label": "javascript.info: debugging in Chrome",
+          "url": "https://javascript.info/debugging-chrome"
+        }
+      ]
+    },
+    {
+      "id": 1070,
+      "track": "javascript",
+      "groupId": 118,
+      "code": "70",
+      "title": "Modules: ESM vs CommonJS",
+      "slug": "js-70-modules-esm-vs-commonjs",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/59-modules.md",
+      "kind": "CORE",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "import/export vs require, live bindings, hoisting of imports, interop in Node.",
+      "links": [
+        {
+          "label": "javascript.info: modules",
+          "url": "https://javascript.info/modules-intro"
+        },
+        {
+          "label": "Node.js: ESM vs CommonJS",
+          "url": "https://nodejs.org/api/esm.html#differences-between-es-modules-and-commonjs"
+        }
+      ]
+    },
+    {
+      "id": 1071,
+      "track": "javascript",
+      "groupId": 118,
+      "code": "71",
+      "title": "Symbol",
+      "slug": "js-71-symbol",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/60-symbol.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Unique keys, well-known symbols, and hidden properties.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/symbol"
+        }
+      ]
+    },
+    {
+      "id": 1072,
+      "track": "javascript",
+      "groupId": 118,
+      "code": "72",
+      "title": "WeakMap and WeakSet",
+      "slug": "js-72-weakmap-and-weakset",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/61-weakmap-and-weakset.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Weakly held keys for caches and private data without leaks.",
+      "links": [
+        {
+          "label": "javascript.info: WeakMap and WeakSet",
+          "url": "https://javascript.info/weakmap-weakset"
+        }
+      ]
+    },
+    {
+      "id": 1073,
+      "track": "javascript",
+      "groupId": 118,
+      "code": "73",
+      "title": "Iterators and Generators",
+      "slug": "js-73-iterators-and-generators",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/62-generators.md",
+      "kind": "CORE",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The iteration protocol, function*, yield, lazy sequences, and async generators.",
+      "links": [
+        {
+          "label": "Lydia Hallie: generators visualised",
+          "url": "https://dev.to/lydiahallie/javascript-visualized-generators-and-iterators-e36"
+        },
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/generators"
+        },
+        {
+          "label": "javascript.info: iterables",
+          "url": "https://javascript.info/iterable"
+        }
+      ]
+    },
+    {
+      "id": 1074,
+      "track": "javascript",
+      "groupId": 118,
+      "code": "74",
+      "title": "Proxy and Reflect",
+      "slug": "js-74-proxy-and-reflect",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/63-proxy-and-reflect.md",
+      "kind": "CORE",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Traps for get, set, has; validation, logging, reactive state.",
+      "links": [
+        {
+          "label": "javascript.info",
+          "url": "https://javascript.info/proxy"
+        }
+      ]
+    },
+    {
+      "id": 1075,
+      "track": "javascript",
+      "groupId": 119,
+      "code": "75",
+      "title": "How the DOM Works",
+      "slug": "js-75-how-the-dom-works",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/65-how-the-dom-works.md",
+      "kind": "BROWSER",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "The tree, nodes vs elements, reflow and repaint.",
+      "links": [
+        {
+          "label": "javascript.info: DOM tree",
+          "url": "https://javascript.info/dom-nodes"
+        }
+      ]
+    },
+    {
+      "id": 1076,
+      "track": "javascript",
+      "groupId": 119,
+      "code": "76",
+      "title": "Selecting and Manipulating Elements",
+      "slug": "js-76-selecting-and-manipulating-elements",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/66-selecting-elements.md",
+      "kind": "BROWSER",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "querySelector, live vs static collections, creating and inserting nodes safely.",
+      "links": [
+        {
+          "label": "Your doc 67: manipulating the DOM",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/67-manipulating-the-dom.md"
+        },
+        {
+          "label": "javascript.info: modifying the document",
+          "url": "https://javascript.info/modifying-document"
+        }
+      ]
+    },
+    {
+      "id": 1077,
+      "track": "javascript",
+      "groupId": 120,
+      "code": "77",
+      "title": "Events: Bubbling and Capturing",
+      "slug": "js-77-events-bubbling-and-capturing",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/68-events.md",
+      "kind": "BROWSER",
+      "importance": "MUST",
+      "lastDay": false,
+      "summary": "The three phases, target vs currentTarget, stopPropagation vs preventDefault.",
+      "links": [
+        {
+          "label": "javascript.info: bubbling and capturing",
+          "url": "https://javascript.info/bubbling-and-capturing"
+        }
+      ]
+    },
+    {
+      "id": 1078,
+      "track": "javascript",
+      "groupId": 120,
+      "code": "78",
+      "title": "Event Delegation",
+      "slug": "js-78-event-delegation",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/69-event-delegation.md",
+      "kind": "BROWSER",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "One listener on a parent for many children; matching with closest.",
+      "links": [
+        {
+          "label": "javascript.info: event delegation",
+          "url": "https://javascript.info/event-delegation"
+        }
+      ]
+    },
+    {
+      "id": 1079,
+      "track": "javascript",
+      "groupId": 120,
+      "code": "79",
+      "title": "Forms",
+      "slug": "js-79-forms",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/70-forms.md",
+      "kind": "BROWSER",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Reading values, validation, submit handling, FormData.",
+      "links": [
+        {
+          "label": "javascript.info: form properties and methods",
+          "url": "https://javascript.info/forms-controls"
+        }
+      ]
+    },
+    {
+      "id": 1080,
+      "track": "javascript",
+      "groupId": 120,
+      "code": "80",
+      "title": "Browser Storage: localStorage, sessionStorage, Cookies",
+      "slug": "js-80-browser-storage-localstorage-sessionstorage-cookies",
+      "url": "https://javascript.info/localstorage",
+      "kind": "BROWSER",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Size limits, string-only values, expiry, and what belongs where.",
+      "links": [
+        {
+          "label": "MDN: Web Storage API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+        },
+        {
+          "label": "javascript.info: cookies",
+          "url": "https://javascript.info/cookie"
+        }
+      ]
+    },
+    {
+      "id": 1081,
+      "track": "javascript",
+      "groupId": 121,
+      "code": "81",
+      "title": "Module Pattern",
+      "slug": "js-81-module-pattern",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/76-module-pattern.md",
+      "kind": "INTERVIEW",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Closures plus IIFE for private state, and how ESM replaced it.",
+      "links": [
+        {
+          "label": "patterns.dev: module pattern",
+          "url": "https://www.patterns.dev/vanilla/module-pattern"
+        }
+      ]
+    },
+    {
+      "id": 1082,
+      "track": "javascript",
+      "groupId": 121,
+      "code": "82",
+      "title": "Observer Pattern",
+      "slug": "js-82-observer-pattern",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/77-observer-pattern.md",
+      "kind": "INTERVIEW",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "Subscribe, notify, unsubscribe; the basis of EventEmitter and reactive libraries.",
+      "links": [
+        {
+          "label": "patterns.dev: observer pattern",
+          "url": "https://www.patterns.dev/vanilla/observer-pattern"
+        }
+      ]
+    },
+    {
+      "id": 1083,
+      "track": "javascript",
+      "groupId": 121,
+      "code": "83",
+      "title": "Clean Code Principles",
+      "slug": "js-83-clean-code-principles",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/78-clean-code-principles.md",
+      "kind": "INTERVIEW",
+      "importance": "EXTRA",
+      "lastDay": false,
+      "summary": "Naming, small functions, early returns, and what reviewers look for.",
+      "links": [
+        {
+          "label": "clean-code-javascript (repo)",
+          "url": "https://github.com/ryanmcdermott/clean-code-javascript"
+        }
+      ]
+    },
+    {
+      "id": 1084,
+      "track": "javascript",
+      "groupId": 122,
+      "code": "84",
+      "title": "JS for DSA: the Top 30 Traps",
+      "slug": "js-84-js-for-dsa-the-top-30-traps",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#36-the-top-30-js-dsa-mistakes-that-cost-you-problems",
+      "kind": "INTERVIEW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Your own list of the mistakes that cost problems: sort, shift, floats, ==, holes.",
+      "links": [
+        {
+          "label": "Your ref: recipe index",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#33-the-how-do-i-recipe-index"
+        }
+      ]
+    },
+    {
+      "id": 1085,
+      "track": "javascript",
+      "groupId": 122,
+      "code": "85",
+      "title": "Polyglot Rosetta: JS against C++, Java, Python",
+      "slug": "js-85-polyglot-rosetta-js-against-c-java-python",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/44-polyglot-rosetta-tables.md",
+      "kind": "INTERVIEW",
+      "importance": "CORE",
+      "lastDay": false,
+      "summary": "One construct per row across four languages, for switching back and forth.",
+      "links": []
+    },
+    {
+      "id": 1086,
+      "track": "javascript",
+      "groupId": 122,
+      "code": "86",
+      "title": "Output-Based Questions Drill",
+      "slug": "js-86-output-based-questions-drill",
+      "url": "https://github.com/lydiahallie/javascript-questions",
+      "kind": "INTERVIEW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "Hoisting, this, closures, coercion and event-loop snippets: predict, then verify.",
+      "links": [
+        {
+          "label": "sudheerj: JavaScript interview questions",
+          "url": "https://github.com/sudheerj/javascript-interview-questions"
+        }
+      ]
+    },
+    {
+      "id": 1087,
+      "track": "javascript",
+      "groupId": 122,
+      "code": "87",
+      "title": "Machine-Coding Classics: flatten, deep clone, EventEmitter, LRU",
+      "slug": "js-87-machine-coding-classics-flatten-deep-clone-eventemitter-lru",
+      "url": "https://bigfrontend.dev/problem",
+      "kind": "INTERVIEW",
+      "importance": "MUST",
+      "lastDay": true,
+      "summary": "The functions you are asked to write live, with edge cases.",
+      "links": [
+        {
+          "label": "sudheerj: coding exercises",
+          "url": "https://github.com/sudheerj/javascript-interview-questions#coding-exercise"
+        },
+        {
+          "label": "Your doc 44: memoization",
+          "url": "https://github.com/parshuKumar/Claude-notes/blob/main/JS/docs/44-memoization.md"
+        }
+      ]
+    }
+  ],
+  "bookshelf": [
+    {
+      "title": "Namaste JavaScript (playlist)",
+      "by": "Akshay Saini",
+      "url": "https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP",
+      "when": "The videos behind Parts 1, 3 and 6. Watch an episode, then read the note."
+    },
+    {
+      "title": "Namaste JavaScript Notes",
+      "by": "Alok Raj",
+      "url": "https://github.com/alok722/namaste-javascript-notes",
+      "when": "Written version of every episode, linked per topic above."
+    },
+    {
+      "title": "javascript.info",
+      "by": "Ilya Kantor",
+      "url": "https://javascript.info/",
+      "when": "The best free written reference. Linked on most rows for depth."
+    },
+    {
+      "title": "Your JS complete reference",
+      "by": "you",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md",
+      "when": "Traps and idioms for coding rounds. Sections 36 and 37 are the last-day drill."
+    },
+    {
+      "title": "JavaScript Questions",
+      "by": "Lydia Hallie",
+      "url": "https://github.com/lydiahallie/javascript-questions",
+      "when": "Output-based questions with explanations. Do ten a day in the final week."
+    },
+    {
+      "title": "JavaScript Interview Questions",
+      "by": "Sudheer Jonna",
+      "url": "https://github.com/sudheerj/javascript-interview-questions",
+      "when": "The 400-question list. Skim headings to find gaps."
+    },
+    {
+      "title": "JavaScript Visualized series",
+      "by": "Lydia Hallie (dev.to)",
+      "url": "https://dev.to/lydiahallie/series/3341",
+      "when": "Animated explanations of the engine, hoisting, scope, prototypes, promises."
+    },
+    {
+      "title": "33 JS Concepts",
+      "by": "Leonardo Maldonado",
+      "url": "https://github.com/leonardomso/33-js-concepts",
+      "when": "Curated links per concept when you want a second explanation."
+    },
+    {
+      "title": "MDN JavaScript Guide",
+      "by": "Mozilla",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+      "when": "The spec-accurate answer when two sources disagree."
+    },
+    {
+      "title": "You Don't Know JS Yet",
+      "by": "Kyle Simpson",
+      "url": "https://github.com/getify/You-Dont-Know-JS",
+      "when": "Deep dives on scope, closures, this and prototypes once the basics are solid."
+    }
+  ],
+  "lastDayKit": [
+    {
+      "label": "Your 60-second warm-up drill",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#37-60-second-warm-up-drill--language-switch-box"
+    },
+    {
+      "label": "Your top 30 JS-DSA traps",
+      "url": "https://github.com/parshuKumar/Claude-notes/blob/main/DSA/41-js-complete-reference.md#36-the-top-30-js-dsa-mistakes-that-cost-you-problems"
+    },
+    {
+      "label": "Lydia Hallie: output questions",
+      "url": "https://github.com/lydiahallie/javascript-questions"
+    },
+    {
+      "label": "sudheerj: interview questions",
+      "url": "https://github.com/sudheerj/javascript-interview-questions"
+    },
+    {
+      "label": "Namaste JS playlist",
+      "url": "https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP"
+    }
+  ]
+}

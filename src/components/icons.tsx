@@ -152,3 +152,9 @@ export const Repeat = (p: IconProps) => (
     <path d="M21 13v1a4 4 0 0 1-4 4H3" />
   </Svg>
 );
+
+export const Moon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" />
+  </Svg>
+);

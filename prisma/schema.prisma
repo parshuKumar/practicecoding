@@ -145,20 +145,26 @@ enum Role {
   CONTEST
 }
 
-// ─────────────────────── System Design content ───────────────────────
-// Seeded from data/system-design.json. Article.id is the curriculum number (1..140)
-// and doubles as its display code, so it must never be renumbered.
+// ───────────────────── Reading-sheet content (tracks) ─────────────────────
+// The "Sd" prefix is historical: these tables started as the System Design sheet and now
+// hold every reading sheet, told apart by `track` ("system-design", "javascript", ...).
+// Seeded from data/<track>.json. Article ids are stable per track (System Design 1..140,
+// JavaScript 1001..) and must never be renumbered: progress rows point at them.
 
 model SdPart {
   id       Int     @id
+  track    String  @default("system-design")
   title    String
   subtitle String?
 
   groups SdGroup[]
+
+  @@index([track])
 }
 
 model SdGroup {
   id     Int    @id
+  track  String @default("system-design")
   partId Int
   code   String
   title  String
@@ -167,19 +173,24 @@ model SdGroup {
   articles SdArticle[]
 
   @@index([partId])
+  @@index([track])
 }
 
-/// One article of the curriculum. 140 rows.
-/// `links` is a JSON array of { label, url } — curated outside reading for the topic.
+/// One article of a track.
+/// `kind` is a free string whose meaning (label, colour, order) is defined per track in
+/// src/lib/tracks.ts. `lastDay` marks the short list worth re-reading the night before an
+/// interview. `links` is a JSON array of { label, url } — curated outside reading.
 model SdArticle {
   id         Int          @id
+  track      String       @default("system-design")
   groupId    Int
   code       String
   title      String
   slug       String       @unique
   url        String
-  kind       SdKind
+  kind       String
   importance SdImportance
+  lastDay    Boolean      @default(false)
   summary    String?
   links      Json         @default("[]")
 
@@ -187,6 +198,7 @@ model SdArticle {
   users SdUserArticle[]
 
   @@index([groupId])
+  @@index([track])
 }
 
 /// No row means: not read, not starred, zero reads, no note.
@@ -206,15 +218,6 @@ model SdUserArticle {
   @@id([userId, articleId])
   @@index([userId, done])
   @@index([userId, starred])
-}
-
-enum SdKind {
-  FOUNDATION
-  LLD
-  HLD
-  HLD_CASE
-  LLD_CASE
-  ADVANCED
 }
 
 enum SdImportance {
